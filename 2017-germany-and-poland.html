@@ -1,0 +1,1311 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}
+/* phones same height side by side */
+.phonerow{align-items:stretch}
+.phone{display:flex;flex-direction:column}
+.phone .screen{flex:1;min-height:640px}
+</style>
+<title>Germany &amp; Poland, 2017</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&family=Special+Elite&display=swap">
+<style>
+/* Layout: the tour as a scrapbook. Each chapter = boarding pass → opener → programme card → loud spreads (corkboard, the noise) → quiet spreads (drabbles) → phone → kept ephemera. Palette from index PAL 2017-10-09. */
+:root{
+  --frame:#303a3e; --frame-deep:#1c2326; --accent:#8f363f; --land:#b9b2a2;
+  --paper:#f5f1e8; --paper-2:#EAE3D4; --ink:#25313a; --muted:#66717a; --rule:#D3C8B3;
+  --gold:#C39A55; --news:#FBF8F1; --white:#FFFFFF; --cork:#D7C9AC;
+  --display:'Playfair Display',Georgia,serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --press:'Old Standard TT',Georgia,serif;
+  --hand:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --type:'Special Elite','Courier New',monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--frame-deep)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 11px/1.2 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+
+/* bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--frame-deep);color:#E9E3D6}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:46px;font:500 11px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.bar .t{color:var(--gold);white-space:nowrap}
+.strip{flex:1;display:flex;justify-content:flex-end;gap:2px;overflow-x:auto;scrollbar-width:none}
+.strip a{padding:4px 8px;color:#9aa3a4;white-space:nowrap;text-decoration:none;border-bottom:2px solid transparent}
+.strip a.on{color:#fff;border-color:var(--accent)}
+.strip a:focus-visible{outline:2px solid var(--gold)}
+
+/* cover */
+.cover{position:relative;color:#fff;background:var(--frame-deep);overflow:hidden}
+.cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1c2326f0 0%,#1c2326b0 45%,#1c232620 75%),linear-gradient(0deg,#1c2326 0%,transparent 40%)}
+.cover .in{position:relative;z-index:1;padding-block:110px 60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end}
+.cover h1{font:900 clamp(56px,10vw,138px)/.86 var(--display);letter-spacing:-.025em}
+.cover h1 em{font-weight:400;color:var(--gold)}
+.cover .dates{font:italic 400 24px var(--display);margin-top:16px}
+.dossier{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px;border-top:1px solid #ffffff40;padding-top:16px;max-width:640px}
+.dossier b{display:block;font:400 34px var(--display)}
+.dossier span{font:600 10px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#cdd1cf}
+.cover .cap{position:absolute;top:66px;right:max(16px,env(safe-area-inset-right,0px));z-index:1;background:#ffffff2a;backdrop-filter:blur(4px);padding:6px 10px;font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.globebig{aspect-ratio:1;max-width:360px;width:100%;margin-left:auto}
+.globebig canvas{width:100%;height:100%}
+
+/* briefing */
+.brief{padding-block:80px}
+.brief .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
+.lede{font:400 24px/1.5 var(--display)}
+.lede::first-letter{float:left;font:800 92px/.8 var(--display);color:var(--accent);padding:6px 10px 0 0}
+.brief .body p{font-size:16px;line-height:1.7;max-width:62ch}
+.brief .pullq{font:italic 400 30px/1.3 var(--display);color:var(--frame);border-left:3px solid var(--accent);padding-left:20px;margin:30px 0}
+.side{display:grid;gap:26px;position:sticky;top:70px}
+.box{background:var(--news);border:1px solid var(--rule);padding:20px 22px}
+.box h4{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.box p{font-size:14px;line-height:1.55}
+.manifest{font:13px/1.45 var(--mono);background:var(--white);border:1px solid var(--rule);padding:18px 20px;box-shadow:5px 6px 0 var(--paper-2);transform:rotate(.6deg)}
+.manifest h4{font:600 12px var(--mono);letter-spacing:.08em;border-bottom:1px dashed var(--rule);padding-bottom:8px;margin-bottom:10px}
+.manifest div{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:4px 0;border-bottom:1px dotted #e3dccd}
+.manifest div b{font-weight:500;color:var(--accent);font-size:11px;letter-spacing:.06em}
+.timeline{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--frame)}
+.timeline div{padding:14px 18px 0 0;position:relative}
+.timeline div::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.timeline b{display:block;font:400 22px var(--display);margin:10px 0 4px}
+.timeline p{font-size:13.5px;color:var(--muted)}
+
+/* memo */
+.memo{background:#FDFBF6;border:1px solid #d8d0bf;padding:30px 34px;font:15px/1.6 var(--type);color:#2a2a2a;box-shadow:0 18px 40px #0000001f;position:relative;transform:rotate(-.5deg);max-width:760px;margin:0 auto}
+.memo .hd{border-bottom:2px solid #2a2a2a;padding-bottom:10px;margin-bottom:16px;display:grid;gap:2px}
+.memo .hd b{font-weight:400;letter-spacing:.14em}
+.memo .stamp{position:absolute;top:22px;right:24px;border:3px solid var(--accent);color:var(--accent);padding:4px 10px;font:700 14px var(--body);letter-spacing:.18em;transform:rotate(6deg);opacity:.85}
+.memo ol{padding-left:22px;margin:0 0 14px}
+.memo li{margin-bottom:10px}
+.memo .hand{font:500 24px/1.2 var(--hand);color:#1f4a8a;margin-top:10px;transform:rotate(-2deg)}
+
+/* boarding pass */
+.leg{background:var(--frame);padding-block:34px}
+.leg.light{background:var(--paper-2)}
+.pass{display:grid;grid-template-columns:1fr 210px;max-width:860px;margin:0 auto;background:var(--news);color:var(--ink);border-radius:10px;box-shadow:0 18px 40px #0b11134d;font-family:var(--mono)}
+.leg:nth-of-type(odd) .pass{transform:rotate(-.6deg)}
+.leg:nth-of-type(even) .pass{transform:rotate(.5deg)}
+.pass .main{padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 18px;min-width:0}
+.pass .stub{padding:18px 20px;border-left:2px dashed var(--rule);display:grid;gap:10px;align-content:start}
+.pass .air{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px;font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--frame)}
+.pass .air b{color:var(--accent)}
+.pass .route{grid-column:1/-1;display:flex;align-items:center;gap:18px;font:400 44px/1 var(--display)}
+.pass .route i{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 11px);position:relative}
+.pass .route i::after{content:"✈";position:absolute;left:50%;top:-11px;font-size:16px;color:var(--accent);font-style:normal}
+.pass small{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.pass .v{font-size:14px}
+.pass .city{font:400 26px var(--display)}
+.bars{height:46px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.pass.road{grid-template-columns:1fr}
+.pass.road .main{grid-template-columns:repeat(3,1fr)}
+
+/* chapter opener */
+.open{padding-block:64px 40px}
+.open .grid{display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:end}
+.chapno{font:italic 400 120px/0.8 var(--display);color:transparent;-webkit-text-stroke:1px var(--accent)}
+.open h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em;margin-top:6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.meta b{color:var(--frame)}
+.why{font:400 19px/1.6 var(--display);max-width:58ch;margin-top:24px}
+.why em{color:var(--accent)}
+.open figure{margin:0}
+.open figure img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 20px 40px #0002}
+figcaption{font:600 10.5px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:10px}
+.bleed{position:relative;color:#fff;overflow:hidden;background:var(--frame-deep)}
+.bleed img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#1c2326f2 0%,#1c232699 45%,#1c232630 100%)}
+.bleed .wrap{position:relative;z-index:1;padding-block:220px 54px}
+.bleed h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em}
+.bleed .chapno{-webkit-text-stroke-color:var(--gold)}
+.bleed .meta{color:#cdd1cf}.bleed .meta b{color:#fff}
+.bleed .why{color:#EDE6D8}.bleed .why em{color:var(--gold)}
+.bleed .eyebrow{color:var(--gold)}
+
+/* programme */
+.prog{margin-top:40px;display:grid;grid-template-columns:repeat(var(--n,4),1fr);background:var(--news);border:1px solid var(--rule);box-shadow:4px 6px 0 var(--paper-2)}
+.prog .day{padding:18px 18px 20px;border-right:1px solid var(--rule);min-width:0}
+.prog .day:last-child{border-right:0}
+.prog h4{margin:0 0 10px;font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.prog p{margin:0 0 9px;font-size:13.5px;line-height:1.45}
+.prog p span{display:block;font:500 11px var(--mono);color:var(--muted)}
+.prog .hot{background:#efdcd8}
+.prog .off{background:repeating-linear-gradient(135deg,transparent 0 8px,#e9e1cf55 8px 9px)}
+
+/* drabble */
+.drab{background:var(--frame-deep);color:#E6DFD1;padding-block:90px}
+.drab .in{max-width:640px;margin:0 auto}
+.label{font:400 11px var(--mono);letter-spacing:.12em;color:var(--gold);display:flex;gap:14px;align-items:center;margin-bottom:30px}
+.label::after{content:"";flex:1;height:1px;background:#3d4a4d}
+.drab p{font:400 19px/1.75 var(--display)}
+.drab p.say{padding-left:1.2em}
+.quiet{position:relative;background:var(--ink);color:#EEE7DA;overflow:hidden}
+.quiet img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;filter:grayscale(.6)}
+.quiet .in{position:relative;max-width:620px;margin:0 auto;padding-block:120px}
+.quiet p{font:400 20px/1.75 var(--display)}
+.quiet .big{font:italic 400 64px/1 var(--display);color:var(--gold);margin:30px 0}
+
+/* two-up photo + stack */
+.spread{padding-block:80px}
+.spread .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start}
+.spread.flip .grid{grid-template-columns:1fr 1.35fr}
+.photo{margin:0}
+.pull{font:italic 400 30px/1.3 var(--display);color:var(--frame);margin:0 0 6px}
+.pull+cite{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-style:normal}
+.stack{display:grid;gap:22px;min-width:0}
+.whybox{border-top:2px solid var(--accent);padding-top:14px;font-size:14.5px}
+.whybox b{font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+
+/* platforms */
+.card{background:var(--white);border:1px solid #DDD5C4;border-radius:10px;padding:14px 16px;font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:#14171a;min-width:0}
+.card .who{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.card .who b{display:block;font-size:14px}
+.card .who small{color:#657786;font-size:12.5px}
+.card .act{color:#657786;font-size:12.5px;margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
+.card .reply{border-top:1px solid #eee;margin-top:8px;padding-top:6px;color:#3b4045;font-size:13px}
+.ig .imgwrap{margin:-14px -16px 10px;aspect-ratio:1;overflow:hidden;border-radius:10px 10px 0 0}
+.ig .imgwrap img{width:100%;height:100%;object-fit:cover}
+.ig .cm{font-size:13px;margin-top:4px}
+.ig .cm b{font-weight:600}
+.fbgrp{background:#fff;border-radius:8px;border:1px solid #dadde1;font:14px/1.4 system-ui,sans-serif;color:#1c1e21;overflow:hidden}
+.fbgrp .hd{background:#f0f2f5;padding:8px 14px;font-size:12px;color:#65676b;font-weight:600}
+.fbgrp .post{padding:12px 14px;border-top:1px solid #e4e6eb}
+.fbgrp .c{margin:8px 0 0 18px;padding:8px 10px;background:#f0f2f5;border-radius:14px;font-size:13px}
+.rd{background:#fff;border:1px solid #ccc;border-radius:8px;padding:12px 14px;font:13.5px/1.45 system-ui,sans-serif;color:#1c1c1c}
+.rd .sub{font-size:12px;color:#576f76;font-weight:600}
+.rd .sub span{font-weight:400}
+.rd h4{font:600 17px/1.3 system-ui,sans-serif;margin:6px 0 10px}
+.rd .cm{border-left:2px solid #E5EBEE;padding:2px 0 2px 12px;margin:10px 0 0}
+.rd .u{font-size:12px;color:#576f76}
+.rd .u b{color:#1c1c1c}
+.rd .pts{font-size:12px;color:#576f76;margin-top:3px}
+.yt{background:#0f0f0f;color:#f1f1f1;border-radius:10px;overflow:hidden;font:13.5px/1.45 system-ui,sans-serif}
+.yt .vid{aspect-ratio:16/9;background:#000 center/cover;position:relative}
+.yt .vid span{position:absolute;right:8px;bottom:8px;background:#000c;font-size:12px;padding:1px 5px;border-radius:4px}
+.yt .t{padding:10px 12px 4px;font-weight:600;font-size:15px}
+.yt .c{padding:6px 12px;color:#ddd}
+.yt .c b{color:#fff;font-size:12.5px;display:block}
+.dish{background:#E8E3D4;border:1px solid #9C9277;font:12.5px/1.45 Verdana,Geneva,sans-serif;color:#222}
+.dish .bar2{background:#5B4E37;color:#F2E9CF;padding:5px 10px;font-weight:700;font-size:11.5px}
+.dish .p{display:grid;grid-template-columns:104px 1fr;border-top:1px solid #B6AC8F}
+.dish .p .l{background:#DAD3BF;padding:8px;font-size:11px;border-right:1px solid #B6AC8F}
+.dish .p .l b{color:#5B2F1A;font-size:12px}
+.dish .p .r{padding:8px 10px;min-width:0}
+.dish .when{font-size:10.5px;color:#6b604a;border-bottom:1px dotted #B6AC8F;margin-bottom:6px;padding-bottom:3px}
+.dish .q{background:#F4F0E4;border:1px dashed #9C9277;padding:6px 8px;margin-bottom:6px;font-size:11.5px}
+.dish .sig{border-top:1px solid #B6AC8F;margin-top:8px;padding-top:4px;font-size:10.5px;color:#6b604a;font-style:italic}
+.tb{background:#001935;color:#fff;border-radius:6px;padding:14px 16px;font:14px/1.5 'Helvetica Neue',Arial,sans-serif}
+.tb .n{font-weight:700;margin-bottom:8px}
+.tb .tags{color:#9DA9B8;font-size:12.5px;margin-top:10px}
+.tb .notes{border-top:1px solid #ffffff22;margin-top:10px;padding-top:8px;font-size:12.5px;color:#C9D2DC}
+.web{background:#fff;border:1px solid #ddd;border-radius:4px;overflow:hidden;font:14px/1.45 Georgia,serif;color:#222}
+.web .m{padding:8px 14px;font:800 15px var(--body);letter-spacing:.04em;color:#fff}
+.web .b{padding:12px 14px}
+.web h4{font:700 19px/1.2 Georgia,serif;margin-bottom:6px}
+.web small{display:block;color:#888;font:12px var(--body);margin-top:6px}
+.etsy{background:#fff;border:1px solid #e1e3df;border-radius:12px;overflow:hidden;font:14px/1.4 system-ui,sans-serif;color:#222}
+.etsy .shirt{aspect-ratio:4/3;background:#2B2B2B;display:grid;place-items:center;color:#fff;font:900 30px/1 var(--body);text-align:center;letter-spacing:.02em;padding:20px}
+.etsy .shirt small{display:block;font:500 13px var(--body);color:#ccc;margin-top:10px;letter-spacing:.2em}
+.etsy .b{padding:10px 14px}
+.etsy .pr{font-weight:700;font-size:16px}
+.etsy .st{color:#595959;font-size:12.5px}
+
+/* corkboard */
+.front{background:var(--cork);background-image:radial-gradient(#0000000d 1px,transparent 1.5px);background-size:7px 7px;padding-block:80px 60px;overflow:hidden}
+.front .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.front h2,.noise h2,.phones h2,.eph h2{font:800 clamp(38px,5.5vw,72px)/.95 var(--display);letter-spacing:-.015em}
+.front h2 em{font-weight:400;color:var(--accent)}
+.board{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;align-items:start}
+.clip{background:var(--news);padding:16px 18px 18px;box-shadow:0 2px 0 #0000000a,0 12px 26px #3a2a1233;font-family:var(--press);color:#1a1a1a;position:relative;min-width:0}
+.clip::before{content:"";position:absolute;top:-9px;left:50%;width:58px;height:20px;margin-left:-29px;background:#f6efd9cc;transform:rotate(-3deg);box-shadow:0 1px 2px #0002}
+.clip .mast{font:700 26px/1 var(--press);text-align:center;border-bottom:3px double #222;padding-bottom:6px;margin-bottom:4px}
+.clip .date{font:400 10px var(--mono);text-align:center;letter-spacing:.08em;border-bottom:1px solid #222;padding-bottom:4px;margin-bottom:10px}
+.clip h3{font:700 26px/1.08 var(--press);margin-bottom:6px}
+.clip .deck{font:italic 400 14px/1.35 var(--press);margin-bottom:10px;color:#333}
+.clip p{font-size:13.5px;line-height:1.45;margin:0 0 8px}
+.clip .by{font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.clip img{margin-bottom:10px}
+.tab{background:#fff;padding:0}
+.tab .m{color:#fff;padding:8px 12px;font:italic 900 28px/1 Georgia,serif}
+.tab .h{font:900 44px/.92 Impact,'Arial Narrow Bold','Arial Narrow',sans-serif;padding:10px 12px 4px;text-transform:uppercase}
+.tab .s{font:700 13px/1.25 Arial,sans-serif;padding:0 12px 12px}
+.tab img{margin:0}
+.op{background:#fff}
+.op .kick{font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#C70000;margin-bottom:6px}
+.op h3{font:700 24px/1.12 Georgia,serif}
+.c1{grid-column:1/6;transform:rotate(-1.4deg)}
+.c2{grid-column:6/10;transform:rotate(.9deg);margin-top:40px}
+.c3{grid-column:10/13;display:grid;gap:22px;margin-top:10px}
+.c4{grid-column:2/7;transform:rotate(.6deg)}
+.c5{grid-column:7/12;transform:rotate(-.8deg)}
+.rot-a{transform:rotate(2deg)}.rot-b{transform:rotate(-1.8deg)}
+.chyron{margin-top:40px;color:#fff;display:grid;grid-template-columns:auto 1fr;align-items:stretch;overflow:hidden;box-shadow:0 10px 24px #0004}
+.chyron .lab{padding:12px 16px;font:800 14px var(--body);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.chyron .tk{min-width:0;overflow:hidden;white-space:nowrap;display:flex;align-items:center}
+.chyron .tk span{display:inline-block;padding-left:100%;animation:tick 34s linear infinite;font:600 14px var(--body);letter-spacing:.04em;text-transform:uppercase}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* noise */
+.noise{padding-block:80px}
+.noise .head,.phones .head,.eph .head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.noise .head p{max-width:42ch;color:var(--muted);margin:0}
+.masonry{columns:3 300px;column-gap:20px}
+.masonry>*{break-inside:avoid;margin-bottom:20px}
+
+/* phones */
+.phones{background:var(--frame);padding-block:90px;color:#EAE3D5}
+.phones h2{color:#fff}
+.phones .head p{max-width:52ch;color:#b9c0c0;margin:0}
+.phonerow{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:start}
+.phone{background:#0B0B0D;border-radius:44px;padding:12px;box-shadow:0 30px 60px #0008;max-width:360px;width:100%;margin:0 auto}
+.screen{background:#fff;border-radius:34px;overflow:hidden;color:#111;font:15px/1.35 -apple-system,'SF Pro Text',system-ui,sans-serif}
+.sb{display:flex;justify-content:space-between;padding:12px 26px 6px;font-weight:600;font-size:13px}
+.thd{text-align:center;padding:4px 0 10px;border-bottom:1px solid #e5e5ea}
+.thd .pic{width:44px;height:44px;border-radius:50%;margin:0 auto 4px;background:#C9B79C;display:grid;place-items:center;color:#fff;font-weight:600}
+.thd small{font-size:11px;color:#8e8e93}
+.msgs{padding:10px 12px 18px;display:flex;flex-direction:column;gap:3px}
+.ts{text-align:center;font-size:11px;color:#8e8e93;margin:10px 0 6px}
+.bub{max-width:78%;padding:7px 12px;border-radius:18px;font-size:14.5px;line-height:1.3}
+.bub.in{align-self:flex-start;background:#E9E9EB}
+.bub.out{align-self:flex-end;background:#0A84FF;color:#fff}
+.bub.shot{padding:4px}
+.bub.shot div{width:170px;aspect-ratio:9/12;border-radius:14px;background:#223 center/cover;position:relative;overflow:hidden}
+.bub.shot div span{position:absolute;left:0;right:0;bottom:0;background:#c00;color:#fff;font:700 9px system-ui;padding:4px 6px;text-transform:uppercase}
+.recents h3{font:700 30px system-ui;padding:6px 18px}
+.call{display:flex;align-items:center;gap:10px;padding:9px 18px;border-bottom:1px solid #eee}
+.call .n{flex:1;min-width:0}
+.call .n b{display:block;font-weight:600;font-size:15px}
+.call .n small{color:#8e8e93;font-size:12.5px}
+.call.miss b{color:#FF3B30}
+.call .t{color:#8e8e93;font-size:13px}
+.vm{margin:14px;background:#F2F2F7;border-radius:14px;padding:12px 14px}
+.vm .top{display:flex;justify-content:space-between;font-size:12.5px;color:#8e8e93;margin-bottom:6px}
+.vm .top b{color:#111;font-size:14.5px}
+.vm p{margin:0;font-size:13.5px;color:#333}
+.vm p em{color:#8e8e93;font-size:11.5px;display:block;margin-top:6px;font-style:normal}
+.phonenote{font:400 19px/1.7 var(--display);color:#E6DFD1;max-width:44ch}
+.phonenote .label{color:var(--gold)}
+
+/* ephemera */
+.eph{padding-block:80px 60px}
+.ephrow{display:grid;grid-template-columns:repeat(var(--n,3),1fr);gap:34px;align-items:center}
+.menu{background:var(--news);border:1px solid var(--rule);padding:30px 26px;text-align:center;font-family:var(--display);transform:rotate(-2deg);box-shadow:0 14px 30px #0002}
+.menu .crest{font:600 11px var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.menu h3{font:italic 400 24px var(--display);margin-bottom:4px}
+.menu .d{font:400 12px var(--body);letter-spacing:.1em;color:var(--muted);margin-bottom:18px}
+.menu p{margin:0 0 12px;font-size:15px;line-height:1.4}
+.menu small{display:block;font:italic 13px var(--display);color:var(--muted)}
+.menu .rule{width:40px;height:1px;background:var(--gold);margin:16px auto}
+.place{background:#fff;border:1px solid var(--rule);padding:22px;transform:rotate(1.5deg);box-shadow:0 12px 26px #0002;text-align:center}
+.place .fold{font:italic 400 28px var(--display);color:var(--frame)}
+.badge{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px #0002;transform:rotate(-1deg);max-width:270px;margin:0 auto;border:1px solid #ddd}
+.badge .t{color:#fff;padding:12px 14px;font:700 13px var(--body);letter-spacing:.12em;text-transform:uppercase;background:#1D1D1D}
+.badge .b{padding:16px 14px;font:13px var(--body)}
+.badge .b big{display:block;font:800 30px/1.05 var(--body);color:var(--accent);letter-spacing:.02em}
+.badge .b small{display:block;color:var(--muted);margin-top:6px;font:11px var(--mono)}
+.badge .hole{width:40px;height:8px;border-radius:4px;background:var(--paper);border:1px solid #ccc;margin:10px auto 0}
+.hanger{width:200px;margin:0 auto;background:#2E2A26;color:#E8DCC2;border-radius:14px 14px 6px 6px;padding:70px 18px 26px;text-align:center;position:relative;transform:rotate(3deg);box-shadow:0 14px 30px #0003}
+.hanger::before{content:"";position:absolute;top:18px;left:50%;width:62px;height:62px;margin-left:-31px;border-radius:50%;background:var(--paper)}
+.hanger b{display:block;font:italic 400 22px var(--display);color:#fff;margin-bottom:8px}
+.hanger small{font:600 9.5px var(--body);letter-spacing:.24em;text-transform:uppercase}
+.receipt{background:#fff;width:230px;margin:0 auto;padding:18px 16px 26px;font:12px/1.5 var(--mono);color:#333;box-shadow:0 12px 26px #0002;transform:rotate(-2.5deg);clip-path:polygon(0 0,100% 0,100% 96%,95% 100%,90% 96%,85% 100%,80% 96%,75% 100%,70% 96%,65% 100%,60% 96%,55% 100%,50% 96%,45% 100%,40% 96%,35% 100%,30% 96%,25% 100%,20% 96%,15% 100%,10% 96%,5% 100%,0 96%)}
+.receipt .c{text-align:center}
+.receipt .r{display:flex;justify-content:space-between}
+.receipt hr{border:0;border-top:1px dashed #999;margin:8px 0}
+.prog-card{background:#0F3B2E;color:#F1E7CF;padding:24px 22px;text-align:center;transform:rotate(2deg);box-shadow:0 14px 30px #0003;border:6px double #C9A961}
+.prog-card h3{font:italic 400 26px var(--display);margin:6px 0}
+.prog-card .sc{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:16px 0 6px;font:700 13px var(--body);letter-spacing:.1em;text-transform:uppercase}
+.prog-card .sc big{font:400 40px var(--display)}
+.prog-card small{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:#C9A961}
+.note{background:#FFFDF4;padding:26px 24px;font:500 23px/1.35 var(--hand);color:#1f3f7a;box-shadow:0 14px 30px #0002;transform:rotate(-1.5deg);background-image:repeating-linear-gradient(0deg,transparent 0 33px,#c9d7ee 33px 34px);max-width:440px;margin:0 auto}
+.note .from{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cable{background:#fff;border:1px solid #ccc;padding:24px 26px;font:13.5px/1.55 var(--mono);color:#222;box-shadow:0 14px 30px #0002;transform:rotate(.8deg)}
+.cable .hd{border-bottom:1px solid #222;padding-bottom:8px;margin-bottom:12px;font-size:12px}
+.cable .cls{color:var(--accent);font-weight:500;letter-spacing:.2em}
+
+/* film strip */
+.film{background:#111;padding:22px 0;display:flex;gap:14px;overflow-x:auto;position:relative}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#111 0 10px,#e8e2d2 10px 18px,#111 18px 28px);opacity:.5}
+.film::before{top:5px}.film::after{bottom:5px}
+.film figure{margin:0;flex:0 0 min(46vw,520px)}
+.film figcaption{color:#aaa;font:11px var(--mono);letter-spacing:.08em;text-transform:none}
+.filmwrap{padding-block:60px;background:#111;color:#ddd}
+.filmwrap .wrap>p{font:400 18px/1.6 var(--display);max-width:60ch;color:#bbb}
+
+/* fireworks */
+.fourth{position:relative;background:#0A1424;color:#fff;overflow:hidden}
+.fourth canvas{position:absolute;inset:0;width:100%;height:100%}
+.fourth .wrap{position:relative;z-index:1;padding-block:110px;text-align:center}
+.fourth blockquote{font:italic 400 clamp(36px,5vw,64px)/1.15 var(--display);margin:0 auto 18px;max-width:18ch}
+.fourth cite{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* magazine cover */
+.mag{position:relative;aspect-ratio:3/4;max-width:420px;width:100%;margin:0 auto;overflow:hidden;box-shadow:0 24px 50px #0004;transform:rotate(-1.5deg);background:#222}
+.mag img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.mag .mh{position:absolute;top:10px;left:0;right:0;text-align:center;font:900 92px/1 var(--body);color:#D0021B;letter-spacing:-.04em}
+.mag .dt{position:absolute;top:104px;left:16px;font:700 10px var(--body);color:#fff;letter-spacing:.1em}
+.mag .hl{position:absolute;left:16px;right:16px;bottom:18px;color:#fff;text-shadow:0 2px 10px #000c}
+.mag .hl b{display:block;font:900 36px/.95 var(--body);color:#F2D06B;margin-bottom:8px;text-transform:uppercase}
+.mag .hl span{display:block;font:700 13px/1.35 var(--body)}
+.late{background:#0D0D14;color:#fff;padding:24px;border-radius:6px;box-shadow:0 14px 30px #0003}
+.late .k{font:800 11px var(--body);letter-spacing:.24em;color:#F2D06B}
+.late q{display:block;font:italic 400 28px/1.25 var(--display);margin:12px 0}
+.late small{color:#aaa;font:12px var(--body)}
+.listicle{background:#fff;border-top:6px solid #EE3322;padding:18px;font:14px/1.45 Arial,sans-serif;color:#222;box-shadow:0 14px 30px #0002}
+.listicle .m{font:900 22px Arial,sans-serif;color:#EE3322}
+.listicle h3{font:800 22px/1.15 Arial,sans-serif;margin:8px 0}
+.listicle ol{padding-left:22px;margin:10px 0 0}
+.listicle li{margin-bottom:6px}
+
+/* after */
+.after{padding-block:90px;background:var(--paper-2)}
+.after .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.after .body p{font-size:16px;line-height:1.7;max-width:60ch}
+.next{border-top:1px solid var(--rule);padding-block:40px 70px}
+.next .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next a{text-decoration:none}
+.next small{display:block;font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.next span{font:400 36px var(--display)}
+
+/* sticky itinerary */
+body{padding-bottom:84px}
+.itin{position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--paper);border-top:2px solid var(--accent);box-shadow:0 -8px 20px #0000001a;padding-bottom:env(safe-area-inset-bottom,0px)}
+.itin .wrap{display:flex;gap:4px;align-items:stretch}
+.itin .lab{flex:none;font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);padding:6px 4px}
+.itin nav{flex:1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px 10px;min-width:0}
+.itin a{flex:1 0 104px;text-decoration:none;border-top:3px solid var(--rule);padding:7px 4px 0}
+.itin a small{display:block;font:500 10px var(--mono);color:var(--accent);white-space:nowrap}
+.itin a span{display:block;font:500 13.5px var(--body);color:var(--ink);white-space:nowrap}
+.itin a.done{border-color:#8f363f80}
+.itin a.on{border-color:var(--accent)}
+.itin a.on span{font-weight:700}
+.itin a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* mini globe */
+.mini{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(98px + env(safe-area-inset-bottom,0px));z-index:8;width:124px;text-align:center;pointer-events:none}
+.mini canvas{width:124px;height:124px;filter:drop-shadow(0 8px 14px #0005)}
+.mini b{display:inline-block;margin-top:4px;background:var(--frame-deep);color:#EDE6D8;font:600 10px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:4px 8px}
+
+@media (max-width:900px){
+  .cover .in,.brief .grid,.open .grid,.spread .grid,.spread.flip .grid,.after .grid{grid-template-columns:1fr}
+  .side{position:static}
+  .globebig{margin:0 auto;max-width:280px}
+  .prog{grid-template-columns:1fr 1fr}
+  .prog .day{border-bottom:1px solid var(--rule)}
+  .board{grid-template-columns:1fr}
+  .c1,.c2,.c3,.c4,.c5{grid-column:1/-1;margin-top:0}
+  .ephrow{grid-template-columns:1fr}
+  .pass{grid-template-columns:1fr}
+  .pass .stub{border-left:0;border-top:2px dashed var(--rule)}
+  .pass .main{grid-template-columns:1fr 1fr}
+  .pass .route{font-size:34px}
+  .timeline{grid-template-columns:1fr 1fr;gap:20px 0}
+  .dossier{grid-template-columns:1fr 1fr}
+  .mini{display:none}
+  .strip{display:none}
+  .bar .t{flex:1;text-align:right}
+}
+@media (prefers-reduced-motion:reduce){.chyron .tk span{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* photo-less wire slips (swap for real images later) */
+figure.slip{margin:0;background:#f3eee2;border:1px solid var(--rule);padding:22px 22px 18px;font:14px/1.55 var(--type);color:#2a2a2a;box-shadow:0 20px 40px #0002;aspect-ratio:4/3.4;display:flex;flex-direction:column;gap:14px;position:relative;transform:rotate(.6deg)}
+figure.slip.tall{aspect-ratio:auto;min-height:420px;transform:rotate(-.6deg)}
+figure.slip::before{content:"";position:absolute;inset:10px;border:1px dashed #cfc5ae;pointer-events:none}
+figure.slip .ag{font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid #2a2a2a;padding-bottom:8px}
+figure.slip p{margin:0;flex:1}
+figure.slip small{font:italic 400 14px/1.4 var(--display);color:var(--muted)}
+.cover{background:radial-gradient(120% 90% at 85% 40%,#3a464b 0%,#1c2326 70%)}
+.cover::after{display:none}
+#bigglobe,#mini{border-radius:50%;box-shadow:0 0 0 3px #8f363f55}
+.cover .in{padding-block:110px 70px}
+
+</style>
+</head><body>
+<header class="bar"><div class="wrap">
+  <a href="index.html" style="text-decoration:none;white-space:nowrap">← All tours</a>
+  <span class="t">Germany &amp; Poland · 2017</span>
+  <nav class="strip" aria-label="Itinerary">
+    <a href="#briefing" data-nav="briefing">Briefing</a><a href="#berlin" data-nav="berlin">Berlin</a><a href="#heidelberg" data-nav="heidelberg">Heidelberg</a><a href="#hamburg" data-nav="hamburg">Hamburg</a><a href="#warsaw" data-nav="warsaw">Warsaw</a><a href="#gdansk" data-nav="gdansk">Gdańsk</a><a href="#stutthof" data-nav="stutthof">Stutthof</a><a href="#wizz" data-nav="wizz">Home</a><a href="#after" data-nav="after">After</a>
+  </nav>
+</div></header>
+
+<!-- ============ COVER ============ -->
+<section class="cover" data-g="0" data-name="London">
+  <div class="wrap"><div class="in">
+    <div>
+      <div class="eyebrow" style="color:var(--gold)">Official tour · Prince of Wales · 2017</div>
+      <h1 style="margin-top:14px">Germany <em>&amp;</em><br>Poland</h1>
+      <div class="dates">9 – 16 October 2017</div>
+      <div class="dossier">
+        <div><b>8</b><span>Days</span></div>
+        <div><b>6</b><span>Stops</span></div>
+        <div><b>2</b><span>Countries</span></div>
+        <div><b>2,690</b><span>Miles</span></div>
+      </div>
+    </div>
+    <div class="globebig"><canvas id="bigglobe" width="720" height="720" aria-label="Globe showing the route from London through Berlin, Heidelberg, Hamburg, Warsaw and Gdańsk, and home to Luton"></canvas></div>
+  </div></div>
+</section>
+
+<!-- ============ BRIEFING ============ -->
+<section class="brief" id="briefing" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="eyebrow">The briefing</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">Berlin between governments, Warsaw at odds with Brussels</h2>
+  <div class="grid">
+    <div class="body">
+      <p class="lede">Eight days in October: Berlin, Heidelberg and Hamburg, then Warsaw and Gdańsk, and a last morning at the Stutthof memorial before the flight home.</p>
+      <p>The Foreign Office wants Germany and Poland in the same autumn. They're the two European relationships it most wants to keep warm after the referendum, and the two countries with the most to say about where Britain is heading. He can't discuss any of it. His part is the visits, the wreaths, the receptions and the photographs, while the negotiating stays with ministers.</p>
+      <p>The timing is untidy on both sides. Germany voted on 24 September. Merkel won, but the new Bundestag doesn't sit until the 24th and the coalition talks haven't really started, so Berlin receives him with a caretaker government and a lot on its mind. In Poland the fight over judicial reform with the European Commission is live, and the President has just put forward his own versions of the bills he vetoed in July. None of it is his to touch. All of it is in the briefing pack.</p>
+      <div class="pullq">The Polish press will ask him about the Poles living in Britain at every stop, and he won't be able to answer.</div>
+      <p>It's his first big tour since America, and the household wants this one quieter: dark suits, fewer receptions, more remembrance, and two presidents. The last morning, at Stutthof, gets more planning than anything else on the programme.</p>
+      <p>He's happiest about the bits with the least ceremony: the rowing club in Heidelberg, the kids' charity in Marzahn, an hour with the old Solidarity men in Gdańsk. The receptions he can do in his sleep. Stutthof is the day the whole office is thinking about.</p>
+    </div>
+    <aside class="side">
+      <div class="box"><h4>Whose tour is it?</h4><p>Neither country is a realm, so this is a British visit abroad at the Foreign Office's request. The embassies in Berlin and Warsaw build it with the consulates in Hamburg and Gdańsk, and the British government pays for the travel.</p><p style="margin:0">Local police forces protect him, with his own Met officers inside the detail. In Germany that's the BKA in Berlin and state police everywhere else. In Poland it's the BOR.</p></div>
+      <div class="manifest">
+        <h4>TOUR PARTY · DE / PL · OCT 2017</h4>
+        <div><b>PRIV OFFICE</b><span>M. Fletcher (PS) · tour secretary · programme coord</span></div>
+        <div><b>PRESS</b><span>C. Renton · 2 press officers (UK pool / photos)</span></div>
+        <div><b>MILITARY</b><span>Thom, equerry (uniforms, RAF kit for Powązki)</span></div>
+        <div><b>PROTECTION</b><span>Miranda + Met officers, inside host detail</span></div>
+        <div><b>OTHER</b><span>Tour doctor · interpreters (DE, PL) · ops manager</span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="timeline">
+    <div><span class="eyebrow">Spring 2017</span><b>Split from France</b><p>Paris goes ahead alone in March. Germany and Poland are pushed to the autumn and joined up.</p></div>
+    <div><span class="eyebrow">Summer 2017</span><b>Recces</b><p>Berlin, Heidelberg, Hamburg, Warsaw, Gdańsk, Stutthof. The museum at Stutthof asks for a small party and no live television.</p></div>
+    <div><span class="eyebrow">24 September</span><b>The election</b><p>Merkel wins and the AfD enter the Bundestag. Berlin's programme shrinks to fit a government that's busy.</p></div>
+    <div><span class="eyebrow">2 October</span><b>Announced</b><p>The Polish papers lead on it. The German papers give it a paragraph under the coalition talks.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-block:20px 90px" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="memo">
+    <div class="stamp">PRIVATE</div>
+    <div class="hd"><b>KENSINGTON PALACE · PRIVATE OFFICE</b><span>TO: Programme &amp; press team</span><span>FROM: MF</span><span>RE: Germany/Poland — tone. Not for circulation.</span></div>
+    <ol>
+      <li><b>Not America.</b> Dark suits. No jacket off, no sunglasses, nothing anyone can make a listicle out of. The photographs this time are wreaths and handshakes, and that's fine.</li>
+      <li><b>Hamburg.</b> St Nikolai is the most sensitive ten minutes of the tour. No remarks there. Flowers, a minute, the director, out.</li>
+      <li><b>The Poles in Britain.</b> He'll be asked in every room. The line is that he meets Polish families all over Britain and they're part of the country. Nothing about the negotiations, ever.</li>
+      <li><b>Stutthof.</b> Pool of four, stills only, nobody speaks to him on the way out. He'll want to go straight to the car. Let him.</li>
+    </ol>
+    <div class="hand">Polish TV will want a sit-down. The answer is no. — C.R.</div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → BERLIN ============ -->
+<section class="leg" data-g="1" data-name="To Berlin"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>British Airways</b> · Boarding pass</span><span>Club Europe</span></div>
+      <div class="route">LHR <i></i> TXL</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">BA 982</span></div>
+      <div><small>Date</small><span class="v">09 OCT 2017</span></div>
+      <div><small>Seat</small><span class="v">1A</span></div>
+      <div><small>Departs</small><span class="v">07:25</span></div>
+      <div><small>Arrives</small><span class="v">10:15 CEST</span></div>
+      <div><small>Gate</small><span class="v">A10</span></div>
+      <div><small>Distance</small><span class="v">592 mi</span></div>
+    </div>
+    <div class="stub"><small>Leg 1 of 7</small><div class="city">Berlin</div><small>Household behind · press pool at the back</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+  <p style="max-width:640px;margin:26px auto 0;color:#cdd1cf;font:italic 400 17px/1.6 var(--display);text-align:center">He skims the Berlin brief for ten minutes, then gets his phone out and scrolls until Tegel: the football, Twitter, a video of a dog on a trampoline that Georgie sent at six this morning.</p>
+</div></section>
+
+<!-- ============ 01 BERLIN ============ -->
+<section class="open" id="berlin" data-g="1" data-name="Berlin"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter one · The capital</div>
+      <div class="chapno" aria-hidden="true">01</div>
+      <h2>Berlin</h2>
+      <div class="meta"><span><b>Mon 9 – Tue 10 October</b></span><span>Residence of the British Ambassador</span></div>
+      <p class="why">The Embassy, the President at Bellevue, the Holocaust memorial, twenty minutes with a chancellor between governments, and an afternoon in Marzahn with a charity for kids who've ended up on the street.</p>
+    </div>
+    <figure class="slip"><div class="ag">dpa · Bildfunk · 10.10.2017</div><p>Bundespräsident Frank-Walter Steinmeier empfängt Prinz Alexander im Park von Schloss Bellevue. Die beiden Männer gehen nebeneinander über den Rasen; der Prinz hat die Hände hinter dem Rücken.</p><small>Steinmeier receives Prince Alexander in the park at Schloss Bellevue · Tue 10 October</small></figure>
+  </div>
+  <div class="prog" style="--n:2">
+    <div class="day"><h4>Mon 9 Oct</h4><p><span>10.15</span>Tegel. Met by Sir Sebastian Wood and the Senate's protocol chief.</p><p><span>12.00</span>British Embassy, Wilhelmstraße. Briefing, then Embassy staff and families in the atrium.</p><p><span>15.30</span>Pariser Platz and the Brandenburg Gate. A short walkabout, longer than planned.</p><p><span>18.30</span>Reception at the Residence: British-German business, the arts, and the British community in Berlin. Short speech, in German.</p></div>
+    <div class="day hot"><h4>Tue 10 Oct</h4><p><span>07.30</span>Programme meeting, Residence.</p><p><span>09.30</span>Schloss Bellevue. President Steinmeier. Photographs in the park.</p><p><span>11.15</span>Memorial to the Murdered Jews of Europe and the information centre underneath, with the foundation's director.</p><p><span>13.00</span>The Chancellery. Courtesy call on Chancellor Merkel.</p><p><span>15.00</span>Straßenkinder e.V., Marzahn. A charity working with young people sleeping rough or out of home in Berlin. Lunch-club kitchen and the drop-in.</p><p><span>19.40</span>Lufthansa to Frankfurt. Car to Heidelberg.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="1" data-name="Berlin"><div class="wrap"><div class="in">
+  <div class="label">TUE 10 OCT · 07.30 · THE RESIDENCE, BERLIN</div>
+  <p>He'd woken at ten to five with the radiator ticking and the sky over the garden still the colour of dishwater, and lain there scrolling until it was light enough to pretend he'd slept. The football had been dismal. Somebody in Ohio wanted him to know that his jawline was a war crime. Georgie had sent a photo at half eleven of her feet in a bath, toes painted dark red, and nothing else, which he'd looked at for longer than any of the rest of it.</p>
+  <p>The small dining room smelled of coffee and floor polish. Through the long windows the lawn was grey with dew, and the lime trees at the end of it had started to go, one yellow leaf at a time coming down slow and sideways through air so still it seemed to think about each one. A blackbird was walking about under them like it owned the place. He watched it instead of eating his toast.</p>
+  <p>Marianne had the day on two sheets, stapled in the corner, because she trusted paper and almost nothing else. She went through it in the same voice she used for everything, bombings and birthdays alike, and he clicked his pen against the edge of the table, in and out, in and out, and listened to about two-thirds of it.</p>
+  <p class="say">"Bellevue at half nine. He'll walk you round the park for the cameras and give you forty minutes inside, and he'll want to talk about the memorial and where you're going next. The Chancellor's twenty minutes, possibly less. She's got the FDP and the Greens in her diary for the next month and you are, frankly, the nicest thing that's going to happen to her today, so don't take it personally if it's quick."</p>
+  <p>He didn't take anything Angela Merkel did personally. He'd have liked to, a bit. There was something about the idea of her he found restful, a woman who had run a country for twelve years in the same three jackets and never once looked as if she wanted anyone to love her. He'd met her once before, in Düsseldorf, for about four minutes, and she had shaken his hand and looked at him the way you'd look at a horse somebody else was trying to sell you.</p>
+  <p>Charlie was at the sideboard with three German papers fanned out and a coffee balanced on top of them, reading the headlines aloud in an accent that was getting worse. They were all about coalitions. Jamaica, they were calling it, black and yellow and green, and every cartoonist in the country had drawn Merkel in a straw hat. He was on page eleven of the Tagesspiegel, a column and a half and a photograph from the Gate in which he looked, he thought, like a man waiting for a bus.</p>
+  <p>It was the most relaxing thing he'd read in months. Nobody here wanted to know what he thought about anything. Nobody was going to slow-motion his face.</p>
+  <p>Upstairs he stood in front of the open wardrobe and picked the dark grey suit, because it was a memorial morning and grey was right for it, and a black tie, and then a navy one for later that he rolled up and pushed into his jacket pocket, where it would crease and he wouldn't care. He looked at himself in the long mirror on the wardrobe door. He looked fine. He looked like the photograph on page eleven. He did up the button and went down.</p>
+</div></div></section>
+
+<section class="spread" data-g="1" data-name="Berlin"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">Reuters · Berlin · 10 Oct 2017</div><p>Britain's Prince Alexander, jacket off, chops onions with young people in the kitchen at Straßenkinder e.V. in Berlin-Marzahn. The charity runs a drop-in and hot meals for young people living on the street.</p><small>Straßenkinder e.V., Marzahn · Tue 10 October</small></figure>
+  <div class="stack">
+    <div><p class="pull">„Er schneidet Zwiebeln schlechter als ich. Hab ich ihm auch gesagt."</p><cite>Kevin, 17 · to the Tagesspiegel</cite><p style="margin-top:8px;font-size:14px;color:var(--muted)">"He chops onions worse than me. I told him so."</p></div>
+    <div class="whybox"><b>Why here</b>The Embassy's pick: Marzahn is the side of Berlin visitors don't see, all prefab tower blocks out east. Most of the kids don't know who he is.</div>
+    <div class="whybox"><b>The Chancellor</b>The Chancellery gives it nineteen minutes, a handshake in front of the flags and two lines in the readout. They'd met briefly at the North Rhine-Westphalia gala in Düsseldorf the year before, and she remembered it. Most of the twenty minutes was the rest of his programme: Heidelberg, Hamburg, and Poland after that, which she asked about in more detail. She was brisk and polite, and she kept looking at the clock.</div>
+  </div>
+</div></div></section>
+
+<section class="front" data-g="1" data-name="Berlin"><div class="wrap">
+  <div class="head"><h2>Berlin <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Mon 9 – Tue 10 October · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Der Tagesspiegel</div><div class="date">MITTWOCH, 11. OKTOBER 2017 · BERLIN</div>
+      <h3>Ein Prinz am Pariser Platz</h3><div class="deck">Britischer Thronfolger besucht Berlin, trifft Steinmeier und verwundete Soldaten</div><div class="by">Von Anja Kessler</div>
+      <p>Prinz Alexander hielt seine kurze Rede am Montagabend auf Deutsch, vom Blatt, sehr förmlich. Danach wechselte er beim Smalltalk schnell ins Englische. Am Dienstag nahm er sich deutlich mehr Zeit für die Jugendlichen in Marzahn als vorgesehen. Für das Kanzleramt blieben knapp zwanzig Minuten.</p>
+      <p style="font-style:italic;color:#555">Prince Alexander gave his short speech on Monday evening in German, read from his notes, very formal. Afterwards he switched quickly to English for the small talk. On Tuesday he gave the young people in Marzahn far more time than planned. The Chancellery got just under twenty minutes.</p></article>
+    <article class="clip c2"><div class="mast">The Times</div><div class="date">WEDNESDAY OCTOBER 11 2017 · 12</div>
+      <h3>Prince takes the quiet road through a distracted Berlin</h3><div class="by">By Valentine Low-Hart</div>
+      <p>Prince Alexander arrived in a capital with other things on its mind. Angela Merkel received him for a courtesy call between rounds of coalition planning, and the German press filed the visit somewhere below the weather.</p><p>Palace aides seemed entirely content with that. After the circus of his American tour, this is a visit designed to be dull, and so far it is succeeding.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#D7141A">BILD</div><div class="h">Prinz Charming am Brandenburger Tor!</div><div class="s">Berlinerinnen kreischen · Er blieb 40 Minuten · Seite 3</div></article>
+      <article class="clip tab rot-b"><div class="m" style="background:#fff;color:#111;font:700 26px var(--press);border-bottom:1px solid #ccc">Daily Mail</div><div class="h" style="font:700 22px/1.12 Georgia,serif;text-transform:none">Alexander keeps it serious in Berlin</div><div class="s" style="font:13px Georgia,serif;color:#444">No eye rolls for Merkel as Prince lays wreath · Page 19</div></article>
+    </div>
+    <article class="clip op c4"><div class="kick">Spiegel Online · Kolumne</div><h3>Warum interessiert uns ein britischer Prinz?</h3>
+      <p style="margin-top:8px">Er ist höflich, er ist gut angezogen, und er hat nichts zu sagen, weil er nichts sagen darf. In einer Woche, in der Deutschland eine Regierung sucht, ist das fast beneidenswert.</p><p style="font-style:italic;color:#555">He's polite, he's well dressed, and he has nothing to say because he isn't allowed to say anything. In a week when Germany is looking for a government, that's almost enviable.</p><div class="by">Jan Fleischhauer-Brandt</div></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">B.Z. · KURZ NOTIERT</div>
+      <p style="font:14px/1.5 var(--body)"><b>VERKEHR —</b> Wegen des Besuchs des britischen Thronfolgers war die Wilhelmstraße am Montag zwischen 11 und 17 Uhr gesperrt. Mehrere Leser beschwerten sich. Die Polizei sagt, der Prinz sei „sehr nett gewesen".</p><p style="font:italic 13px/1.5 var(--body);color:#555">Wilhelmstraße was closed on Monday from 11 until 5 for the British heir's visit. Several readers complained. The police say the prince was "very nice".</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="1" data-name="Berlin"><div class="wrap">
+  <div class="head"><h2>Berlin online</h2><p>Twitter, Reddit and the royal forums, 9–10 October.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#AD1457">L</div><div><b>Lena 🌙</b><small>@lenaschreibt · 9 Okt 2017</small></div></div>war heute zufällig am brandenburger tor und da stand dieser prinz und ich hab NICHTS an. also ich hatte schon was an. aber nicht DAS was man anhaben sollte<div class="act">2.104 Retweets · 9.877 Gefällt mir</div><div class="reply">↳ <i>was at the brandenburg gate by accident today and this prince was there and i had NOTHING on. i mean i had something on. but not what you'd want to have on</i></div></div>
+    <div class="rd"><div class="sub">r/berlin <span>· u/kreuzberg_kevin · 7h</span></div><h4>Why is half of Mitte blocked off today?</h4>
+      <div class="cm"><div class="u"><b>ostkreuz_ok</b> · 7h</div>british prince. the one who rolled his eyes at trump<div class="pts">⬆ 412</div>
+        <div class="cm"><div class="u"><b>kreuzberg_kevin</b> · 7h</div>oh. ok. I will allow it<div class="pts">⬆ 690</div></div></div>
+      <div class="cm"><div class="u"><b>neukoelln_needs_sleep</b> · 6h</div>my M41 was 25 minutes late and the driver announced "wegen Prinz" in a voice of pure despair<div class="pts">⬆ 288</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#37474F">K</div><div><b>Klaus-Dieter W.</b><small>@kdw_mitte · 9 Okt 2017</small></div></div>Wohne seit 1987 in der Wilhelmstraße. Habe Honecker überlebt, die Wende, und Obama. Kann auch einen Prinzen überleben. Muss aber nicht schön finden.<div class="act">88 Retweets · 412 Gefällt mir</div><div class="reply">↳ <i>Lived on Wilhelmstraße since 1987. Survived Honecker, reunification and Obama. Can survive a prince. Don't have to like it.</i></div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in Germany and Poland, October 2017 (Read 21,036 times)</div>
+      <div class="p"><div class="l"><b>QuebecQueen</b><br>Large Member<br>Posts: 1840</div><div class="r"><div class="when">Reply #18 on: October 10, 2017, 09:02:11 AM</div>Very low-key arrival. Navy suit, no fuss. You can tell KP learned from the summer.</div></div>
+      <div class="p"><div class="l"><b>Kaiserin_B</b><br>Member<br>Germany<br>Posts: 211</div><div class="r"><div class="when">Reply #21 on: October 10, 2017, 10:44:30 AM</div>I can tell you from here that nobody in Germany is paying attention. It's all the coalition. My mother asked me if he is the one who was a pilot and then went back to her crossword.<div class="sig">Grüße aus Hannover</div></div></div>
+      <div class="p"><div class="l"><b>blueblooded84</b><br>Senior Member<br>Posts: 951</div><div class="r"><div class="when">Reply #24 on: October 10, 2017, 02:15:48 PM</div>The photo from the kitchen in Marzahn is lovely. Jacket off, onions everywhere.</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1565C0">E</div><div><b>Emma Fairley</b><small>@emmafairley · 10 Oct 2017</small></div></div>The one time a royal gets a photo with Merkel and she's looking at him like he's a delivery she didn't order<div class="act">1,906 Retweets · 7.1K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6A1B9A">J</div><div><b>Julia</b><small>@juli_a_ · 10 Okt 2017</small></div></div>Mein kleiner Bruder geht zu Straßenkinder in Marzahn und hat heute mit dem britischen Prinzen Zwiebeln geschnitten. Er hat mir erst geglaubt, als es in der Abendschau kam.<div class="act">1.311 Retweets · 7.820 Gefällt mir</div><div class="reply">↳ <i>My little brother goes to Straßenkinder in Marzahn and chopped onions with the British prince today. He only believed it was him when it came on the evening news.</i></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="1" data-name="Berlin"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Berlin</div>
+  <div class="ephrow">
+    <div class="menu"><div class="crest">British Embassy · Berlin</div><h3>Reception</h3><div class="d">Monday 9th October 2017</div>
+      <p>Smoked Scottish salmon on rye<br><small>Nyetimber Classic Cuvée</small></p><div class="rule"></div>
+      <p>Miniature Yorkshire puddings, rare beef<br><small>and a Riesling from the Rheingau, by request</small></p><div class="rule"></div>
+      <p>Berliner, very small</p></div>
+    <div class="place"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Schloss Bellevue · Besuch</div><div class="fold">S.K.H. Prinz Alexander</div></div>
+    <div class="badge"><div class="t" style="background:#3a3a3a">Bundeskanzleramt</div><div class="b">Besucher · Begleitung<big>BK 0910</big>10.10.2017 · 13:00<small>Nur mit Begleitung gültig · Willy-Brandt-Straße 1</small></div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → HEIDELBERG ============ -->
+<section class="leg light" data-g="2" data-name="To Heidelberg"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>Lufthansa</b> · Bordkarte</span><span>Business</span></div>
+      <div class="route">TXL <i></i> FRA</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">LH 199</span></div>
+      <div><small>Date</small><span class="v">10 OCT 2017</span></div>
+      <div><small>Seat</small><span class="v">2C</span></div>
+    </div>
+    <div class="stub"><small>Leg 2 of 7</small><div class="city">Heidelberg</div><small>+262 mi · then 55 min by road</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 02 HEIDELBERG ============ -->
+<section class="open" id="heidelberg" data-g="2" data-name="Heidelberg"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter two · The university town</div>
+      <div class="chapno" aria-hidden="true">02</div>
+      <h2>Heidelberg</h2>
+      <div class="meta"><span><b>Wed 11 October</b></span><span>Hotel near the Neckar</span></div>
+      <p class="why">Cancer research in the morning, the old university at lunch, and an eight on the Neckar in the afternoon.</p>
+    </div>
+    <figure class="slip"><div class="ag">PA · Heidelberg · 11 Oct 2017</div><p>Prince Alexander (third from the bow, centre) rows with members of a Heidelberg rowing club on the River Neckar, with the Old Bridge and the castle behind. His crew lost by half a length.</p><small>On the Neckar · Wed 11 October</small></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Wed 11 Oct</h4><p><span>09.30</span>German Cancer Research Centre (DKFZ). Laboratories, then a round table with young researchers, several of them British.</p><p><span>12.00</span>Heidelberg University. The Old University and the Student Jail with the Rector. Lunch with international students before the winter semester starts.</p><p><span>13.45</span>Marktplatz walkabout.</p><p><span>15.00</span>The Neckar. A row with a local club against a university crew, 500 metres, under the Old Bridge.</p><p><span>18.30</span>Lufthansa, Frankfurt to Hamburg.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="2" data-name="Heidelberg"><div class="wrap"><div class="in">
+  <div class="label">WED 11 OCT · 10.20 · DKFZ, IM NEUENHEIMER FELD</div>
+  <p>The building was all glass and pale wood and that clean, faintly sweet smell labs have, like a new car. Everyone wore white and everyone was very young. A postdoc from Leeds with a ponytail and trainers under her coat walked him along a corridor lined with freezers, each with a padlock and a handwritten label, humming like a row of fridges in a pub cellar, and talked about tumour markers at a speed that suggested she'd practised in the shower.</p>
+  <p>He liked her. He liked all of it, actually. The microscope that cost more than a house, the screen of cells lit up green and violet like something from the bottom of the sea, the way she said "so basically" before anything complicated and then made it less complicated. He asked about funding and she told him, with feeling, and the director at the back made a small face.</p>
+  <p>At the end of the lab tour she stopped by the window and said, quite quietly, so the others wouldn't hear, that she was very sorry about his mother, and that she hoped it meant something to him to see the work. She'd been eleven when it was on the news. She remembered her own mum crying.</p>
+  <p>He said thank you. He said it did. He said it in the voice he'd been using for this for nearly ten years, warm and low and a bit grateful, the one that closed the subject without making anybody feel they'd said the wrong thing.</p>
+  <p>The Palace had said cancer for four years, and then it had said cancer when she died, and it had kept saying it ever since in every profile, every anniversary piece, every documentary with a sad piano under it. Somebody at the Embassy had read those profiles and thought, a cancer centre, how fitting, and put it on the programme in good faith. Marianne had signed it off in good faith too. Outside the family and a handful of doctors, nobody knew there was anything to object to. So here he was in Heidelberg, being kindly condoled with by a woman from Leeds about a disease his mother never had, in a building full of people who'd given their lives to curing it.</p>
+  <p>Outside the window there was a car park and a row of birch trees going yellow at the tips, and a man in a high-vis jacket smoking by the bins with his back to the whole institute. He looked at the man for a while. He thought about the actual thing, the hands that stopped working first, the music going, the voice going, the last months, and how much simpler everyone found it to imagine her bald and brave.</p>
+  <p>Marianne had gone on ahead with the director. After a minute she came back down the corridor to find him and said the researchers were ready for him whenever he was. She assumed something in the lab had caught his interest. He let her think that.</p>
+  <p>Then he did his jacket up and went in to the round table, and asked the young researchers what they'd do with more money, and listened to every one of them.</p>
+</div></div></section>
+
+<section class="spread flip" data-g="2" data-name="Heidelberg"><div class="wrap"><div class="grid">
+  <div class="stack">
+    <div><p class="pull">"I said we'll go easy on you, and he said please don't. Then he rowed very hard."</p><cite>Tobias Hahn, stroke, university crew · to the Rhein-Neckar-Zeitung</cite></div>
+    <div class="whybox"><b>Why here</b>The university and a local club put it together when the Consulate mentioned he'd rowed at Cambridge. He hasn't been in an eight since university. He knew he'd be stiff. He did it anyway.</div>
+    <div class="fbgrp">
+      <div class="hd">Heidelberg Altstadt · Nachbarn · Öffentliche Gruppe</div>
+      <div class="post"><b>Sabine Roth</b><br>Wer hat heute den Prinzen auf dem Neckar gesehen?? Ich stand mit dem Hund an der Alten Brücke und auf einmal 200 Leute 😅<div class="c"><b>Uwe Krämer</b> Die Brücke war gesperrt, ich musste mit dem Rad über die Theodor-Heuss-Brücke. Hat 20 Minuten gekostet.</div><div class="c"><b>Petra Lang</b> Mein Sohn ist im Uni-Boot. Er sagt, der Prinz hat sich nach dem Rennen bei allen bedankt und ist mit nassen Schuhen zum Auto gegangen.</div></div>
+      <div class="post" style="font-size:12.5px;color:#65676b;font-style:italic">Sabine: Who saw the prince on the Neckar today?? I was at the Old Bridge with the dog and suddenly 200 people. · Uwe: The bridge was closed, I had to cycle over the Theodor-Heuss bridge. Took 20 minutes. · Petra: My son's in the university boat. He says the prince thanked everybody after the race and walked to the car in wet shoes.</div>
+    </div>
+  </div>
+  <figure class="slip tall"><div class="ag">Rhein-Neckar-Zeitung · Foto</div><p>Nach dem Rennen: Prinz Alexander, außer Atem und lachend, gibt dem Schlagmann des Universitätsboots am Steg die Hand. Sein Hemd ist bis zu den Ellbogen nass.</p><small>After the race: Alexander, out of breath and laughing, shakes hands with the university stroke on the landing stage. His shirt is soaked to the elbows.</small></figure>
+</div></div></section>
+
+<section class="front" data-g="2" data-name="Heidelberg"><div class="wrap">
+  <div class="head"><h2>Heidelberg <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Wed 11 October · The coverage</div></div>
+  <div class="board">
+    <div class="c1" style="display:grid;gap:22px">
+      <article class="clip tab"><div class="m" style="background:#D7141A">BILD</div><div class="h">Ruder-Pleite für Prinz Alexander!</div><div class="s">Royal verliert auf dem Neckar gegen Heidelberger Studenten · „Er war ein guter Verlierer" · Seite 7</div></article>
+      <article class="clip tab rot-b"><div class="m" style="background:#D7141A">The Sun</div><div class="h">Row, row, row your boat</div><div class="s">…gently past the Prince, who comes second to German students · Page 11</div></article>
+    </div>
+    <article class="clip c2"><div class="mast">Rhein-Neckar-Zeitung</div><div class="date">DONNERSTAG, 12. OKTOBER 2017 · HEIDELBERG</div>
+      <h3>Ein Prinz im Achter</h3><div class="deck">Hunderte am Neckarufer · Universitätsboot gewinnt mit einer halben Länge</div><div class="by">Von Martin Schuster</div>
+      <p>Der britische Thronfolger ruderte auf Position sechs, ließ sich nach dem Zieleinlauf nicht aus dem Boot helfen und bestand darauf, das Boot mit zum Steg zu tragen.</p>
+      <p style="font-style:italic;color:#555">The British heir rowed at six, refused help getting out of the boat after the finish, and insisted on carrying it up to the landing stage.</p></article>
+    <article class="clip c3" style="margin-top:20px"><div class="mast" style="font-size:20px">The Daily Telegraph</div><div class="date">THURSDAY 12 OCTOBER 2017</div>
+      <h3 style="font-size:20px">Prince shows his competitive streak on German river</h3><p>Aides said he had asked for "no special treatment" in the race. He received none.</p></article>
+    <article class="clip op c4"><div class="kick">The Guardian · Pass notes</div><h3>Prince Alexander, rower</h3>
+      <p style="margin-top:8px"><b>Age:</b> 31. <b>Appearance:</b> Wet. <b>Is he any good?</b> He lost by half a length to a boat of 21-year-olds, so: good for a man who spends most of his working life standing in marquees. <b>Don't say:</b> "Rule, Britannia." <b>Do say:</b> "Vorsprung durch Technik, mate."</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">REUTERS · FACTBOX</div>
+      <p style="font:14px/1.5 var(--body)">The Prince's morning visit to the German Cancer Research Centre was closed to cameras at the Centre's request. A spokeswoman said the visit had gone well.</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="2" data-name="Heidelberg"><div class="wrap">
+  <div class="head"><h2>Heidelberg online</h2><p>Reddit, Facebook and Twitter, 11 October.</p></div>
+  <div class="masonry">
+    <div class="rd"><div class="sub">r/Rowing <span>· u/ergsandeggs · 5h</span></div><h4>British prince rowed in a club eight in Heidelberg today, video in comments</h4>
+      <div class="cm"><div class="u"><b>ergsandeggs</b> · 5h</div>Video's about 3 mins, the race starts at 0:40. He's at 6. For what it's worth the uni boat were racing a mixed-ability club crew plus one guest, so I wouldn't read much into the result.<div class="pts">⬆ 88</div></div>
+      <div class="cm"><div class="u"><b>LwtSculler</b> · 4h</div>He's obviously rowed seriously at some point. Hands are fine, he's a bit early with the arms and his slide control goes in the last 100 but that's what happens when you haven't been in a boat for years and then sit in someone else's eight. Club crew looked like they'd had two outings together. Fair play to him for doing it on video at all, I wouldn't.<div class="pts">⬆ 141</div>
+        <div class="cm"><div class="u"><b>ergsandeggs</b> · 4h</div>He rowed at Cambridge, there's a Boat Race in there somewhere I think<div class="pts">⬆ 36</div></div>
+        <div class="cm"><div class="u"><b>LwtSculler</b> · 4h</div>That would explain it. Also explains why he looked so annoyed at the finish lol<div class="pts">⬆ 97</div></div></div>
+      <div class="cm"><div class="u"><b>tubby_coxswain</b> · 3h</div>can we not make this sub about royals please, there's r/RoyalsGossip for that<div class="pts">⬆ 22</div></div></div>
+    <div class="fbgrp">
+      <div class="hd">Royal Family Fans UK · Public group · 48K members</div>
+      <div class="post"><b>Brenda Hollis</b><br>Lovely to see Prince Alexander having a go at rowing in Germany today, he looked like he really enjoyed it even though they lost. His mother would be so proud of him xx<div class="c"><b>Pat Dunmore</b> She would Brenda. Such a lovely young man. Hope he gets a rest soon they work him so hard</div><div class="c"><b>Gary Sheldon</b> Shame we lost to the Germans again 😂</div><div class="c"><b>Brenda Hollis</b> Gary it was a friendly</div><div class="c"><b>Kerry Ann Mills</b> Has anyone seen the photo of him in the lab this morning? He looked very tired I thought. Hope he's looking after himself</div></div>
+    </div>
+    <div class="card"><div class="who"><div class="av" style="background:#5D4037">H</div><div><b>Hannah Lewis</b><small>@hannahlewisphd · 11 Oct 2017</small></div></div>Strange experience having the Prince of Wales come through our institute today. He was polite, stayed for about an hour, and then a lot of men in suits took him away again. My PI has framed the photo already.<div class="act">64 Retweets · 402 Likes</div><div class="reply">↳ <b>@dkfz_jonas</b> I'll send you the slide we didn't get to</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#C2185B">S</div><div><b>soph</b><small>@sophiewrites_ · 11 Oct 2017</small></div></div>didn't know prince alexander rowed. the pictures from heidelberg are quite nice actually<div class="act">212 Retweets · 1,880 Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#2E7D32">M</div><div><b>Mareike</b><small>@mareike_hd · 11 Okt 2017</small></div></div>Die Alte Brücke war zwei Stunden gesperrt. Ich wohne auf der anderen Seite und hatte um 15 Uhr ein Seminar. Ich habe den Prinzen nicht gesehen, nur sehr viele Polizisten.<div class="act">38 Retweets · 210 Gefällt mir</div><div class="reply">↳ <i>The Old Bridge was closed for two hours. I live on the other side and had a seminar at 3. I didn't see the prince, just a lot of police.</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#455A64">P</div><div><b>Paul Mason-Reid</b><small>@pmreid · 11 Oct 2017</small></div></div>Nice enough pictures from Heidelberg but I'd quite like someone to explain what this trip is costing and what it's actually for, beyond photo ops. Genuine question.<div class="act">51 Retweets · 233 Likes</div><div class="reply">↳ <b>@clare_t_writes</b> FCO request, same as every royal tour. Soft power. Whether you think that's worth it is a separate question</div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → HAMBURG ============ -->
+<section class="leg" data-g="3" data-name="To Hamburg"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>Lufthansa</b> · Bordkarte</span><span>Business</span></div>
+      <div class="route">FRA <i></i> HAM</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">LH 18</span></div>
+      <div><small>Date</small><span class="v">11 OCT 2017</span></div>
+      <div><small>Seat</small><span class="v">2A</span></div>
+    </div>
+    <div class="stub"><small>Leg 3 of 7</small><div class="city">Hamburg</div><small>+254 mi · stiff from the boat</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 03 HAMBURG ============ -->
+<section class="open" id="hamburg" data-g="3" data-name="Hamburg"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter three · The port</div>
+      <div class="chapno" aria-hidden="true">03</div>
+      <h2>Hamburg</h2>
+      <div class="meta"><span><b>Thu 12 October</b></span><span>Hotel on the Alster</span></div>
+      <p class="why">The container port in the morning and the new concert hall in the afternoon. In between, ten minutes at St Nikolai, the church the RAF bombed in July 1943, which the city kept as a ruin.</p>
+    </div>
+    <figure class="slip"><div class="ag">Hamburger Abendblatt · Foto</div><p>Prinz Alexander legt am Mahnmal St. Nikolai einen Kranz nieder. Hinter ihm der ausgebrannte Turm. Er bleibt eine Minute allein stehen, die Hände vor dem Körper.</p><small>Laying a wreath at St Nikolai, in front of the burned-out tower · Thu 12 October</small></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Thu 12 Oct</h4><p><span>09.00</span>Port of Hamburg. A container terminal by launch and on foot, with the port authority and British shippers and logistics firms.</p><p><span>11.45</span>Mahnmal St. Nikolai. Wreath, a minute's silence, the memorial's director and a woman who lived through Operation Gomorrah as a child.</p><p><span>14.30</span>The Elbphilharmonie. The Plaza, then the Great Hall for part of an orchestra rehearsal and the hall's youth music programme.</p><p><span>17.30</span>Reception at the Consul-General's residence.</p><p><span>20.10</span>LOT to Warsaw.</p></div>
+  </div>
+</div></section>
+
+<section class="quiet" data-g="3" data-name="Hamburg">
+  <div class="wrap"><div class="in">
+    <div class="label">THU 12 OCT · 11.48 · ST NIKOLAI</div>
+    <p>The tower was still standing. Everything else had gone, the nave and the roof and the long Victorian windows, and what was left was a black spire nearly a hundred and fifty metres high over a square of grass and broken walls, with the traffic going round it on the Willy-Brandt-Straße as if it were any other building. The stone had gone the colour of an old fireplace. Pigeons sat in the empty window arches. It was a grey morning off the Elbe, cold enough that his breath showed, and the wind came up the street from the harbour smelling of diesel and wet rope.</p>
+    <p>Frau Brandt was waiting by the memorial with the director, very small in a camel coat and a good hat, with a handbag held in front of her in both hands like a shield. She was eighty-two. When he bent to shake her hand she took his in both of hers instead and didn't let go, and then she talked, in careful English at first, which ran out after a few sentences, and then in German.</p>
+    <p>He caught some of it. The interpreter gave him the rest, very low, close to his ear, a beat behind, so that he heard everything twice: once in Frau Brandt's voice, flat and Hamburg and quite calm, and once in English, in the voice of a woman of thirty from the Foreign Office who was trying not to cry.</p>
+    <p>Hammerbrook, July 1943. Eight years old. A tenement on a street that isn't there any more, a cellar under it with forty people in it, her mother holding her baby brother. The bombing started after midnight. Then the fires joined up across the whole district, and the wind came, a wind like nothing anyone had ever felt, pulling at the cellar door from outside as though something enormous was breathing in. The walls got so hot you couldn't touch them. People started to faint. Her mother wrapped them in wet blankets from the laundry tub and pushed them up the steps and out, into a street that was on fire from end to end, and ran with them towards the canal, and didn't look back, and told her not to look back either. She looked back once. She didn't say what she saw. Most of the people in that cellar were found there afterwards.</p>
+    <p>She told it in about four minutes. She'd told it to schoolchildren for years, the director said later, and it came out in the right order, with no adjectives, the way people tell a thing they've had to find a way of carrying.</p>
+    <p class="say">"Es ist lange her," she said at the end, and patted the back of his hand twice, briskly, as though she was the one who ought to be comforting him. It's a long time ago.</p>
+    <p>He thanked her in German, which was stiff and came out in the wrong order, and she smiled at him for trying and corrected it, and he said it again her way.</p>
+    <p>Then the wreath, which was heavier than it looked, and the minute. He'd done a lot of these. You put it down, you step back, you look at a point on the stone about a foot above the flowers, and you wait for whoever's in charge to move. His feet were cold. Somewhere behind the barriers a phone went off and was smothered. He thought about the port people at the reception at half five, and how many of them would want a photograph, and whether the Consul-General's wife was the one who'd written to the office about her charity.</p>
+    <p>The director moved. He shook her hand, shook Frau Brandt's hand again, told her in his bad German that he'd write, and meant it more or less, and got into the car. Miranda talked to the motorcycle escort through the window. Thom passed back the sandwiches the Consulate had packed, because there was always food in the car and nobody let a programme run without it, and he ate two of them on the way to the concert hall.</p>
+  </div></div>
+</section>
+
+<section class="spread" data-g="3" data-name="Hamburg"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">dpa · Hamburg · 12.10.2017</div><p>Prinz Alexander spricht in der Elbphilharmonie mit jungen Musikern des Jugendorchesters. Eine 15-jährige Cellistin zeigt ihm ihr Instrument.</p><small>Talking to young players from the youth orchestra. A 15-year-old cellist shows him her instrument · Thu 12 October</small></figure>
+  <div class="stack">
+    <div><p class="pull">„Er hat zugegeben, dass er keine Ahnung von klassischer Musik hat. Das fand ich gut."</p><cite>Lina, 15, cello · to the Hamburger Abendblatt</cite><p style="margin-top:8px;font-size:14px;color:var(--muted)">"He admitted he knows nothing about classical music. I liked that."</p></div>
+    <div class="whybox"><b>Why here</b>The hall opened in January, years late and hugely over budget. Hamburg asked for it because it's the city's showpiece, and the Consulate put it after St Nikolai. It isn't his sort of thing. He gets through the hall politely and is much better with the kids than with the building.</div>
+    <div class="whybox"><b>The port</b>The port is why the Foreign Office wanted Hamburg on the programme. Most of what Britain ships to Germany comes through somewhere like it, and the British firms there wanted the visit.</div>
+  </div>
+</div></div></section>
+
+<section class="front" data-g="3" data-name="Hamburg"><div class="wrap">
+  <div class="head"><h2>Hamburg <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Thu 12 October · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Hamburger Abendblatt</div><div class="date">FREITAG, 13. OKTOBER 2017 · HAMBURG</div>
+      <h3>Prinz Alexander in Hamburg</h3><div class="deck">Hafen, Mahnmal St. Nikolai und Elbphilharmonie</div><div class="by">Von Henning Voss</div>
+      <p>Am Mahnmal St. Nikolai legte er einen Kranz nieder und sprach mit einer Zeitzeugin des Feuersturms von 1943. Am Nachmittag besuchte er die Elbphilharmonie.</p>
+      <p style="font-style:italic;color:#555">At the St Nikolai memorial he laid a wreath and spoke with a witness of the 1943 firestorm. In the afternoon he visited the Elbphilharmonie.</p></article>
+    <article class="clip c2"><div class="mast">The Guardian</div><div class="date">FRIDAY 13 OCTOBER 2017 · 18</div>
+      <h3>Prince visits Hamburg port, war memorial and concert hall</h3><div class="by">By Kate Connolly-Shaw in Hamburg</div>
+      <p>Prince Alexander spent Thursday in Hamburg: the container port in the morning, a wreath at the St Nikolai war memorial at midday, and the new Elbphilharmonie concert hall in the afternoon, before flying on to Warsaw.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#D7141A">MOPO</div><div class="h">Prinz im Hafen!</div><div class="s">Royal-Besuch bei HHLA · Elphi-Rundgang · Seite 5</div><div class="s" style="font-weight:400;font-style:italic">Prince at the port! Royal visit to the container terminal · Tour of the Elphi</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>Hamburger Abendblatt</b> runs a picture gallery: 24 photos, mostly of the port and the Plaza.</article>
+    </div>
+    <article class="clip c4"><div class="mast" style="font-size:20px">NDR · Hamburg Journal</div><div class="date">12.10.2017 · 19:30</div><h3 style="font-size:20px">Britischer Thronfolger besucht Hamburg</h3><p>Ein kurzer Bericht: Hafen am Vormittag, Kranzniederlegung am Mahnmal St. Nikolai, am Nachmittag die Elbphilharmonie. Dann weiter nach Warschau.</p><p style="font-style:italic;color:#555">A short report: the port in the morning, a wreath at the St Nikolai memorial, the Elbphilharmonie in the afternoon. Then on to Warsaw.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">MOPO · HAMBURGER MORGENPOST</div>
+      <p style="font:14px/1.5 var(--body)"><b>Nach dem Sturm:</b> Eine Woche nach Orkan „Xavier" liegen in Eppendorf und Winterhude noch Bäume auf den Gehwegen. Die Stadtreinigung bittet um Geduld. Der Prinz fuhr durch Harvestehude. Die Bäume dort waren schon weg.</p><p style="font:italic 13px/1.5 var(--body);color:#555">A week after Storm Xavier, trees are still down across the pavements in Eppendorf and Winterhude. The city asks for patience. The prince was driven through Harvestehude, where the trees had already been cleared.</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="3" data-name="Hamburg"><div class="wrap">
+  <div class="head"><h2>Hamburg online</h2><p>Twitter and Reddit, 12 October.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#1565C0">J</div><div><b>Jens</b><small>@jens_hh · 12 Okt 2017</small></div></div>Willy-Brandt-Straße dicht wegen Prinz. Bus 6 fährt Umleitung. Danke.<div class="act">12 Retweets · 48 Gefällt mir</div><div class="reply">↳ <i>Willy-Brandt-Straße shut because of a prince. Number 6 bus on diversion. Thanks.</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#283593">H</div><div><b>Hanna Petersen</b><small>@hannapetersen_hh · 12 Okt 2017</small></div></div>Meine Oma war heute bei St. Nikolai. Sie sagt, der Prinz hat ihr sehr lange zugehört und kein einziges Mal auf die Uhr geschaut. Sie war 1943 sechs Jahre alt.<div class="act">4.512 Retweets · 19.900 Gefällt mir</div><div class="reply">↳ <i>My grandma was at St Nikolai today. She says the prince listened to her for a long time and didn't look at his watch once. She was six in 1943.</i></div></div>
+    <div class="rd"><div class="sub">r/europe <span>· u/hanse_hans · 9h</span></div><h4>British Prince lays wreath at Hamburg memorial to 1943 firestorm victims</h4>
+      <div class="cm"><div class="u"><b>polish_pierogi_lord</b> · 9h</div>He's coming to Poland tomorrow. We will see what he brings us 👀<div class="pts">⬆ 1.2k</div>
+        <div class="cm"><div class="u"><b>hanse_hans</b> · 8h</div>Tomb of the Unknown Soldier and the Uprising museum according to the programme. And Stutthof on Monday.<div class="pts">⬆ 310</div></div></div>
+      <div class="cm"><div class="u"><b>kiwi_in_kiel</b> · 8h</div>honestly this is how you do it. no speech, no apology tour, just show up and be quiet<div class="pts">⬆ 860</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#00838F">E</div><div><b>Elbphilharmonie</b><small>@elbphilharmonie · 12 Okt 2017</small></div></div>Heute zu Gast: S.K.H. Prinz Alexander, bei unserem Jugendorchester. Danke für Ihre Fragen, Hoheit! 🎻<div class="act">1.140 Retweets · 6.300 Gefällt mir</div><div class="reply">↳ <i>Our guest today: HRH Prince Alexander, with our youth orchestra. Thank you for your questions, sir!</i></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="3" data-name="Hamburg"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Hamburg</div>
+  <div class="ephrow" style="--n:2">
+    <div class="badge" style="max-width:300px"><div class="t" style="background:#00838F">Elbphilharmonie · Großer Saal</div><div class="b">Probe · Jugendorchester<big>Ebene 15</big>12.10.2017 · 14:30<small>Ehrengast · Begleitung: Konsulat</small></div></div>
+    <div class="note" style="max-width:340px;margin:0 auto"><div class="from">Order of service · St Nikolai · back cover</div>Frau Ingrid Brandt, Hammerbrook. Write to her. Not through the Embassy. — A.</div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → WARSAW ============ -->
+<section class="leg light" data-g="4" data-name="To Warsaw"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>LOT Polish Airlines</b> · Karta pokładowa</span><span>Business</span></div>
+      <div class="route">HAM <i></i> WAW</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">LO 380</span></div>
+      <div><small>Date</small><span class="v">12 OCT 2017</span></div>
+      <div><small>Seat</small><span class="v">1D</span></div>
+    </div>
+    <div class="stub"><small>Leg 4 of 7</small><div class="city">Warsaw</div><small>+468 mi · the interpreter starts work</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 04 WARSAW ============ -->
+<section class="open" id="warsaw" data-g="4" data-name="Warsaw"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter four · The rebuilt city</div>
+      <div class="chapno" aria-hidden="true">04</div>
+      <h2>Warsaw</h2>
+      <div class="meta"><span><b>Fri 13 – Sat 14 October</b></span><span>Residence of the British Ambassador</span></div>
+      <p class="why">The President, the Unknown Soldier, the Uprising and its last veterans, an Old Town that was rubble in 1945, Polish airmen at Powązki, and in every room somebody wanting to ask about the Poles in Britain.</p>
+    </div>
+    <figure class="slip"><div class="ag">PAP · Warszawa · 13.10.2017</div><p>Książę Aleksander rozmawia z weteranką Powstania Warszawskiego w Muzeum Powstania. Kobieta, 91 lat, trzyma go za rękaw.</p><small>Talking with a 91-year-old veteran of the Warsaw Uprising, who keeps hold of his sleeve · Fri 13 October</small></figure>
+  </div>
+  <div class="prog" style="--n:2">
+    <div class="day hot"><h4>Fri 13 Oct</h4><p><span>09.30</span>Presidential Palace. Official welcome and a meeting with President Duda.</p><p><span>11.00</span>Tomb of the Unknown Soldier, Piłsudski Square. Wreath with the honour guard.</p><p><span>12.30</span>Warsaw Rising Museum. Veterans of the 1944 Uprising, and the director.</p><p><span>15.00</span>Old Town. Market Square walkabout and the Royal Castle, rebuilt from the ground up.</p><p><span>18.30</span>Reception at the Residence. Polish families who've lived in Britain, British people living in Poland, and the British-Polish business community.</p></div>
+    <div class="day"><h4>Sat 14 Oct</h4><p><span>10.00</span>Powązki Military Cemetery. Graves of Polish airmen who flew with the RAF, with the Polish Air Force and airmen's families.</p><p><span>12.00</span>A British Council English-language project with Warsaw teenagers and their parents.</p><p><span>14.55</span>PKP Intercity Express to Gdańsk, press on the same train.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="4" data-name="Warsaw"><div class="wrap"><div class="in">
+  <div class="label">FRI 13 OCT · 19.40 · THE RESIDENCE, WARSAW</div>
+  <p>By half seven the drawing room was too hot. Somebody had built the fire up as though the Poles might complain otherwise, and the windows had misted over the garden. He had a glass of sparkling water with a slice of lime in it, held at chest height. It was a prop. Everyone in the room had one.</p>
+  <p>Receptions were a skill, and he was good at them. The trick was to listen hard to the first sentence, nod through the middle, catch the last sentence, and you'll always have something to say back. He'd done it with three bank managers, a man from a bus company and a sculptor. The sculptor had been all right, actually. She'd told him the Palace of Culture was the most beautiful building in Warsaw and dared him to disagree. He hadn't, because it was hideous and she knew it.</p>
+  <p>The dentist from Ealing was different. She was forty-ish and tired around the eyes, wearing a dress that had obviously been bought for this. She didn't want a photograph. She told him her son had come home from school after the referendum and asked if they'd have to leave England. Someone in his class had told him so. He was seven.</p>
+  <p>He listened to all of it. Every sentence.</p>
+  <p>There was an answer that began with the negotiations, and he was forbidden it. There was another that began with what he thought of the parents who'd raised that classmate, and that one was forbidden in a different way. Behind her, by the door, two Polish journalists who'd been allowed in for ten minutes were still there at forty, pens out.</p>
+  <p class="say">"I'm sorry he heard that. What did you tell him?"</p>
+  <p class="say">"That we live in Ealing. His school is there, his friends. His football."</p>
+  <p class="say">"That sounds right to me. Who does he support?"</p>
+  <p>She told him Brentford, with an expression of great suffering, and he laughed. It was a real laugh, louder than he meant, the kind that turns heads near the fire. She laughed too. He saw both pens move.</p>
+  <p>Later, upstairs, he lay on the bed with his shoes still on and his tie in a coil on the floor. The radiator knocked. He scrolled Polish Twitter, which he couldn't read, looking for his own face. It was there already. Him laughing, her laughing, a caption he'd need Google to translate. He decided not to. He'd find out in the morning whether he'd been charming or a disgrace, and he suspected the answer depended on which paper you bought.</p>
+</div></div></section>
+
+<section class="spread" data-g="4" data-name="Warsaw"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">PAP · Powązki · 14.10.2017</div><p>Książę Aleksander w mundurze RAF przy grobach polskich lotników na Cmentarzu Wojskowym na Powązkach. Obok niego córka pilota Dywizjonu 303.</p><small>In RAF uniform at the graves of Polish airmen at Powązki, beside the daughter of a 303 Squadron pilot · Sat 14 October</small></figure>
+  <div class="stack">
+    <div><p class="pull">„Znał nazwisko mojego ojca, zanim mu powiedziałam. Ktoś go dobrze przygotował."</p><cite>Krystyna Zawadzka, 74 · to TVN24</cite><p style="margin-top:8px;font-size:14px;color:var(--muted)">"He knew my father's name before I told him. Somebody briefed him well."</p></div>
+    <div class="whybox"><b>Why here</b>The Embassy's suggestion. The Poles who flew with the RAF are the obvious shared history between the two air forces, and the Polish Air Force wanted the photograph. He wears RAF uniform, which he's entitled to, and the Polish papers like it.</div>
+    <div class="whybox"><b>The President</b>Forty minutes at the Presidential Palace. Duda talks about NATO's eastern flank and British troops in Orzysz. Alexander asks about the Uprising Museum, where he's going that afternoon, and about Warsaw's rebuilding.</div>
+  </div>
+</div></div></section>
+
+<section class="front" data-g="4" data-name="Warsaw"><div class="wrap">
+  <div class="head"><h2>Warsaw <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Fri 13 – Sat 14 October · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Gazeta Wyborcza</div><div class="date">SOBOTA, 14 PAŹDZIERNIKA 2017 · WARSZAWA</div>
+      <h3>Książę, Brentford i pytanie, na które nie mógł odpowiedzieć</h3><div class="by">Agnieszka Lewandowska-Kos</div>
+      <p>Nie mógł powiedzieć nic o brexicie. Powiedział za to, że Polacy w Wielkiej Brytanii „są jej częścią". Dla wielu z nas w tym sali to wystarczyło.</p>
+      <p style="font-style:italic;color:#555">The prince, Brentford, and the question he couldn't answer. He couldn't say anything about Brexit. What he did say was that Poles in Britain "are part of it". For many of us in that room, it was enough.</p></article>
+    <article class="clip c2"><div class="mast">Rzeczpospolita</div><div class="date">14.10.2017</div>
+      <h3>Prezydent przyjął następcę brytyjskiego tronu</h3><div class="deck">Rozmowa o bezpieczeństwie i historii · Wieniec przy Grobie Nieznanego Żołnierza</div>
+      <p style="font-style:italic;color:#555">The President receives the heir to the British throne. Talks on security and history; wreath at the Tomb of the Unknown Soldier.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#E30613">FAKT</div><div class="h">Książę z bajki!</div><div class="s">Tłumy na Starówce · Warszawianki oszalały · Str. 4–5</div><div class="s" style="font-weight:400;font-style:italic">Fairytale prince! Crowds in the Old Town · Warsaw women lose their minds</div></article>
+      <article class="clip tab rot-b"><div class="m" style="background:#D7141A">Super Express</div><div class="h">Ma 31 lat i… jest zajęty</div><div class="s">Wszystko o Georgianie · Str. 6</div><div class="s" style="font-weight:400;font-style:italic">He's 31 and… taken. All about Georgiana</div></article>
+    </div>
+    <article class="clip op c4"><div class="kick">wPolityce.pl · Komentarz</div><h3>Ładne słowa o Polakach. A co z ich prawami?</h3>
+      <p style="margin-top:8px">Brytyjski książę przyjeżdża, kładzie wieniec, żartuje o piłce nożnej. Miłe. Ale półtora roku po referendum Polacy na Wyspach nadal nie wiedzą, co ich czeka.</p><p style="font-style:italic;color:#555">Nice words about Poles. What about their rights? A British prince comes, lays a wreath, jokes about football. Pleasant. But a year and a half after the referendum, Poles in Britain still don't know what's coming.</p></article>
+    <article class="clip c5"><div class="mast" style="font-size:20px">The Times</div><div class="date">SATURDAY OCTOBER 14 2017</div>
+      <h3 style="font-size:20px">Prince faces the question no royal can answer</h3><p>In Warsaw, where almost every family seems to have someone in Britain, Prince Alexander was asked about Brexit in some form at nearly every engagement. He gave the same careful answer each time, and in the evening, according to those present, a slightly less careful one about Brentford FC.</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="4" data-name="Warsaw"><div class="wrap">
+  <div class="head"><h2>Warsaw online</h2><p>Wykop, Facebook and Twitter, 13–14 October.</p></div>
+  <div class="masonry">
+    <div class="rd" style="border-color:#367ac2"><div class="sub" style="color:#367ac2">wykop.pl <span>· #ksiazealeksander #warszawa · 4 godz.</span></div><h4>Brytyjski książę na Starówce. Ludzie stoją od 6 rano 😂</h4>
+      <div class="cm"><div class="u"><b>JanuszBiznesu</b> · 4 godz.</div>Ciekawe ile kosztuje ochrona. Pewnie my płacimy.<div class="pts">+ 412</div></div>
+      <div class="cm"><div class="u"><b>Mirek_z_Mokotowa</b> · 3 godz.</div>Byłem przy Zamku, tłum był duży ale spokojny. Dużo starszych pań z kwiatami.<div class="pts">+ 288</div></div>
+      <div class="cm" style="font-style:italic;color:#576f76">Wonder how much the security costs. We're probably paying. · I was by the Castle, big crowd but calm. Lots of older ladies with flowers.</div></div>
+    <div class="fbgrp">
+      <div class="hd">Polacy w UK 🇵🇱🇬🇧 · Grupa publiczna · 214 tys. członków</div>
+      <div class="post"><b>Monika Wiśniewska</b><br>Widzieliście artykuł w Wyborczej o księciu i Polakach w UK? Rozmawiał z dentystką z Ealing. Miło że ktoś w ogóle pyta o nasze dzieci.<div class="c"><b>Tomasz Nowak</b> Ładnie, ale to nic nie zmienia.</div><div class="c"><b>Ewa K.</b> Mnie interesuje tylko czy dostaniemy settled status. Książę tego nie załatwi.</div><div class="c"><b>Monika Wiśniewska</b> Wiem, on nie może się wypowiadać o polityce. Ale i tak było miło przeczytać.</div></div>
+      <div class="post" style="font-size:12.5px;color:#65676b;font-style:italic">Monika: Did you see the Wyborcza piece about the prince and Poles in the UK? He talked to a dentist from Ealing. Nice that anyone asks about our kids at all. · Tomasz: Nice, but it doesn't change anything. · Ewa: All I care about is whether we get settled status. A prince won't sort that out. · Monika: I know, he can't talk about politics. It was still nice to read.</div>
+    </div>
+    <div class="card"><div class="who"><div class="av" style="background:#B71C1C">A</div><div><b>Ania</b><small>@ania_waw · 13 paź 2017</small></div></div>Byłam dziś na Starówce. Książę jest wyższy niż myślałam. Mama dostała uścisk dłoni.<div class="act">84 podanych dalej · 610 polubień</div><div class="reply">↳ <i>Was in the Old Town today. The prince is taller than I thought. My mum got a handshake.</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#558B2F">B</div><div><b>Brentford FC</b><small>@BrentfordFC · 14 Oct 2017</small></div></div>We hear we got a mention in Warsaw this week. Dzień dobry to our Polish supporters, here and in London. 🐝<div class="act">640 Retweets · 2.9K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#0D47A1">M</div><div><b>Michał Kowalczyk</b><small>@mkowalczyk_pl · 14 paź 2017</small></div></div>Mundur RAF na Powązkach. Ktoś w Kensington Palace wie, co robi.<div class="act">712 podanych dalej · 3 210 polubień</div><div class="reply">↳ <i>RAF uniform at Powązki. Somebody at Kensington Palace knows what they're doing.</i></div></div>
+  </div>
+</div></section>
+
+<section class="phones" data-g="4" data-name="Warsaw"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">His phone · Sat 14 October · On the train</div><h2 style="margin-top:8px">Texts</h2></div><p>The Express to Gdańsk. Press two carriages back. Georgie in Sussex, an hour behind. Her birthday's on Thursday.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>15:22</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 15:04</div>
+        <div class="bub out">I'm on a train with forty journalists and a woman from the Polish foreign ministry who's been explaining pierogi fillings to Thom for an hour. He's taking notes.</div>
+        <div class="bub in">poor thom!! tell him i want a full report 🥟🥟 just got back from petworth and the car's making that noise again, dad says it's the fan belt which he says about literally everything 🙄</div>
+        <div class="bub out">Your father thinks every noise is the fan belt.</div>
+        <div class="bub in">he's right about half the time which is the annoying bit 😂 how's the train??</div>
+        <div class="bub out">Better than Southern. The countryside is very flat and very brown. Have you thought about Thursday? I'll book somewhere tonight.</div>
+        <div class="bub in">the pub honestly!! somewhere with chips and nobody staring at us 🍟 i don't want anything fancy i just want you home ❤️</div>
+        <div class="bub out">The pub it is. Your present's been wrapped since September, so don't start.</div>
+        <div class="bub in">i wasn't going to start!!! i'm going to be very dignified until thursday and then rip the paper off in front of you 😇🎁</div>
+        <div class="bub out">I'd expect nothing less. Gdańsk tomorrow. Apparently it's all amber and gabled houses. I'll send you pictures.</div>
+        <div class="bub in">send me ones with you in them, the buildings can stay in poland 😘 miss you. the cottage is freezing without you hogging the duvet 🥶❤️</div>
+      </div>
+    </div></div>
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>15:40</span><span>●●●</span></div>
+      <div class="thd"><div class="pic" style="background:#556b6e">C</div><b style="font-size:13px">Charlie</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 15:31</div>
+        <div class="bub out">Did the Mariacka bit stay in for tomorrow? I asked for it back in August.</div>
+        <div class="bub in">It's in. 15.00, after the walkabout, forty minutes. The Consulate's found you an amber workshop, the owner will show you how they cut it. Pool of two photographers, no TV.</div>
+        <div class="bub out">Good. I'd like to actually look at things for once.</div>
+        <div class="bub in">If you buy anything, the Sun will call it an engagement ring by Monday whatever it is. Just so you know.</div>
+        <div class="bub out">Then they'll be wrong, won't they.</div>
+      </div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → GDANSK ============ -->
+<section class="leg" data-g="5" data-name="To Gdańsk"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>PKP Intercity</b> · Express InterCity Premium</span><span>1 klasa</span></div>
+      <div class="route">WARSZAWA <i></i> GDAŃSK</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Train</small><span class="v">EIP 5302</span></div>
+      <div><small>Date</small><span class="v">14 OCT 2017</span></div>
+      <div><small>Coach / Seat</small><span class="v">1 / 51</span></div>
+      <div><small>Departs</small><span class="v">14:55 Centralna</span></div>
+      <div><small>Arrives</small><span class="v">17:41 Główny</span></div>
+    </div>
+    <div class="stub"><small>Leg 5 of 7</small><div class="city">Gdańsk</div><small>+211 mi by rail · press two coaches back</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 05 GDANSK ============ -->
+<section class="open" id="gdansk" data-g="5" data-name="Gdańsk"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter five · The free city</div>
+      <div class="chapno" aria-hidden="true">05</div>
+      <h2>Gdańsk</h2>
+      <div class="meta"><span><b>Sun 15 October</b></span><span>Hotel on the Motława</span></div>
+      <p class="why">Westerplatte, the European Solidarity Centre and the shipyard gate, a walkabout on the Long Market, Mariacka Street, and the Shakespeare Theatre in the evening.</p>
+    </div>
+    <figure class="slip"><div class="ag">PAP · Gdańsk · 15.10.2017</div><p>Książę Aleksander i prezydent Gdańska Paweł Adamowicz przy historycznej Bramie nr 2 Stoczni Gdańskiej. Obok nich dawni działacze Solidarności.</p><small>With the Mayor of Gdańsk, Paweł Adamowicz, and Solidarity veterans at Gate No. 2 of the shipyard · Sun 15 October</small></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Sun 15 Oct</h4><p><span>09.30</span>Westerplatte. The Polish garrison's memorial, where the first shots of the war were fired on 1 September 1939. Wreath and a short remembrance.</p><p><span>11.30</span>European Solidarity Centre and the shipyard's Gate No. 2, with Mayor Adamowicz and former shipyard workers who struck in 1980.</p><p><span>14.00</span>Long Market walkabout, from the Golden Gate to Neptune's Fountain.</p><p><span>15.00</span>Mariacka Street. Time to look round, added at his request, including an amber workshop where the owner shows him how the stone is cut and polished.</p><p><span>19.00</span>Gdańsk Shakespeare Theatre. A short performance by young actors and a reception.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="5" data-name="Gdańsk"><div class="wrap"><div class="in">
+  <div class="label">SUN 15 OCT · 11.52 · EUROPEAN SOLIDARITY CENTRE</div>
+  <p>The building was rusted steel on the outside, tilted slabs the colour of a ship's hull, made to look like the shipyard had grown it. Inside it was all light. From the top floor you could see the cranes along the water, standing in a row like enormous green herons, most of them doing nothing.</p>
+  <p>Zbigniew had been a welder. He was seventy now. His hands were the biggest Alexander had ever shaken, and they had burn scars across the knuckles like candle wax. His English was nonexistent and he didn't regard this as a problem. He talked straight at Alexander, never at the interpreter. She was a nervous girl from the ministry who was falling further behind with every sentence.</p>
+  <p>August 1980. Seventeen thousand men inside the yard. Families outside the gate, passing bread through the bars. Nobody knew whether the tanks were coming. Zbigniew was twenty-three with a baby daughter at home he hadn't seen for a fortnight. At this point he pointed down at the gate itself, still there, still hung with flowers and a faded photograph of the Pope. Then he made a fist and laughed. It was a big laugh with no bitterness in it at all.</p>
+  <p>Alexander had spent seven days being received by people who'd been told to receive him. He'd been handed from the President to the Mayor to the museum director like a parcel nobody wanted to drop. This was the first person all week who didn't seem to care who he was. Zbigniew was telling the story because he liked telling it. If a tall Englishman wanted to hear it, so much the better.</p>
+  <p class="say">"Was he frightened?"</p>
+  <p>The interpreter asked. Zbigniew looked at him for a while, then at the interpreter, then at Alexander again, as though checking whether the question had been asked seriously. He said something short.</p>
+  <p class="say">"He says of course. Every day. He says you go in anyway."</p>
+  <p>Alexander liked him enormously. He wanted to stay all afternoon. He wanted to ask about the baby daughter, and the tanks that didn't come, and what it was like afterwards when the shipyard he'd risked his life for was sold off in pieces. He had eleven minutes left.</p>
+  <p>At the end Zbigniew unpinned the red Solidarność badge from his own lapel and pinned it on Alexander's, crooked, jabbing him slightly through the shirt. Charlie made a sound like a kettle coming to the boil. The heir to the throne could not be photographed wearing a trade union. Alexander knew that perfectly well. He wore it anyway, all the way down in the lift and out across the square, and only took it off in the car.</p>
+  <p>It went in his inside pocket. Later it went in a drawer at Kensington Palace, in the desk in the study, where it stayed.</p>
+</div></div></section>
+
+<section class="spread flip" data-g="5" data-name="Gdańsk"><div class="wrap"><div class="grid">
+  <div class="stack">
+    <div><p class="pull">„Przyszedł, posłuchał, podał rękę. Miło było."</p><cite>Zbigniew Kaczmarek, former shipyard welder · to Trójmiasto.pl</cite><p style="margin-top:8px;font-size:14px;color:var(--muted)">"He came, he listened, he shook our hands. It was nice."</p></div>
+    <div class="whybox"><b>The walkabout</b>The Long Market on a warm October Sunday. The police estimate fifteen thousand. He does the left side going down and the right side coming back, takes forty minutes over twenty, and gets handed amber, a rose, a baby he declines to hold, and a pierogi in a napkin that he eats.</div>
+    <div class="whybox"><b>Mariacka Street</b>He asked for this in August: forty minutes on Mariacka with nothing official in them, just time to look round. He goes in and out of the galleries, talks to the owner of an amber workshop about how the stone is cut, holds pieces up to the window, and buys a pendant with his own card while two photographers try to work out what it is.</div>
+  </div>
+  <figure class="slip tall"><div class="ag">Reuters · Gdańsk · 15 Oct 2017</div><p>Britain's Prince Alexander greets the crowd on the Long Market in Gdańsk, with Neptune's Fountain and the Artus Court behind him. Police estimated 15,000 people turned out on a sunny Sunday afternoon.</p><small>The Long Market · Sun 15 October</small></figure>
+</div></div></section>
+
+<section class="noise" data-g="5" data-name="Gdańsk"><div class="wrap">
+  <div class="head"><h2>Gdańsk online</h2><p>Trójmiasto.pl, Instagram, Twitter and the royal forums, 15 October.</p></div>
+  <div class="masonry">
+    <div class="web"><div class="m" style="background:#0A6E9C">Trójmiasto.pl · Komentarze (612)</div><div class="b">
+      <p><b>gdanszczanka_83</b> · Byłam na Długim Targu z dziećmi. Podszedł do mojej córki i zapytał po polsku, jak ma na imię. Akcent straszny, ale się starał ❤️</p>
+      <p><b>sopot_sceptyk</b> · A tramwaj nr 8 stał 40 minut. Dziękuję Królestwu Brytyjskiemu.</p>
+      <p><b>gdanszczanka_83</b> · @sopot_sceptyk to idź pieszo, jest ładna pogoda</p>
+      <p><b>Ryszard_Stocznia</b> · Mój ojciec był w stoczni w 1980. Dziś stał przy bramie i płakał. Dobrze, że przyjechał.</p>
+      <small>I was on the Long Market with the kids. He came over to my daughter and asked her name in Polish. Terrible accent, but he tried ❤️ · And the number 8 tram sat there 40 minutes. Thank you, British Kingdom. · Then walk, it's nice weather · My father was in the shipyard in 1980. Today he stood by the gate and cried. Good that he came.</small></div></div>
+    <div class="card ig"><div class="who"><div class="av" style="background:#AD1457">K</div><div><b>kasia.amber.gdansk</b><small>Mariacka, Gdańsk</small></div></div><b>1,288 likes</b><br>Dziś odwiedził naszą pracownię książę Aleksander! Oglądał szlifowanie i kupił wisiorek. Bardzo miły pan. Dziękujemy! ✨ #mariacka #bursztyn #gdansk
+      <div class="cm"><b>ola_trojmiasto</b> Gratulacje! A co kupił?</div><div class="cm"><b>kasia.amber.gdansk</b> Tego nie powiemy 😊</div><div class="cm" style="font-style:italic;color:#888">Prince Alexander visited our workshop today! He watched us polishing and bought a pendant. Very nice man. Thank you! · Congratulations! What did he buy? · We're not saying 😊</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#E65100">R</div><div><b>Rebecca</b><small>@becca_in_gdynia · 15 Oct 2017</small></div></div>Went to see Prince Alexander on the Long Market with my Polish flatmates. Huge crowd, really good-natured. My flatmate's gran had brought him amber and he actually took it.<div class="act">96 Retweets · 702 Likes</div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in Germany and Poland, October 2017 (page 6)</div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8301</div><div class="r"><div class="when">Reply #140 on: October 15, 2017, 04:12:55 PM</div>Huge crowds in Gdańsk. Much bigger than Germany. The Poles have taken to him.<div class="sig">"Never complain, never explain" ~ and never sit next to Fergus at dinner</div></div></div>
+      <div class="p"><div class="l"><b>sweetpea</b><br>Member<br>Posts: 144</div><div class="r"><div class="when">Reply #141 on: October 15, 2017, 04:20:02 PM</div>Pictures of him buying something in an amber workshop on Mariacka this afternoon. G's birthday is this week!! 💍</div></div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8301</div><div class="r"><div class="when">Reply #142 on: October 15, 2017, 04:24:47 PM</div><div class="q">Quote from: sweetpea<br>G's birthday is this week!! 💍</div>You can see in the PA picture it's a pendant on a chain. It's not a ring.</div></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="5" data-name="Gdańsk"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Gdańsk</div>
+  <div class="ephrow">
+    <div class="receipt"><div class="c"><b>BURSZTYN · MARIACKA</b><br>ul. Mariacka · Gdańsk<br>15.10.2017 · 15:24</div><hr><div class="r"><span>Wisior, bursztyn bałtycki</span><span></span></div><div class="r"><span>srebro 925, łańcuszek</span><span>1 450,00</span></div><div class="r"><span>Pudełko prezentowe</span><span>0,00</span></div><hr><div class="r"><b>RAZEM PLN</b><b>1 450,00</b></div><div class="r"><span>Karta ****</span><span></span></div><hr><div class="c">DZIĘKUJEMY · THANK YOU<br><small>(paid on his own card)</small></div></div>
+    <div class="badge"><div class="t" style="background:#a31d24">Solidarność</div><div class="b" style="text-align:center"><big style="font:800 34px var(--body);color:#c8102e">Solidarność</big>Lapel badge, enamel<small>Kept · Not photographed</small></div></div>
+    <div class="menu"><div class="crest">Gdański Teatr Szekspirowski</div><h3>Romeo i Julia</h3><div class="d">Scenes · Sunday 15th October 2017</div><p>Young company of the theatre<br><small>Performed in Polish and English</small></p><div class="rule"></div><p>Reception in the foyer<br><small>Żubrówka, apple juice, and a lot of Polish questions about Shakespeare's Globe</small></p></div>
+  </div>
+</div></section>
+
+<!-- ============ 06 STUTTHOF ============ -->
+<section class="leg light" data-g="6" data-name="To Stutthof"><div class="wrap">
+  <div class="pass road">
+    <div class="main">
+      <div class="air"><span><b>Motorcade</b> · Route 501</span><span>Gdańsk → Sztutowo</span></div>
+      <div class="route">GDAŃSK <i></i> SZTUTOWO</div>
+      <div><small>Date</small><span class="v">16 OCT 2017</span></div>
+      <div><small>Departs</small><span class="v">08:40</span></div>
+      <div><small>Distance</small><span class="v">24 mi · 40 min</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="open" id="stutthof" data-g="6" data-name="Stutthof"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter six · The camp</div>
+      <div class="chapno" aria-hidden="true">06</div>
+      <h2>Stutthof</h2>
+      <div class="meta"><span><b>Mon 16 October</b></span><span>Muzeum Stutthof, Sztutowo</span></div>
+      <p class="why">The first camp the Nazis built outside Germany, set up the day after the war began, near the Vistula Lagoon. Around sixty-five thousand people died there. Two survivors who now live in Britain came back with him, at his invitation through the Holocaust Educational Trust.</p>
+    </div>
+    <figure class="slip"><div class="ag">PA · Sztutowo · 16 Oct 2017</div><p>Prince Alexander walks with Holocaust survivor Henryk Lewin, 89, from north London, along the path to the camp's gas chamber and crematorium at the Stutthof Museum. Mr Lewin was held at Stutthof in 1944.</p><small>With Henryk Lewin on the path through the camp · Mon 16 October</small></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Mon 16 Oct</h4><p><span>09.30</span>Stutthof Museum. A guided visit with the museum director, and with two survivors of the camp who live in Britain and travelled with the Holocaust Educational Trust.</p><p><span>10.45</span>The memorial. Wreath and candles. Silence.</p><p><span>11.15</span>A short meeting with Polish and German teenagers on a joint education programme at the museum.</p><p><span>12.15</span>Motorcade to Gdańsk Airport. No public engagements.</p></div>
+  </div>
+</div></section>
+
+<section class="quiet" data-g="6" data-name="Stutthof">
+  <div class="wrap"><div class="in">
+    <div class="label">MON 16 OCT · 10.05 · SZTUTOWO</div>
+    <p>Nobody had told him it would be pretty. Pine woods on sandy ground, the lagoon a pale strip off to the left, the air sharp with resin and salt. A woodpecker was working at a tree somewhere behind the barracks. He hated that. He'd braced for something grey and he'd got a lovely October morning, and it made him angry in a way he couldn't have explained to anyone.</p>
+    <p>Mr Lewin walked with a stick and turned down every arm offered to him. Leah Mandel walked on the other side, slower, and after the first hundred yards she took Alexander's arm without asking. He shortened his stride to hers and kept it there all morning.</p>
+    <p>Mr Lewin had arrived here at sixteen, in the autumn of 1944, after the ghetto and the train. At sixteen Alexander had been at school, sulking about exams and cold showers. He thought that, then wished he hadn't. Mr Lewin told it the way he'd told it in a hundred British school halls. Arrival. Selection. The barracks, three to a bunk. The winter. The march west in January through the snow, when most of the people he'd walked out with died at the side of the road.</p>
+    <p>The barracks were wooden huts, smaller than he'd pictured, with rows of bunks like shelves in a warehouse. He stood in the doorway of one and tried to fit three grown men on one of those boards, and couldn't, and then understood that by the end they wouldn't have been grown men's size. He felt sick. He asked Mr Lewin which hut had been his. Mr Lewin pointed at a gap in the trees where there wasn't a hut any more.</p>
+    <p>The gas chamber was a little brick building. That was the worst thing, how little it was. You could have mistaken it for a pump house. Mr Lewin stopped in front of it and looked at the chimney for a long time. Then he said, in the tone of somebody mentioning the weather, "I was very lucky, you know. I was a strong boy."</p>
+    <p>There wasn't a reply to that, and Alexander didn't try to make one. He put his hand on the old man's shoulder for a moment instead. Mr Lewin let it stay there.</p>
+    <p>The wreath. Then a candle in red glass, the kind on every grave in Poland, lit with somebody's lighter and handed to him. He crouched to set it on the stone and his hand shook, and he was furious with it for shaking in front of the cameras. He stayed down until it stopped.</p>
+    <p class="say">"You'll tell them," Mr Lewin said when he stood up, and held on to his hand. "When I'm not here to."</p>
+    <p class="say">"I will. I promise you."</p>
+    <p>Back in August, he'd written to both of them through the Holocaust Educational Trust and asked whether, if they were willing, he might take their photographs while they were there, for himself and not for the press. They could say no and it wouldn't change anything. Mr Lewin had written back in green ink: yes, provided he could keep his coat on. Leah had said yes on the phone and then rung back twice to check what she should wear.</p>
+    <p>So in the little room the museum lent them afterwards, away from the rope, he asked again before he took the Leica out of Thom's bag, because a letter in August wasn't the same as this morning. They both said yes. Leah took her glasses off, put them back on, then took them off again. He shot the roll slowly, talking to them the whole time, about her grandchildren and Mr Lewin's cat. He knew the frame he wanted before he'd wound on: Mr Lewin turning to say something to Leah, and Leah laughing with her head back, the pines in the window behind her.</p>
+    <p>Nobody spoke in the car. Around the turning for Stegna he got his phone out, looked at it, put it away. The film was in his jacket pocket. He kept his hand over it most of the way to the airport.</p>
+  </div></div>
+</section>
+
+<section class="front" data-g="6" data-name="Stutthof"><div class="wrap">
+  <div class="head"><h2>Stutthof <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Mon 16 October · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Dziennik Bałtycki</div><div class="date">WTOREK, 17 PAŹDZIERNIKA 2017 · GDAŃSK</div>
+      <h3>Świeca na kamieniu</h3><div class="deck">Następca brytyjskiego tronu w Muzeum Stutthof · Towarzyszyli mu byli więźniowie</div>
+      <p>Nie było przemówienia. Było zapalenie znicza i długa cisza. Ksiądz z Sztutowa powiedział nam: „To był bardzo polski gest".</p>
+      <p style="font-style:italic;color:#555">A candle on the stone. There was no speech. There was a lit candle and a long silence. The priest from Sztutowo told us: "It was a very Polish gesture."</p></article>
+    <article class="clip c2"><div class="mast">The Daily Telegraph</div><div class="date">TUESDAY 17 OCTOBER 2017 · 1</div>
+      <h3>'You'll tell them when I'm not here to'</h3><div class="deck">Survivor's plea to Prince at Nazi camp where 65,000 died</div><div class="by">By Gordon Rayner-Hill in Sztutowo</div>
+      <p>Henryk Lewin, 89, who survived Stutthof and a death march as a teenager, asked Prince Alexander to carry on telling his story after he was gone. The Prince, who did not speak to reporters, was seen to promise that he would.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#fff;color:#111;font:700 26px var(--press);border-bottom:1px solid #ccc">Daily Mail</div><div class="h" style="font:700 22px/1.12 Georgia,serif;text-transform:none">The promise</div><div class="s" style="font:13px Georgia,serif;color:#444">Prince's emotional final day in Poland · Pages 8–9</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>Holocaust Educational Trust</b> statement: "We are grateful to His Royal Highness for travelling with Henryk and Leah, and for the care he showed them throughout."</article>
+    </div>
+    <article class="clip op c4"><div class="kick">The Guardian · Editorial</div><h3>The Guardian view on a royal at Stutthof: silence, done well</h3>
+      <p style="margin-top:8px">We are not natural admirers of the hereditary principle. But there is a kind of public duty that only the long-lived and the unelected can do, which is to stand in a place like Stutthof and be quiet for long enough. Yesterday it was done well.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">DIE WELT · KURZ</div>
+      <p style="font:14px/1.5 var(--body)">An dem Treffen mit Jugendlichen nahmen Schüler aus Gdańsk und aus Lübeck teil. Prinz Alexander fragte sie, was sie anderen erzählen würden. Eine Schülerin antwortete: „Alles."</p><p style="font:italic 13px/1.5 var(--body);color:#555">Students from Gdańsk and Lübeck took part in the meeting with young people. Prince Alexander asked them what they'd tell other people. One girl answered: "Everything."</p></article>
+  </div>
+</div></section>
+
+
+<section class="spread" data-g="6" data-name="Stutthof"><div class="wrap"><div class="grid">
+  <div class="card ig" style="max-width:520px"><div class="imgwrap" style="aspect-ratio:4/5;background:#2a2a2a;display:grid;place-items:center"><div style="color:#d8d2c4;font:italic 15px/1.5 var(--display);padding:30px;text-align:center">[black-and-white film portrait]<br>Henryk Lewin turning to Leah Mandel, mid-laugh, by the window at the Stutthof Museum. Pines behind.</div></div><div class="who"><div class="av" style="background:#303a3e">K</div><div><b>kensingtonpalace</b> ✔<small>Muzeum Stutthof, Sztutowo</small></div></div><b>412,880 likes</b><br>Henryk and Leah, Stutthof, October 2017. Henryk was sixteen when he arrived there and Leah was fourteen. I took this after they'd walked me round it. They asked me to keep telling their story when they can't, and this is part of keeping that promise. — A #HolocaustMemorialDay
+    <div class="cm"><b>hmd_trust</b> Thank you, sir. 🕯️</div><div class="cm"><b>katarzyna.gdansk</b> Pamiętamy. We remember. 🇵🇱🇬🇧</div><div class="cm"><b>sarahjwilliams</b> did he take this himself??</div><div class="cm"><b>emily.p.r</b> @sarahjwilliams yes he's been doing photography for years, it was on film</div><div class="cm"><b>leahs.granddaughter</b> my booba has this printed by her bed. she says he made her look like her mother ❤️</div><div class="cm" style="color:#888">27 JANUARY 2018</div></div>
+  <div class="stack">
+    <div class="whybox"><b>Three months later</b>He develops the roll himself in the darkroom at Edgeworth in November and sits on the prints over Christmas. He doesn't show them to Charlie until January. On Holocaust Memorial Day it goes up on the Kensington Palace account with a caption he writes himself and signs "A", with Henryk's and Leah's agreement. Charlie posts it. Buckingham Palace wasn't asked beforehand.</div>
+    <div class="whybox"><b>And later</b>The rest of the roll stays in a box under the desk at Edgeworth for years. Some of those frames end up in his photography book.</div>
+    <div><p class="pull">"It's a very good photograph, and he took it himself, on film."</p><cite>Chris Jackson, royal photographer · to the Press Gazette, Jan 2018</cite></div>
+  </div>
+</div></div></section>
+
+<!-- ============ HOME: WIZZ ============ -->
+<section class="leg" id="wizz" data-g="7" data-name="Home"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b style="color:#c6007e">Wizz Air</b> · Boarding pass</span><span>WIZZ Priority</span></div>
+      <div class="route">GDN <i></i> LTN</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">W6 1311</span></div>
+      <div><small>Date</small><span class="v">16 OCT 2017</span></div>
+      <div><small>Seat</small><span class="v">3A (3B–3C, 4A–4C blocked)</span></div>
+      <div><small>Departs</small><span class="v">14:20</span></div>
+      <div><small>Arrives</small><span class="v">15:35 BST</span></div>
+      <div><small>Seen off by</small><span class="v">Voivode of Pomerania</span></div>
+      <div><small>Distance</small><span class="v">828 mi</span></div>
+    </div>
+    <div class="stub"><small>Leg 7 of 7</small><div class="city">Luton</div><small>Charlie's idea · Marianne's reluctant yes</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+  <p style="max-width:640px;margin:26px auto 0;color:#cdd1cf;font:italic 400 17px/1.6 var(--display);text-align:center">Gdańsk has no British Airways. It has Wizz to Luton, which is how a good share of the Poles in Britain go home and come back. Charlie pitched it in August. Marianne said it was a stunt. Charlie said yes, and a good one, and won.</p>
+</div></section>
+
+<section class="drab" data-g="7" data-name="Home"><div class="wrap"><div class="in">
+  <div class="label">MON 16 OCT · 14.41 · ROW 3, SOMEWHERE OVER POMERANIA</div>
+  <p>The plane smelled of coconut sun cream and somebody's hot sandwich. It was full and it was loud. There were students going back for term. Builders in work boots and fleeces, heading for sites in Bedfordshire. A hen party from Gdynia in matching pink sashes, already two vodkas into the afternoon. Two rows back a baby had made up its mind about the whole enterprise before they'd left the ground.</p>
+  <p>Miranda had bought the seats around him and sat in 3C with her arms folded, looking at everybody in turn. The press had their own block at the back. They'd been told no questions, and they were obeying, more or less, because they had the picture already: the Voivode of Pomerania shaking his hand at the foot of the steps, and Prince Alexander turning at the top to wave, framed by the purple-and-pink door of a Wizz Air Airbus.</p>
+  <p>He had meant to sleep. He put his head against the window and watched Poland go flat and brown and patchy through gaps in the cloud. His body felt like it had been driven over. Seven days of standing. Seven days of other people's faces. The morning sat in his chest like something swallowed wrong, and the film sat in his pocket, and he wanted badly to be alone in a room with the door shut.</p>
+  <p class="say">"Przepraszam. Excuse me. Sorry. Your Highness."</p>
+  <p>A woman across the aisle in 4D. Sixty, a cardigan, reading glasses on a chain. Miranda half rose. He shook his head at her.</p>
+  <p>Her mother was in Gdynia, the woman said. Ninety. She'd watched him on television that morning, at the camp, and cried, and told her daughter to say thank you if she saw him. And, if it wasn't too much, a photograph. For her mother. She was sorry. He was tired, she could see.</p>
+  <p>He was tired. He'd have paid real money to be left alone with the window. He leant across the aisle anyway. She held her phone at arm's length and took four photographs, all of them blurred, so he took the phone off her and held it up high the way Georgie did and took a fifth one himself, in focus.</p>
+  <p class="say">"Your accent is very bad," she said kindly, when he said thank you in Polish.</p>
+  <p>The trolley came. He bought a coffee and a Twix with his own card. The girl serving didn't recognise him, or pretended superbly. For about thirty seconds, handing over the card and waiting for the machine, he was nobody at all, and it was the best thirty seconds of the tour.</p>
+</div></div></section>
+
+<section class="front" id="homecoming" data-g="7" data-name="Home" style="background:var(--frame-deep);background-image:none;color:#fff"><div class="wrap">
+  <div class="head"><h2 style="color:#fff">Prince of <em style="color:var(--gold)">Wizz</em></h2><div class="eyebrow" style="color:var(--gold)">Tue 17 October · The coverage</div></div>
+  <div class="board">
+    <div class="c1" style="transform:none;display:grid;gap:22px">
+      <article class="clip tab"><div class="m" style="background:#D7141A">The Sun</div><div class="h">Prince of Wizz!</div><div class="s">Royal flies budget to Luton · Bought his own Twix (£1.50) · Hen party: "He's gorgeous" · Pages 4 &amp; 5</div></article>
+      <article class="clip tab rot-b"><div class="m" style="background:#E30613">FAKT</div><div class="h">Książę leciał z nami!</div><div class="s">Polacy z samolotu do Luton: „Normalny facet" · Str. 3</div><div class="s" style="font-weight:400;font-style:italic">The prince flew with us! Poles on the Luton flight: "A normal bloke"</div></article>
+    </div>
+    <article class="clip c2" style="margin-top:0"><div class="mast">Gazeta Wyborcza</div><div class="date">WTOREK, 17 PAŹDZIERNIKA 2017</div>
+      <h3>Tanie linie, drogi gest</h3><div class="deck">Cheap airline, costly gesture</div>
+      <p>Mógł wrócić samolotem rządowym. Wrócił z budowlańcami, studentami i wieczorem panieńskim z Gdyni. Wiedział dokładnie, co robi, i nikt w Polsce nie ma mu tego za złe.</p>
+      <p style="font-style:italic;color:#555">He could have gone home on a government plane. He went home with builders, students and a hen party from Gdynia. He knew exactly what he was doing, and nobody in Poland holds it against him.</p></article>
+    <div class="c3" style="margin-top:0;display:grid;gap:22px">
+      <article class="clip op"><div class="kick">The Guardian · Opinion</div><h3 style="font-size:19px">A budget flight is a gesture. It is not a policy</h3><p style="font-size:13px;margin-top:6px">Sitting next to Polish builders for two hours does nothing for their residency rights. It does make a nice photograph.</p></article>
+      <div class="card"><div class="who"><div class="av" style="background:#c6007e">W</div><div><b>Wizz Air UK</b><small>@wizzair · 16 Oct 2017</small></div></div>We'd like to thank all our passengers on today's Gdańsk–Luton flight. All of them. Every single one. 👑💜<div class="act">8,804 Retweets · 31K Likes</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="noise" data-g="7" data-name="Home"><div class="wrap">
+  <div class="head"><h2>The flight home online</h2><p>Instagram, Twitter and Reddit, 16 October.</p></div>
+  <div class="masonry">
+    <div class="card ig"><div class="who"><div class="av" style="background:#EC407A">M</div><div><b>martyna.hen.do</b><small>Gdańsk Lech Wałęsa Airport</small></div></div><b>4,903 likes</b><br>wieczór panieński roku 💍👑 Natalia wychodzi za mąż w sobotę a i tak wszyscy patrzyli na niego 😂😂 #wizzair #luton #ksiazealeksander
+      <div class="cm"><b>natalia_k</b> Najlepszy lot w życiu 😂</div><div class="cm"><b>martyna.hen.do</b> @natalia_k był bardzo miły dla wszystkich</div><div class="cm" style="font-style:italic;color:#888">Best flight of my life · He was very nice to everyone</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#5D4037">J</div><div><b>Jo Pemberton</b><small>@jopemb · 16 Oct 2017</small></div></div>the heir to the throne just landed at LUTON. on WIZZ. he's going to have to queue for the car park bus like the rest of us<div class="act">5,120 Retweets · 22K Likes</div><div class="reply">↳ my sister was on it, says he was off the plane first and into a car on the tarmac. so no</div></div>
+    <div class="rd"><div class="sub">r/unitedkingdom <span>· u/beds_and_breakfast · 6h</span></div><h4>Prince Alexander flew Wizz Air from Gdańsk to Luton. Thoughts?</h4>
+      <div class="cm"><div class="u"><b>luton_lad_93</b> · 6h</div>First time anyone's voluntarily come to Luton in years. Respect.<div class="pts">⬆ 4.4k</div></div>
+      <div class="cm"><div class="u"><b>republic_now</b> · 6h</div>PR stunt, and taxpayers still paid for his security to fly with him<div class="pts">⬆ 1.0k</div>
+        <div class="cm"><div class="u"><b>quietly_unbothered</b> · 5h</div>cheaper than the RAF jet though?<div class="pts">⬆ 1.9k</div></div></div>
+      <div class="cm"><div class="u"><b>polishgirl_in_mk</b> · 5h</div>my mum was on that flight and said he was quiet, mostly looked out of the window, and was polite to the people who asked for photos. she was quite impressed<div class="pts">⬆ 640</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#00695C">D</div><div><b>Dorota</b><small>@dorota_gdynia · 16 paź 2017</small></div></div>Moja mama ma 90 lat i oglądała dziś rano księcia w Stutthofie. Spotkałam go w samolocie do Luton i zrobił nam zdjęcie dla niej. Bardzo się ucieszyła.<div class="act">1 204 podanych dalej · 8 900 polubień</div><div class="reply">↳ <i>My mum is 90 and watched the prince at Stutthof this morning. I met him on the plane to Luton and he took a photo of us for her. She was very happy.</i></div></div>
+  </div>
+</div></section>
+
+<section class="phones" data-g="7" data-name="Home"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">His phone · Mon 16 October · Luton, then the M1</div><h2 style="margin-top:8px">Texts and calls</h2></div><p>Wheels down at 15:31, then the M1 to Kensington Palace. Georgie's at her cottage in Barlavington. Three days to her birthday and the box is in Thom's bag.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>15:52</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 09:12</div>
+        <div class="bub in">thinking about you this morning ❤️ hope it goes ok xx</div>
+        <div class="ts">15:44</div>
+        <div class="bub out">Landed. Luton is exactly as advertised.</div>
+        <div class="bub in">just seen the photo of you waving from the top of the steps of a bright PINK plane on the bbc app 😂😂😂 i've been sat in the co-op car park crying laughing for five minutes</div>
+        <div class="bub out">It's purple, actually. And it was a very nice plane. I had a Twix.</div>
+        <div class="bub in">of course you are 😂 how was this morning? you don't have to tell me now xx</div>
+        <div class="bub out">It was a beautiful place, which made it worse somehow. I'll tell you about it when I see you. Not by text.</div>
+        <div class="bub in">ok ❤️ are you at kp tonight?</div>
+        <div class="bub out">KP. Bath, takeaway, bed. I'm dead on my feet. I'll ring you once I'm horizontal.</div>
+        <div class="bub in">ring me!! and thursday you're coming down here and i'm doing shepherd's pie before the pub bc you'll be starving 🥧</div>
+        <div class="bub out">I'll be in the car to Barlavington the minute I'm out of the Palace. Save me the crispy bits.</div>
+        <div class="bub in">also the mail has a photo of you buying something in an amber shop 👀 just mentioning it!!</div>
+        <div class="bub out">Thursday, G.</div>
+        <div class="bub in">mmhmm 😏 go have your bath. love you xx</div>
+        <div class="bub out">Love you. Thursday.</div>
+      </div>
+    </div></div>
+    <div class="phone"><div class="screen recents">
+      <div class="sb"><span>17:58</span><span>●●●</span></div>
+      <h3>Recents</h3>
+            <div class="call"><div class="n"><b>Charlie</b><small>mobile · 3 min</small></div><div class="t">16:02</div></div>
+      <div class="call"><div class="n"><b>Caro</b><small>mobile · 9 min</small></div><div class="t">15:58</div></div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ============ AFTER ============ -->
+<section class="after" id="after" data-g="7" data-name="After the tour"><div class="wrap">
+  <div class="eyebrow">After the tour</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">After the tour</h2>
+  <div class="grid">
+    <div class="body">
+      <p>The German coverage was small and polite, and mostly buried under the coalition talks. The Polish coverage was much bigger, split along the usual lines, and mostly friendly. The Polish press asked about Brexit at every stop and never got an answer.</p>
+      <p>Inside the household the lessons are practical. He's at his best with people who've got nothing to gain from him, like the kids in Marzahn, Zbigniew and Mr Lewin, and his worst with rooms full of people who want something. Remembrance days need the morning after protected. Charlie's instinct for a photograph is very good, and needs a Marianne standing next to it.</p>
+      <p>He writes to Frau Brandt in Hamburg himself, by hand, and she writes back. The roll of film from Stutthof goes in his jacket pocket and then the darkroom at Edgeworth, and on Holocaust Memorial Day one frame of Henryk and Leah goes up on the Kensington Palace Instagram, captioned and signed by him. The Solidarność badge goes in the drawer. Mr Lewin comes to Kensington Palace in January for Holocaust Memorial Day, and they have tea, and Alexander keeps the promise for as long as anyone asks him to. On the 19th he drives down to Barlavington after a day at the Palace with her present and an amber pendant he hadn't planned on, and Georgie wears the pendant to dinner at the pub.</p>
+    </div>
+    <div class="stack" style="gap:40px">
+      <div class="cable"><div class="hd"><span class="cls">OFFICIAL-SENSITIVE</span><br>FM WARSAW · TO FCO · DIPTEL<br>SUBJECT: VISIT OF HRH THE PRINCE OF WALES TO POLAND, 13–16 OCT: ASSESSMENT</div>
+        <p>1. SUMMARY. A successful visit, warmly received across the political spectrum, which is unusual. The Brentford remark was widely and favourably reported. Government-aligned media were more critical but personally respectful.</p>
+        <p>4. The return by low-cost carrier was not this Embassy's idea, but we would not have advised against it. Polish coverage was unanimously positive. We judge it the most effective single moment of the visit.</p>
+        <p style="margin:0">HM AMBASSADOR</p></div>
+      <div class="note"><div class="from">MF · Household file · October 2017</div>Nothing scheduled the afternoon after a camp.<br>Write to people himself. He wants to.<br>Next time Charlie wants a budget airline, ask me first.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="next"><div class="wrap">
+  <a href="2017-usa.html"><small>← Previous in this collection</small><span>The United States</span></a>
+  <a href="2018-middle-east.html" style="text-align:right"><small>Next in this collection →</small><span>The Middle East</span></a>
+</div></section>
+
+<footer class="itin"><div class="wrap"><div class="lab" aria-hidden="true">Itinerary</div><nav aria-label="Itinerary, city by city">
+  <a href="#briefing" data-nav="briefing"><small>Oct 2017</small><span>Briefing</span></a>
+  <a href="#berlin" data-nav="berlin"><small>9–10 Oct</small><span>Berlin</span></a>
+  <a href="#heidelberg" data-nav="heidelberg"><small>11 Oct</small><span>Heidelberg</span></a>
+  <a href="#hamburg" data-nav="hamburg"><small>12 Oct</small><span>Hamburg</span></a>
+  <a href="#warsaw" data-nav="warsaw"><small>13–14 Oct</small><span>Warsaw</span></a>
+  <a href="#gdansk" data-nav="gdansk"><small>14–15 Oct</small><span>Gdańsk</span></a>
+  <a href="#stutthof" data-nav="stutthof"><small>16 Oct</small><span>Stutthof</span></a>
+  <a href="#wizz" data-nav="wizz"><small>16 Oct</small><span>Wizz to Luton</span></a>
+  <a href="#after" data-nav="after"><small>Oct</small><span>After</span></a>
+</nav></div></footer>
+
+<div class="mini" aria-hidden="true"><canvas id="mini" width="248" height="248"></canvas><br><b id="miniName">London</b></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="data/world.js"></script>
+<script>
+window.TOUR = {
+  stops: [
+    ["London", 51.47, -0.45, "British Airways"],
+    ["Berlin", 52.52, 13.40, "BA 982"],
+    ["Heidelberg", 49.40, 8.69, "Lufthansa + road"],
+    ["Hamburg", 53.55, 9.99, "Lufthansa"],
+    ["Warsaw", 52.23, 21.01, "LOT"],
+    ["Gda\u0144sk", 54.35, 18.65, "PKP Intercity"],
+    ["Stutthof", 54.33, 19.15, "Motorcade"],
+    ["Luton", 51.87, -0.37, "Wizz Air"]
+  ]
+};
+(function(){
+  const navs=[...document.querySelectorAll('.strip a,.itin a')];
+  const ids=[...new Set(navs.map(a=>a.dataset.nav))];
+  const secs=[...document.querySelectorAll('[data-g]')];
+  let curG=0,targetRot=null;
+  const miniName=document.getElementById('miniName');
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;
+    curG=+el.dataset.g; if(miniName)miniName.textContent=el.dataset.name||'';
+    let id=null,n=el;while(n){if(n.id&&ids.includes(n.id)){id=n.id;break}n=n.previousElementSibling}
+    const k=ids.indexOf(id);
+    navs.forEach(a=>{const i=ids.indexOf(a.dataset.nav);a.classList.toggle('on',i===k);a.classList.toggle('done',k>=0&&i<k)});
+    const cur=document.querySelector('.itin a.on');if(cur){const nv=cur.parentElement;const x=cur.offsetLeft-nv.clientWidth/2+cur.clientWidth/2;nv.scrollTo({left:x,behavior:'smooth'})}
+    setTarget(curG);
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>io.observe(s));
+
+  if(!window.d3||!window.topojson||!window.WORLD){return}
+  const land=topojson.merge(WORLD,WORLD.objects.countries.geometries);
+  const borders=topojson.mesh(WORLD,WORLD.objects.countries,(a,b)=>a!==b);
+  const S=TOUR.stops.map(s=>[s[2],s[1]]);
+  const C={sea:'#E4DED2',land:'#b9b2a2',border:'#E4DED2',route:'#8f363f',ghost:'#8f363f55',grat:'#D4CCBC',rim:'#8f363f'};
+  function make(id,scaleF,labels){
+    const cv=document.getElementById(id);if(!cv)return null;
+    const ctx=cv.getContext('2d'),W=cv.width;
+    const pr=d3.geoOrthographic().translate([W/2,W/2]).scale(W/2*scaleF).clipAngle(90);
+    const path=d3.geoPath(pr,ctx);
+    return function(r,upto){
+      pr.rotate(r);ctx.clearRect(0,0,W,W);
+      ctx.beginPath();path({type:'Sphere'});ctx.fillStyle=C.sea;ctx.fill();
+      ctx.beginPath();path(d3.geoGraticule10());ctx.strokeStyle=C.grat;ctx.lineWidth=W/700;ctx.stroke();
+      ctx.beginPath();path(land);ctx.fillStyle=C.land;ctx.fill();
+      ctx.beginPath();path(borders);ctx.strokeStyle=C.border;ctx.lineWidth=W/900;ctx.stroke();
+      ctx.setLineDash([W/90,W/150]);
+      ctx.beginPath();path({type:'LineString',coordinates:S});ctx.strokeStyle=C.ghost;ctx.lineWidth=W/320;ctx.stroke();
+      ctx.setLineDash([]);
+      if(upto>0){ctx.beginPath();path({type:'LineString',coordinates:S.slice(0,upto+1)});ctx.strokeStyle=C.route;ctx.lineWidth=W/220;ctx.stroke()}
+      const cen=[-r[0],-r[1]];
+      TOUR.stops.forEach((s,i)=>{const p=[s[2],s[1]];if(d3.geoDistance(p,cen)>1.45)return;const xy=pr(p);
+        ctx.beginPath();ctx.arc(xy[0],xy[1],W/(i===upto?60:120),0,7);ctx.fillStyle=i<=upto?C.route:'#7d776a';ctx.fill();
+        if(labels&&i!==6&&i!==7){ctx.font=`600 ${W/36}px Hanken Grotesk, sans-serif`;ctx.fillStyle='#25313a';ctx.fillText(s[0],xy[0]+W/60,xy[1]+(i===1||i===2?W/30:W/150))}});
+      ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle=C.rim;ctx.lineWidth=W/260;ctx.stroke();
+    };
+  }
+  const big=make('bigglobe',2.4,true), mini=make('mini',2.0,false);
+  if(big)big([-10,-52.5],7);
+  let rot=[-10,-52.5];
+  function rotFor(g){const s=TOUR.stops[g];if(g===0||g===7)return[-10,-52.5];return[-s[2],-s[1]]}
+  function setTarget(g){targetRot=rotFor(g)}
+  setTarget(0);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function tick(){if(targetRot){if(reduce){rot=targetRot.slice()}else{rot=[rot[0]+(targetRot[0]-rot[0])*.06,rot[1]+(targetRot[1]-rot[1])*.06]}}
+    mini&&mini(rot,curG);requestAnimationFrame(tick)})();
+})();
+</script>
+</body></html>

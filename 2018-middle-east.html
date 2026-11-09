@@ -1,0 +1,1337 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}
+/* photo slots: drop img/me-2018-XX.jpg into img/ and they appear */
+.ph{position:relative;background:#2c3128;color:#cfc6b2;overflow:hidden}
+.ph .lab{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:22px;font:12.5px/1.5 var(--mono);background:repeating-linear-gradient(135deg,#2c3128 0 14px,#30362b 14px 28px)}
+.ph .lab b{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+figure.photo{margin:0}
+figure.photo .ph{aspect-ratio:4/5;box-shadow:0 20px 40px #0003}
+figure.photo figcaption{margin-top:10px;font:italic 400 14px/1.4 var(--display);color:var(--muted)}
+.bleed .ph{position:absolute;inset:0;z-index:0}
+.bleed .ph .lab{justify-content:flex-start;padding-top:90px;opacity:.5}
+.film .ph{aspect-ratio:3/2}
+
+/* phones same height side by side */
+.phonerow{align-items:stretch}
+.phone{display:flex;flex-direction:column}
+.phone .screen{flex:1;min-height:640px}
+</style>
+<title>The Middle East, 2018</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&family=Special+Elite&display=swap">
+<style>
+/* Layout: the tour as a scrapbook. Each chapter = boarding pass → opener → programme card → loud spreads (corkboard, the noise) → quiet spreads (drabbles) → phone → kept ephemera. Palette from tours.css [data-tour="usa-2017"]. */
+:root{
+  --frame:#3c4538; --frame-deep:#232a21; --accent:#9c573a; --land:#cdb68e;
+  --paper:#f5f1e8; --paper-2:#EAE3D4; --ink:#25313a; --muted:#66717a; --rule:#D3C8B3;
+  --gold:#C39A55; --news:#FBF8F1; --white:#FFFFFF; --cork:#D7C9AC;
+  --display:'Playfair Display',Georgia,serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --press:'Old Standard TT',Georgia,serif;
+  --hand:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --type:'Special Elite','Courier New',monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--frame-deep)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 11px/1.2 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+
+/* bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--frame-deep);color:#E9E3D6}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:46px;font:500 11px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.bar .t{color:var(--gold);white-space:nowrap}
+.strip{flex:1;display:flex;justify-content:flex-end;gap:2px;overflow-x:auto;scrollbar-width:none}
+.strip a{padding:4px 8px;color:#a7ab98;white-space:nowrap;text-decoration:none;border-bottom:2px solid transparent}
+.strip a.on{color:#fff;border-color:var(--accent)}
+.strip a:focus-visible{outline:2px solid var(--gold)}
+
+/* cover */
+.cover{position:relative;color:#fff;background:var(--frame-deep);overflow:hidden}
+.cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#232a21f0 0%,#232a21b0 45%,#232a2120 75%),linear-gradient(0deg,#232a21 0%,transparent 40%)}
+.cover .in{position:relative;z-index:1;padding-block:110px 60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end}
+.cover h1{font:900 clamp(56px,10vw,138px)/.86 var(--display);letter-spacing:-.025em}
+.cover h1 em{font-weight:400;color:var(--gold)}
+.cover .dates{font:italic 400 24px var(--display);margin-top:16px}
+.dossier{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px;border-top:1px solid #ffffff40;padding-top:16px;max-width:640px}
+.dossier b{display:block;font:400 34px var(--display)}
+.dossier span{font:600 10px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#d9d3c4}
+.cover .cap{position:absolute;top:66px;right:max(16px,env(safe-area-inset-right,0px));z-index:1;background:#ffffff2a;backdrop-filter:blur(4px);padding:6px 10px;font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.globebig{aspect-ratio:1;max-width:360px;width:100%;margin-left:auto}
+.globebig canvas{width:100%;height:100%}
+
+/* briefing */
+.brief{padding-block:80px}
+.brief .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
+.lede{font:400 24px/1.5 var(--display)}
+.lede::first-letter{float:left;font:800 92px/.8 var(--display);color:var(--accent);padding:6px 10px 0 0}
+.brief .body p{font-size:16px;line-height:1.7;max-width:62ch}
+.brief .pullq{font:italic 400 30px/1.3 var(--display);color:var(--frame);border-left:3px solid var(--accent);padding-left:20px;margin:30px 0}
+.side{display:grid;gap:26px;position:sticky;top:70px}
+.box{background:var(--news);border:1px solid var(--rule);padding:20px 22px}
+.box h4{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.box p{font-size:14px;line-height:1.55}
+.manifest{font:13px/1.45 var(--mono);background:var(--white);border:1px solid var(--rule);padding:18px 20px;box-shadow:5px 6px 0 var(--paper-2);transform:rotate(.6deg)}
+.manifest h4{font:600 12px var(--mono);letter-spacing:.08em;border-bottom:1px dashed var(--rule);padding-bottom:8px;margin-bottom:10px}
+.manifest div{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:4px 0;border-bottom:1px dotted #e3dccd}
+.manifest div b{font-weight:500;color:var(--accent);font-size:11px;letter-spacing:.06em}
+.timeline{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--frame)}
+.timeline div{padding:14px 18px 0 0;position:relative}
+.timeline div::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.timeline b{display:block;font:400 22px var(--display);margin:10px 0 4px}
+.timeline p{font-size:13.5px;color:var(--muted)}
+
+/* memo */
+.memo{background:#FDFBF6;border:1px solid #d8d0bf;padding:30px 34px;font:15px/1.6 var(--type);color:#2a2a2a;box-shadow:0 18px 40px #0000001f;position:relative;transform:rotate(-.5deg);max-width:760px;margin:0 auto}
+.memo .hd{border-bottom:2px solid #2a2a2a;padding-bottom:10px;margin-bottom:16px;display:grid;gap:2px}
+.memo .hd b{font-weight:400;letter-spacing:.14em}
+.memo .stamp{position:absolute;top:22px;right:24px;border:3px solid var(--accent);color:var(--accent);padding:4px 10px;font:700 14px var(--body);letter-spacing:.18em;transform:rotate(6deg);opacity:.85}
+.memo ol{padding-left:22px;margin:0 0 14px}
+.memo li{margin-bottom:10px}
+.memo .hand{font:500 24px/1.2 var(--hand);color:#1f4a8a;margin-top:10px;transform:rotate(-2deg)}
+
+/* boarding pass */
+.leg{background:var(--frame);padding-block:34px}
+.leg.light{background:var(--paper-2)}
+.pass{display:grid;grid-template-columns:1fr 210px;max-width:860px;margin:0 auto;background:var(--news);color:var(--ink);border-radius:10px;box-shadow:0 18px 40px #0b16244d;font-family:var(--mono)}
+.leg:nth-of-type(odd) .pass{transform:rotate(-.6deg)}
+.leg:nth-of-type(even) .pass{transform:rotate(.5deg)}
+.pass .main{padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 18px;min-width:0}
+.pass .stub{padding:18px 20px;border-left:2px dashed var(--rule);display:grid;gap:10px;align-content:start}
+.pass .air{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px;font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--frame)}
+.pass .air b{color:var(--accent)}
+.pass .route{grid-column:1/-1;display:flex;align-items:center;gap:18px;font:400 44px/1 var(--display)}
+.pass .route i{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 11px);position:relative}
+.pass .route i::after{content:"✈";position:absolute;left:50%;top:-11px;font-size:16px;color:var(--accent);font-style:normal}
+.pass small{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.pass .v{font-size:14px}
+.pass .city{font:400 26px var(--display)}
+.bars{height:46px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.pass.road{grid-template-columns:1fr}
+.pass.road .main{grid-template-columns:repeat(3,1fr)}
+
+/* chapter opener */
+.open{padding-block:64px 40px}
+.open .grid{display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:end}
+.chapno{font:italic 400 120px/0.8 var(--display);color:transparent;-webkit-text-stroke:1px var(--accent)}
+.open h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em;margin-top:6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.meta b{color:var(--frame)}
+.why{font:400 19px/1.6 var(--display);max-width:58ch;margin-top:24px}
+.why em{color:var(--accent)}
+.open figure{margin:0}
+.open figure img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 20px 40px #0002}
+figcaption{font:600 10.5px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:10px}
+.bleed{position:relative;color:#fff;overflow:hidden;background:var(--frame-deep)}
+.bleed img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bleed::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#1c221be6 0%,#1c221bb3 45%,#1c221b20 75%),linear-gradient(0deg,#1c221bcc 0%,#1c221b00 50%)}
+.bleed .wrap{position:relative;z-index:2;padding-block:220px 54px}
+.bleed h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em}
+.bleed .chapno{-webkit-text-stroke-color:var(--gold)}
+.bleed .meta{color:#d9d3c4}.bleed .meta b{color:#fff}
+.bleed .why{color:#EDE6D8}.bleed .why em{color:var(--gold)}
+.bleed .eyebrow{color:var(--gold)}
+
+/* programme */
+.prog{margin-top:40px;display:grid;grid-template-columns:repeat(var(--n,4),1fr);background:var(--news);border:1px solid var(--rule);box-shadow:4px 6px 0 var(--paper-2)}
+.prog .day{padding:18px 18px 20px;border-right:1px solid var(--rule);min-width:0}
+.prog .day:last-child{border-right:0}
+.prog h4{margin:0 0 10px;font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.prog p{margin:0 0 9px;font-size:13.5px;line-height:1.45}
+.prog p span{display:block;font:500 11px var(--mono);color:var(--muted)}
+.prog .hot{background:#f1e3d0}
+.prog .off{background:repeating-linear-gradient(135deg,transparent 0 8px,#e9e1cf55 8px 9px)}
+
+/* drabble */
+.drab{background:var(--frame-deep);color:#E6DFD1;padding-block:90px}
+.drab .in{max-width:640px;margin:0 auto}
+.label{font:400 11px var(--mono);letter-spacing:.12em;color:var(--gold);display:flex;gap:14px;align-items:center;margin-bottom:30px}
+.label::after{content:"";flex:1;height:1px;background:#4c5646}
+.drab p{font:400 19px/1.75 var(--display)}
+.drab p.say{padding-left:1.2em}
+.quiet{position:relative;background:var(--ink);color:#EEE7DA;overflow:hidden}
+.quiet img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;filter:grayscale(.6)}
+.quiet .in{position:relative;max-width:620px;margin:0 auto;padding-block:120px}
+.quiet p{font:400 20px/1.75 var(--display)}
+.quiet .big{font:italic 400 64px/1 var(--display);color:var(--gold);margin:30px 0}
+
+/* two-up photo + stack */
+.spread{padding-block:80px}
+.spread .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start}
+.spread.flip .grid{grid-template-columns:1fr 1.35fr}
+.photo{margin:0}
+.pull{font:italic 400 30px/1.3 var(--display);color:var(--frame);margin:0 0 6px}
+.pull+cite{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-style:normal}
+.stack{display:grid;gap:22px;min-width:0}
+.whybox{border-top:2px solid var(--accent);padding-top:14px;font-size:14.5px}
+.whybox b{font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+
+/* platforms */
+.card{background:var(--white);border:1px solid #DDD5C4;border-radius:10px;padding:14px 16px;font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:#14171a;min-width:0}
+.card .who{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.card .who b{display:block;font-size:14px}
+.card .who small{color:#657786;font-size:12.5px}
+.card .act{color:#657786;font-size:12.5px;margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
+.card .reply{border-top:1px solid #eee;margin-top:8px;padding-top:6px;color:#3b4045;font-size:13px}
+.ig .imgwrap{margin:-14px -16px 10px;aspect-ratio:1;overflow:hidden;border-radius:10px 10px 0 0}
+.ig .imgwrap img{width:100%;height:100%;object-fit:cover}
+.ig .cm{font-size:13px;margin-top:4px}
+.ig .cm b{font-weight:600}
+.fbgrp{background:#fff;border-radius:8px;border:1px solid #dadde1;font:14px/1.4 system-ui,sans-serif;color:#1c1e21;overflow:hidden}
+.fbgrp .hd{background:#f0f2f5;padding:8px 14px;font-size:12px;color:#65676b;font-weight:600}
+.fbgrp .post{padding:12px 14px;border-top:1px solid #e4e6eb}
+.fbgrp .c{margin:8px 0 0 18px;padding:8px 10px;background:#f0f2f5;border-radius:14px;font-size:13px}
+.rd{background:#fff;border:1px solid #ccc;border-radius:8px;padding:12px 14px;font:13.5px/1.45 system-ui,sans-serif;color:#1c1c1c}
+.rd .sub{font-size:12px;color:#576f76;font-weight:600}
+.rd .sub span{font-weight:400}
+.rd h4{font:600 17px/1.3 system-ui,sans-serif;margin:6px 0 10px}
+.rd .cm{border-left:2px solid #E5EBEE;padding:2px 0 2px 12px;margin:10px 0 0}
+.rd .u{font-size:12px;color:#576f76}
+.rd .u b{color:#1c1c1c}
+.rd .pts{font-size:12px;color:#576f76;margin-top:3px}
+.yt{background:#0f0f0f;color:#f1f1f1;border-radius:10px;overflow:hidden;font:13.5px/1.45 system-ui,sans-serif}
+.yt .vid{aspect-ratio:16/9;background:#000 center/cover;position:relative}
+.yt .vid span{position:absolute;right:8px;bottom:8px;background:#000c;font-size:12px;padding:1px 5px;border-radius:4px}
+.yt .t{padding:10px 12px 4px;font-weight:600;font-size:15px}
+.yt .c{padding:6px 12px;color:#ddd}
+.yt .c b{color:#fff;font-size:12.5px;display:block}
+.dish{background:#E8E3D4;border:1px solid #9C9277;font:12.5px/1.45 Verdana,Geneva,sans-serif;color:#222}
+.dish .bar2{background:#5B4E37;color:#F2E9CF;padding:5px 10px;font-weight:700;font-size:11.5px}
+.dish .p{display:grid;grid-template-columns:104px 1fr;border-top:1px solid #B6AC8F}
+.dish .p .l{background:#DAD3BF;padding:8px;font-size:11px;border-right:1px solid #B6AC8F}
+.dish .p .l b{color:#5B2F1A;font-size:12px}
+.dish .p .r{padding:8px 10px;min-width:0}
+.dish .when{font-size:10.5px;color:#6b604a;border-bottom:1px dotted #B6AC8F;margin-bottom:6px;padding-bottom:3px}
+.dish .q{background:#F4F0E4;border:1px dashed #9C9277;padding:6px 8px;margin-bottom:6px;font-size:11.5px}
+.dish .sig{border-top:1px solid #B6AC8F;margin-top:8px;padding-top:4px;font-size:10.5px;color:#6b604a;font-style:italic}
+.tb{background:#001935;color:#fff;border-radius:6px;padding:14px 16px;font:14px/1.5 'Helvetica Neue',Arial,sans-serif}
+.tb .n{font-weight:700;margin-bottom:8px}
+.tb .tags{color:#9DA9B8;font-size:12.5px;margin-top:10px}
+.tb .notes{border-top:1px solid #ffffff22;margin-top:10px;padding-top:8px;font-size:12.5px;color:#C9D2DC}
+.web{background:#fff;border:1px solid #ddd;border-radius:4px;overflow:hidden;font:14px/1.45 Georgia,serif;color:#222}
+.web .m{padding:8px 14px;font:800 15px var(--body);letter-spacing:.04em;color:#fff}
+.web .b{padding:12px 14px}
+.web h4{font:700 19px/1.2 Georgia,serif;margin-bottom:6px}
+.web small{display:block;color:#888;font:12px var(--body);margin-top:6px}
+.etsy{background:#fff;border:1px solid #e1e3df;border-radius:12px;overflow:hidden;font:14px/1.4 system-ui,sans-serif;color:#222}
+.etsy .shirt{aspect-ratio:4/3;background:#2B2B2B;display:grid;place-items:center;color:#fff;font:900 30px/1 var(--body);text-align:center;letter-spacing:.02em;padding:20px}
+.etsy .shirt small{display:block;font:500 13px var(--body);color:#ccc;margin-top:10px;letter-spacing:.2em}
+.etsy .b{padding:10px 14px}
+.etsy .pr{font-weight:700;font-size:16px}
+.etsy .st{color:#595959;font-size:12.5px}
+
+/* corkboard */
+.front{background:var(--cork);background-image:radial-gradient(#0000000d 1px,transparent 1.5px);background-size:7px 7px;padding-block:80px 60px;overflow:hidden}
+.front .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.front h2,.noise h2,.phones h2,.eph h2{font:800 clamp(38px,5.5vw,72px)/.95 var(--display);letter-spacing:-.015em}
+.front h2 em{font-weight:400;color:var(--accent)}
+.board{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;align-items:start}
+.clip{background:var(--news);padding:16px 18px 18px;box-shadow:0 2px 0 #0000000a,0 12px 26px #3a2a1233;font-family:var(--press);color:#1a1a1a;position:relative;min-width:0}
+.clip::before{content:"";position:absolute;top:-9px;left:50%;width:58px;height:20px;margin-left:-29px;background:#f6efd9cc;transform:rotate(-3deg);box-shadow:0 1px 2px #0002}
+.clip .mast{font:700 26px/1 var(--press);text-align:center;border-bottom:3px double #222;padding-bottom:6px;margin-bottom:4px}
+.clip .date{font:400 10px var(--mono);text-align:center;letter-spacing:.08em;border-bottom:1px solid #222;padding-bottom:4px;margin-bottom:10px}
+.clip h3{font:700 26px/1.08 var(--press);margin-bottom:6px}
+.clip .deck{font:italic 400 14px/1.35 var(--press);margin-bottom:10px;color:#333}
+.clip p{font-size:13.5px;line-height:1.45;margin:0 0 8px}
+.clip .by{font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.clip img{margin-bottom:10px}
+.tab{background:#fff;padding:0}
+.tab .m{color:#fff;padding:8px 12px;font:italic 900 28px/1 Georgia,serif}
+.tab .h{font:900 44px/.92 Impact,'Arial Narrow Bold','Arial Narrow',sans-serif;padding:10px 12px 4px;text-transform:uppercase}
+.tab .s{font:700 13px/1.25 Arial,sans-serif;padding:0 12px 12px}
+.tab img{margin:0}
+.op{background:#fff}
+.op .kick{font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#C70000;margin-bottom:6px}
+.op h3{font:700 24px/1.12 Georgia,serif}
+.c1{grid-column:1/6;transform:rotate(-1.4deg)}
+.c2{grid-column:6/10;transform:rotate(.9deg);margin-top:40px}
+.c3{grid-column:10/13;display:grid;gap:22px;margin-top:10px}
+.c4{grid-column:2/7;transform:rotate(.6deg)}
+.c5{grid-column:7/12;transform:rotate(-.8deg)}
+.rot-a{transform:rotate(2deg)}.rot-b{transform:rotate(-1.8deg)}
+.chyron{margin-top:40px;color:#fff;display:grid;grid-template-columns:auto 1fr;align-items:stretch;overflow:hidden;box-shadow:0 10px 24px #0004}
+.chyron .lab{padding:12px 16px;font:800 14px var(--body);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.chyron .tk{min-width:0;overflow:hidden;white-space:nowrap;display:flex;align-items:center}
+.chyron .tk span{display:inline-block;padding-left:100%;animation:tick 34s linear infinite;font:600 14px var(--body);letter-spacing:.04em;text-transform:uppercase}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* noise */
+.noise{padding-block:80px}
+.noise .head,.phones .head,.eph .head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.noise .head p{max-width:42ch;color:var(--muted);margin:0}
+.masonry{columns:3 300px;column-gap:20px}
+.masonry>*{break-inside:avoid;margin-bottom:20px}
+
+/* phones */
+.phones{background:var(--frame);padding-block:90px;color:#EAE3D5}
+.phones h2{color:#fff}
+.phones .head p{max-width:52ch;color:#c4c3b2;margin:0}
+.phonerow{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:start}
+.phone{background:#0B0B0D;border-radius:44px;padding:12px;box-shadow:0 30px 60px #0008;max-width:360px;width:100%;margin:0 auto}
+.screen{background:#fff;border-radius:34px;overflow:hidden;color:#111;font:15px/1.35 -apple-system,'SF Pro Text',system-ui,sans-serif}
+.sb{display:flex;justify-content:space-between;padding:12px 26px 6px;font-weight:600;font-size:13px}
+.thd{text-align:center;padding:4px 0 10px;border-bottom:1px solid #e5e5ea}
+.thd .pic{width:44px;height:44px;border-radius:50%;margin:0 auto 4px;background:#C9B79C;display:grid;place-items:center;color:#fff;font-weight:600}
+.thd small{font-size:11px;color:#8e8e93}
+.msgs{padding:10px 12px 18px;display:flex;flex-direction:column;gap:3px}
+.ts{text-align:center;font-size:11px;color:#8e8e93;margin:10px 0 6px}
+.bub{max-width:78%;padding:7px 12px;border-radius:18px;font-size:14.5px;line-height:1.3}
+.bub.in{align-self:flex-start;background:#E9E9EB}
+.bub.out{align-self:flex-end;background:#0A84FF;color:#fff}
+.bub.shot{padding:4px}
+.bub.shot div{width:170px;aspect-ratio:9/12;border-radius:14px;background:#223 center/cover;position:relative;overflow:hidden}
+.bub.shot div span{position:absolute;left:0;right:0;bottom:0;background:#c00;color:#fff;font:700 9px system-ui;padding:4px 6px;text-transform:uppercase}
+.recents h3{font:700 30px system-ui;padding:6px 18px}
+.call{display:flex;align-items:center;gap:10px;padding:9px 18px;border-bottom:1px solid #eee}
+.call .n{flex:1;min-width:0}
+.call .n b{display:block;font-weight:600;font-size:15px}
+.call .n small{color:#8e8e93;font-size:12.5px}
+.call.miss b{color:#FF3B30}
+.call .t{color:#8e8e93;font-size:13px}
+.vm{margin:14px;background:#F2F2F7;border-radius:14px;padding:12px 14px}
+.vm .top{display:flex;justify-content:space-between;font-size:12.5px;color:#8e8e93;margin-bottom:6px}
+.vm .top b{color:#111;font-size:14.5px}
+.vm p{margin:0;font-size:13.5px;color:#333}
+.vm p em{color:#8e8e93;font-size:11.5px;display:block;margin-top:6px;font-style:normal}
+.phonenote{font:400 19px/1.7 var(--display);color:#E6DFD1;max-width:44ch}
+.phonenote .label{color:var(--gold)}
+
+/* ephemera */
+.eph{padding-block:80px 60px}
+.ephrow{display:grid;grid-template-columns:repeat(var(--n,3),1fr);gap:34px;align-items:center}
+.menu{background:var(--news);border:1px solid var(--rule);padding:30px 26px;text-align:center;font-family:var(--display);transform:rotate(-2deg);box-shadow:0 14px 30px #0002}
+.menu .crest{font:600 11px var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.menu h3{font:italic 400 24px var(--display);margin-bottom:4px}
+.menu .d{font:400 12px var(--body);letter-spacing:.1em;color:var(--muted);margin-bottom:18px}
+.menu p{margin:0 0 12px;font-size:15px;line-height:1.4}
+.menu small{display:block;font:italic 13px var(--display);color:var(--muted)}
+.menu .rule{width:40px;height:1px;background:var(--gold);margin:16px auto}
+.place{background:#fff;border:1px solid var(--rule);padding:22px;transform:rotate(1.5deg);box-shadow:0 12px 26px #0002;text-align:center}
+.place .fold{font:italic 400 28px var(--display);color:var(--frame)}
+.badge{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px #0002;transform:rotate(-1deg);max-width:270px;margin:0 auto;border:1px solid #ddd}
+.badge .t{color:#fff;padding:12px 14px;font:700 13px var(--body);letter-spacing:.12em;text-transform:uppercase;background:#1D1D1D}
+.badge .b{padding:16px 14px;font:13px var(--body)}
+.badge .b big{display:block;font:800 30px/1.05 var(--body);color:var(--accent);letter-spacing:.02em}
+.badge .b small{display:block;color:var(--muted);margin-top:6px;font:11px var(--mono)}
+.badge .hole{width:40px;height:8px;border-radius:4px;background:var(--paper);border:1px solid #ccc;margin:10px auto 0}
+.hanger{width:200px;margin:0 auto;background:#2E2A26;color:#E8DCC2;border-radius:14px 14px 6px 6px;padding:70px 18px 26px;text-align:center;position:relative;transform:rotate(3deg);box-shadow:0 14px 30px #0003}
+.hanger::before{content:"";position:absolute;top:18px;left:50%;width:62px;height:62px;margin-left:-31px;border-radius:50%;background:var(--paper)}
+.hanger b{display:block;font:italic 400 22px var(--display);color:#fff;margin-bottom:8px}
+.hanger small{font:600 9.5px var(--body);letter-spacing:.24em;text-transform:uppercase}
+.receipt{background:#fff;width:230px;margin:0 auto;padding:18px 16px 26px;font:12px/1.5 var(--mono);color:#333;box-shadow:0 12px 26px #0002;transform:rotate(-2.5deg);clip-path:polygon(0 0,100% 0,100% 96%,95% 100%,90% 96%,85% 100%,80% 96%,75% 100%,70% 96%,65% 100%,60% 96%,55% 100%,50% 96%,45% 100%,40% 96%,35% 100%,30% 96%,25% 100%,20% 96%,15% 100%,10% 96%,5% 100%,0 96%)}
+.receipt .c{text-align:center}
+.receipt .r{display:flex;justify-content:space-between}
+.receipt hr{border:0;border-top:1px dashed #999;margin:8px 0}
+.prog-card{background:#0F3B2E;color:#F1E7CF;padding:24px 22px;text-align:center;transform:rotate(2deg);box-shadow:0 14px 30px #0003;border:6px double #C9A961}
+.prog-card h3{font:italic 400 26px var(--display);margin:6px 0}
+.prog-card .sc{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:16px 0 6px;font:700 13px var(--body);letter-spacing:.1em;text-transform:uppercase}
+.prog-card .sc big{font:400 40px var(--display)}
+.prog-card small{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:#C9A961}
+.note{background:#FFFDF4;padding:26px 24px;font:500 23px/1.35 var(--hand);color:#1f3f7a;box-shadow:0 14px 30px #0002;transform:rotate(-1.5deg);background-image:repeating-linear-gradient(0deg,transparent 0 33px,#c9d7ee 33px 34px);max-width:440px;margin:0 auto}
+.note .from{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cable{background:#fff;border:1px solid #ccc;padding:24px 26px;font:13.5px/1.55 var(--mono);color:#222;box-shadow:0 14px 30px #0002;transform:rotate(.8deg)}
+.cable .hd{border-bottom:1px solid #222;padding-bottom:8px;margin-bottom:12px;font-size:12px}
+.cable .cls{color:var(--accent);font-weight:500;letter-spacing:.2em}
+
+/* film strip */
+.film{background:#111;padding:22px 0;display:flex;gap:14px;overflow-x:auto;position:relative}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#111 0 10px,#e8e2d2 10px 18px,#111 18px 28px);opacity:.5}
+.film::before{top:5px}.film::after{bottom:5px}
+.film figure{margin:0;flex:0 0 min(46vw,520px)}
+.film figcaption{color:#aaa;font:11px var(--mono);letter-spacing:.08em;text-transform:none}
+.filmwrap{padding-block:60px;background:#111;color:#ddd}
+.filmwrap .wrap>p{font:400 18px/1.6 var(--display);max-width:60ch;color:#bbb}
+
+/* fireworks */
+.fourth{position:relative;background:#0A1424;color:#fff;overflow:hidden}
+.fourth canvas{position:absolute;inset:0;width:100%;height:100%}
+.fourth .wrap{position:relative;z-index:1;padding-block:110px;text-align:center}
+.fourth blockquote{font:italic 400 clamp(36px,5vw,64px)/1.15 var(--display);margin:0 auto 18px;max-width:18ch}
+.fourth cite{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* magazine cover */
+.mag{position:relative;aspect-ratio:3/4;max-width:420px;width:100%;margin:0 auto;overflow:hidden;box-shadow:0 24px 50px #0004;transform:rotate(-1.5deg);background:#222}
+.mag img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.mag .mh{position:absolute;top:10px;left:0;right:0;text-align:center;font:900 92px/1 var(--body);color:#D0021B;letter-spacing:-.04em}
+.mag .dt{position:absolute;top:104px;left:16px;font:700 10px var(--body);color:#fff;letter-spacing:.1em}
+.mag .hl{position:absolute;left:16px;right:16px;bottom:18px;color:#fff;text-shadow:0 2px 10px #000c}
+.mag .hl b{display:block;font:900 36px/.95 var(--body);color:#F2D06B;margin-bottom:8px;text-transform:uppercase}
+.mag .hl span{display:block;font:700 13px/1.35 var(--body)}
+.late{background:#0D0D14;color:#fff;padding:24px;border-radius:6px;box-shadow:0 14px 30px #0003}
+.late .k{font:800 11px var(--body);letter-spacing:.24em;color:#F2D06B}
+.late q{display:block;font:italic 400 28px/1.25 var(--display);margin:12px 0}
+.late small{color:#aaa;font:12px var(--body)}
+.listicle{background:#fff;border-top:6px solid #EE3322;padding:18px;font:14px/1.45 Arial,sans-serif;color:#222;box-shadow:0 14px 30px #0002}
+.listicle .m{font:900 22px Arial,sans-serif;color:#EE3322}
+.listicle h3{font:800 22px/1.15 Arial,sans-serif;margin:8px 0}
+.listicle ol{padding-left:22px;margin:10px 0 0}
+.listicle li{margin-bottom:6px}
+
+/* after */
+.after{padding-block:90px;background:var(--paper-2)}
+.after .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.after .body p{font-size:16px;line-height:1.7;max-width:60ch}
+.next{border-top:1px solid var(--rule);padding-block:40px 70px}
+.next .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next a{text-decoration:none}
+.next small{display:block;font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.next span{font:400 36px var(--display)}
+
+/* sticky itinerary */
+body{padding-bottom:84px}
+.itin{position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--paper);border-top:2px solid var(--accent);box-shadow:0 -8px 20px #0000001a;padding-bottom:env(safe-area-inset-bottom,0px)}
+.itin .wrap{display:flex;gap:4px;align-items:stretch}
+.itin .lab{flex:none;font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);padding:6px 4px}
+.itin nav{flex:1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px 10px;min-width:0}
+.itin a{flex:1 0 104px;text-decoration:none;border-top:3px solid var(--rule);padding:7px 4px 0}
+.itin a small{display:block;font:500 10px var(--mono);color:var(--accent);white-space:nowrap}
+.itin a span{display:block;font:500 13.5px var(--body);color:var(--ink);white-space:nowrap}
+.itin a.done{border-color:#9c573a80}
+.itin a.on{border-color:var(--accent)}
+.itin a.on span{font-weight:700}
+.itin a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* mini globe */
+.mini{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(98px + env(safe-area-inset-bottom,0px));z-index:8;width:124px;text-align:center;pointer-events:none}
+.mini canvas{width:124px;height:124px;filter:drop-shadow(0 8px 14px #0005)}
+.mini b{display:inline-block;margin-top:4px;background:var(--frame-deep);color:#EDE6D8;font:600 10px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:4px 8px}
+
+@media (max-width:900px){
+  .cover .in,.brief .grid,.open .grid,.spread .grid,.spread.flip .grid,.after .grid{grid-template-columns:1fr}
+  .side{position:static}
+  .globebig{margin:0 auto;max-width:280px}
+  .prog{grid-template-columns:1fr 1fr}
+  .prog .day{border-bottom:1px solid var(--rule)}
+  .board{grid-template-columns:1fr}
+  .c1,.c2,.c3,.c4,.c5{grid-column:1/-1;margin-top:0}
+  .ephrow{grid-template-columns:1fr}
+  .pass{grid-template-columns:1fr}
+  .pass .stub{border-left:0;border-top:2px dashed var(--rule)}
+  .pass .main{grid-template-columns:1fr 1fr}
+  .pass .route{font-size:34px}
+  .timeline{grid-template-columns:1fr 1fr;gap:20px 0}
+  .dossier{grid-template-columns:1fr 1fr}
+  .mini{display:none}
+  .strip{display:none}
+  .bar .t{flex:1;text-align:right}
+}
+@media (prefers-reduced-motion:reduce){.chyron .tk span{animation:none;padding-left:0}html{scroll-behavior:auto}}
+/* photo-less wire slips (swap for real images later) */
+figure.slip{margin:0;background:#f4ecdc;border:1px solid var(--rule);padding:22px 22px 18px;font:14px/1.55 var(--type);color:#2a2a2a;box-shadow:0 20px 40px #0002;aspect-ratio:4/3.4;display:flex;flex-direction:column;gap:14px;position:relative;transform:rotate(.6deg)}
+figure.slip.tall{aspect-ratio:auto;min-height:420px;transform:rotate(-.6deg)}
+figure.slip::before{content:"";position:absolute;inset:10px;border:1px dashed #cfc5ae;pointer-events:none}
+figure.slip .ag{font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid #2a2a2a;padding-bottom:8px}
+figure.slip p{margin:0;flex:1}
+figure.slip small{font:italic 400 14px/1.4 var(--display);color:var(--muted)}
+.cover{background:radial-gradient(120% 90% at 85% 40%,#4d5743 0%,#232a21 70%)}
+#bigglobe,#mini{border-radius:50%;box-shadow:0 0 0 3px #9c573a55}
+.cover .in{padding-block:110px 60px}
+
+
+</style>
+</head><body>
+<header class="bar"><div class="wrap">
+  <a href="index.html" style="text-decoration:none;white-space:nowrap">← All tours</a>
+  <span class="t">The Middle East · 2018</span>
+  <nav class="strip" aria-label="Itinerary">
+    <a href="#briefing" data-nav="briefing">Briefing</a><a href="#amman" data-nav="amman">Amman</a><a href="#birthday" data-nav="birthday">Petra</a><a href="#zaatari" data-nav="zaatari">Zaatari</a><a href="#jerusalem" data-nav="jerusalem">Jerusalem</a><a href="#oldcity" data-nav="oldcity">Old City</a><a href="#ramallah" data-nav="ramallah">Ramallah</a><a href="#nazareth" data-nav="nazareth">Nazareth</a><a href="#telaviv" data-nav="telaviv">Tel Aviv</a><a href="#after" data-nav="after">After</a>
+  </nav>
+</div></header>
+
+<!-- ============ COVER ============ -->
+<section class="cover" data-g="0" data-name="London">
+  <img class="bg" src="img/me-2018-00.jpg" alt="Prince Alexander and Crown Prince Hussein at the Treasury, Petra" onerror="this.nextElementSibling.remove();this.remove()">
+  <span class="cap">Petra · His 32nd birthday, 23 April 2018</span>
+  <div class="wrap"><div class="in">
+    <div>
+      <div class="eyebrow" style="color:var(--gold)">Official tour · Prince of Wales · 2018</div>
+      <h1 style="margin-top:14px">The Middle<br><em>East</em></h1>
+      <div class="dates">22 – 29 April 2018</div>
+      <div class="dossier">
+        <div><b>8</b><span>Days</span></div>
+        <div><b>8</b><span>Stops</span></div>
+        <div><b>3</b><span>Governments</span></div>
+        <div><b>32</b><span>His birthday, in Jordan</span></div>
+      </div>
+    </div>
+    <div class="globebig"><canvas id="bigglobe" width="720" height="720" aria-label="Globe showing the route from London to Amman, Petra, Jerash and Zaatari, across to Jerusalem, Ramallah, Nazareth and Tel Aviv, and home"></canvas></div>
+  </div></div>
+</section>
+
+<!-- ============ BRIEFING ============ -->
+<section class="brief" id="briefing" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="eyebrow">The briefing</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">Jordan, Israel and the Palestinian Territories, without Egypt</h2>
+  <div class="grid">
+    <div class="body">
+      <p class="lede">For seventy years no member of the Royal Family made an official visit to Israel or the Palestinian Territories. Successive governments thought it too risky. In 2017 the Foreign Office decided the time had come, and decided it should be the Prince of Wales.</p>
+      <p>The reasons were mostly practical. The government wanted a visible sign of British engagement in the region after the referendum, while it was trying to persuade everybody that leaving the EU didn't mean leaving the world. A royal visit could do that without committing a single minister to a single word about Jerusalem. It also had to be the right royal. The King had no interest in a week of checkpoints and memorials and never seriously considered it, which suited Buckingham Palace, who considered the whole region a minefield and preferred him nowhere near it. That left the heir.</p>
+      <p>It suited the Foreign Office to have him. He was thirty-one, a serving officer until two years before, with a combat tour in Afghanistan, which mattered in Jordan and in Israel for different reasons. He'd known the Jordanian royal family since childhood, and King Abdullah wanted him. The Israeli government wanted the heir to the throne at Yad Vashem. The Palestinian Authority wanted him in Ramallah, so that the visit couldn't be presented as a visit to one side. His tours had found their feet after a rocky Australia in 2016, and the Americans had loved him the previous summer. The Foreign Office thought he could carry it.</p>
+      <p>He wanted to go. That was the other reason, and the one that never made the papers. He'd never been to Jerusalem. He was a believer, privately and seriously, and when the first outline came across Marianne's desk in the autumn he asked for the Christian holy places to be built into the programme rather than squeezed into a free afternoon: the Holy Sepulchre, the Church of Mary Magdalene, Nazareth. The Foreign Office agreed, on condition that every Christian site was balanced by a Jewish and a Muslim one, and that he said nothing at any of them.</p>
+      <p>He also asked for Egypt. The first plan was ten days in May, ending with Cairo, the Egyptian Museum, Giza and Alexandria. In January the dates moved forward to the week after the Commonwealth summit in London. In March, with protests starting on the Gaza border and the American embassy due to move to Jerusalem in May, the Foreign Office took Egypt out. He agreed with the reasoning and was disappointed all the same.</p>
+      <div class="pullq">"The programme has been revised in light of the regional situation. The Prince of Wales looks forward to visiting Egypt in future." — Foreign Office spokesman, 14 March 2018</div>
+      <p>What's left is eight days. Three in Jordan, staying with the royal family at Beit al Urdun, including his birthday at Petra, which Hussein added himself. Then across the Allenby Bridge to Jerusalem, which is the base for Yad Vashem, the Old City and Ramallah, half an hour to the north. Then Nazareth, Tel Aviv and Jaffa, and home from Ben Gurion.</p>
+      <p>The row started before he'd left London. On 9 April Kensington Palace published the programme, written by the Foreign Office, and listed his day in the Old City under the heading "the Occupied Palestinian Territories", because that's British policy. Israel's Jerusalem Affairs Minister, Ze'ev Elkin, called it a distortion: united Jerusalem had been Israel's capital for three thousand years, and no royal itinerary would change that. A right-wing MK, Bezalel Smotrich, asked the Prime Minister to stop the visit to the Old City altogether. The Mayor of Jerusalem, Nir Barkat, invited him to City Hall. The Foreign Office declined, because a meeting with the mayor in Jerusalem would imply recognition, and Barkat let it be known he was hurt. Kensington Palace declined to comment on any of it. The ambassador in Tel Aviv said only that the wording was "consistent with British government policy".</p>
+      <p>The British line is fixed and he will not move off it: support for a two-state solution with Jerusalem as a shared capital, no comment on the status of the city, no comment on the embassy move, no comment on Gaza. The Israeli government calls Jerusalem its capital. The Foreign Office's programme calls the Old City "the Old City" and lists it under neither country. Every caption, walkabout route and photograph position has been negotiated by officials in three capitals who will be very relieved when it's over.</p>
+    </div>
+    <aside class="side">
+      <div class="box"><h4>Whose tour is it?</h4><p>A Foreign Office request, built by the embassies in Amman and Tel Aviv and the Consulate-General in Jerusalem, which handles the Palestinian programme. Each government protects him on its own ground: Jordan's Royal Guard, Israel's security service, and the Palestinian presidential guard in Ramallah, with his own Met officers inside all three.</p><p style="margin:0">He flies British Airways and Royal Jordanian, and crosses from Jordan by road.</p></div>
+      <div class="manifest">
+        <h4>TOUR PARTY · ME · APR 2018</h4>
+        <div><b>PRIV OFFICE</b><span>M. Fletcher (PS) · tour secretary · programme coord</span></div>
+        <div><b>PRESS</b><span>C. Renton · 2 press officers</span></div>
+        <div><b>MILITARY</b><span>Thom, equerry</span></div>
+        <div><b>PROTECTION</b><span>Miranda + Met officers, inside host details</span></div>
+        <div><b>FCO</b><span>Political adviser, Middle East &amp; North Africa Directorate</span></div>
+        <div><b>OTHER</b><span>Tour doctor · interpreters (AR, HE) · ops manager</span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="timeline">
+    <div><span class="eyebrow">Autumn 2017</span><b>Ten days, four countries</b><p>The first plan: Jordan, Israel, the Palestinian Territories, Egypt. 3–14 May.</p></div>
+    <div><span class="eyebrow">January 2018</span><b>Moved forward</b><p>The dates move to the week after CHOGM in London. 22–29 April.</p></div>
+    <div><span class="eyebrow">March 2018</span><b>Egypt cut</b><p>The Foreign Office takes Cairo and Alexandria out. He hears it from Marianne in the car.</p></div>
+    <div><span class="eyebrow">9 April</span><b>Announced</b><p>Kensington Palace confirms the visit "at the request of the Foreign Office", and the papers spend a week on the word "first".</p></div>
+  </div>
+</div></section>
+
+<section style="padding-block:20px 90px" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="memo">
+    <div class="stamp">PRIVATE</div>
+    <div class="hd"><b>KENSINGTON PALACE · PRIVATE OFFICE</b><span>TO: Programme &amp; press team</span><span>FROM: MF</span><span>RE: Middle East. Not for circulation.</span></div>
+    <ol>
+      <li><b>Words.</b> The Foreign Office has his remarks for every stop. He may not improvise in Jerusalem or Ramallah. Not a sentence. He knows.</li>
+      <li><b>Places.</b> Captions say "Jerusalem" and "the Old City". Never "Israel" for anything east of the 1967 line, never "Palestine" for anything west of it. Check every Instagram post twice. We have had enough of Mr Elkin.</li>
+      <li><b>The 23rd.</b> His birthday. Nothing announced from us. The Jordanians know and will do something. Let them.</li>
+      <li><b>The 26th.</b> The evening is blank on the published programme and stays blank. Nobody discusses it with the press, the Consulate or each other.</li>
+    </ol>
+    <div class="hand">Jordanian TV have asked for an interview. No. — C.R.</div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → AMMAN ============ -->
+<section class="leg" data-g="1" data-name="To Amman"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>British Airways</b> · Boarding pass</span><span>Club World</span></div>
+      <div class="route">LHR <i></i> AMM</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">BA 6501</span></div>
+      <div><small>Date</small><span class="v">22 APR 2018</span></div>
+      <div><small>Seat</small><span class="v">1A</span></div>
+      <div><small>Departs</small><span class="v">08:30</span></div>
+      <div><small>Arrives</small><span class="v">15:25 EEST</span></div>
+      <div><small>Gate</small><span class="v">B36</span></div>
+      <div><small>Distance</small><span class="v">2,280 mi</span></div>
+    </div>
+    <div class="stub"><small>Leg 1 of 6</small><div class="city">Amman</div><small>Five hours, two briefs, one film</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+  <p style="max-width:640px;margin:26px auto 0;color:#d9d3c4;font:italic 400 17px/1.6 var(--display);text-align:center">He reads the Jordan brief over Brussels and the Jerusalem one over the Alps, then watches half of a film about a heist and falls asleep somewhere above Cyprus with his mouth open, which Thom will not mention to anyone, ever.</p>
+</div></section>
+
+<!-- ============ 01 AMMAN ============ -->
+<section class="open" id="amman" data-g="1" data-name="Amman"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter one · The Hashemite Kingdom</div>
+      <div class="chapno" aria-hidden="true">01</div>
+      <h2>Amman</h2>
+      <div class="meta"><span><b>Sun 22 April</b></span><span>Beit al Urdun, as the King's guest</span></div>
+      <p class="why">The King and Queen on the tarmac at Marka, the Dead Sea Scrolls at the Jordan Museum, and dinner at Beit al Urdun, the family's private residence, where he stays as their guest.</p>
+    </div>
+    <figure class="photo"><div class="ph" style="aspect-ratio:1376/768"><div class="lab"><b>img/me-2018-01.jpg</b>King Abdullah greets Alexander at the foot of the aircraft steps at Marka, the guard of honour behind</div><img src="img/me-2018-01.jpg" alt="King Abdullah greets Alexander at the foot of the aircraft steps at Marka, the guard of honour behind" onerror="this.remove()"></div><figcaption>Marka military airport · Sun 22 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Sun 22 Apr</h4><p><span>15.25</span>Marka military airport. Received by King Abdullah II, Queen Rania and Crown Prince Hussein. Guard of honour of the Royal Guard.</p><p><span>17.00</span>The Jordan Museum. The Dead Sea Scroll fragments and the Copper Scroll, with the museum's conservators.</p><p><span>18.30</span>British Embassy. Briefing with Ambassador Edward Oakden.</p><p><span>20.30</span>Beit al Urdun. Private dinner with the King, Queen and Crown Prince.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="1" data-name="Amman"><div class="wrap"><div class="in">
+  <div class="label">SUN 22 APR · 15.31 · QUEEN ALIA INTERNATIONAL AIRPORT</div>
+  <p>The door opened and the heat walked in like it owned the plane.</p>
+  <p>Nine degrees and spitting at Heathrow that morning. Now the cabin crew were lined up by the galley with the strained smiles of people who wanted the whole of row one off their aircraft so they could get on with their lives, and outside the air was white, and it smelt of jet fuel and hot rubber and, underneath, something dry and herby blowing in off the desert that he couldn't have named if you'd paid him. Thyme, maybe. Dust. Jordan.</p>
+  <p>He did up his jacket button and ran a hand over his hair, which had flattened on one side against the window somewhere over Cyprus. Then he went to the top of the steps and stood there for the two seconds the photographers needed, squinting into a sun that seemed to be about four feet away.</p>
+  <p>There at the end of the red carpet, a hundred yards of it shimmering on the tarmac, stood the King of Jordan in a dark suit with his hands folded in front of him like a man waiting outside a school gate. Beside him Rania, in pale linen, looking as though heat were a thing that happened to other, lesser people. And a pace behind his parents, a head taller than both of them now, Hussein, grinning in a manner that had nothing whatsoever to do with diplomacy.</p>
+  <p>It had been on the programme since February. Kings didn't meet other people's heirs at the airport. Abdullah knew that better than anyone, and he'd done it anyway. Alexander was more touched by it than he'd have admitted to a living soul.</p>
+  <p>He'd known Abdullah all his life. The Sandhurst cadet who'd turned up at Windsor when Alexander was in short trousers; the uncle-ish figure who'd talked to him about tanks at a state banquet when he was eleven and everybody else at the table was talking about interest rates. His mother had liked him enormously. His father put up with him, which by his father's standards was practically love.</p>
+  <p class="say">"Alexander." The handshake was short and firm, and halfway through it turned into a hug. "Welcome home. You look terrible. Did they make you fly commercial?"</p>
+  <p class="say">"British Airways, sir. They gave me the vegetarian meal by mistake. I've suffered terribly."</p>
+  <p>Abdullah gave a bark of a laugh and squeezed his arm. Rania kissed him on both cheeks and held him off at arm's length to inspect him, the way she'd done every time she'd seen him since he was fifteen, and pronounced him too thin. She said it every time. He'd been thirteen stone of rowing at nineteen and she'd said it then, too.</p>
+  <p>Hussein skipped the handshake entirely and clapped him on the shoulder. "Did you bring the whisky?"</p>
+  <p>Hello to you too, then. "Two bottles. They're in the hold."</p>
+  <p class="say">"Good. We finished the last lot at New Year. My father says it's medicinal."</p>
+  <p>The last time Alexander had paid Hussein any real attention he'd been a gangly sixteen-year-old with a terrible haircut, being told off by his mother at a wedding for kicking the chair in front. Now he was twenty-three, six foot something, Sandhurst and Georgetown, with a jaw like his grandfather's on the banknotes. It was very disconcerting. Alexander felt about a hundred.</p>
+  <p>Then the guard of honour, a great long line of them in red-and-white shemaghs, not one of them so much as blinking in the heat. The band played God Save the King a fraction too fast, as foreign bands always did, as if they were keen to get it over with. Fair enough. So was he. He walked the line with his hands clasped behind his back, looking each man in the face as he'd been taught at nine years old, and felt sweat start in a slow trickle down the middle of his spine. Somewhere behind the rope to his left forty photographers were getting the picture. Somewhere among them Charlie was already writing the tweet. Somewhere in a Land Rover was the air conditioning, and he'd have given an organ for it.</p>
+  <p>In the car Marianne handed him a bottle of water without a word. He drank the whole thing in one go.</p>
+</div></div></section>
+
+<section class="spread" data-g="1" data-name="Amman"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">Reuters · Amman · 22 Apr 2018</div><p>Britain's Prince Alexander looks at a fragment of the Copper Scroll, one of the Dead Sea Scrolls, with conservators at the Jordan Museum in Amman. The scroll, made of copper and listing hidden treasure, was found at Qumran in 1952.</p><small>The Jordan Museum · Sun 22 April</small></figure>
+  <div class="stack">
+    <div><p class="pull">"It was a pleasure to show him the scrolls. He was very kind to our staff."</p><cite>Senior conservator, the Jordan Museum · to the Jordan Times</cite></div>
+    <div class="whybox"><b>Why here</b>Queen Rania's suggestion: the museum is one of her projects. A twenty-five-minute visit that ran to forty.</div>
+    <div class="whybox"><b>Beit al Urdun</b>The King and Queen's private residence, where he stays for all three nights in Jordan instead of the Embassy. Dinner on the first night is family only: the King, the Queen, Hussein and his sisters, and Alexander, and an argument about Formula One.</div>
+  </div>
+</div></div></section>
+
+<section class="noise" data-g="1" data-name="Amman"><div class="wrap">
+  <div class="head"><h2>Amman online</h2><p>Embassy, palace and museum accounts, Jordanian Twitter, 22 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#1a3a6b">🇬🇧</div><div><b>UK in Jordan</b><small>@UKinJordan · 22 Apr 2018</small></div></div>Welcome to Jordan, Your Royal Highness! 🇬🇧🇯🇴 The Prince of Wales has arrived in Amman for the first leg of his visit to the region, received by Their Majesties King Abdullah II and Queen Rania and HRH Crown Prince Al Hussein. #RoyalVisitJordan<div class="act">612 Retweets · 2.4K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#8a1c1c">RH</div><div><b>RHCJO</b><small>@RHCJO · 22 Apr 2018</small></div></div>جلالة الملك عبدالله الثاني وجلالة الملكة رانيا العبدالله يستقبلان سمو الأمير ألكسندر، أمير ويلز، لدى وصوله إلى عمان في زيارة رسمية للمملكة.<div class="act">1,204 إعادة تغريد · 5,880 إعجاب</div><div class="reply">↳ <i>Their Majesties King Abdullah II and Queen Rania receive HRH Prince Alexander, Prince of Wales, on his arrival in Amman for an official visit to the Kingdom.</i></div></div>
+    <div class="card ig"><div class="who"><div class="av" style="background:#6b4e2e">JM</div><div><b>thejordanmuseum</b><small>The Jordan Museum, Amman</small></div></div><b>3,402 likes</b><br>We were honoured to welcome HRH The Prince of Wales to the Jordan Museum today, where he visited the Dead Sea Scrolls gallery and our conservation laboratory. 📜 #JordanMuseum #RoyalVisitJordan
+      <div class="cm"><b>dana.haddad</b> my sister works in the lab!! she said he was really nice to everyone</div><div class="cm"><b>omar_amm</b> Jordan looks good on him</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#4E342E">T</div><div><b>Tamer</b><small>@tamer_jo · 22 Apr 2018</small></div></div>The whole airport road was closed for an hour this afternoon and I was stuck behind it on the way back from Aqaba. Then I saw on the news the King went to meet him himself. OK, fair enough, he's family to them.<div class="act">31 Retweets · 214 Likes</div></div>
+    <div class="rd"><div class="sub">r/jordan <span>· u/irbid_boy · 6h</span></div><h4>Prince Alexander staying at Beit al Urdun instead of the British Embassy</h4>
+      <div class="cm"><div class="u"><b>irbid_boy</b> · 6h</div>According to Al Ghad he's staying with the royal family the whole time he's here. That's unusual for a visiting royal, normally they put them at the embassy residence.<div class="pts">⬆ 64</div></div>
+      <div class="cm"><div class="u"><b>sweilehsunrise</b> · 5h</div>Our royals and the British royals have known each other forever. They've all been to Sandhurst. It's not that surprising.<div class="pts">⬆ 88</div>
+        <div class="cm"><div class="u"><b>irbid_boy</b> · 5h</div>Fair. Hope they let him see Petra this time<div class="pts">⬆ 41</div></div></div>
+      <div class="cm"><div class="u"><b>ammancoffee</b> · 4h</div>Can they close fewer roads next time please<div class="pts">⬆ 120</div></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="1" data-name="Amman"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Amman</div>
+  <div class="ephrow">
+    <div class="menu"><div class="crest">Beit al Urdun</div><h3>Dinner</h3><div class="d">Sunday 22nd April 2018</div>
+      <p>Mansaf<br><small>lamb in jameed, on rice, with almonds and pine nuts</small></p><div class="rule"></div>
+      <p>Mezze from the kitchen garden</p><div class="rule"></div>
+      <p>Knafeh<br><small>and mint tea on the terrace</small></p></div>
+    <div class="place"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">The Jordan Museum · Visitors' book</div><div class="fold" style="font:italic 400 22px/1.3 var(--display)">With many thanks for a fascinating afternoon. Alexander · 22.iv.2018</div></div>
+    <div class="badge"><div class="t" style="background:#8a1c1c">The Royal Hashemite Court</div><div class="b">Official visit · Guest<big>RHC 2204</big>22–25.04.2018<small>Beit al Urdun · Al Hummar</small></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 02 JERASH / BIRTHDAY ============ -->
+<section class="open" id="birthday" data-g="2" data-name="Petra"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter two · St George's Day</div>
+      <div class="chapno" aria-hidden="true">02</div>
+      <h2>Petra</h2>
+      <div class="meta"><span><b>Mon 23 April</b></span><span>His thirty-second birthday</span></div>
+      <p class="why">Hussein's birthday present: a day at Petra, flown down by the Royal Jordanian Air Force, walked through the Siq by the Crown Prince and the Petra Development and Tourism Region Authority. Back to Amman for an embassy reception that's for St George and happens also to be for him.</p>
+    </div>
+    <figure class="photo"><div class="ph" style="aspect-ratio:1376/768"><div class="lab"><b>img/me-2018-04.jpg</b>Alexander and Hussein at the end of the Siq, looking up at the Treasury</div><img src="img/me-2018-04.jpg" alt="Alexander and Hussein at the Treasury, Petra" onerror="this.remove()"></div><figcaption>The Treasury, Petra · Mon 23 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Mon 23 Apr</h4><p><span>07.30</span>Royal Jordanian Air Force helicopter, Amman to Wadi Musa, with Crown Prince Hussein.</p><p><span>09.00</span>Petra. The Siq and the Treasury with the Petra Development and Tourism Region Authority and Jordanian archaeologists. The Street of Facades, the Theatre and the Royal Tombs.</p><p><span>12.30</span>Lunch with the Bdoul community at Umm Sayhoun, the village built for the families who once lived inside Petra.</p><p><span>14.30</span>The climb to the Monastery, Ad Deir, with the Crown Prince. Not on the press programme.</p><p><span>16.30</span>Helicopter to Amman.</p><p><span>19.00</span>Residence of the British Ambassador. Reception for St George's Day.</p></div>
+  </div>
+</div></section>
+
+<section class="spread" data-g="2" data-name="Petra"><div class="wrap"><div class="grid">
+  <figure class="photo"><div class="ph" style="aspect-ratio:4/5"><div class="lab"><b>img/me-2018-05.jpg</b>Alexander and Hussein at the top of the 800 steps in front of the Monastery, sleeves pushed up, both out of breath, no press in sight. Taken on Hussein's phone.</div><img src="img/me-2018-05.jpg" alt="" onerror="this.remove()"></div><figcaption>Ad Deir · Mon 23 April · Hussein's Instagram, that evening</figcaption></figure>
+  <div class="stack">
+    <div class="whybox"><b>Why Petra</b>It wasn't on the Foreign Office's first draft, which had a day of engagements in Amman. Hussein had it changed in January. It was his idea and his present, he said: nobody should spend a birthday at a business breakfast, and nobody should come to Jordan three times without seeing Petra. The Foreign Office could hardly argue with the Crown Prince.</div>
+    <div class="whybox"><b>The press</b>A pool of six walked the Siq with them as far as the Treasury and got the picture they'd come for. Then the pool went back to the helicopters, and the two of them went up to the Monastery with two protection officers and a guide, eight hundred steps in twenty-eight degrees, and nobody else.</div>
+    <div><p class="pull">"The Prince of Wales has been to Jordan many times. Today he finally came to Petra. Happy birthday, my friend."</p><cite>Crown Prince Hussein · Instagram, 23 April 2018</cite></div>
+  </div>
+</div></div></section>
+<section class="phones" data-g="2" data-name="Petra"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">His phone · Mon 23 April</div><h2 style="margin-top:8px">Texts and calls</h2></div><p>Amman is two hours ahead of Sussex. Georgie set an alarm.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>07:12</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 05:01</div>
+        <div class="bub in">HAPPY BIRTHDAY!!!!! 🎂🎂🎂🎉🎉 i set an alarm so i'd be first, if caro beat me i'm going to be livid</div>
+        <div class="bub in">32!!! you're so old 😂 love you so much. i hate that you're not here</div>
+        <div class="bub in">[photo: a wrapped box on the kitchen table at the cottage, a ribbon gone slightly wrong]</div>
+        <div class="bub in">this is staying here until you're home. don't even ask. it's very good though 😇</div>
+        <div class="ts">07:09</div>
+        <div class="bub out">You were first. Caro texted at six her time, so she's been beaten and I'll make sure she knows it.</div>
+        <div class="bub out">Thank you. I wish you were here too. It's already twenty-five degrees and I'm about to be put in a helicopter to Petra by a man who wants to talk about F1 the whole way.</div>
+        <div class="bub in">PETRA!!! 😭 on your birthday?? that's so lovely of him</div>
+        <div class="bub out">It is. I could live without the F1.</div>
+        <div class="bub in">wear suncream!!!! you burnt in the scillies last year and were insufferable 🙄 go have a lovely day, i'll ring you tonight if you're not at something xx ❤️❤️</div>
+      </div>
+    </div></div>
+    <div class="phone"><div class="screen recents">
+      <div class="sb"><span>23:48</span><span>●●●</span></div>
+      <h3>Recents</h3>
+      <div class="call"><div class="n"><b>G ❤️</b><small>mobile · 41 min</small></div><div class="t">22:55</div></div>
+      <div class="call"><div class="n"><b>Caro</b><small>mobile · 12 min</small></div><div class="t">12:40</div></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="2" data-name="Petra"><div class="wrap"><div class="in">
+  <div class="label">MON 23 APR · 22.10 · THE RESIDENCE KITCHEN, AMMAN</div>
+  <p>The reception had been for St George, according to the card on the easel by the door. Two hundred people, a flag the size of a tennis court, a quartet in the corner playing Elgar to people who weren't listening. It had been for him too, of course. The Ambassador's speech mentioned both, to laughter in the right place. Then the British community of Amman queued up to wish him happy birthday, one at a time, for an hour and a quarter. He'd shaken roughly two hundred hands. He'd said thank you, that's very kind, about two hundred times. Somewhere around the hundred and fiftieth, a retired engineer from Basingstoke had told him that he looked much older in person.</p>
+  <p>Now it was ten o'clock, his feet hurt, and he was in the Residence kitchen, because Thom had come to find him at the end of the receiving line and said, sir, there's a slight problem downstairs, in a voice so flat that Alexander knew at once it wasn't a problem.</p>
+  <p>Marianne at the end of the steel counter with her shoes off and her glasses on her head. Charlie, the tour secretary, two of the press officers, Thom, and the Residence chef, who had gone out for the cake. And in the middle of the counter, on a plastic tray from a bakery in Jabal Amman, a white cake with blue icing that said, in confident looping letters, HAPPY BIRTHDAY PRINCE ALEXSANDER.</p>
+  <p>He stood there looking at it.</p>
+  <p class="say">"We asked them to check the spelling," Charlie said. "They said they had."</p>
+  <p>Somebody had found candles. Three and two, in green wax, gone soft from the walk across the Residence garden. The Residence chef lit them with a match from the hob, and they sang, with Thom a full bar behind everybody else, and Marianne not singing at all but smiling at him over the top of her water glass in a way he'd seen perhaps twice in seven years.</p>
+  <p>He blew the candles out. He felt about eleven years old, which was ridiculous, and he was more pleased about it than he could have said out loud, which was even more ridiculous, so he said nothing and cut the cake instead, in uneven wedges, because the knife they'd found was meant for bread.</p>
+  <p>It was the first thing he'd eaten since the canapés at seven. It was sickly sweet. He had two slices standing up at the counter, then a third, while Charlie told a long story about the Ambassador's wife and a peacock that may or may not have been true. Miranda put her head round the door once, saw him eating, and went back out to the corridor. Nobody said "sir" for twenty minutes.</p>
+  <p>At eleven Marianne put her shoes back on and said, sir, Zaatari at half seven, and everybody went to bed. He took the last slice back to Beit al Urdun in a napkin. Lying on the bed, he rang Georgie. Her day had involved a neighbour's spaniel getting into somebody's hen house, which she described in great and unnecessary detail (the noise, the feathers, the neighbour in her dressing gown). He laughed until he had to put the cake down on his chest. Best phone call of the week. Possibly the month.</p>
+</div></div></section>
+
+<section class="front" data-g="2" data-name="Petra"><div class="wrap">
+  <div class="head"><h2>Jordan <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Sun 22 – Mon 23 April · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">The Jordan Times</div><div class="date">TUESDAY, APRIL 24, 2018 · AMMAN</div>
+      <h3>Prince of Wales marks birthday at Petra with Crown Prince</h3><div class="deck">King and Queen receive British heir at Marka · Jordan Museum · A day in the rose-red city</div><div class="by">By Rana Husseini-Malik</div>
+      <p>The Prince of Wales celebrated his 32nd birthday on Monday at Petra as the guest of His Royal Highness Crown Prince Al Hussein, walking the Siq to the Treasury and lunching with the Bdoul community at Umm Sayhoun.</p></article>
+    <article class="clip c2"><div class="mast">The Daily Telegraph</div><div class="date">TUESDAY 24 APRIL 2018 · 9</div>
+      <h3>Prince spends birthday in Petra as Middle East tour begins</h3><div class="by">By Gordon Rayner-Hill in Petra</div>
+      <p>The Prince of Wales turned 32 yesterday on the first full day of a politically delicate tour that will take him to Israel and the Palestinian Territories later this week, the first official visit there by a Prince of Wales.</p><p>Jordan's King Abdullah broke with protocol to greet him at the airport in person on Sunday, a gesture aides described as "a mark of a very old friendship between the two royal houses".</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#D7141A">The Sun</div><div class="h">Happy birthday, Your Royal Heatness!</div><div class="s">Prince swelters in 28C at Petra · Page 13</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>Kensington Palace</b> confirms the Prince "had a very nice birthday, thank you", and declines to say anything else about it.</article>
+    </div>
+    <article class="clip op c4"><div class="kick">Al Ghad · الغد</div><h3>ولي العهد وأمير ويلز في البترا</h3>
+      <p style="margin-top:8px">رافق سمو ولي العهد الأمير الحسين بن عبدالله الثاني ضيفه البريطاني في جولة في البترا في يوم عيد ميلاده، وتناولا الغداء مع أبناء قبيلة البدول في أم صيحون.</p><p style="font-style:italic;color:#555">The Crown Prince and the Prince of Wales in Petra. Crown Prince Al Hussein bin Abdullah II accompanied his British guest around Petra on his birthday, and they had lunch with the Bdoul at Umm Sayhoun.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">PETRA · VISITOR NOTICE</div>
+      <p style="font:14px/1.5 var(--body)">The Siq and the Treasury area will be closed to visitors from 08:30 to 11:00 on Monday 23 April for an official visit. The site will reopen as normal from 11:00. We apologise for any inconvenience.</p></article>
+  </div>
+</div></section>
+
+<!-- ============ 03 ZAATARI ============ -->
+<section class="open" id="zaatari" data-g="3" data-name="Zaatari"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter three · The camp in the desert</div>
+      <div class="chapno" aria-hidden="true">03</div>
+      <h2>Jerash &amp; Zaatari</h2>
+      <div class="meta"><span><b>Tue 24 April</b></span><span>Beit al Urdun</span></div>
+      <p class="why">The Roman city at Jerash in the morning, Zaatari in the afternoon, both in the north. Zaatari, in the Mafraq desert, is home to around eighty thousand Syrians. In the evening, Hussein, a television and the Champions League.</p>
+    </div>
+    <figure class="photo"><div class="ph" style="aspect-ratio:1672/941"><div class="lab"><b>img/me-2018-07.jpg</b>Alexander sitting on the floor of the Makani centre at Zaatari with a group of children and their drawings</div><img src="img/me-2018-07.jpg" alt="Alexander sitting on the floor of the Makani centre at Zaatari with a group of children and their drawings" onerror="this.remove()"></div><figcaption>A Makani centre, Zaatari · Tue 24 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Tue 24 Apr</h4><p><span>09.00</span>Jerash. Hadrian's Arch, the Oval Plaza and the Cardo with the Department of Antiquities and University of Jordan archaeology students.</p><p><span>12.00</span>Zaatari refugee camp, Mafraq. Briefing from UNHCR. The Makani child and youth centre, a clinic, and the Champs-Élysées, the camp's main shopping street.</p><p><span>20.45</span>Beit al Urdun. Private evening with the Crown Prince.</p></div>
+  </div>
+</div></section>
+
+<section class="bleed" data-g="3" data-name="Zaatari">
+  <div class="ph"><div class="lab"><b>img/me-2018-08.jpg</b>Wide shot of Zaatari from the water tower: the white caravans in rows to the horizon, Alexander and the UNHCR team small in the foreground</div><img src="img/me-2018-08.jpg" alt="Zaatari camp from above" onerror="this.remove()"></div>
+  <div class="wrap">
+    <div class="eyebrow">Tue 24 April · Mafraq</div>
+    <h2>Eighty thousand people</h2>
+    <p class="why">Zaatari opened in July 2012 as a field of tents. Six years later it's a town of prefabricated caravans with a main street of shops the residents named the Champs-Élysées, thirty-two schools, a hospital, and the fourth-largest population in Jordan.</p>
+  </div>
+</section>
+<section class="spread" data-g="3" data-name="Zaatari"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">AFP · Mafraq · 24 Apr 2018</div><p>A Syrian boy shows Britain's Prince Alexander a drawing during his visit to Zaatari camp. The Prince spent nearly four hours in the camp, an hour longer than scheduled.</p><small>Zaatari · Tue 24 April</small></figure>
+  <div class="stack">
+    <div><p class="pull">"He stayed a long time and he sat on the floor with the children. They liked that."</p><cite>UNHCR camp manager, Zaatari · to the Guardian</cite></div>
+    <div class="whybox"><b>Why here</b>Britain is one of the largest funders of the Syrian refugee response in Jordan. The Foreign Office wanted the photograph, and the camp wanted a visitor who'd stay long enough to see the water problem. He stayed long enough.</div>
+    <div class="whybox"><b>The drawing</b>A boy of about seven drew him a helicopter, because somebody had told the children their visitor used to fly them. The drawing is now in a frame in the study at Kensington Palace. The boy's family asked for his name not to be used.</div>
+  </div>
+</div></div></section>
+
+<section class="drab" data-g="3" data-name="Zaatari"><div class="wrap"><div class="in">
+  <div class="label">TUE 24 APR · 22.50 · BEIT AL URDUN, AMMAN</div>
+  <p>Hussein's idea of a private evening was the family sitting room at Beit al Urdun with an enormous television, two sofas, a tray of mezze that nobody was touching, and three members of staff standing just out of sight at the edges of things, pretending not to watch the match.</p>
+  <p>Liverpool against Roma. Champions League semi-final, first leg, at Anfield. Not his team, which Hussein knew perfectly well and had already brought up twice before kick-off. But he'd been on his feet since six, Jerash in the morning and four hours in the dust at Zaatari after it, and there was nothing in the world as restful as a sofa, his shoes off and somebody else's football on a very big screen.</p>
+  <p>Then Salah scored.</p>
+  <p>It was a ridiculous goal. He cut inside off the right and curled it into the top corner from the edge of the box. Hussein was off the sofa, shouting at the screen in Arabic. Somebody in the doorway shouted back. Alexander had seen the Pyramids once in his life, from an aeroplane window on the way to somewhere else, and felt a small, unworthy twinge.</p>
+  <p class="say">"An Egyptian," Hussein said, sitting back down. "Tonight of all nights. My father will love this."</p>
+  <p>The whole of Amman seemed to know Egypt had come off his programme. That was the thing about the Hashemites. They knew everything, usually before you did.</p>
+  <p>Salah scored again before half-time, a little chip over the keeper that made it look easy. He set up two more in the second half. By five-nil, Hussein was lying full length on his sofa with his hands behind his head, telling him about a restaurant in Alexandria that did the best fish he'd ever eaten.</p>
+  <p class="say">"Go next year," Hussein said. "Privately. Go and see the museum before they move everything to Giza. It's the best museum in the world."</p>
+  <p>Alexander said he'd try. He meant it, and he also knew how much a private holiday to Cairo for the Prince of Wales would involve, and how many people would have to agree to it. (Several hundred. Minimum.)</p>
+  <p>Roma got two back at the end and Hussein swore at the screen with real feeling. Alexander ate some of the mezze, at last, because it was half eleven and the cake was a long time ago, and was faintly ashamed of how much better the evening had made him feel. He'd known Hussein since he was small. It was odd, and nice, to find him grown up and good company.</p>
+  <p>He went up to bed at half past midnight. Allenby Bridge at eight. Somewhere on the other side of the river was Jerusalem, and he couldn't decide if he was looking forward to it or not.</p>
+</div></div></section>
+
+<section class="noise" data-g="3" data-name="Zaatari"><div class="wrap">
+  <div class="head"><h2>Zaatari online</h2><p>UNHCR, UNICEF, aid workers and Syrian Twitter, 24 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#0072BC">U</div><div><b>UNHCR Jordan</b><small>@UNHCRJo · 24 Apr 2018</small></div></div>Today HRH The Prince of Wales visited #Zaatari camp, home to some 80,000 Syrian refugees. He met families, teachers and health workers, and heard about the challenges of the seventh year of displacement. Thank you to the UK, one of our largest donors. 🇬🇧<div class="act">410 Retweets · 1.3K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1CABE2">U</div><div><b>UNICEF Jordan</b><small>@UNICEFJordan · 24 Apr 2018</small></div></div>At our Makani centre in Zaatari, the Prince of Wales spent time with children who drew pictures for him and showed him their reading books. Makani centres offer learning, psychosocial support and a safe space to play. #ForEveryChild<div class="act">221 Retweets · 860 Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#558B2F">H</div><div><b>Hanna Ellis</b><small>@hanna_ngo · 24 Apr 2018</small></div></div>Royal visit to Zaatari today. The prep for these is always enormous and the visit always shorter than the prep. This one stayed nearly four hours. The kids at the Makani centre had a good day, which is what matters.<div class="act">96 Retweets · 512 Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6D4C41">A</div><div><b>Ahmad</b><small>@ahmad_daraa · 24 Apr 2018</small></div></div>الأمير البريطاني زار المخيم اليوم. أخي الصغير رسم له طيارة هليكوبتر لأنه قالوا له إنه كان طيار. الأمير أخذ الرسمة معه.<div class="act">48 إعادة تغريد · 302 إعجاب</div><div class="reply">↳ <i>The British prince visited the camp today. My little brother drew him a helicopter because they told him he used to be a pilot. The prince took the drawing with him.</i></div></div>
+  </div>
+</div></section>
+<section class="noise" data-g="3" data-name="Zaatari"><div class="wrap">
+  <div class="head"><h2>Jordan, three days online</h2><p>Twitter, Facebook and the royal forums, 22–24 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#00695C">R</div><div><b>Rania Al Abdullah</b><small>@QueenRania · 22 Apr 2018</small></div></div>Welcome back to Jordan, Your Royal Highness. 🇯🇴🇬🇧<div class="act">2,412 Retweets · 11K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6D4C41">L</div><div><b>Lina Kh.</b><small>@lina_amman · 23 Apr 2018</small></div></div>أنا من طلاب قسم الآثار اللي كانوا اليوم في جرش. الدكتورة تبعتنا كانت متوترة كثير ونسيت نص المحاضرة. الأميرين كانوا لطيفين كثير معها.<div class="act">340 إعادة تغريد · 2,104 إعجاب</div><div class="reply">↳ <i>I'm one of the archaeology students who were at Jerash today. Our lecturer was so nervous she forgot half her talk. The two princes were very polite about it.</i></div></div>
+    <div class="fbgrp">
+      <div class="hd">British Expats in Amman · Private group · 3.1K members</div>
+      <div class="post"><b>Helen Pritchard</b><br>Did anyone else go to the St George's Day do at the Residence last night? He was very nice to my daughter, she asked him if he'd been to Petra and he said not yet, but it was top of his list, and asked her what she'd liked best there.<div class="c"><b>Martin Ellis</b> He did look tired by the end, I was in the queue for about forty minutes. Fair play to him.</div><div class="c"><b>Sue Harding</b> I spoke to one of his staff by the canapés and she said they were getting him a cake. Hope he got one.</div></div>
+    </div>
+    <div class="card"><div class="who"><div class="av" style="background:#C62828">L</div><div><b>Liverpool FC</b><small>@LFC · 24 Apr 2018</small></div></div>FULL-TIME: Liverpool 5-2 Roma. 🔴 Mo Salah: two goals, two assists. 👑<div class="act">48K Retweets · 162K Likes</div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in Jordan, Israel and the Palestinian Territories, April 2018 (Read 34,920 times)</div>
+      <div class="p"><div class="l"><b>QuebecQueen</b><br>Large Member<br>Posts: 2006</div><div class="r"><div class="when">Reply #31 on: April 22, 2018, 02:14:09 PM</div>The King AND Queen at the airport. That's very unusual for an heir's visit. The Jordanians must have wanted to make a point.</div></div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8790</div><div class="r"><div class="when">Reply #33 on: April 22, 2018, 03:02:41 PM</div>The two families have known each other a long time. It's a family thing.<div class="sig">"Never complain, never explain" ~ and never sit next to Fergus at dinner</div></div></div>
+      <div class="p"><div class="l"><b>blueblooded84</b><br>Senior Member<br>Posts: 1102</div><div class="r"><div class="when">Reply #58 on: April 24, 2018, 11:40:17 AM</div>The Zaatari pictures are very good. He's sitting on the floor with the kids in most of them.</div></div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → JERUSALEM ============ -->
+<section class="leg light" data-g="4" data-name="To Jerusalem"><div class="wrap">
+  <div class="pass road">
+    <div class="main">
+      <div class="air"><span><b>Motorcade</b> · Jordan Valley</span><span>King Hussein Bridge / Allenby crossing</span></div>
+      <div class="route">AMMAN <i></i> JERUSALEM</div>
+      <div><small>Date</small><span class="v">25 APR 2018</span></div>
+      <div><small>Departs</small><span class="v">07:30</span></div>
+      <div><small>Stops</small><span class="v">King Abdullah Canal · the bridge</span></div>
+      <div><small>Distance</small><span class="v">68 mi · 1,300 m down, then 800 m up</span></div>
+    </div>
+  </div>
+  <p style="max-width:640px;margin:26px auto 0;color:#5e5a4e;font:italic 400 17px/1.6 var(--display);text-align:center">The road drops from Amman to the Jordan Valley, four hundred metres below sea level, to a canal that waters the whole valley floor and an engineer who's waited six weeks to show it to someone. Then the bridge, a Jordanian handshake on one side and an Israeli one on the other, and the long climb up through the desert to Jerusalem.</p>
+</div></section>
+
+<!-- ============ 04 JERUSALEM ============ -->
+<section class="open" id="jerusalem" data-g="4" data-name="Jerusalem"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter four · The city</div>
+      <div class="chapno" aria-hidden="true">04</div>
+      <h2>Jerusalem</h2>
+      <div class="meta"><span><b>Wed 25 April</b></span><span>The King David Hotel</span></div>
+      <p class="why">The King Abdullah Canal in the Jordan Valley, the Allenby crossing, Yad Vashem, and the President of Israel's garden in the evening.</p>
+    </div>
+    <figure class="photo"><div class="ph"><div class="lab"><b>img/me-2018-10.jpg</b>Alexander and President Rivlin in the garden at Beit HaNassi</div><img src="img/me-2018-10.jpg" alt="Alexander and President Rivlin in the garden at Beit HaNassi" onerror="this.remove()"></div><figcaption>Beit HaNassi, Jerusalem · Wed 25 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Wed 25 Apr</h4><p><span>08.45</span>King Abdullah Canal, Jordan Valley. The Jordan Valley Authority and farmers on the irrigation network.</p><p><span>10.30</span>King Hussein Bridge / Allenby crossing.</p><p><span>13.00</span>Yad Vashem, with the Chief Rabbi, Ephraim Mirvis, and the chairman, Avner Shalev. The Hall of Names; rekindles the eternal flame and lays a wreath in the Hall of Remembrance; the Children's Memorial; survivors who came to Britain on the Kindertransport, in the library afterwards.</p><p><span>17.30</span>Beit HaNassi. Meeting with President Reuven Rivlin, who asks him to take a message of peace to President Abbas. Garden reception.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="4" data-name="Jerusalem"><div class="wrap"><div class="in">
+  <div class="label">WED 25 APR · 13.40 · YAD VASHEM</div>
+  <p>The Hall of Names was a cone. He'd seen photographs and hadn't understood them. A tall cone, open at the top. Up inside it, all the way to the light, were the faces: hundreds of small black-and-white photographs. Passport pictures. Wedding pictures. Children in school uniform squinting at a camera somebody had borrowed. And below it, a matching cone cut into the rock, going down, with water at the bottom, so that the faces were reflected and went on downwards too, into the dark.</p>
+  <p>Around the walls of the room, in black binders on shelves, the Pages of Testimony. Four million names, the guide said. She was about sixty, with a voice like a radio presenter's. She'd done this for presidents and pop stars. She didn't soften any of it for him, which he was grateful for.</p>
+  <p>He'd been at Stutthof six months ago. He'd thought that would help, as if there was a kind of practice you could do. It didn't help in the least. Stutthof had been one place. This was the arithmetic of the whole thing, laid out in binders, with space on the shelves for the names nobody had found yet.</p>
+  <p>He looked up into the cone for a long time. A girl of perhaps fifteen, in a photograph near the bottom of it, had plaits and a gap between her front teeth and was laughing at whoever held the camera. He didn't know her name. Nobody standing next to him knew her name. That seemed to be the point of the whole building. He looked at the floor for a moment and counted the tiles.</p>
+  <p>Afterwards in the library they gave him tea, and three survivors, two women and a man, the youngest of them eighty-four. The man had been in Auschwitz, then Mauthausen, then Haifa from 1948 onwards. He had no intention of talking about any of it. He wanted to talk about Manchester United, whom he'd followed since the Munich crash, and about the Queen Mother's hats, which he'd admired on a visit to London in 1972. Alexander let him talk about hats for ten minutes. It was the least he could do and it was also, if he was honest, a relief.</p>
+  <p>At the end the man held on to his hand and said, in Hebrew, something the interpreter translated as "Thank you for coming to see us while we are still here". His grip was strong for a man of ninety, and he didn't let go for a long time. Alexander put his other hand over the top of it and told him he was very glad he had come, and that he would remember him. He would. Then he was back in the car with a bottle of water, Rivlin in three hours, and a headache behind his eyes that wasn't going anywhere.</p>
+</div></div></section>
+
+<section class="front" data-g="4" data-name="Jerusalem"><div class="wrap">
+  <div class="head"><h2>Israel <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Wed 25 April · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Haaretz</div><div class="date">THURSDAY, APRIL 26, 2018 · ENGLISH EDITION</div>
+      <h3>First Prince of Wales to visit Israel makes Yad Vashem his first stop</h3><div class="deck">Rivlin hosts British heir; Palace keeps to Foreign Office line on Jerusalem's status</div><div class="by">By Noa Landau-Shalev</div>
+      <p>Prince Alexander arrived in Jerusalem via the Allenby crossing on Wednesday and went directly to Yad Vashem, where he spent nearly two hours. At the President's residence, he made brief remarks about "friendship between our peoples" that had clearly been vetted word by word in London.</p></article>
+    <article class="clip c2"><div class="mast">Israel Hayom</div><div class="date">26.04.2018</div>
+      <h3>אלקין: "ירושלים המאוחדת היא בירת ישראל כבר 3,000 שנה"</h3>
+      <p style="font-style:italic;color:#555">Elkin: "United Jerusalem has been Israel's capital for 3,000 years". The paper leads on the itinerary row, puts the Prince at Yad Vashem underneath it, and reports that Mayor Barkat "was not given the courtesy of a meeting in his own city".</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#fff;color:#111;font:700 26px var(--press);border-bottom:1px solid #ccc">The Times</div><div class="h" style="font:700 22px/1.12 Georgia,serif;text-transform:none;color:#111">A historic visit, and a very careful one</div><div class="s" style="font:13px Georgia,serif;color:#444">Every word checked as Prince enters Israel · Page 4</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>The Jerusalem Post:</b> Mayor Nir Barkat, whose invitation to City Hall was declined, says he "regrets that the Prince will see Jerusalem but not its elected representative".</article>
+    </div>
+    <article class="clip op c4"><div class="kick">Haaretz · Editorial</div><h3>A prince with nothing to say, and no power to say it</h3>
+      <p style="margin-top:8px">On Wednesday a thirty-two-year-old former helicopter pilot, whose only job is to wait for his father to die, crossed the Allenby Bridge. He will lay wreaths, shake hands with Netanyahu and Abbas, and say nothing at all. The government is very excited. It's hard to see why.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">AL-QUDS · القدس</div>
+      <p style="font:14px/1.5 var(--body)">الأمير البريطاني يصل إلى القدس عبر جسر الملك حسين، ويزور رام الله يوم الجمعة للقاء الرئيس محمود عباس.</p><p style="font:italic 13px/1.5 var(--body);color:#555">The British prince arrives in Jerusalem via the King Hussein Bridge, and visits Ramallah on Friday to meet President Mahmoud Abbas.</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="4" data-name="Jerusalem"><div class="wrap">
+  <div class="head"><h2>Jerusalem online</h2><p>Yad Vashem, the President's office, the embassy and Israeli Twitter, 25 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#2b2b2b">YV</div><div><b>Yad Vashem</b><small>@yadvashem · 25 Apr 2018</small></div></div>HRH The Prince of Wales visited Yad Vashem today. He toured the Holocaust History Museum, laid a wreath in the Hall of Remembrance, and met Holocaust survivors in the library. #RoyalVisitIsrael<div class="act">1,880 Retweets · 6.2K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1565C0">R</div><div><b>Reuven Rivlin</b><small>@PresidentRuvi · 25 Apr 2018</small></div></div>It was my great pleasure to welcome the Prince of Wales to Beit HaNassi this evening. The first official visit of a Prince of Wales to Israel is an important moment in the friendship between our two peoples. 🇮🇱🇬🇧<div class="act">2,404 Retweets · 9.1K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#0D47A1">ZE</div><div><b>Ze'ev Elkin</b><small>@zeev_elkin · 23 Apr 2018</small></div></div>ירושלים המאוחדת היא בירת ישראל כבר 3,000 שנה, ושום עיוות במסלול הביקור לא ישנה את המציאות הזאת.<div class="act">1,120 Retweets · 4.4K Likes</div><div class="reply">↳ <i>United Jerusalem has been the capital of Israel for 3,000 years, and no distortion in a tour itinerary will change that reality.</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#37474F">CR</div><div><b>Chief Rabbi Ephraim Mirvis</b><small>@chiefrabbi · 25 Apr 2018</small></div></div>Today's visit to Yad Vashem with HRH The Prince of Wales was profoundly moving. A moment of history for Jews in Britain and around the world.<div class="act">640 Retweets · 2.1K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1a3a6b">🇬🇧</div><div><b>UK in Israel</b><small>@UKinIsrael · 25 Apr 2018</small></div></div>Welcome to Israel, Your Royal Highness! 🇬🇧🇮🇱 The Prince of Wales has crossed from Jordan and begun the Israel leg of his visit at Yad Vashem. Follow #RoyalVisitIsrael for updates.<div class="act">540 Retweets · 2.2K Likes</div></div>
+    <div class="fbgrp">
+      <div class="hd">British Expats in Israel · Private group · 8.4K members</div>
+      <div class="post"><b>Debbie Kaplan</b><br>Anyone get an invite to the President's garden thing tonight? My husband's company got two and he gave the second one to his boss, which I'm not over.<div class="c"><b>Mark Simons</b> I went. Very hot. He worked the whole garden, talked to everyone. Looked tired by the end.</div><div class="c"><b>Ruth Green</b> My mum is a survivor and was asked to Yad Vashem but couldn't go because of her hip. She was so upset. She's watching it all on the news instead.</div></div>
+    </div>
+    <div class="card"><div class="who"><div class="av" style="background:#455A64">O</div><div><b>Ofer</b><small>@ofer_tlv · 25 Apr 2018</small></div></div>מעניין שהנסיך הבריטי נכנס דרך גשר אלנבי ולא דרך נתב"ג. מישהו במשרד החוץ הבריטי חשב על זה הרבה.<div class="act">22 Retweets · 140 Likes</div><div class="reply">↳ <i>Interesting that the British prince came in over the Allenby Bridge and not through Ben Gurion. Somebody at the British Foreign Office thought about that a lot.</i></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="4" data-name="Jerusalem"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Jerusalem</div>
+  <div class="ephrow">
+    <div class="place"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Yad Vashem · Book of distinguished visitors</div><div class="fold" style="font:italic 400 20px/1.35 var(--display)">It is almost impossible to take in. We must never forget, and we must keep teaching it. Alexander · 25th April 2018</div></div>
+    <div class="badge"><div class="t" style="background:#1565C0">Beit HaNassi</div><div class="b">Garden reception<big>№ 0143</big>25.04.2018 · 18:30<small>Bring this invitation and photo ID</small></div></div>
+    <div class="badge"><div class="t" style="background:#5a5a5a">King Hussein Bridge · Allenby</div><div class="b">VIP crossing · Diplomatic<big>JO → IL</big>25.04.2018 · 10:30<small>Convoy of 9 vehicles</small></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 05 OLD CITY ============ -->
+<section class="open" id="oldcity" data-g="5" data-name="The Old City"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter five · Inside the walls</div>
+      <div class="chapno" aria-hidden="true">05</div>
+      <h2>The Old City</h2>
+      <div class="meta"><span><b>Thu 26 April</b></span><span>The King David Hotel</span></div>
+      <p class="why">The Church of the Holy Sepulchre at dawn, the Haram al-Sharif with the Waqf, the Western Wall, and the Church of Mary Magdalene on the Mount of Olives. The evening is blank on the programme.</p>
+    </div>
+    <figure class="photo"><div class="ph"><div class="lab"><b>img/me-2018-12.jpg</b>Alexander coming out of the doors of the Holy Sepulchre into the empty courtyard just after six, Father Isidoros beside him</div><img src="img/me-2018-12.jpg" alt="Alexander coming out of the doors of the Holy Sepulchre into the empty courtyard just after six, Father Isidoros beside him" onerror="this.remove()"></div><figcaption>The courtyard of the Holy Sepulchre · Thu 26 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Thu 26 Apr</h4><p><span>06.00</span>Church of the Holy Sepulchre. Private visit, with the Greek Orthodox sacristan.</p><p><span>07.45</span>Haram al-Sharif. The Dome of the Rock and al-Aqsa compound with the Director of the Jerusalem Waqf.</p><p><span>09.30</span>The Western Wall, with the Rabbi of the Western Wall and Holy Sites, Shmuel Rabinowitz, and the Chief Rabbi. Signs the Wall's guest book.</p><p><span>10.30</span>Church of St Mary Magdalene, Mount of Olives. The Russian Orthodox convent of Gethsemane. Prayers at the tombs of Grand Duchess Elizaveta Feodorovna and Sister Varvara.</p><p><span>13.00</span>Lunch, Residence of the Consul-General.</p><p><span>18.30</span>—</p></div>
+  </div>
+</div></section>
+
+<section class="bleed" data-g="5" data-name="The Old City">
+  <div class="ph"><div class="lab"><b>img/me-2018-13.jpg</b>The Old City from the Mount of Olives in late-morning sun: the Dome of the Rock, the walls, the domes of the Holy Sepulchre behind, the golden onion domes of Mary Magdalene in the foreground</div><img src="img/me-2018-13.jpg" alt="The Old City of Jerusalem from the Mount of Olives" onerror="this.remove()"></div>
+  <div class="wrap">
+    <div class="eyebrow">Thu 26 April · Inside the walls</div>
+    <h2>Less than a square kilometre</h2>
+    <p class="why">The Christian, Muslim, Jewish and Armenian Quarters, three of the holiest places on earth within ten minutes' walk of each other, and an agreement on who may stand where that's older than most countries.</p>
+  </div>
+</section>
+<section class="quiet" data-g="5" data-name="The Old City">
+  <div class="wrap"><div class="in">
+    <div class="label">THU 26 APR · 06.04 · THE CHURCH OF THE HOLY SEPULCHRE</div>
+    <p>The city was blue at that hour, the stone gone the colour of skimmed milk, and the alleys of the Christian Quarter were empty except for a man hosing down the step of a shop and a cat on a wall watching him do it. They came in through the New Gate on foot: him, Miranda, two Israeli policemen and Father Isidoros, the Greek sacristan. The priest was perhaps seventy. He walked faster than all of them, his black robe snapping round his ankles.</p>
+    <p>The door of the church was open. It was opened every morning by a Muslim family who'd held the key for eight hundred years, because none of the Christian churches trusted each other with it, and the thought of that delighted him. It was the most Jerusalem thing he'd ever heard.</p>
+    <p>Inside it was dark. Incense, old wax, and something sweetish underneath, like stone that's been touched for centuries. Somewhere off to the right the Armenians were already singing. Somebody else, further away, was singing something different over the top of them. Lamps everywhere, hundreds of them, hanging on chains, and the dark between them black.</p>
+    <p>He'd read the arguments. He'd read them at Cambridge, when he still thought reading was the same as knowing anything. The Garden Tomb lot outside the walls with their nice lawns and their Victorian general. The archaeologists with their excavations under the Rotunda. The four-hundred-year quarrel over who was allowed to sweep which step, and the ladder on the façade that nobody had dared to move since the 1750s. He knew you couldn't prove it. He knew it had been built by Constantine, knocked down by the Fatimids, rebuilt by the Crusaders, and restored two years ago by Greek engineers with lasers.</p>
+    <p>None of it mattered in the least. He'd thought it might, coming in. It didn't.</p>
+    <p>The Aedicule sat in the middle of the Rotunda like a small building indoors, newly cleaned, the stone pale and pink in places from the restoration. Father Isidoros took him to the low door and stood aside. Alexander had to duck almost double to get through, into the first little chamber, and then duck again through a second door so low he had to go in sideways, and then he was inside.</p>
+    <p>It was tiny. There was room for perhaps three people. A marble slab along the right-hand side, cracked down the middle, worn smooth as soap. Candles. Silver lamps. Icons above. The marble was cold.</p>
+    <p>He knelt. He crossed himself and put both hands flat on the slab, and the marble was so cold it ached in the bones of his wrists.</p>
+    <p>He'd said the Creed every Sunday of his life. On the third day He rose again. He'd said it at school in a chapel that smelt of floor polish, and in a tent at Bastion with a padre and nine other men and the generators going, and in the Abbey with the whole country watching. He'd always meant it. Here was the place it said had happened. A dead man had been laid on this rock and wrapped in linen and left in the dark, and on the third day the women came with their spices and he wasn't there.</p>
+    <p>He'd believed it all his life. Here, with his hands on the stone, he believed it with his whole body, the way you believe in the floor when you're standing on it.</p>
+    <p>He tried to pray and the words came out as the old ones, because they were the only ones big enough. Lord, have mercy. Christ, have mercy. He said them in his head and they didn't feel like words he'd learnt. They felt like the right answer to a question he'd been asked a long time ago and never got round to answering. Everything he'd brought in with him, the tour and the cameras and the Foreign Office and the ache that had followed him round for years, was too small to fit through that door. He'd left it on the other side without noticing.</p>
+    <p>Whatever happened afterwards, the empty tomb was empty. Grief had an end to it. Death had been in this room and lost. He thought, this is it, and the peace that came with it went all the way down, warm, like the marble under his palms had finally taken the heat of his hands.</p>
+    <p>He didn't know how long he stayed. Afterwards Miranda said eleven minutes. He stood up, knees cracking. He touched the slab once more, the way you'd touch someone's shoulder going past their chair, and ducked out through the two doors. In the Rotunda a tour group had arrived and was being told about Constantine in Spanish. The day had begun. Father Isidoros was holding out a little paper packet of incense for him to take home. Alexander never cried in front of anyone. He was glad of the dark.</p>
+  </div></div>
+</section>
+
+<section class="spread flip" data-g="5" data-name="The Old City"><div class="wrap"><div class="grid">
+  <div class="stack">
+    <div class="whybox"><b>The Haram al-Sharif</b>The Waqf's director took him across the platform to the Dome of the Rock and al-Aqsa during the hours set aside for non-Muslim visitors, with Israeli police at the Mughrabi Gate and the Jordanian-funded Waqf guards on the platform itself. The Foreign Office spent three weeks agreeing the route. He took his shoes off at al-Aqsa and walked the carpets in his socks.</div>
+    <div class="whybox"><b>The Western Wall</b>He wore a black kippah lent by the Rabbi of the Wall and put a folded note between the stones. Kensington Palace said it was private. Within the hour somebody had pulled it out again, and on Friday morning it was on the front of Maariv.</div>
+    <div class="whybox"><b>Mary Magdalene</b>A Russian Orthodox church with seven gold onion domes on the slope of the Mount of Olives, built by Alexander III. Grand Duchess Elizaveta Feodorovna is buried in it, the sister of the last Tsarina, murdered in 1918 with the nun Varvara, who lies beside her. The family connection runs through Olga. The press waited at the gate. The nuns gave him tea in the garden afterwards and he looked down across the Kidron at the whole of the city for a long time.</div>
+  </div>
+  <figure class="photo"><div class="ph" style="aspect-ratio:1672/941"><div class="lab"><b>img/me-2018-14.jpg</b>Alexander at the Western Wall in a kippah, his hand flat on the stones</div><img src="img/me-2018-14.jpg" alt="Alexander at the Western Wall" onerror="this.remove()"></div><figcaption>The Western Wall · Thu 26 April · Reuters</figcaption></figure>
+</div></div></section>
+
+<section class="spread" data-g="5" data-name="The Old City"><div class="wrap"><div class="grid">
+  <figure class="photo"><div class="ph" style="aspect-ratio:3/4"><div class="lab"><b>img/me-2018-15.jpg</b>Alexander's note from the Western Wall, on Kensington Palace paper, folded in eight</div><img src="img/me-2018-15.jpg" alt="Alexander's handwritten prayer from the Western Wall on Kensington Palace paper" onerror="this.remove()"></div><figcaption>Maariv · Fri 27 April 2018 · front page</figcaption></figure>
+  <div class="stack">
+    <div class="whybox"><b>The note</b>A yeshiva student took it out of the Wall about forty minutes after the Prince of Wales left the plaza, and Maariv bought it. They ran it full-size on Friday's front page under the headline <i>The Prince's Prayer</i>. It was the same paper that printed Barack Obama's note in 2008, which a student had pulled out of the same Wall the same way.</div>
+    <div class="whybox"><b>The Rabbi of the Wall</b>Rabbi Shmuel Rabinowitz called it a disgrace. The notes placed between the stones, he said, were between a man and his Creator, and reading one was like reading somebody's mind. The Western Wall Heritage Foundation said the notes are collected twice a year, before Passover and before Rosh Hashanah, and buried on the Mount of Olives. Nobody reads them.</div>
+    <div class="whybox"><b>Kensington Palace</b>"The Prince of Wales's prayer was a private matter between him and God. We are disappointed that it has been made public, and we will not be commenting on its contents."</div>
+    <div><p class="pull">"I'd take a future King who writes that over one who doesn't."</p><cite>Reader comment · The Times, 27 April 2018</cite></div>
+  </div>
+</div></div></section>
+<section class="noise" data-g="5" data-name="The Old City"><div class="wrap">
+  <div class="head"><h2>The Prince's Prayer</h2><p>What people made of the note, Friday 27 April onwards.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#1d3b6e">M</div><div><b>Maariv</b><small>@MaarivOnline · 27 Apr 2018</small></div></div>תפילת הנסיך: זה מה שכתב יורש העצר הבריטי בפתק שהטמין בכותל<div class="act">2,310 Retweets · 3.1K Likes</div><div class="reply">↳ <i>The Prince's Prayer: this is what the British heir wrote in the note he placed in the Western Wall</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6b4a2b">RW</div><div><b>Rabbi Shmuel Rabinowitz</b><small>@WesternWallRabbi · 27 Apr 2018</small></div></div>The notes placed in the Western Wall are between a person and his Creator. Taking one out and printing it is a disgrace, whoever wrote it. We ask the public not to share it.<div class="act">1,870 Retweets · 6.2K Likes</div></div>
+    <div class="rd"><div class="sub">r/unitedkingdom <span>· u/ferrybridge_c · 9h</span></div><h4>Israeli paper prints Prince Alexander's private prayer from the Western Wall</h4>
+      <div class="cm"><div class="u"><b>ferrybridge_c</b> · 9h</div>Whatever you think of the monarchy, nicking someone's prayer out of a wall and selling it is grim.<div class="pts">⬆ 2.4k</div></div>
+      <div class="cm"><div class="u"><b>loose_tea_leaves</b> · 8h</div>Same paper did it to Obama. You'd think his team would know that and tell him to write something bland.<div class="pts">⬆ 1.1k</div>
+        <div class="cm"><div class="u"><b>ferrybridge_c</b> · 8h</div>It is fairly bland though? It's basically the Collect.<div class="pts">⬆ 870</div></div></div>
+      <div class="cm"><div class="u"><b>hollowayroadbus</b> · 7h</div>"Forgive me my sins" and the Mail is going to spend a week asking which ones. Watch.<div class="pts">⬆ 1.9k</div></div>
+    </div>
+    <div class="web"><div class="m" style="background:#4a2a5e">CHURCH TIMES</div><div class="b"><h4>A prayer that was never meant to be read</h4>It's plain Anglican, Prayer Book language: mercy, wisdom, guidance. What readers noticed was "an instrument of Your will", where they expected St Francis's "instrument of Your peace". It's the prayer of a man who expects to be asked to do things he hasn't chosen, which for an heir is accurate. None of that makes printing it any less shabby.<small>Comment · 4 May 2018</small></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#222">RP</div><div><b>Republic</b><small>@RepublicStaffs · 27 Apr 2018</small></div></div>Nobody should have their private prayer published. But "make me an instrument of Your will" is a fairly good summary of the case against hereditary power.<div class="act">340 Retweets · 980 Likes</div></div>
+    <div class="dish"><div class="bar2">Royal Dish › The Prince of Wales's Western Wall note (Read 51,207 times)</div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8790</div><div class="r"><div class="when">Reply #4 on: April 27, 2018, 07:51:12 AM</div>I'm not going to discuss what it says. It was a private prayer and it should never have been taken.<div class="sig">"Never complain, never explain" ~ and never sit next to Fergus at dinner</div></div></div>
+      <div class="p"><div class="l"><b>tiarasandtea</b><br>Senior Member<br>Posts: 3315</div><div class="r"><div class="when">Reply #12 on: April 27, 2018, 09:20:44 AM</div>It's on Kensington Palace paper, so he wrote it before he went, not on the spot. I find that rather touching.</div></div>
+      <div class="p"><div class="l"><b>QuebecQueen</b><br>Large Member<br>Posts: 2006</div><div class="r"><div class="when">Reply #19 on: April 27, 2018, 11:02:37 AM</div>The Mail already has "forgive me my sins" in a headline. Of course they do.</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#3c4538">CH</div><div><b>Chloe Harker</b><small>@chloeharker · 27 Apr 2018</small></div></div>my nan has that exact prayer on a card in her kitchen. weirdly made me like him more<div class="act">212 Retweets · 3.4K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1a3a6b">JP</div><div><b>The Jerusalem Post</b><small>@Jerusalem_Post · 27 Apr 2018</small></div></div>Western Wall Heritage Foundation condemns publication of Prince of Wales's note, says notes are buried unread twice a year on the Mount of Olives<div class="act">410 Retweets · 1.2K Likes</div></div>
+  </div>
+</div></section>
+<section class="noise" data-g="5" data-name="The Old City"><div class="wrap">
+  <div class="head"><h2>The Old City online</h2><p>The Consulate, the churches, the Western Wall and Jerusalemites, 26 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#1a3a6b">🇬🇧</div><div><b>UK in Jerusalem</b><small>@UKinJerusalem · 26 Apr 2018</small></div></div>The Prince of Wales spent today in the Old City of Jerusalem, visiting the Haram al-Sharif with the Director of the Waqf, the Western Wall, and the Church of St Mary Magdalene on the Mount of Olives. #RoyalVisitJerusalem<div class="act">380 Retweets · 1.6K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#0D47A1">WW</div><div><b>The Western Wall</b><small>@TheKotel · 26 Apr 2018</small></div></div>The Prince of Wales visited the Western Wall this morning with the Rabbi of the Western Wall and Holy Sites, Rabbi Shmuel Rabinowitz, and placed a note between the stones, as millions have before him. 🙏<div class="act">890 Retweets · 3.4K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#795548">E</div><div><b>Elias</b><small>@elias_jlm · 26 Apr 2018</small></div></div>I open my shop on Christian Quarter Road at six every day and this morning there were police everywhere and a tall man walking very fast with an old Greek priest. My neighbour says it was the British prince going to the Kiyameh before anyone was awake. I didn't recognise him.<div class="act">74 Retweets · 520 Likes</div></div>
+    <div class="fbgrp">
+      <div class="hd">ROCOR Pilgrims to the Holy Land · Group</div>
+      <div class="post"><b>Svetlana M.</b><br>The sisters at Gethsemane say the British prince came to Mary Magdalene this morning and prayed at the shrine of the Grand Duchess Elizabeth and Sister Varvara for a long time. Then he had tea with Mother Elisaveta in the garden. They were very touched.<div class="c"><b>Fr. Andrei</b> His family is related to the Grand Duchess. It is right that he came.</div><div class="c"><b>Natasha K.</b> Was the press allowed in?</div><div class="c"><b>Svetlana M.</b> No, they stayed at the gate.</div></div>
+    </div>
+    <div class="rd"><div class="sub">r/Jerusalem <span>· u/mahaneyehuda · 11h</span></div><h4>Half the Old City shut this morning for the British royal visit</h4>
+      <div class="cm"><div class="u"><b>mahaneyehuda</b> · 11h</div>Jaffa Gate to the Kotel was closed in stages from about 6 to 11. Shuk was fine.<div class="pts">⬆ 40</div></div>
+      <div class="cm"><div class="u"><b>armenianquarter_ani</b> · 10h</div>They did the Sepulchre at 6am before the pilgrims came. Honestly that's the right way to do it, the place is impossible after 9.<div class="pts">⬆ 77</div></div>
+      <div class="cm"><div class="u"><b>nablusroad</b> · 9h</div>He went up to the Haram in socks at al-Aqsa. The Waqf people I know said it went fine and he was respectful.<div class="pts">⬆ 58</div></div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="5" data-name="The Old City"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · the Old City</div>
+  <div class="ephrow">
+    <div class="note" style="max-width:300px;margin:0 auto"><div class="from">A paper packet · the Holy Sepulchre</div>Incense from the Aedicule. Given by Fr Isidoros, 26.iv.18, 06.20. Now on the desk at KP.</div>
+    <div class="receipt"><div class="c"><b>RAZZOUK INK</b><br>Jaffa Gate · Old City<br>26.04.2018 · 21:58</div><hr><div class="r"><span>Coptic cross</span><span></span></div><div class="r"><span>traditional stamp, inner wrist</span><span>₪ 350</span></div><hr><div class="r"><b>TOTAL</b><b>₪ 350</b></div><div class="r"><span>Card ****</span><span></span></div><hr><div class="c"><small>Wash twice daily · no sun · no swimming 2 wks<br>Since 1300 · Thank you, pilgrim</small></div></div>
+    <div class="place"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Convent of St Mary Magdalene · Gethsemane</div><div class="fold" style="font:italic 400 20px/1.35 var(--display)">Святая преподобномученица Елисавета, моли Бога о нас</div></div>
+  </div>
+</div></section>
+<section class="drab" data-g="5" data-name="The Old City"><div class="wrap"><div class="in">
+  <div class="label">THU 26 APR · 21.15 · RAZZOUK INK, JAFFA GATE</div>
+  <p>He'd known about Razzouk since he was nineteen. A history tutor at Cambridge had mentioned it in passing in a seminar on the Crusader states, a family of Coptic tattooists who'd come up from Egypt five hundred years ago and never left, still working by the Jaffa Gate, still using the same olive-wood blocks to stamp the designs on pilgrims before the needle went in. Afterwards he'd gone to the library and looked it up.  He'd thought about it on and off for thirteen years, the way you think about a country you mean to visit, and never told anyone, because it wasn't anyone's business.</p>
+  <p>The Coptic cross was the point. Not the Jerusalem one with its four little crosses, which was pretty and Crusader and slightly too pleased with itself. The plain Coptic one, small, equal-armed, the ends flared. For centuries in Egypt the Copts had marked it on the inside of the wrist so that a Christian could prove what he was. The churches wouldn't let you in without it. Under the caliphs it was the thing that could get you killed, and they'd done it anyway, to their children, generation after generation. Then the pilgrims had taken it home from Jerusalem as proof they'd been. It wasn't decoration. It had always meant <i>I belong to this, and I'm not hiding it</i>.</p>
+  <p>That morning he'd knelt in the tomb. He'd felt what he'd felt, and he'd had nowhere to put it. He couldn't say it to Marianne or Charlie, or to the Foreign Office adviser with his folder of approved remarks. He couldn't put it on Instagram, or say it in a speech, or even really say it to Georgie, not yet. He wanted it on him, somewhere he'd see it every day, and nobody else needed to know what it was for.</p>
+  <p>So: the blank space on the programme, which had taken Marianne three weeks of arguing to keep blank. Miranda and a second protection officer. Two men from the Israeli escort in plain clothes at the bottom of the steps, cleared days ago. And Chris Jackson, with one camera and no flash. Alexander had asked him himself, and had made it clear the pictures were his and would go nowhere unless he said so.</p>
+  <p>The shop was up a few stone steps off the street, through a door you'd walk straight past. Strip lighting. White walls covered in flash sheets of birds and roses and crosses. Behind glass at the back, the old blocks, black with centuries of ink, carved with saints and the Virgin and the cross he'd come for. Wassim Razzouk was big, bearded and cheerful, his own forearms covered in ink. He'd done this for bishops, bikers and drunk Americans. He didn't bow. He shook hands, looked at Alexander's wrist, and said, "The Coptic. Good choice. The old one."</p>
+  <p>Alexander had prepared a short explanation of why. He found he didn't need any of it, and said yes.</p>
+  <p>Wassim inked the old block and pressed it to the inside of his left wrist, just below the heel of the hand. He lifted it away. There it was, in purple outline on his skin. Then the machine. It barely hurt, a hot scratch over the tendons, less than a vaccination. He sat with his forearm flat on the padded rest and his sleeve rolled to the elbow and watched the needle go round the four arms, one after another. The shutter went twice behind him, quietly, and then stopped.</p>
+  <p>He thought about the slab in the morning, cold under his palms. He thought about the women in Egypt doing this to their babies so they'd be let into church. He thought about his mother, briefly, because he always did in churches, and then let it go.</p>
+  <p>Twenty minutes. Wassim wiped it clean. The cross sat black and raised and shining on the inside of his wrist, where his pulse was, slightly smaller than his thumbnail. Wassim wrapped it in cling film and taped it down. Twice a day, soap and water, no sun, no swimming for two weeks. Alexander paid with his own card and shook his hand again.</p>
+  <p>Outside, the air had gone cool. The walls were lit up gold. Somewhere in the Armenian Quarter somebody was practising the trumpet, the same four bars over and over.</p>
+  <p>He was back at the hotel before midnight. He sat on the end of the bed with tomorrow's briefing on his knees, Ramallah, Abbas, the approved remarks, and read it all the way through twice with his left hand turned palm-up on his thigh, where he could see it. He didn't mention it to anyone.</p>
+</div></div></section>
+
+<!-- ============ 06 RAMALLAH ============ -->
+<section class="leg light" data-g="6" data-name="To Ramallah"><div class="wrap">
+  <div class="pass road">
+    <div class="main">
+      <div class="air"><span><b>Motorcade</b> · Route 60</span><span>Qalandiya crossing</span></div>
+      <div class="route">JERUSALEM <i></i> RAMALLAH</div>
+      <div><small>Date</small><span class="v">27 APR 2018</span></div>
+      <div><small>Departs</small><span class="v">09:00</span></div>
+      <div><small>Distance</small><span class="v">10 mi · 40 min with the checkpoint</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="open" id="ramallah" data-g="6" data-name="Ramallah"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter six · Ten miles north</div>
+      <div class="chapno" aria-hidden="true">06</div>
+      <h2>Ramallah</h2>
+      <div class="meta"><span><b>Fri 27 April</b></span><span>Back to Jerusalem by night</span></div>
+      <p class="why">President Abbas at the Muqata'a, the Khalil Sakakini Cultural Centre, and Jalazone, a refugee camp of about fourteen thousand people founded in 1949, with UNRWA.</p>
+    </div>
+    <figure class="photo"><div class="ph"><div class="lab"><b>img/me-2018-16.jpg</b>Alexander and President Abbas between the two flags in the courtyard of the Muqata'a</div><img src="img/me-2018-16.jpg" alt="Alexander and President Abbas between the two flags in the courtyard of the Muqata'a" onerror="this.remove()"></div><figcaption>The Muqata'a, Ramallah · Fri 27 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Fri 27 Apr</h4><p><span>10.00</span>The Muqata'a. Meeting with President Mahmoud Abbas. Wreath at the tomb of Yasser Arafat, as foreign visitors are asked to.</p><p><span>12.00</span>Khalil Sakakini Cultural Centre. Palestinian musicians, writers and visual artists.</p><p><span>14.30</span>Jalazone camp. The UNRWA health centre, then a walk through the camp with young people from the youth centre.</p><p><span>17.00</span>Ramallah Municipality, with the Mayor, Musa Hadid. A dabke troupe, a young singer, Palestinian food. Jibril Rajoub of the Palestinian Football Association presents him with a national team shirt.</p><p><span>19.30</span>Residence of the Consul-General, Jerusalem. Reception and short remarks.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="6" data-name="Ramallah"><div class="wrap"><div class="in">
+  <div class="label">FRI 27 APR · 09.20 · QALANDIYA</div>
+  <p>The wall was higher than he'd pictured. He'd seen it in photographs, the grey concrete slabs eight metres tall with the watchtowers, the graffiti on the Palestinian side, and he'd still pictured something lower. From the car it went on beside the road for ever. At the turnstiles on the other side of the checkpoint people were queuing to go to work, or to hospital, or to see their mothers. Some of them had been standing there since before he woke up.</p>
+  <p>The motorcade did not queue. The motorcade went through a separate gate with a nod from a nineteen-year-old soldier who looked about as interested in the heir to the British throne as in the weather, and that was in its way the worst part, how easy it was for him.</p>
+  <p>He'd been told, in four separate briefings, by people who'd been doing this for thirty years, exactly what he could and couldn't say about any of it. He could say he was pleased to be there. He could say Britain supported a two-state solution with Jerusalem as a shared capital. He could say that he had seen the challenges facing the Palestinian people and their aspirations. He could not say anything with a verb in it that the Foreign Office hadn't seen first.</p>
+  <p>His jaw ached by half past ten. He'd been clenching it since Qalandiya. Abbas was eighty-two, courteous, tired and formal. He spoke for twenty minutes about the American embassy, exactly as Alexander had been warned he would. Alexander said what he'd been told to say, each word in its place. A gramophone. A very expensive gramophone. At the tomb he laid the wreath. In the courtyard he stood for photographs between two flags. Every moment of it would be read by somebody in Jerusalem, somebody in Washington and somebody in Whitehall, all looking for a mistake. There wasn't one. He didn't make them. He thought he might be sick with how much he didn't make them.</p>
+  <p>At Jalazone in the afternoon a boy of about thirteen in a Barcelona shirt walked beside him down the narrowest street he'd ever been on, past breeze-block houses four storeys high and water tanks on every roof, and asked him in good English whether it was true he'd been in the army in Afghanistan.</p>
+  <p>Yes, Alexander said. The air force.</p>
+  <p>The boy considered this. "Did you like it?"</p>
+  <p>He thought about it. He thought about the press officer two metres behind him, the cameras, the Foreign Office adviser whose entire job this week was to make sure he never answered a question like that one honestly.</p>
+  <p class="say">"Some of it," he said. "The flying. Not the rest."</p>
+  <p>The boy nodded as if that was the answer he'd expected. Then he asked who'd win the Champions League. Alexander said Liverpool, purely to annoy Hussein from fifty miles away. The boy told him he was an idiot. He laughed out loud for the first time that day.</p>
+</div></div></section>
+
+<section class="front" data-g="6" data-name="Ramallah"><div class="wrap">
+  <div class="head"><h2>Ramallah <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Fri 27 April · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Al-Ayyam · الأيام</div><div class="date">السبت ٢٨ نيسان ٢٠١٨</div>
+      <h3>الرئيس يستقبل أمير ويلز ويؤكد على حل الدولتين</h3>
+      <p style="font-style:italic;color:#555">The President receives the Prince of Wales and stresses the two-state solution. The paper leads on Abbas's remarks about the embassy move and runs the Prince's statement in full: "I have been very glad to visit Ramallah and Jalazone and to meet the Palestinian people. Britain's support for a just and lasting peace is well known."</p></article>
+    <article class="clip c2"><div class="mast">The Guardian</div><div class="date">SATURDAY 28 APRIL 2018 · 22</div>
+      <h3>Prince visits refugee camp and meets Abbas, but stays on script</h3><div class="by">By Peter Beaumont in Ramallah</div>
+      <p>Prince Alexander's day in the West Bank was the most closely managed of a closely managed tour. At Jalazone camp he walked with teenagers from the youth centre, sat in on a clinic, and appeared, according to several people who spoke to him, genuinely interested in the water supply.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#fff;color:#111;font:700 26px var(--press);border-bottom:1px solid #ccc">Daily Mail</div><div class="h" style="font:700 22px/1.12 Georgia,serif;text-transform:none;color:#111">Prince lays wreath at Arafat's tomb</div><div class="s" style="font:13px Georgia,serif;color:#444">Critics say visit 'legitimises' Palestinian Authority · Page 15</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>Kensington Palace:</b> "The Prince followed the protocol for all official visitors to the Muqata'a. The visit was undertaken at the request of the Foreign Office."</article>
+    </div>
+    <article class="clip op c4"><div class="kick">The Times of Israel · Blogs</div><h3>He went to Ramallah. Good.</h3>
+      <p style="margin-top:8px">I don't expect a British prince to fix anything. I'd still rather he saw Qalandiya with his own eyes than read about it. Everyone who comes here to talk about this place should have to queue at that checkpoint once.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">ARAB NEWS</div>
+      <p style="font:14px/1.5 var(--body)"><b>"Come back to an independent Palestine,"</b> President Abbas told the Prince at the Muqata'a. The Prince replied that he shared his hope "for a just and lasting peace". At the Consul-General's residence that evening he told guests the Palestinian people "have not been forgotten".</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body);margin-top:14px"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">UNRWA · PRESS RELEASE</div>
+      <p style="font:14px/1.5 var(--body)">UNRWA thanks HRH The Prince of Wales for his visit to Jalazone camp and the UK for its continued support to Palestine refugees. The Prince met health staff, patients and young people from the camp's youth centre.</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="6" data-name="Ramallah"><div class="wrap">
+  <div class="head"><h2>Jerusalem and Ramallah online</h2><p>Twitter, Facebook and Reddit, 25–27 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#1565C0">Y</div><div><b>Yael B.</b><small>@yael_b_jlm · 26 Apr 2018</small></div></div>Was at the Kotel this morning for minyan and there was a very tall man in a borrowed kippah with about thirty police around him. Apparently it was the British prince. He stood at the wall for a long time.<div class="act">88 Retweets · 610 Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#2E7D32">S</div><div><b>Samer</b><small>@samer_rml · 27 Apr 2018</small></div></div>الأمير البريطاني في جلزون اليوم. ابن عمي مشي معه. قال إنه سأل عن المي وعن المدارس، وبعدين حكوا عن كرة القدم.<div class="act">54 إعادة تغريد · 380 إعجاب</div><div class="reply">↳ <i>The British prince was in Jalazone today. My cousin walked with him. He said he asked about the water and the schools, and then they talked about football.</i></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#424242">J</div><div><b>Jonny Cohen</b><small>@jcohen_news · 27 Apr 2018</small></div></div>Press pool told this morning: any mention of "Israel" in datelines filed from Ramallah to be removed. Datelines from yesterday's Jerusalem filing to say "Jerusalem" only. #RoyalVisit<div class="act">88 Retweets · 210 Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#4E342E">N</div><div><b>Nour</b><small>@nour_ldn · 27 Apr 2018</small></div></div>He shook Netanyahu's hand on Sunday, laid a wreath at Arafat's tomb on Friday, said nothing about Gaza either day. Over 40 killed at the fence in four weeks. "You have not been forgotten" is quite a thing to say in that context.<div class="act">1,604 Retweets · 3.9K Likes</div><div class="reply">↳ <b>@samirk</b> he's a royal, he literally isn't allowed to say anything. your anger belongs with the government</div><div class="reply">↳ <b>@nour_ldn</b> then why send him</div></div>
+    <div class="rd"><div class="sub">r/Israel <span>· u/haifa_harry · 9h</span></div><h4>Prince Alexander at Yad Vashem, full gallery</h4>
+      <div class="cm"><div class="u"><b>haifa_harry</b> · 9h</div>Whatever you think about the Ramallah leg, the Yad Vashem visit was done well. Two hours, no speech, sat with survivors.<div class="pts">⬆ 412</div></div>
+      <div class="cm"><div class="u"><b>throwaway_tlv</b> · 8h</div>The British government is still refusing to say anything about the embassy. This is a nice photo op to cover for it.<div class="pts">⬆ 160</div>
+        <div class="cm"><div class="u"><b>haifa_harry</b> · 8h</div>He's a royal, he's not allowed to say anything about the embassy either way. That's not him.<div class="pts">⬆ 205</div></div></div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in Jordan, Israel and the Palestinian Territories, April 2018 (page 9)</div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8790</div><div class="r"><div class="when">Reply #210 on: April 26, 2018, 08:15:44 AM</div>A private visit to the Holy Sepulchre at six in the morning and a photo of him coming out of the door. That's all. I think that's lovely actually. Not everything has to be for us.</div></div>
+      <div class="p"><div class="l"><b>sweetpea</b><br>Member<br>Posts: 201</div><div class="r"><div class="when">Reply #214 on: April 26, 2018, 09:02:10 AM</div>Nothing on the schedule for this evening at all? Very unusual for a tour day.</div></div>
+      <div class="p"><div class="l"><b>QuebecQueen</b><br>Large Member<br>Posts: 2006</div><div class="r"><div class="when">Reply #215 on: April 26, 2018, 09:10:52 AM</div>He's been going since six. They're probably letting him have a night off.</div></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 07 NAZARETH ============ -->
+<section class="leg" data-g="7" data-name="To Nazareth"><div class="wrap">
+  <div class="pass road">
+    <div class="main">
+      <div class="air"><span><b>Motorcade</b> · Route 6</span><span>North, then the coast</span></div>
+      <div class="route">JERUSALEM <i></i> NAZARETH <i></i> TEL AVIV</div>
+      <div><small>Date</small><span class="v">28 APR 2018</span></div>
+      <div><small>Departs</small><span class="v">08:00</span></div>
+      <div><small>Distance</small><span class="v">142 mi in all</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="open" id="nazareth" data-g="7" data-name="Nazareth"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter seven · The Galilee</div>
+      <div class="chapno" aria-hidden="true">07</div>
+      <h2>Nazareth</h2>
+      <div class="meta"><span><b>Sat 28 April</b></span><span>The Norman, Tel Aviv</span></div>
+      <p class="why">Shabbat everywhere else in Israel, a working Saturday in Nazareth, Israel's largest Arab city. The Basilica of the Annunciation, lunch with the Mayor, and a reception in Tel Aviv in the evening.</p>
+    </div>
+    <figure class="photo"><div class="ph"><div class="lab"><b>img/me-2018-19.jpg</b>Alexander in the Grotto of the Annunciation with the Franciscan Custos</div><img src="img/me-2018-19.jpg" alt="Alexander in the Grotto of the Annunciation with the Franciscan Custos" onerror="this.remove()"></div><figcaption>The Basilica of the Annunciation · Sat 28 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Sat 28 Apr</h4><p><span>10.30</span>Basilica of the Annunciation, with the Franciscan Custody of the Holy Land. The Grotto and the upper church's gallery of Madonnas from around the world.</p><p><span>12.30</span>Lunch with the Mayor of Nazareth, Ali Sallam, and Christian and Muslim community leaders.</p><p><span>14.30</span>The Old Market and the White Mosque.</p><p><span>19.30</span>British Council reception, Tel Aviv. Israeli and British writers, artists and academics.</p></div>
+  </div>
+</div></section>
+
+<section class="spread" data-g="7" data-name="Nazareth"><div class="wrap"><div class="grid">
+  <figure class="slip tall"><div class="ag">AFP · Nazareth · 28 Apr 2018</div><p>Prince Alexander looks at the mosaics of the Virgin and Child given by Catholic communities around the world, which line the walls of the upper church of the Basilica of the Annunciation.</p><small>The upper church · Sat 28 April</small></figure>
+  <div class="stack">
+    <div><p class="pull">"He stayed for the midday prayer in the Grotto. We were glad he did."</p><cite>A Franciscan friar of the Custody · to the Catholic Herald</cite></div>
+    <div class="whybox"><b>Why here</b>The one stop of the tour in an Arab city inside Israel. The Foreign Office wanted the Christian communities of the Holy Land on the programme, and Nazareth on a Saturday worked when nothing else in the country did.</div>
+    <div class="whybox"><b>The Mayor</b>Ali Sallam talked for most of lunch about the city's traffic, the parking shortage in the Old Market and the government's planning restrictions, at volume, and the Prince didn't mind any of it.</div>
+  </div>
+</div></div></section>
+
+<section class="noise" data-g="7" data-name="Nazareth"><div class="wrap">
+  <div class="head"><h2>Nazareth online</h2><p>The Custody, the municipality and Nazarenes, 28 April.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#6d4c2a">CT</div><div><b>Custodia Terrae Sanctae</b><small>@CustodiaTS · 28 Apr 2018</small></div></div>The Prince of Wales visited the Basilica of the Annunciation in Nazareth today, welcomed by the Custos of the Holy Land and the friars of the Nazareth community. He prayed in the Grotto and visited the upper basilica. #Nazareth<div class="act">310 Retweets · 1.1K Likes</div></div>
+    <div class="fbgrp">
+      <div class="hd">بلدية الناصرة · Nazareth Municipality</div>
+      <div class="post"><b>بلدية الناصرة</b><br>رئيس البلدية علي سلام يستقبل أمير ويلز في الناصرة ويطلعه على احتياجات المدينة.<div class="c"><b>Rami Haddad</b> يا ريت يحكيله عن الشوارع كمان 😂</div><div class="c"><b>Maryam S.</b> حكاله عن الشوارع ساعة كاملة، كنت هناك</div></div>
+      <div class="post" style="font-size:12.5px;color:#65676b;font-style:italic">Mayor Ali Sallam receives the Prince of Wales in Nazareth and tells him about the city's needs. · Hope he tells him about the roads too 😂 · He told him about the roads for a whole hour, I was there</div>
+    </div>
+    <div class="card"><div class="who"><div class="av" style="background:#00838F">L</div><div><b>Lina</b><small>@lina_nazareth · 28 Apr 2018</small></div></div>Saturday in Nazareth is our busy day, the Old Market was packed already and then the British prince turned up. My grandmother sells spices on Paulus VI Street and he bought za'atar from her. She's telling everyone.<div class="act">210 Retweets · 1,880 Likes</div></div>
+  </div>
+</div></section>
+
+<!-- ============ 08 TEL AVIV ============ -->
+<section class="open" id="telaviv" data-g="8" data-name="Tel Aviv &amp; Jaffa"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter eight · The coast</div>
+      <div class="chapno" aria-hidden="true">08</div>
+      <h2>Tel Aviv &amp; Jaffa</h2>
+      <div class="meta"><span><b>Sun 29 April</b></span><span>Home that night</span></div>
+      <p class="why">The Prime Minister, the Peres Center for Peace and Innovation in Jaffa, and football on an artificial pitch with Arab and Jewish children from the Center's twinned schools.</p>
+    </div>
+    <figure class="photo"><div class="ph"><div class="lab"><b>img/me-2018-21.jpg</b>Alexander with his jacket off, mid-kick on the artificial pitch in Jaffa, the goalkeeper already diving</div><img src="img/me-2018-21.jpg" alt="Alexander with his jacket off, mid-kick on the artificial pitch in Jaffa, the goalkeeper already diving" onerror="this.remove()"></div><figcaption>Jaffa · Sun 29 April</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:1">
+    <div class="day hot"><h4>Sun 29 Apr</h4><p><span>09.30</span>Meeting with Prime Minister Benjamin Netanyahu, Tel Aviv.</p><p><span>11.30</span>Peres Center for Peace and Innovation, Jaffa. The Israeli Innovation Center, with young engineers.</p><p><span>13.00</span>Twinned Peace Sport Schools. Football with Arab and Jewish children from Jaffa and Bat Yam.</p><p><span>18.15</span>British Airways from Ben Gurion to Heathrow.</p></div>
+  </div>
+</div></section>
+
+<section class="filmwrap" data-g="8" data-name="Tel Aviv &amp; Jaffa">
+  <div class="wrap"><div class="eyebrow" style="color:var(--gold)">Sun 29 April · 13.21 · Jaffa</div><p style="margin-top:10px">Contact sheet, Reuters photographer behind the goal. Frame 22 runs on the front of Yedioth Ahronoth. Frame 24 goes on Kensington Palace's Instagram.</p></div>
+  <div class="film" aria-label="Three frames of the save in Jaffa">
+    <figure><div class="ph"><div class="lab"><b>img/me-2018-22.jpg</b>Alexander's right foot connecting, the ball a blur</div><img src="img/me-2018-22.jpg" alt="" onerror="this.remove()"></div><figcaption>21 · 13:21:04</figcaption></figure>
+    <figure><div class="ph"><div class="lab"><b>img/me-2018-23.jpg</b>Amir at full stretch to his left, fingertips on the ball</div><img src="img/me-2018-23.jpg" alt="" onerror="this.remove()"></div><figcaption>22 · 13:21:05</figcaption></figure>
+    <figure><div class="ph"><div class="lab"><b>img/me-2018-24.jpg</b>Alexander shaking Amir's gloved hand, both laughing</div><img src="img/me-2018-24.jpg" alt="" onerror="this.remove()"></div><figcaption>24 · 13:21:31</figcaption></figure>
+  </div>
+</section>
+<section class="front" data-g="8" data-name="Tel Aviv &amp; Jaffa"><div class="wrap">
+  <div class="head"><h2>The last day <em>in the</em> papers</h2><div class="eyebrow" style="color:var(--frame)">Sun 29 – Mon 30 April · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Yedioth Ahronoth</div><div class="date">30.04.2018</div>
+      <h3>הנסיך שבעט בכדור ביפו</h3><div class="deck">The prince who kicked a ball in Jaffa</div>
+      <p style="font-style:italic;color:#555">The paper's front-page photo is the save: a ten-year-old goalkeeper from Bat Yam diving to his left to stop the Prince's shot. The boy, Amir, tells the paper he would have let it in but "he hit it too hard to let it in".</p></article>
+    <article class="clip c2"><div class="mast">The Times</div><div class="date">MONDAY APRIL 30 2018</div>
+      <h3>Netanyahu meeting caps tour that tested royal neutrality</h3><div class="by">By our correspondent in Tel Aviv</div>
+      <p>The Prince of Wales ended his Middle East tour yesterday with a meeting with Benjamin Netanyahu that both sides described as warm and neither described in detail. Diplomats in Jerusalem said the week had passed "without a single wrong word", which, they added, was the point.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#D7141A">The Sun</div><div class="h">Penalty saved!</div><div class="s">10-year-old keeper denies Prince in Jaffa · Page 7</div></article>
+      <article class="clip rot-b" style="font-size:13px"><b>Kensington Palace</b> posts a photograph of the Prince and the goalkeeper shaking hands, captioned "Well saved, Amir."</article>
+    </div>
+    <article class="clip op c4"><div class="kick">The Spectator · Diary</div><h3>The Prince's long week</h3>
+      <p style="margin-top:8px">One British official in Jerusalem told me the Prince had been "a model". Another, less guarded over a second glass of wine, said he looked by Sunday "like a man who has spent eight days holding his breath". Both are probably true.</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 18px var(--body);color:#1a1a1a;border-bottom:2px solid #1a1a1a;padding-bottom:4px;margin-bottom:8px">EGYPT INDEPENDENT · BRIEFLY</div>
+      <p style="font:14px/1.5 var(--body)">The Prince of Wales completed a visit to Jordan, Israel and the Palestinian Territories on Sunday. A planned leg to Egypt was dropped in March. The Ministry of Foreign Affairs said the Prince would be "welcome at any time".</p></article>
+  </div>
+</div></section>
+
+<section class="noise" data-g="8" data-name="Tel Aviv &amp; Jaffa"><div class="wrap">
+  <div class="head"><h2>The last day online</h2><p>Twitter, Instagram and the royal forums, 28–30 April.</p></div>
+  <div class="masonry">
+    <div class="card ig"><div class="who"><div class="av" style="background:#303a3e">K</div><div><b>kensingtonpalace</b> ✔</div></div><b>188,402 likes</b><br>Well saved, Amir. ⚽ The Prince of Wales joined children from the Peres Center's Twinned Peace Sport Schools in Jaffa today, where Arab and Jewish children play and learn together. #RoyalVisitMiddleEast
+      <div class="cm"><b>peres_center</b> Thank you for joining us, Your Royal Highness! 🙏</div><div class="cm"><b>danielle.k</b> the kid's face 😂</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#AD1457">N</div><div><b>Noa</b><small>@noa_tlv · 28 Apr 2018</small></div></div>went to the british council thing tonight for work and ended up talking to the prince about lior ashkenazi films for five minutes. he'd seen foxtrot on the plane. he had opinions. extremely surreal friday night, sorry, saturday night<div class="act">120 Retweets · 1,404 Likes</div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in Jordan, Israel and the Palestinian Territories, April 2018 (page 12)</div>
+      <div class="p"><div class="l"><b>blueblooded84</b><br>Senior Member<br>Posts: 1102</div><div class="r"><div class="when">Reply #301 on: April 29, 2018, 07:44:02 PM</div>He looked absolutely shattered at Ben Gurion. Long week.</div></div>
+      <div class="p"><div class="l"><b>sweetpea</b><br>Member<br>Posts: 201</div><div class="r"><div class="when">Reply #303 on: April 29, 2018, 08:01:19 PM</div>Has anyone noticed in the Jaffa pictures he's got a plaster on his left wrist? Or is it a bandage? It's under his cuff.</div></div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8790</div><div class="r"><div class="when">Reply #304 on: April 29, 2018, 08:09:33 PM</div>Probably scraped it on something at the football. Men.</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1a3a6b">🇬🇧</div><div><b>UK in Israel</b><small>@UKinIsrael · 29 Apr 2018</small></div></div>Thank you, Israel! 🇬🇧🇮🇱 The Prince of Wales ends his visit with @PeresCenter in Jaffa, where Arab and Jewish children play football together every week. Fair to say the goalkeeping was excellent. ⚽ #RoyalVisitIsrael<div class="act">720 Retweets · 3.3K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#2E7D32">P</div><div><b>Peres Center</b><small>@PeresCenter · 29 Apr 2018</small></div></div>An honour to host HRH The Prince of Wales at the Peres Center for Peace and Innovation today. He met young innovators at the Israeli Innovation Center and joined our Twinned Peace Sport Schools on the pitch. Shimon would have loved this day. 💙<div class="act">540 Retweets · 2.6K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#5D4037">H</div><div><b>Hussein bin Abdullah</b><small>@HusseinCrownPrince · 29 Apr 2018</small></div></div>It was a pleasure to welcome my friend the Prince of Wales to Jordan. Next time we watch the match in London. 🇯🇴🇬🇧⚽<div class="act">3,880 Retweets · 21K Likes</div></div>
+  </div>
+</div></section>
+
+<section class="phones" data-g="8" data-name="Home"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">His phone · Sun 29 April · Ben Gurion</div><h2 style="margin-top:8px">Texts</h2></div><p>Five hours home. He's going back to Kensington Palace tonight; Georgie is at her cottage in Barlavington and has been told nothing about the wrist.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>17:52</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 15:20</div>
+        <div class="bub in">a TEN YEAR OLD saved your penalty 😂😂😂 it's on the bbc, i'm screaming. amir is my new favourite person</div>
+        <div class="bub out">It wasn't a penalty, it was open play, and I hit it extremely well. He was very good. I've been told he's the best goalkeeper in Bat Yam.</div>
+        <div class="bub in">mmhmm 😏 what time are you landing??</div>
+        <div class="bub out">Half nine. KP tonight, I'm dead on my feet. Edgeworth on Friday. Come over Saturday morning?</div>
+        <div class="bub in">nooo a whole week 😤 ok fine. saturday!! i'll bring lasagne, i've got a week of tenants and a boiler man who's always late first</div>
+        <div class="ts">17:48</div>
+        <div class="bub out">Boarding. I've got something to show you when I'm home.</div>
+        <div class="bub in">👀👀 is it a present?? did you bring me something from jerusalem</div>
+        <div class="bub out">Sort of. You'll see.</div>
+        <div class="bub in">alec that's so annoying. ok. fly safe. love you ❤️❤️</div>
+        <div class="bub out">Love you. Saturday.</div>
+      </div>
+    </div></div>
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>17:40</span><span>●●●</span></div>
+      <div class="thd"><div class="pic" style="background:#556b6e">C</div><b style="font-size:13px">Charlie</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 17:31</div>
+        <div class="bub in">The Mail picture desk have asked about the dressing on your wrist in the Jaffa pictures. I've said it's nothing and you scraped it on the pitch.</div>
+        <div class="bub out">That's fine.</div>
+        <div class="bub in">It'll come out eventually. Somebody will see it at a garden party. Do you want a line ready?</div>
+        <div class="bub out">No. If anybody asks I'll tell them myself.</div>
+        <div class="bub in">Fine. For the record I think it's quite nice.</div>
+        <div class="bub out">Thank you, Charlie.</div>
+      </div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="fourth" data-g="8" data-name="Home" style="background:var(--frame-deep)">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold);margin-bottom:24px">Sun 29 April · Ben Gurion · 17.50</div>
+    <blockquote>"Thank you for coming to see us while we are still here."</blockquote>
+    <cite>A survivor at Yad Vashem, 25 April · the line Charlie put in the end-of-tour note to the household</cite>
+  </div>
+</section>
+<!-- ============ AFTER ============ -->
+<section class="after" id="after" data-g="9" data-name="After the tour"><div class="wrap">
+  <div class="eyebrow">After the tour</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">Eight days, three governments, no wrong words</h2>
+  <div class="grid">
+    <div class="body">
+      <p>The Foreign Office's assessment called the visit "a success in difficult circumstances", which in Foreign Office means nobody had to apologise for anything. The Israeli press was largely positive about Yad Vashem and divided about Ramallah. The Palestinian press was courteous about Ramallah and angry about the embassy, which it didn't blame him for. The Jordanians were delighted with him from start to finish, and King Abdullah wrote to his father to say so.</p>
+      <p>Two weeks later the American embassy opened in Jerusalem, on the same day the Israeli army killed some sixty people at the Gaza border fence. The Foreign Office was relieved the tour was over.</p>
+      <p>Georgie saw the cross on his wrist about thirty seconds after he got through the door at Edgeworth on the Saturday morning, and thought at first it was biro. He told her about Razzouk, and the stamps, and the Copts, for longer than she'd ever heard him talk about anything. He didn't tell her about the Sepulchre that night. He told her a long time afterwards.</p>
+      <p>The press noticed the tattoo at the Garter Day service in June, when his cuff rode up on the steps of St George's. Kensington Palace confirmed it was a Coptic cross, "a pilgrim's tattoo in a tradition going back many centuries", and said nothing else.</p>
+    </div>
+    <div class="stack" style="gap:40px">
+      <div class="cable"><div class="hd"><span class="cls">OFFICIAL-SENSITIVE</span><br>FM JERUSALEM · TO FCO · DIPTEL<br>SUBJECT: VISIT OF HRH THE PRINCE OF WALES, 25–29 APRIL: ASSESSMENT</div>
+        <p>1. SUMMARY. The visit met its objectives. HRH kept to agreed language throughout, including under sustained pressure in Ramallah. Palestinian and Israeli interlocutors both described the visit as respectful. No incidents.</p>
+        <p>6. We note that HRH's private evening on 26 April passed without press attention. We have no further comment to make on it.</p>
+        <p style="margin:0">HM CONSUL-GENERAL</p></div>
+      <div class="note"><div class="from">MF · Household file · April 2018</div>No improvising, eight days, not a word out of place.<br>Egypt to go back on the list for 2019.<br>The incense from the Sepulchre is on his desk at KP. Leave it there.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="next"><div class="wrap">
+  <a href="2017-germany-and-poland.html"><small>← Previous in this collection</small><span>Germany &amp; Poland</span></a>
+  <a href="2018-russia.html" style="text-align:right"><small>Next in this collection →</small><span>Russia</span></a>
+</div></section>
+
+<footer class="itin"><div class="wrap"><div class="lab" aria-hidden="true">Itinerary</div><nav aria-label="Itinerary, city by city">
+  <a href="#briefing" data-nav="briefing"><small>Apr 2018</small><span>Briefing</span></a>
+  <a href="#amman" data-nav="amman"><small>22 Apr</small><span>Amman</span></a>
+  <a href="#birthday" data-nav="birthday"><small>23 Apr</small><span>Petra</span></a>
+  <a href="#zaatari" data-nav="zaatari"><small>24 Apr</small><span>Jerash &amp; Zaatari</span></a>
+  <a href="#jerusalem" data-nav="jerusalem"><small>25 Apr</small><span>Jerusalem</span></a>
+  <a href="#oldcity" data-nav="oldcity"><small>26 Apr</small><span>The Old City</span></a>
+  <a href="#ramallah" data-nav="ramallah"><small>27 Apr</small><span>Ramallah</span></a>
+  <a href="#nazareth" data-nav="nazareth"><small>28 Apr</small><span>Nazareth</span></a>
+  <a href="#telaviv" data-nav="telaviv"><small>29 Apr</small><span>Tel Aviv &amp; Jaffa</span></a>
+  <a href="#after" data-nav="after"><small>After</small><span>After</span></a>
+</nav></div></footer>
+
+<div class="mini" aria-hidden="true"><canvas id="mini" width="248" height="248"></canvas><br><b id="miniName">London</b></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="data/world.js"></script>
+<script>
+window.TOUR = {
+  stops: [
+    ["London", 51.47, -0.45, "British Airways"],
+    ["Amman", 31.95, 35.93, "BA"],
+    ["Petra", 30.33, 35.44, "RJAF helicopter"],
+    ["Zaatari", 32.29, 36.32, "Motorcade via Jerash"],
+    ["Jerusalem", 31.78, 35.23, "Allenby crossing"],
+    ["Old City", 31.778, 35.23, "On foot"],
+    ["Ramallah", 31.90, 35.20, "Motorcade"],
+    ["Nazareth", 32.70, 35.30, "Motorcade"],
+    ["Tel Aviv", 32.07, 34.78, "Motorcade"],
+    ["London", 51.47, -0.45, "British Airways"]
+  ]
+};
+(function(){
+  const navs=[...document.querySelectorAll('.strip a,.itin a')];
+  const ids=[...new Set(navs.map(a=>a.dataset.nav))];
+  const secs=[...document.querySelectorAll('[data-g]')];
+  let curG=0,targetRot=null;
+  const miniName=document.getElementById('miniName');
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;
+    curG=+el.dataset.g; if(miniName)miniName.textContent=el.dataset.name||'';
+    let id=null,n=el;while(n){if(n.id&&ids.includes(n.id)){id=n.id;break}n=n.previousElementSibling}
+    const k=ids.indexOf(id);
+    navs.forEach(a=>{const i=ids.indexOf(a.dataset.nav);a.classList.toggle('on',i===k);a.classList.toggle('done',k>=0&&i<k)});
+    const cur=document.querySelector('.itin a.on');if(cur){const nv=cur.parentElement;const x=cur.offsetLeft-nv.clientWidth/2+cur.clientWidth/2;nv.scrollTo({left:x,behavior:'smooth'})}
+    setTarget(curG);
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>io.observe(s));
+
+  if(!window.d3||!window.topojson||!window.WORLD){return}
+  const land=topojson.merge(WORLD,WORLD.objects.countries.geometries);
+  const borders=topojson.mesh(WORLD,WORLD.objects.countries,(a,b)=>a!==b);
+  const S=TOUR.stops.map(s=>[s[2],s[1]]);
+  const C={sea:'#E9E1D0',land:'#cdb68e',border:'#E9E1D0',route:'#9c573a',ghost:'#9c573a55',grat:'#D9CFBB',rim:'#9c573a'};
+  function make(id,scaleF,labels){
+    const cv=document.getElementById(id);if(!cv)return null;
+    const ctx=cv.getContext('2d'),W=cv.width;
+    const pr=d3.geoOrthographic().translate([W/2,W/2]).scale(W/2*scaleF).clipAngle(90);
+    const path=d3.geoPath(pr,ctx);
+    return function(r,upto){
+      pr.rotate(r);ctx.clearRect(0,0,W,W);
+      ctx.beginPath();path({type:'Sphere'});ctx.fillStyle=C.sea;ctx.fill();
+      ctx.beginPath();path(d3.geoGraticule10());ctx.strokeStyle=C.grat;ctx.lineWidth=W/700;ctx.stroke();
+      ctx.beginPath();path(land);ctx.fillStyle=C.land;ctx.fill();
+      ctx.beginPath();path(borders);ctx.strokeStyle=C.border;ctx.lineWidth=W/900;ctx.stroke();
+      ctx.setLineDash([W/90,W/150]);
+      ctx.beginPath();path({type:'LineString',coordinates:S});ctx.strokeStyle=C.ghost;ctx.lineWidth=W/320;ctx.stroke();
+      ctx.setLineDash([]);
+      if(upto>0){ctx.beginPath();path({type:'LineString',coordinates:S.slice(0,upto+1)});ctx.strokeStyle=C.route;ctx.lineWidth=W/220;ctx.stroke()}
+      const cen=[-r[0],-r[1]];
+      TOUR.stops.forEach((s,i)=>{const p=[s[2],s[1]];if(d3.geoDistance(p,cen)>1.45)return;const xy=pr(p);
+        ctx.beginPath();ctx.arc(xy[0],xy[1],W/(i===upto?60:120),0,7);ctx.fillStyle=i<=upto?C.route:'#7d776a';ctx.fill();
+        if(labels&&[1,4].includes(i)){ctx.font=`600 ${W/36}px Hanken Grotesk, sans-serif`;ctx.fillStyle='#25313a';ctx.fillText(s[0],xy[0]+W/60,xy[1]+(i===4?W/30:-W/90))}});
+      ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle=C.rim;ctx.lineWidth=W/260;ctx.stroke();
+    };
+  }
+  const big=make('bigglobe',1.25,true), mini=make('mini',2.4,false);
+  if(big)big([-18,-42],9);
+  let rot=[-18,-42];
+  function rotFor(g){const s=TOUR.stops[Math.min(g,9)];if(g===0||g>=9)return[-18,-42];return[-s[2],-s[1]]}
+  function setTarget(g){targetRot=rotFor(g)}
+  setTarget(0);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function tick(){if(targetRot){if(reduce){rot=targetRot.slice()}else{rot=[rot[0]+(targetRot[0]-rot[0])*.06,rot[1]+(targetRot[1]-rot[1])*.06]}}
+    mini&&mini(rot,curG);requestAnimationFrame(tick)})();
+})();
+</script>
+</body></html>

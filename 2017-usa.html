@@ -1,0 +1,1354 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>The United States, 2017</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&family=Special+Elite&display=swap">
+<style>
+/* Layout: the tour as a scrapbook. Each chapter = boarding pass → opener → programme card → loud spreads (corkboard, the noise) → quiet spreads (drabbles) → phone → kept ephemera. Palette from tours.css [data-tour="usa-2017"]. */
+:root{
+  --frame:#203c59; --frame-deep:#142839; --accent:#a94336; --land:#c7b49a;
+  --paper:#f5f1e8; --paper-2:#EAE3D4; --ink:#25313a; --muted:#66717a; --rule:#D3C8B3;
+  --gold:#C39A55; --news:#FBF8F1; --white:#FFFFFF; --cork:#D7C9AC;
+  --display:'Playfair Display',Georgia,serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --press:'Old Standard TT',Georgia,serif;
+  --hand:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --type:'Special Elite','Courier New',monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--frame-deep)}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 11px/1.2 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0 0 1em}
+
+/* bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--frame-deep);color:#E9E3D6}
+.bar .wrap{display:flex;align-items:center;gap:18px;height:46px;font:500 11px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.bar .t{color:var(--gold);white-space:nowrap}
+.strip{flex:1;display:flex;justify-content:flex-end;gap:2px;overflow-x:auto;scrollbar-width:none}
+.strip a{padding:4px 8px;color:#8FA0B3;white-space:nowrap;text-decoration:none;border-bottom:2px solid transparent}
+.strip a.on{color:#fff;border-color:var(--accent)}
+.strip a:focus-visible{outline:2px solid var(--gold)}
+
+/* cover */
+.cover{position:relative;color:#fff;background:var(--frame-deep);overflow:hidden}
+.cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#142839f0 0%,#142839b0 45%,#14283920 75%),linear-gradient(0deg,#142839 0%,transparent 40%)}
+.cover .in{position:relative;z-index:1;padding-block:110px 60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end}
+.cover h1{font:900 clamp(56px,10vw,138px)/.86 var(--display);letter-spacing:-.025em}
+.cover h1 em{font-weight:400;color:var(--gold)}
+.cover .dates{font:italic 400 24px var(--display);margin-top:16px}
+.dossier{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px;border-top:1px solid #ffffff40;padding-top:16px;max-width:640px}
+.dossier b{display:block;font:400 34px var(--display)}
+.dossier span{font:600 10px var(--body);letter-spacing:.18em;text-transform:uppercase;color:#C9D3DD}
+.cover .cap{position:absolute;top:66px;right:max(16px,env(safe-area-inset-right,0px));z-index:1;background:#ffffff2a;backdrop-filter:blur(4px);padding:6px 10px;font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase}
+.globebig{aspect-ratio:1;max-width:360px;width:100%;margin-left:auto}
+.globebig canvas{width:100%;height:100%}
+
+/* briefing */
+.brief{padding-block:80px}
+.brief .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
+.lede{font:400 24px/1.5 var(--display)}
+.lede::first-letter{float:left;font:800 92px/.8 var(--display);color:var(--accent);padding:6px 10px 0 0}
+.brief .body p{font-size:16px;line-height:1.7;max-width:62ch}
+.brief .pullq{font:italic 400 30px/1.3 var(--display);color:var(--frame);border-left:3px solid var(--accent);padding-left:20px;margin:30px 0}
+.side{display:grid;gap:26px;position:sticky;top:70px}
+.box{background:var(--news);border:1px solid var(--rule);padding:20px 22px}
+.box h4{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.box p{font-size:14px;line-height:1.55}
+.manifest{font:13px/1.45 var(--mono);background:var(--white);border:1px solid var(--rule);padding:18px 20px;box-shadow:5px 6px 0 var(--paper-2);transform:rotate(.6deg)}
+.manifest h4{font:600 12px var(--mono);letter-spacing:.08em;border-bottom:1px dashed var(--rule);padding-bottom:8px;margin-bottom:10px}
+.manifest div{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:4px 0;border-bottom:1px dotted #e3dccd}
+.manifest div b{font-weight:500;color:var(--accent);font-size:11px;letter-spacing:.06em}
+.timeline{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--frame)}
+.timeline div{padding:14px 18px 0 0;position:relative}
+.timeline div::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.timeline b{display:block;font:400 22px var(--display);margin:10px 0 4px}
+.timeline p{font-size:13.5px;color:var(--muted)}
+
+/* memo */
+.memo{background:#FDFBF6;border:1px solid #d8d0bf;padding:30px 34px;font:15px/1.6 var(--type);color:#2a2a2a;box-shadow:0 18px 40px #0000001f;position:relative;transform:rotate(-.5deg);max-width:760px;margin:0 auto}
+.memo .hd{border-bottom:2px solid #2a2a2a;padding-bottom:10px;margin-bottom:16px;display:grid;gap:2px}
+.memo .hd b{font-weight:400;letter-spacing:.14em}
+.memo .stamp{position:absolute;top:22px;right:24px;border:3px solid var(--accent);color:var(--accent);padding:4px 10px;font:700 14px var(--body);letter-spacing:.18em;transform:rotate(6deg);opacity:.85}
+.memo ol{padding-left:22px;margin:0 0 14px}
+.memo li{margin-bottom:10px}
+.memo .hand{font:500 24px/1.2 var(--hand);color:#1f4a8a;margin-top:10px;transform:rotate(-2deg)}
+
+/* boarding pass */
+.leg{background:var(--frame);padding-block:34px}
+.leg.light{background:var(--paper-2)}
+.pass{display:grid;grid-template-columns:1fr 210px;max-width:860px;margin:0 auto;background:var(--news);color:var(--ink);border-radius:10px;box-shadow:0 18px 40px #0b16244d;font-family:var(--mono)}
+.leg:nth-of-type(odd) .pass{transform:rotate(-.6deg)}
+.leg:nth-of-type(even) .pass{transform:rotate(.5deg)}
+.pass .main{padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px 18px;min-width:0}
+.pass .stub{padding:18px 20px;border-left:2px dashed var(--rule);display:grid;gap:10px;align-content:start}
+.pass .air{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px;font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--frame)}
+.pass .air b{color:var(--accent)}
+.pass .route{grid-column:1/-1;display:flex;align-items:center;gap:18px;font:400 44px/1 var(--display)}
+.pass .route i{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 11px);position:relative}
+.pass .route i::after{content:"✈";position:absolute;left:50%;top:-11px;font-size:16px;color:var(--accent);font-style:normal}
+.pass small{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.pass .v{font-size:14px}
+.pass .city{font:400 26px var(--display)}
+.bars{height:46px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px)}
+.pass.road{grid-template-columns:1fr}
+.pass.road .main{grid-template-columns:repeat(3,1fr)}
+
+/* chapter opener */
+.open{padding-block:64px 40px}
+.open .grid{display:grid;grid-template-columns:1.25fr .85fr;gap:48px;align-items:end}
+.chapno{font:italic 400 120px/0.8 var(--display);color:transparent;-webkit-text-stroke:1px var(--accent)}
+.open h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em;margin-top:6px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font:600 11px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.meta b{color:var(--frame)}
+.why{font:400 19px/1.6 var(--display);max-width:58ch;margin-top:24px}
+.why em{color:var(--accent)}
+.open figure{margin:0}
+.open figure img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 20px 40px #0002}
+figcaption{font:600 10.5px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:10px}
+.bleed{position:relative;color:#fff;overflow:hidden;background:var(--frame-deep)}
+.bleed img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#142839f2 0%,#14283999 45%,#14283930 100%)}
+.bleed .wrap{position:relative;z-index:1;padding-block:220px 54px}
+.bleed h2{font:800 clamp(52px,8vw,108px)/.92 var(--display);letter-spacing:-.02em}
+.bleed .chapno{-webkit-text-stroke-color:var(--gold)}
+.bleed .meta{color:#C9D3DD}.bleed .meta b{color:#fff}
+.bleed .why{color:#EDE6D8}.bleed .why em{color:var(--gold)}
+.bleed .eyebrow{color:var(--gold)}
+
+/* programme */
+.prog{margin-top:40px;display:grid;grid-template-columns:repeat(var(--n,4),1fr);background:var(--news);border:1px solid var(--rule);box-shadow:4px 6px 0 var(--paper-2)}
+.prog .day{padding:18px 18px 20px;border-right:1px solid var(--rule);min-width:0}
+.prog .day:last-child{border-right:0}
+.prog h4{margin:0 0 10px;font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.prog p{margin:0 0 9px;font-size:13.5px;line-height:1.45}
+.prog p span{display:block;font:500 11px var(--mono);color:var(--muted)}
+.prog .hot{background:#F5E4D5}
+.prog .off{background:repeating-linear-gradient(135deg,transparent 0 8px,#e9e1cf55 8px 9px)}
+
+/* drabble */
+.drab{background:var(--frame-deep);color:#E6DFD1;padding-block:90px}
+.drab .in{max-width:640px;margin:0 auto}
+.label{font:400 11px var(--mono);letter-spacing:.12em;color:var(--gold);display:flex;gap:14px;align-items:center;margin-bottom:30px}
+.label::after{content:"";flex:1;height:1px;background:#3A4E66}
+.drab p{font:400 19px/1.75 var(--display)}
+.drab p.say{padding-left:1.2em}
+.quiet{position:relative;background:var(--ink);color:#EEE7DA;overflow:hidden}
+.quiet img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;filter:grayscale(.6)}
+.quiet .in{position:relative;max-width:620px;margin:0 auto;padding-block:120px}
+.quiet p{font:400 20px/1.75 var(--display)}
+.quiet .big{font:italic 400 64px/1 var(--display);color:var(--gold);margin:30px 0}
+
+/* two-up photo + stack */
+.spread{padding-block:80px}
+.spread .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start}
+.spread.flip .grid{grid-template-columns:1fr 1.35fr}
+.photo{margin:0}
+.pull{font:italic 400 30px/1.3 var(--display);color:var(--frame);margin:0 0 6px}
+.pull+cite{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-style:normal}
+.stack{display:grid;gap:22px;min-width:0}
+.whybox{border-top:2px solid var(--accent);padding-top:14px;font-size:14.5px}
+.whybox b{font:600 10.5px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+
+/* platforms */
+.card{background:var(--white);border:1px solid #DDD5C4;border-radius:10px;padding:14px 16px;font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;color:#14171a;min-width:0}
+.card .who{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.av{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.card .who b{display:block;font-size:14px}
+.card .who small{color:#657786;font-size:12.5px}
+.card .act{color:#657786;font-size:12.5px;margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
+.card .reply{border-top:1px solid #eee;margin-top:8px;padding-top:6px;color:#3b4045;font-size:13px}
+.ig .imgwrap{margin:-14px -16px 10px;aspect-ratio:1;overflow:hidden;border-radius:10px 10px 0 0}
+.ig .imgwrap img{width:100%;height:100%;object-fit:cover}
+.ig .cm{font-size:13px;margin-top:4px}
+.ig .cm b{font-weight:600}
+.fbgrp{background:#fff;border-radius:8px;border:1px solid #dadde1;font:14px/1.4 system-ui,sans-serif;color:#1c1e21;overflow:hidden}
+.fbgrp .hd{background:#f0f2f5;padding:8px 14px;font-size:12px;color:#65676b;font-weight:600}
+.fbgrp .post{padding:12px 14px;border-top:1px solid #e4e6eb}
+.fbgrp .c{margin:8px 0 0 18px;padding:8px 10px;background:#f0f2f5;border-radius:14px;font-size:13px}
+.rd{background:#fff;border:1px solid #ccc;border-radius:8px;padding:12px 14px;font:13.5px/1.45 system-ui,sans-serif;color:#1c1c1c}
+.rd .sub{font-size:12px;color:#576f76;font-weight:600}
+.rd .sub span{font-weight:400}
+.rd h4{font:600 17px/1.3 system-ui,sans-serif;margin:6px 0 10px}
+.rd .cm{border-left:2px solid #E5EBEE;padding:2px 0 2px 12px;margin:10px 0 0}
+.rd .u{font-size:12px;color:#576f76}
+.rd .u b{color:#1c1c1c}
+.rd .pts{font-size:12px;color:#576f76;margin-top:3px}
+.yt{background:#0f0f0f;color:#f1f1f1;border-radius:10px;overflow:hidden;font:13.5px/1.45 system-ui,sans-serif}
+.yt .vid{aspect-ratio:16/9;background:#000 center/cover;position:relative}
+.yt .vid span{position:absolute;right:8px;bottom:8px;background:#000c;font-size:12px;padding:1px 5px;border-radius:4px}
+.yt .t{padding:10px 12px 4px;font-weight:600;font-size:15px}
+.yt .c{padding:6px 12px;color:#ddd}
+.yt .c b{color:#fff;font-size:12.5px;display:block}
+.dish{background:#E8E3D4;border:1px solid #9C9277;font:12.5px/1.45 Verdana,Geneva,sans-serif;color:#222}
+.dish .bar2{background:#5B4E37;color:#F2E9CF;padding:5px 10px;font-weight:700;font-size:11.5px}
+.dish .p{display:grid;grid-template-columns:104px 1fr;border-top:1px solid #B6AC8F}
+.dish .p .l{background:#DAD3BF;padding:8px;font-size:11px;border-right:1px solid #B6AC8F}
+.dish .p .l b{color:#5B2F1A;font-size:12px}
+.dish .p .r{padding:8px 10px;min-width:0}
+.dish .when{font-size:10.5px;color:#6b604a;border-bottom:1px dotted #B6AC8F;margin-bottom:6px;padding-bottom:3px}
+.dish .q{background:#F4F0E4;border:1px dashed #9C9277;padding:6px 8px;margin-bottom:6px;font-size:11.5px}
+.dish .sig{border-top:1px solid #B6AC8F;margin-top:8px;padding-top:4px;font-size:10.5px;color:#6b604a;font-style:italic}
+.tb{background:#001935;color:#fff;border-radius:6px;padding:14px 16px;font:14px/1.5 'Helvetica Neue',Arial,sans-serif}
+.tb .n{font-weight:700;margin-bottom:8px}
+.tb .tags{color:#9DA9B8;font-size:12.5px;margin-top:10px}
+.tb .notes{border-top:1px solid #ffffff22;margin-top:10px;padding-top:8px;font-size:12.5px;color:#C9D2DC}
+.web{background:#fff;border:1px solid #ddd;border-radius:4px;overflow:hidden;font:14px/1.45 Georgia,serif;color:#222}
+.web .m{padding:8px 14px;font:800 15px var(--body);letter-spacing:.04em;color:#fff}
+.web .b{padding:12px 14px}
+.web h4{font:700 19px/1.2 Georgia,serif;margin-bottom:6px}
+.web small{display:block;color:#888;font:12px var(--body);margin-top:6px}
+.etsy{background:#fff;border:1px solid #e1e3df;border-radius:12px;overflow:hidden;font:14px/1.4 system-ui,sans-serif;color:#222}
+.etsy .shirt{aspect-ratio:4/3;background:#2B2B2B;display:grid;place-items:center;color:#fff;font:900 30px/1 var(--body);text-align:center;letter-spacing:.02em;padding:20px}
+.etsy .shirt small{display:block;font:500 13px var(--body);color:#ccc;margin-top:10px;letter-spacing:.2em}
+.etsy .b{padding:10px 14px}
+.etsy .pr{font-weight:700;font-size:16px}
+.etsy .st{color:#595959;font-size:12.5px}
+
+/* corkboard */
+.front{background:var(--cork);background-image:radial-gradient(#0000000d 1px,transparent 1.5px);background-size:7px 7px;padding-block:80px 60px;overflow:hidden}
+.front .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.front h2,.noise h2,.phones h2,.eph h2{font:800 clamp(38px,5.5vw,72px)/.95 var(--display);letter-spacing:-.015em}
+.front h2 em{font-weight:400;color:var(--accent)}
+.board{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;align-items:start}
+.clip{background:var(--news);padding:16px 18px 18px;box-shadow:0 2px 0 #0000000a,0 12px 26px #3a2a1233;font-family:var(--press);color:#1a1a1a;position:relative;min-width:0}
+.clip::before{content:"";position:absolute;top:-9px;left:50%;width:58px;height:20px;margin-left:-29px;background:#f6efd9cc;transform:rotate(-3deg);box-shadow:0 1px 2px #0002}
+.clip .mast{font:700 26px/1 var(--press);text-align:center;border-bottom:3px double #222;padding-bottom:6px;margin-bottom:4px}
+.clip .date{font:400 10px var(--mono);text-align:center;letter-spacing:.08em;border-bottom:1px solid #222;padding-bottom:4px;margin-bottom:10px}
+.clip h3{font:700 26px/1.08 var(--press);margin-bottom:6px}
+.clip .deck{font:italic 400 14px/1.35 var(--press);margin-bottom:10px;color:#333}
+.clip p{font-size:13.5px;line-height:1.45;margin:0 0 8px}
+.clip .by{font:600 10px var(--body);letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.clip img{margin-bottom:10px}
+.tab{background:#fff;padding:0}
+.tab .m{color:#fff;padding:8px 12px;font:italic 900 28px/1 Georgia,serif}
+.tab .h{font:900 44px/.92 Impact,'Arial Narrow Bold','Arial Narrow',sans-serif;padding:10px 12px 4px;text-transform:uppercase}
+.tab .s{font:700 13px/1.25 Arial,sans-serif;padding:0 12px 12px}
+.tab img{margin:0}
+.op{background:#fff}
+.op .kick{font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#C70000;margin-bottom:6px}
+.op h3{font:700 24px/1.12 Georgia,serif}
+.c1{grid-column:1/6;transform:rotate(-1.4deg)}
+.c2{grid-column:6/10;transform:rotate(.9deg);margin-top:40px}
+.c3{grid-column:10/13;display:grid;gap:22px;margin-top:10px}
+.c4{grid-column:2/7;transform:rotate(.6deg)}
+.c5{grid-column:7/12;transform:rotate(-.8deg)}
+.rot-a{transform:rotate(2deg)}.rot-b{transform:rotate(-1.8deg)}
+.chyron{margin-top:40px;color:#fff;display:grid;grid-template-columns:auto 1fr;align-items:stretch;overflow:hidden;box-shadow:0 10px 24px #0004}
+.chyron .lab{padding:12px 16px;font:800 14px var(--body);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.chyron .tk{min-width:0;overflow:hidden;white-space:nowrap;display:flex;align-items:center}
+.chyron .tk span{display:inline-block;padding-left:100%;animation:tick 34s linear infinite;font:600 14px var(--body);letter-spacing:.04em;text-transform:uppercase}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* noise */
+.noise{padding-block:80px}
+.noise .head,.phones .head,.eph .head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.noise .head p{max-width:42ch;color:var(--muted);margin:0}
+.masonry{columns:3 300px;column-gap:20px}
+.masonry>*{break-inside:avoid;margin-bottom:20px}
+
+/* phones */
+.phones{background:var(--frame);padding-block:90px;color:#EAE3D5}
+.phones h2{color:#fff}
+.phones .head p{max-width:52ch;color:#B6C2CF;margin:0}
+.phonerow{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;align-items:start}
+.phone{background:#0B0B0D;border-radius:44px;padding:12px;box-shadow:0 30px 60px #0008;max-width:360px;width:100%;margin:0 auto}
+.screen{background:#fff;border-radius:34px;overflow:hidden;color:#111;font:15px/1.35 -apple-system,'SF Pro Text',system-ui,sans-serif}
+.sb{display:flex;justify-content:space-between;padding:12px 26px 6px;font-weight:600;font-size:13px}
+.thd{text-align:center;padding:4px 0 10px;border-bottom:1px solid #e5e5ea}
+.thd .pic{width:44px;height:44px;border-radius:50%;margin:0 auto 4px;background:#C9B79C;display:grid;place-items:center;color:#fff;font-weight:600}
+.thd small{font-size:11px;color:#8e8e93}
+.msgs{padding:10px 12px 18px;display:flex;flex-direction:column;gap:3px}
+.ts{text-align:center;font-size:11px;color:#8e8e93;margin:10px 0 6px}
+.bub{max-width:78%;padding:7px 12px;border-radius:18px;font-size:14.5px;line-height:1.3}
+.bub.in{align-self:flex-start;background:#E9E9EB}
+.bub.out{align-self:flex-end;background:#0A84FF;color:#fff}
+.bub.shot{padding:4px}
+.bub.shot div{width:170px;aspect-ratio:9/12;border-radius:14px;background:#223 center/cover;position:relative;overflow:hidden}
+.bub.shot div span{position:absolute;left:0;right:0;bottom:0;background:#c00;color:#fff;font:700 9px system-ui;padding:4px 6px;text-transform:uppercase}
+.recents h3{font:700 30px system-ui;padding:6px 18px}
+.call{display:flex;align-items:center;gap:10px;padding:9px 18px;border-bottom:1px solid #eee}
+.call .n{flex:1;min-width:0}
+.call .n b{display:block;font-weight:600;font-size:15px}
+.call .n small{color:#8e8e93;font-size:12.5px}
+.call.miss b{color:#FF3B30}
+.call .t{color:#8e8e93;font-size:13px}
+.vm{margin:14px;background:#F2F2F7;border-radius:14px;padding:12px 14px}
+.vm .top{display:flex;justify-content:space-between;font-size:12.5px;color:#8e8e93;margin-bottom:6px}
+.vm .top b{color:#111;font-size:14.5px}
+.vm p{margin:0;font-size:13.5px;color:#333}
+.vm p em{color:#8e8e93;font-size:11.5px;display:block;margin-top:6px;font-style:normal}
+.phonenote{font:400 19px/1.7 var(--display);color:#E6DFD1;max-width:44ch}
+.phonenote .label{color:var(--gold)}
+
+/* ephemera */
+.eph{padding-block:80px 60px}
+.ephrow{display:grid;grid-template-columns:repeat(var(--n,3),1fr);gap:34px;align-items:center}
+.menu{background:var(--news);border:1px solid var(--rule);padding:30px 26px;text-align:center;font-family:var(--display);transform:rotate(-2deg);box-shadow:0 14px 30px #0002}
+.menu .crest{font:600 11px var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.menu h3{font:italic 400 24px var(--display);margin-bottom:4px}
+.menu .d{font:400 12px var(--body);letter-spacing:.1em;color:var(--muted);margin-bottom:18px}
+.menu p{margin:0 0 12px;font-size:15px;line-height:1.4}
+.menu small{display:block;font:italic 13px var(--display);color:var(--muted)}
+.menu .rule{width:40px;height:1px;background:var(--gold);margin:16px auto}
+.place{background:#fff;border:1px solid var(--rule);padding:22px;transform:rotate(1.5deg);box-shadow:0 12px 26px #0002;text-align:center}
+.place .fold{font:italic 400 28px var(--display);color:var(--frame)}
+.badge{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 26px #0002;transform:rotate(-1deg);max-width:270px;margin:0 auto;border:1px solid #ddd}
+.badge .t{color:#fff;padding:12px 14px;font:700 13px var(--body);letter-spacing:.12em;text-transform:uppercase;background:#1D1D1D}
+.badge .b{padding:16px 14px;font:13px var(--body)}
+.badge .b big{display:block;font:800 30px/1.05 var(--body);color:var(--accent);letter-spacing:.02em}
+.badge .b small{display:block;color:var(--muted);margin-top:6px;font:11px var(--mono)}
+.badge .hole{width:40px;height:8px;border-radius:4px;background:var(--paper);border:1px solid #ccc;margin:10px auto 0}
+.hanger{width:200px;margin:0 auto;background:#2E2A26;color:#E8DCC2;border-radius:14px 14px 6px 6px;padding:70px 18px 26px;text-align:center;position:relative;transform:rotate(3deg);box-shadow:0 14px 30px #0003}
+.hanger::before{content:"";position:absolute;top:18px;left:50%;width:62px;height:62px;margin-left:-31px;border-radius:50%;background:var(--paper)}
+.hanger b{display:block;font:italic 400 22px var(--display);color:#fff;margin-bottom:8px}
+.hanger small{font:600 9.5px var(--body);letter-spacing:.24em;text-transform:uppercase}
+.receipt{background:#fff;width:230px;margin:0 auto;padding:18px 16px 26px;font:12px/1.5 var(--mono);color:#333;box-shadow:0 12px 26px #0002;transform:rotate(-2.5deg);clip-path:polygon(0 0,100% 0,100% 96%,95% 100%,90% 96%,85% 100%,80% 96%,75% 100%,70% 96%,65% 100%,60% 96%,55% 100%,50% 96%,45% 100%,40% 96%,35% 100%,30% 96%,25% 100%,20% 96%,15% 100%,10% 96%,5% 100%,0 96%)}
+.receipt .c{text-align:center}
+.receipt .r{display:flex;justify-content:space-between}
+.receipt hr{border:0;border-top:1px dashed #999;margin:8px 0}
+.prog-card{background:#0F3B2E;color:#F1E7CF;padding:24px 22px;text-align:center;transform:rotate(2deg);box-shadow:0 14px 30px #0003;border:6px double #C9A961}
+.prog-card h3{font:italic 400 26px var(--display);margin:6px 0}
+.prog-card .sc{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:16px 0 6px;font:700 13px var(--body);letter-spacing:.1em;text-transform:uppercase}
+.prog-card .sc big{font:400 40px var(--display)}
+.prog-card small{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:#C9A961}
+.note{background:#FFFDF4;padding:26px 24px;font:500 23px/1.35 var(--hand);color:#1f3f7a;box-shadow:0 14px 30px #0002;transform:rotate(-1.5deg);background-image:repeating-linear-gradient(0deg,transparent 0 33px,#c9d7ee 33px 34px);max-width:440px;margin:0 auto}
+.note .from{font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cable{background:#fff;border:1px solid #ccc;padding:24px 26px;font:13.5px/1.55 var(--mono);color:#222;box-shadow:0 14px 30px #0002;transform:rotate(.8deg)}
+.cable .hd{border-bottom:1px solid #222;padding-bottom:8px;margin-bottom:12px;font-size:12px}
+.cable .cls{color:var(--accent);font-weight:500;letter-spacing:.2em}
+
+/* film strip */
+.film{background:#111;padding:22px 0;display:flex;gap:14px;overflow-x:auto;position:relative}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#111 0 10px,#e8e2d2 10px 18px,#111 18px 28px);opacity:.5}
+.film::before{top:5px}.film::after{bottom:5px}
+.film figure{margin:0;flex:0 0 min(46vw,520px)}
+.film figcaption{color:#aaa;font:11px var(--mono);letter-spacing:.08em;text-transform:none}
+.filmwrap{padding-block:60px;background:#111;color:#ddd}
+.filmwrap .wrap>p{font:400 18px/1.6 var(--display);max-width:60ch;color:#bbb}
+
+/* fireworks */
+.fourth{position:relative;background:#0A1424;color:#fff;overflow:hidden}
+.fourth canvas{position:absolute;inset:0;width:100%;height:100%}
+.fourth .wrap{position:relative;z-index:1;padding-block:110px;text-align:center}
+.fourth blockquote{font:italic 400 clamp(36px,5vw,64px)/1.15 var(--display);margin:0 auto 18px;max-width:18ch}
+.fourth cite{font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* magazine cover */
+.mag{position:relative;aspect-ratio:3/4;max-width:420px;width:100%;margin:0 auto;overflow:hidden;box-shadow:0 24px 50px #0004;transform:rotate(-1.5deg);background:#222}
+.mag img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.mag .mh{position:absolute;top:10px;left:0;right:0;text-align:center;font:900 92px/1 var(--body);color:#D0021B;letter-spacing:-.04em}
+.mag .dt{position:absolute;top:104px;left:16px;font:700 10px var(--body);color:#fff;letter-spacing:.1em}
+.mag .hl{position:absolute;left:16px;right:16px;bottom:18px;color:#fff;text-shadow:0 2px 10px #000c}
+.mag .hl b{display:block;font:900 36px/.95 var(--body);color:#F2D06B;margin-bottom:8px;text-transform:uppercase}
+.mag .hl span{display:block;font:700 13px/1.35 var(--body)}
+.late{background:#0D0D14;color:#fff;padding:24px;border-radius:6px;box-shadow:0 14px 30px #0003}
+.late .k{font:800 11px var(--body);letter-spacing:.24em;color:#F2D06B}
+.late q{display:block;font:italic 400 28px/1.25 var(--display);margin:12px 0}
+.late small{color:#aaa;font:12px var(--body)}
+.listicle{background:#fff;border-top:6px solid #EE3322;padding:18px;font:14px/1.45 Arial,sans-serif;color:#222;box-shadow:0 14px 30px #0002}
+.listicle .m{font:900 22px Arial,sans-serif;color:#EE3322}
+.listicle h3{font:800 22px/1.15 Arial,sans-serif;margin:8px 0}
+.listicle ol{padding-left:22px;margin:10px 0 0}
+.listicle li{margin-bottom:6px}
+
+/* after */
+.after{padding-block:90px;background:var(--paper-2)}
+.after .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.after .body p{font-size:16px;line-height:1.7;max-width:60ch}
+.next{border-top:1px solid var(--rule);padding-block:40px 70px}
+.next .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.next a{text-decoration:none}
+.next small{display:block;font:600 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.next span{font:400 36px var(--display)}
+
+/* sticky itinerary */
+body{padding-bottom:84px}
+.itin{position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--paper);border-top:2px solid var(--accent);box-shadow:0 -8px 20px #0000001a;padding-bottom:env(safe-area-inset-bottom,0px)}
+.itin .wrap{display:flex;gap:4px;align-items:stretch}
+.itin .lab{flex:none;font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);padding:6px 4px}
+.itin nav{flex:1;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px 10px;min-width:0}
+.itin a{flex:1 0 104px;text-decoration:none;border-top:3px solid var(--rule);padding:7px 4px 0}
+.itin a small{display:block;font:500 10px var(--mono);color:var(--accent);white-space:nowrap}
+.itin a span{display:block;font:500 13.5px var(--body);color:var(--ink);white-space:nowrap}
+.itin a.done{border-color:#a9433680}
+.itin a.on{border-color:var(--accent)}
+.itin a.on span{font-weight:700}
+.itin a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* mini globe */
+.mini{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(98px + env(safe-area-inset-bottom,0px));z-index:8;width:124px;text-align:center;pointer-events:none}
+.mini canvas{width:124px;height:124px;filter:drop-shadow(0 8px 14px #0005)}
+.mini b{display:inline-block;margin-top:4px;background:var(--frame-deep);color:#EDE6D8;font:600 10px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:4px 8px}
+
+@media (max-width:900px){
+  .cover .in,.brief .grid,.open .grid,.spread .grid,.spread.flip .grid,.after .grid{grid-template-columns:1fr}
+  .side{position:static}
+  .globebig{margin:0 auto;max-width:280px}
+  .prog{grid-template-columns:1fr 1fr}
+  .prog .day{border-bottom:1px solid var(--rule)}
+  .board{grid-template-columns:1fr}
+  .c1,.c2,.c3,.c4,.c5{grid-column:1/-1;margin-top:0}
+  .ephrow{grid-template-columns:1fr}
+  .pass{grid-template-columns:1fr}
+  .pass .stub{border-left:0;border-top:2px dashed var(--rule)}
+  .pass .main{grid-template-columns:1fr 1fr}
+  .pass .route{font-size:34px}
+  .timeline{grid-template-columns:1fr 1fr;gap:20px 0}
+  .dossier{grid-template-columns:1fr 1fr}
+  .mini{display:none}
+  .strip{display:none}
+  .bar .t{flex:1;text-align:right}
+}
+@media (prefers-reduced-motion:reduce){.chyron .tk span{animation:none;padding-left:0}html{scroll-behavior:auto}}
+</style>
+
+<header class="bar"><div class="wrap">
+  <a href="#" style="text-decoration:none;white-space:nowrap">← All tours</a>
+  <span class="t">USA · 2017</span>
+  <nav class="strip" aria-label="Itinerary">
+    <a href="#briefing" data-nav="briefing">Briefing</a><a href="#washington" data-nav="washington">Washington</a><a href="#newyork" data-nav="newyork">New York</a><a href="#chicago" data-nav="chicago">Chicago</a><a href="#houston" data-nav="houston">Houston</a><a href="#losangeles" data-nav="losangeles">Los Angeles</a><a href="#santabarbara" data-nav="santabarbara">Santa Barbara</a><a href="#frenzy" data-nav="frenzy">Online</a><a href="#after" data-nav="after">After</a>
+  </nav>
+</div></header>
+
+<!-- ============ COVER ============ -->
+<section class="cover" data-g="0" data-name="London">
+  <img class="bg" src="img/usa-2017-01.jpg" alt="Prince Alexander arriving in Houston, smiling at the crowd">
+  <span class="cap">Arriving in Houston · 3 July 2017</span>
+  <div class="wrap"><div class="in">
+    <div>
+      <div class="eyebrow" style="color:var(--gold)">Official tour · Prince of Wales · 2017</div>
+      <h1 style="margin-top:14px">The United <em>States</em></h1>
+      <div class="dates">24 June – 9 July 2017</div>
+      <div class="dossier">
+        <div><b>16</b><span>Days</span></div>
+        <div><b>6</b><span>Stops</span></div>
+        <div><b>4</b><span>States &amp; D.C.</span></div>
+        <div><b id="totMiles">12,416</b><span>Miles</span></div>
+      </div>
+    </div>
+    <div class="globebig"><canvas id="bigglobe" width="720" height="720" aria-label="Globe showing the whole route, London to six American cities and home"></canvas></div>
+  </div></div>
+</section>
+
+<!-- ============ BRIEFING ============ -->
+<section class="brief" id="briefing" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="eyebrow">The briefing</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">Britain, on display.</h2>
+  <div class="grid">
+    <div class="body">
+      <p class="lede">Diplomacy, defence, trade, science, and sixteen days of Kensington Palace finding out just how effectively a handsome unmarried prince can be sold to the American public.</p>
+      <p>The visit has been under discussion since 2016, but the referendum gives it urgency. The government wants senior contact in Washington, reassurance for investors and defence partners, and a programme that shows Britain's American relationships go deeper than whichever ministers happen to be in office.</p>
+      <p>Donald Trump is pleased to receive the Prince of Wales. He likes royal association, ceremony and the attention attached to both. London will provide the meeting and the photographs, but does not want the visit read as a personal endorsement. So Washington also gets Congress, Arlington, Walter Reed and the Smithsonian, and most of the tour happens outside the capital.</p>
+      <div class="pullq">More than four hundred journalists apply for accreditation. Most of them are American.</div>
+      <p>He is thirty-one, handsome, unmarried, a decorated veteran, and already followed by an American press that can sell photographs of him whether the subject is wounded servicemen, spacecraft or polo. The White House wants that. So does every television producer, city official, charity and museum fighting for a slot.</p>
+      <p>For Kensington Palace it's also the first major tour run substantially by Alexander's own office. Marianne treats it as a chance to sell him as the future of the monarchy: young, independent, military, educated, attractive, and visibly unlike the institution behind him. She brings in Clara Bell, a stylist used to dressing actors. By the second fitting he's offering opinions and checking how the clothes sit from several angles.</p>
+      <p>None of this is imposed on a reluctant prince. He's vain, he enjoys clothes, and he enjoys being wanted. The Warrior Games are the one thing he insists on. Johnson and JPL he welcomes for less elevated reasons: he grew up watching shuttle launches and thinks Mars rovers are extremely cool.</p>
+    </div>
+    <aside class="side">
+      <div class="box"><h4>Whose tour is it?</h4><p>Canada was a realm, so Canada ran it and paid. The United States is a foreign country, so this is a British visit abroad. The Foreign Office asks for it, the Embassy and four consulates build each leg, and the British government pays for the travel.</p><p style="margin:0">He isn't a head of state, so the Secret Service doesn't protect him. The State Department's Diplomatic Security Service does, with his own Met officers inside their detail.</p></div>
+      <div class="manifest">
+        <h4>TOUR PARTY · US VISIT · JUN–JUL 2017</h4>
+        <div><b>PRIV OFFICE</b><span>M. Fletcher (PS) · DPS, a day ahead · tour secretary</span></div>
+        <div><b>PRESS</b><span>C. Renton · 3 press officers (UK pool / US networks / photos)</span></div>
+        <div><b>WARDROBE</b><span>C. Bell (first tour) · valet</span></div>
+        <div><b>MILITARY</b><span>Thom, equerry</span></div>
+        <div><b>PROTECTION</b><span>Miranda + Met officers, inside DSS detail</span></div>
+        <div><b>OTHER</b><span>Tour doctor · programme coord · ops manager (luggage, overnight, five cities)</span></div>
+      </div>
+    </aside>
+  </div>
+  <div class="timeline">
+    <div><span class="eyebrow">2016</span><b>Proposed</b><p>The Foreign Office proposes a summer visit. The referendum makes it a priority.</p></div>
+    <div><span class="eyebrow">Early 2017</span><b>The Games</b><p>The White House agrees a meeting. DoD invites him to open the Warrior Games. He won't trade it.</p></div>
+    <div><span class="eyebrow">Spring 2017</span><b>Recces</b><p>KP, the Embassy and Diplomatic Security walk every site in five cities. Clara's fittings begin.</p></div>
+    <div><span class="eyebrow">June 2017</span><b>400+ press</b><p>The programme is announced. Most of the accreditation requests are American.</p></div>
+  </div>
+</div></section>
+
+<!-- memo -->
+<section style="padding-block:20px 90px" data-g="0" data-name="The briefing"><div class="wrap">
+  <div class="memo">
+    <div class="stamp">PRIVATE</div>
+    <div class="hd"><b>KENSINGTON PALACE · PRIVATE OFFICE</b><span>TO: Programme &amp; press team</span><span>FROM: MF</span><span>RE: US visit — presentation. Not for circulation.</span></div>
+    <ol>
+      <li><b>The light.</b> Outdoor walkabouts late afternoon wherever the programme allows. Don't put this in an email.</li>
+      <li><b>The clothes.</b> Shirts that still work with the jacket off, because the jacket will come off. Sunglasses hooked on the shirt, not worn. The cameras want his eyes.</li>
+      <li><b>The shows.</b> One press officer does nothing but the morning programmes. Know which producer wants the firehouse and which wants the rover. Deliver by 6 a.m.</li>
+      <li><b>The line.</b> Nobody from this household says he is handsome, single or anything else. The photographs do it. On Georgiana: we do not comment on his private life. Every time.</li>
+    </ol>
+    <div class="hand">He knows. Don't tell him we know he knows. — C.R.</div>
+  </div>
+</div></section>
+
+<!-- ============ LEG 0 ============ -->
+<section class="leg" data-g="1" data-name="Over the Atlantic"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>British Airways</b> · Boarding pass</span><span>First</span></div>
+      <div class="route">LHR <i></i> IAD</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">BA 217</span></div>
+      <div><small>Date</small><span class="v">24 JUN 2017</span></div>
+      <div><small>Seat</small><span class="v">2K</span></div>
+      <div><small>Departs</small><span class="v">11:40</span></div>
+      <div><small>Arrives</small><span class="v">14:35 EDT</span></div>
+      <div><small>Gate</small><span class="v">B36</span></div>
+      <div><small>Distance</small><span class="v">3,653 mi</span></div>
+    </div>
+    <div class="stub"><small>Leg 1 of 8</small><div class="city">Washington</div><small>Household in Club · press pool behind</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+  <p style="max-width:640px;margin:26px auto 0;color:#C9D3DD;font:italic 400 17px/1.6 var(--display);text-align:center">He reads the Washington briefing twice and Chicago once, puts the seat flat, and sleeps until afternoon tea somewhere over Nova Scotia. Clara spends the first hour worrying about her garment bags in the hold.</p>
+</div></section>
+
+<!-- ============ 01 WASHINGTON ============ -->
+<section class="open" id="washington" data-g="1" data-name="Washington"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter one · The capital</div>
+      <div class="chapno" aria-hidden="true">01</div>
+      <h2>Washington, D.C.</h2>
+      <div class="meta"><span><b>Sat 24 – Tue 27 June</b></span><span>Residence of the British Ambassador</span></div>
+      <p class="why">Arlington, Walter Reed, Congress and the Smithsonian, with a short Oval Office meeting on the Monday morning. The press pool gets four minutes at the start of it.</p>
+    </div>
+    <figure><img src="img/usa-2017-03.jpg" alt="Trump with his hand on Alexander's shoulder in the Oval Office" style="aspect-ratio:4/3"><figcaption>The Oval Office · Mon 26 June</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:4">
+    <div class="day"><h4>Sat 24 Jun</h4><p><span>Afternoon</span>Dulles. Met on the steps by Sir Kim Darroch and State Department protocol.</p><p><span>18.30</span>Reception at the Residence for Embassy staff and the British community.</p></div>
+    <div class="day"><h4>Sun 25 Jun</h4><p><span>10.00</span>Arlington. Wreath at the Tomb of the Unknown Soldier. Commonwealth graves, no cameras.</p><p><span>14.00</span>Walter Reed, Bethesda. The wards and the Military Advanced Training Center.</p></div>
+    <div class="day hot"><h4>Mon 26 Jun</h4><p><span>07.15</span>Programme meeting, Residence study.</p><p><span>Morning</span>The White House. Oval Office, pool spray at the top.</p><p><span>14.30</span>Capitol Hill. Leaders of both parties.</p><p><span>19.30</span>Dinner at the Residence.</p></div>
+    <div class="day"><h4>Tue 27 Jun</h4><p><span>09.30</span>American History Museum, before opening.</p><p><span>11.15</span>Air and Space. Wright Flyer, Bell X-1.</p><p><span>14.30</span>AA shuttle to LaGuardia.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="1" data-name="Washington"><div class="wrap"><div class="in">
+  <div class="label">MON 26 JUN · 07.15 · THE STUDY, BRITISH RESIDENCE</div>
+  <p>Four hours' sleep, and the study smelled of furniture polish and somebody else's grandmother. The Embassy had put coffee on in a silver pot the size of a fire extinguisher. It was terrible. He drank it anyway, standing at the window with no jacket on yet, watching a sprinkler tick across the lawn like it was being paid by the hour.</p>
+  <p>Marianne had the programme printed. She always did. She trusted paper, a stapler, and very little else.</p>
+  <p class="say">"Four minutes of pool at the top. Then twenty-five without cameras. You're out before the Indians arrive."</p>
+  <p class="say">"What does he want?"</p>
+  <p class="say">"To be seen with you."</p>
+  <p class="say">"And what do we want?"</p>
+  <p class="say">"For you to be seen with him and for nothing else to happen." She turned the page. "He'll mention your mother. He'll mention your looks. Don't answer either."</p>
+  <p class="say">Charlie, on the window seat behind three newspapers: "He might do Scotland. The golf courses."</p>
+  <p class="say">"Christ."</p>
+  <p class="say">"Just say Turnberry's beautiful."</p>
+  <p class="say">"Turnberry is beautiful. That's the fucking problem."</p>
+  <p>Nobody laughed. Marianne had the pen behind her ear, which only came out after the second coffee. He read the card. Mother: no. Looks: no. Golf: Turnberry. Four minutes. He could do four minutes standing on his head. He'd done Walter Reed yesterday with a Marine who'd lost both hands and wanted to talk about Mourinho, and he'd been fine. Better than fine. He'd been exactly the right amount of everything.</p>
+  <p>Clara had left a tie on the bed. Navy with a red stripe, which was clever of her, because it was also very nearly the President's colours and nobody could say he'd made a point.</p>
+  <p>In the car he counted flags on the embassies going up Mass Ave. Brazil. Turkey. Something green he didn't recognise. Miranda said two minutes, sir. He did up his jacket.</p>
+</div></div></section>
+
+<section class="spread" data-g="1" data-name="Washington"><div class="wrap"><div class="grid">
+  <figure class="photo"><img src="img/usa-2017-04.jpg" alt="Alexander in RAF multi-terrain uniform crouched beside a patient in a wheelchair at Walter Reed"><figcaption>Military Advanced Training Center, Walter Reed · Sun 25 June</figcaption></figure>
+  <div class="stack">
+    <div><p class="pull">"He didn't do the sad face. He asked how long I'd had the leg and then we talked soccer for like ten minutes."</p><cite>Cpl. Dustin Reyes, USMC · to WTOP</cite></div>
+    <div class="whybox"><b>Why here</b>Most of the afternoon is at the Military Advanced Training Center with patients in rehab, US and British. A lot of them want to talk about football.</div>
+    <div class="fbgrp">
+      <div class="hd">Bethesda Moms (Unfiltered) · Public group</div>
+      <div class="post"><b>Karen Whitley</b><br>Old Georgetown Rd closed from 1:30 to almost 4. Missed my daughter's recital. A royal visit is lovely but some of us live here?<div class="c"><b>Jen Park</b> did you see him though</div><div class="c"><b>Karen Whitley</b> Jen no I was in my car on Cedar Lane for 40 minutes</div><div class="c"><b>Lisa M. Ortiz</b> my husband works in prosthetics and said he was really nice and stayed way longer than they planned. so. worth the traffic imo</div></div>
+    </div>
+    <div class="card ig"><div class="imgwrap" style="aspect-ratio:4/5"><img src="img/usa-2017-doctor.jpg" alt="Dr Lauren Okafor in a Walter Reed white coat smiling beside Alexander in RAF uniform" style="object-position:50% 20%"></div><div class="who"><div class="av" style="background:#7B5E57">L</div><div><b>dr.laurenokafor</b><small>Walter Reed National Military Medical Center</small></div></div><b>3,212 likes</b><br>Grateful to have met Prince Alexander during his visit to our Military Advanced Training Center today. As a veteran himself he understands what our patients have given and what they're still working through. He listened more than he talked. Thank you for showing up for them, sir. 🇺🇸🇬🇧 #WarriorCare #WalterReed
+      <div class="cm"><b>pt_mike_bethesda</b> great day at the MATC 💪</div><div class="cm"><b>jen.okafor.k</b> LAUREN!!! 😭😭</div><div class="cm"><b>dr.amyschultz_dpt</b> I was literally in the next room doing gait training and missed it 😑</div><div class="cm"><b>navywife_2009</b> he is so much taller than I thought</div><div class="cm"><b>kels.marie</b> the way you're both smiling 😭 frame this</div></div>
+  </div>
+</div></div></section>
+
+<section class="front" data-g="1" data-name="Washington"><div class="wrap">
+  <div class="head"><h2>One second <em>in the</em><br>Oval Office</h2><div class="eyebrow" style="color:var(--frame)">Mon 26 June · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">The Washington Post</div><div class="date">TUESDAY, JUNE 27, 2017 · A12</div>
+      <img src="img/usa-2017-02.jpg" alt="Alexander looking away as Trump speaks">
+      <h3>A royal visit, and a royal eye roll</h3><div class="deck">Visit overshadowed by Oval Office moment</div><div class="by">By Karen Mullins</div>
+      <p>As Trump praised the 31-year-old heir to the British throne for a second time, calling him "so handsome," the prince turned away and rolled his eyes. By Monday evening, video of the moment had been viewed several million times. Kensington Palace declined to comment.</p></article>
+    <article class="clip c2"><div class="mast">The New York Times</div><div class="date">TUESDAY, JUNE 27, 2017 · A9</div>
+      <h3>Heir to British Throne Brings Reassurance to a White House Visit</h3><div class="deck">London seeks closer ties after "Brexit" vote</div><div class="by">By Mark Landon</div>
+      <p>WASHINGTON — Prince Alexander met President Trump at the White House on Monday, the most senior British royal to visit the administration so far and a clear sign of how much weight London is putting on its relationship with Washington.</p><p>British officials described the meeting, which lasted about half an hour, as a courtesy call. As a member of the royal family, the prince does not discuss policy.</p></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:#D7141A">The Sun</div><div class="h">Roll with it</div><div class="s">Prince's eye-roll in Oval Office watched by millions · Pages 4 &amp; 5</div></article>
+      <article class="clip tab rot-b"><div class="m" style="background:#fff;color:#111;font:700 26px var(--press);border-bottom:1px solid #ccc">Daily Mail</div><div class="h" style="font:700 22px/1.12 Georgia,serif;text-transform:none">The eye-roll seen around the world</div><div class="s" style="font:13px Georgia,serif;color:#444">Prince's one-second reaction to Trump's compliments steals the show · Pages 6–7</div></article>
+    </div>
+    <article class="clip op c4"><div class="kick">The Guardian · Opinion</div><h3>An eye roll at Trump doesn't make an unelected heir one of us</h3>
+      <p style="margin-top:8px">He is in Washington because a government that cannot secure a trade deal on its own has sent the next head of state to be photographed being charming. That he found the president's flattery embarrassing tells us something about his taste. It tells us nothing about his politics, which, by design, we will never be allowed to know.</p><div class="by">Hannah Lowe</div></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 20px var(--body);color:#D32B26;border-bottom:2px solid #D32B26;padding-bottom:4px;margin-bottom:8px">POLITICO PLAYBOOK</div>
+      <p style="font:14px/1.5 var(--body)"><b>THE ROLL CALL —</b> A West Wing official tells Playbook the President "loved the meeting" and "didn't see" the moment until it was on Fox &amp; Friends. A second official, asked if POTUS was annoyed: "He thinks the guy is good-looking. That part's real." The Embassy asked the networks whether there was another angle. There was not.</p></article>
+  </div>
+  <div class="chyron" role="marquee"><div class="lab" style="background:#C8102E">Fox &amp; Friends</div><div class="tk" style="background:#0A1B3D"><span>Did the Prince disrespect the President? · Oval Office eye roll: snub or nothing? · Palace declines to comment · Coming up: should Americans care what British royals think?</span></div></div>
+</div></section>
+
+<section class="quiet" data-g="1" data-name="Washington">
+  <img class="bg" src="img/usa-2017-03.jpg" alt="">
+  <div class="wrap"><div class="in">
+    <div class="label">MON 26 JUN · 10.06 · THE OVAL OFFICE</div>
+  <p>The carpet was the first thing. Gold, with the eagle woven into the middle of it, and up close it looked like something out of a casino in Leeds. He fixed his eyes about a foot to the left of the eagle's head and kept them there.</p>
+  <p class="say">"This guy. This guy is a hero. A real hero, not like some of them, believe me. He flew helicopters in Afghanistan, very dangerous helicopters, and he saved Americans. A lot of Americans. Is that right? I was told a lot."</p>
+  <p class="say">"Some, sir. It was a joint—"</p>
+  <p class="say">"A lot of Americans. People don't know that. The fake news won't tell you that. And he got hurt, very badly hurt, you can see—" a finger, wagging somewhere near the scar, "—and he's not complaining. He doesn't complain. Tremendous courage. His mother would be very proud. Beautiful woman. Very sad, very sad what happened. And he's popular, very popular, the American people are going to love him, they already love him, have you seen the coverage? Unbelievable coverage. Better than mine, almost." Laughter from the pool. "Almost."</p>
+  <p>A hand landed on his shoulder and stayed. It patted twice, the way you'd pat a horse you'd just bought.</p>
+  <p>Behind the desk the windows were tall and old-fashioned, with the Rose Garden green in the bottom panes, and he knew from someone who'd been briefed by someone that the glass was about three inches thick. He measured it anyway. Two strides from where he was standing. Head first, a bit of a run-up. Charlie could brief it as a medical episode.</p>
+  <p>He smiled at the eagle. He'd been smiling at the eagle for about two minutes now and his face had set like that, a sort of pleasant, interested, slightly glazed expression, the one he used for school prize-givings and people's holiday photos. He had no idea what else to do with it. There was a protocol for being insulted by a head of state. There was a protocol for being ignored by one. Nobody had ever written one for being complimented to death on camera by one, and he was making it up as he went along: don't nod, it looks like agreement. Don't look at the pool. Don't look at Marianne. Don't do anything at all with your eyebrows.</p>
+  <p class="say">"Do women still propose to you? In the crowds?"</p>
+  <p class="say">"Not often, sir."</p>
+  <p class="say">"They will here." To the room, delighted: "He's got the whole package. Look at him."</p>
+  <p>Twenty lenses looked at him. He could feel the lights on the back of his neck, and a bead of sweat setting off down his spine under the shirt, slowly, like it had all the time in the world.</p>
+  <p>At the back somebody shouted about women, whether all the attention bothered him, and the President laughed and leant in and said it again, slower, for anyone who'd missed it. <i>So handsome.</i></p>
+  <p>Oh, fuck off.</p>
+  <p>He turned his face away so it wouldn't show. It didn't help. His eyes went wide, his eyebrows went up a fraction, the pure disbelieving <i>are you fucking serious</i> of it, and then they rolled, all the way up and round, on their own, the way they'd gone at Caroline across the breakfast table since he was nine.</p>
+  <p>Oh. Oh, no.</p>
+  <div class="big">one second</div>
+  <p>The pool had it. He heard them get it: twenty people breathing in at once, the shutters going like rain on a tin roof, then the shouting. Was he embarrassed. Did he like the President. Was Georgiana watching. He turned back with his expression put away and said thank you, Mr President, and that the Rose Garden was looking very well this year, and somebody from the press office was already herding them out.</p>
+  <p>The President thought it had gone brilliantly. He said so twice.</p>
+  <p>In the car Marianne said nothing until the Naval Observatory. Then she turned and looked at him for a long time without blinking, the way his mother used to look at him in church.</p>
+  <p>He looked out of the window. Brazil. Turkey. The green one.</p></div></div>
+</section>
+
+<section class="noise" data-g="1" data-name="Washington"><div class="wrap">
+  <div class="head"><h2>By lunchtime in London</h2><p>Snark, thirst, politics and the locals.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#C2185B">E</div><div><b>Ellie Novak</b><small>@ellienovak · 26 Jun 2017</small></div></div>prince alexander rolling his eyes in the oval office is my new personality<div class="act">48.2K Retweets · 131K Likes</div></div>
+    <div class="rd"><div class="sub">r/RoyalsGossip <span>· u/corgi_conspiracy · 6h</span></div><h4>He knew EXACTLY what he was doing and I respect it</h4>
+      <div class="cm"><div class="u"><b>throwaway_tiaras</b> · 6h</div>you don't get to 31 in that family without knowing where the pool camera is. that was on purpose and his PR guy is either dying or getting a raise<div class="pts">⬆ 2.1k</div>
+        <div class="cm"><div class="u"><b>ladyofshallot88</b> · 5h</div>his eyes go WIDE first. that's not strategy that's a man in shock<div class="pts">⬆ 940</div></div></div>
+      <div class="cm"><div class="u"><b>sunday_roast_enjoyer</b> · 5h</div>Georgiana watching this from Sussex like 🙂<div class="pts">⬆ 611</div></div>
+      <div class="cm"><div class="u"><b>m_bennet</b> · 4h</div>the tie. the suit. the contempt. we are so back<div class="pts">⬆ 388</div></div></div>
+    <div class="yt"><div class="vid" style="background-image:url(img/usa-2017-02.jpg)"><span>0:09</span></div><div class="t">Prince Alexander EYE ROLL at Trump in Oval Office (slowed down)</div><div class="c" style="color:#aaa;padding-top:0">1.9M views · 1 day ago</div>
+      <div class="c"><b>kayla m</b>the way his eyes go WIDE first like he cannot believe what he is hearing</div>
+      <div class="c"><b>Dan Ferris</b>this is a foreign prince insulting our president on our soil and yall think its cute</div>
+      <div class="c"><b>mollyyy</b>@Dan Ferris it was literally one second dan</div>
+      <div class="c"><b>Tom Reid</b>As a Brit I have never been prouder of the monarchy</div>
+      <div class="c"><b>jess</b>watched this 40 times for research purposes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#33691E">D</div><div><b>Danielle 🌻</b><small>@daniellereads · 26 Jun 2017</small></div></div>respectfully i would also roll my eyes at trump if i looked like that. i would roll my eyes at everyone. i would never stop<div class="act">9,204 Retweets · 37K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#B71C1C">S</div><div><b>Steve K. 🇺🇸</b><small>@stevek_maga · 26 Jun 2017</small></div></div>We fought a whole war so we wouldn't have to bow to these people. Now one of them walks into the Oval and disrespects our President on camera and the media cheers. Send him home.<div class="act">1,840 Retweets · 6.2K Likes</div><div class="reply">↳ <b>@hayleyfromohio</b> steve he's leaving on tuesday</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#4A148C">R</div><div><b>Rachel Hale MP</b><small>@RachelHaleMP · 26 Jun 2017</small></div></div>Glad our Prince of Wales has more self-respect than our Foreign Secretary. Shame it took a royal to say what the Government won't.<div class="act">3,377 Retweets · 11K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#0D47A1">C</div><div><b>Conor Walsh</b><small>@conorwalsh_pol · 26 Jun 2017</small></div></div>Labour MPs cheering a hereditary heir for pulling a face is the most 2017 thing that has ever happened. He's on a trade mission. That's the job.<div class="act">412 Retweets · 1.9K Likes</div></div>
+    <div class="rd"><div class="sub">r/washingtondc <span>· u/metro_suffering · 9h</span></div><h4>Mass Ave closed AGAIN for the British prince motorcade, 3rd time this weekend</h4>
+      <div class="cm"><div class="u"><b>GLUT_enjoyer</b> · 9h</div>embassy row residents when an embassy does embassy things<div class="pts">⬆ 812</div></div>
+      <div class="cm"><div class="u"><b>adams_morgan_mom</b> · 8h</div>he waved from the car at the Naval Observatory light. my bus driver honked. unclear if in support<div class="pts">⬆ 506</div></div>
+      <div class="cm"><div class="u"><b>dc_native_actually</b> · 7h</div>He rolled his eyes at Trump so he can close whatever he wants honestly<div class="pts">⬆ 1.3k</div></div></div>
+    <div class="dish"><div class="bar2">Royal Dish › The British Royal Family › Prince Alexander in the United States (Read 88,412 times)</div>
+      <div class="p"><div class="l"><b>QuebecQueen</b><br>Large Member<br>Posts: 1702</div><div class="r"><div class="when">Reply #212 on: June 26, 2017, 01:12:40 PM</div>Well. Has everyone seen the Oval Office clip.</div></div>
+      <div class="p"><div class="l"><b>blueblooded84</b><br>Senior Member<br>Posts: 893</div><div class="r"><div class="when">Reply #213 on: June 26, 2017, 01:15:02 PM</div>Not a good look for the heir to the throne, sorry. He is meant to keep his face still in meetings like that, that is the whole job. I will admit I laughed though.</div></div>
+      <div class="p"><div class="l"><b>Duchess_of_Dupont</b><br>Member<br>Washington DC<br>Posts: 310</div><div class="r"><div class="when">Reply #214 on: June 26, 2017, 01:31:55 PM</div><div class="q">Quote from: blueblooded84<br>Not a good look for the heir to the throne</div>He was asked about women in front of the entire press pool by the President of the United States. I'd have climbed out of the window. He has more self-control than me.<div class="sig">Long live the King · Washington, D.C.</div></div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#E65100">M</div><div><b>Mia (busy)</b><small>@miathinks · 27 Jun 2017</small></div></div>not to be dramatic but the photo of him crouched down talking to the veteran at walter reed did more to me than anything my boyfriend has said in two years<div class="act">6,018 Retweets · 22K Likes</div></div>
+  </div>
+</div></section>
+
+<section class="phones" data-g="1" data-name="Washington"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">His phone · Mon 26 June · Eastern time</div><h2 style="margin-top:8px">Meanwhile, privately</h2></div><p>Georgie at home in Sussex, five hours ahead. Two missed calls from BP.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>11:42</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Today 11:38</div>
+        <div class="bub in">alec</div>
+        <div class="bub in">ALEC</div>
+        <div class="bub in shot"><div style="background-image:url(img/usa-2017-02.jpg)"><span>Sky News · Prince's Oval Office eye roll</span></div></div>
+        <div class="bub in">you rolled your EYES at the PRESIDENT 😭😭😭</div>
+        <div class="bub in">mum has rung me twice. dad is pretending he hasn't watched it but he has</div>
+        <div class="ts">12:58</div>
+        <div class="bub out">Yes, thank you, I was there.</div>
+        <div class="bub out">Charlie's made me watch it eleven times. Slowed down. Like the Zapruder film.</div>
+        <div class="bub out">He called me handsome twice in ninety seconds and patted me like a heifer at auction. What exactly was I meant to do with my face?</div>
+        <div class="bub in">💀💀</div>
+        <div class="bub in">i mean hes not wrong about the handsome</div>
+        <div class="bub out">I'm aware of that, Georgiana, I own a mirror.</div>
+        <div class="bub in">not the heifer tho</div>
+        <div class="bub out">You've never had any complaints about the haunches.</div>
+        <div class="bub in">ALEC</div>
+        <div class="bub in">is charlie dying</div>
+        <div class="bub out">Charlie's thrilled and pretending to be furious. Marianne's furious and pretending to be calm. Audley's rung twice and I haven't picked up, which is the telephone equivalent of telling him to fuck off or suck my cock. Either way I win.</div>
+        <div class="bub in">LMAO 💀💀💀</div>
+        <div class="bub in">ur going to be in so much trouble</div>
+        <div class="bub out">I'll ring him after the Hill. I want one more hour of being the most popular man in Britain first.</div>
+        <div class="ts">23:51</div>
+        <div class="bub out">Dinner done. Sat next to a woman from Brookings who explained the NHS to me for forty minutes.</div>
+        <div class="bub in">did u correct her</div>
+        <div class="bub out">I'm a guest in her country. I nodded like a Labrador and thought very seriously about the fish knife.</div>
+        <div class="bub in">🙄</div>
+        <div class="bub out">Go to sleep. It's five in the morning there and you look like shit when you don't sleep.</div>
+        <div class="bub in">wow ok goodnight to u too</div>
+      </div>
+    </div></div>
+    <div class="phone"><div class="screen recents">
+      <div class="sb"><span>23:58</span><span>●●●</span></div>
+      <h3>Recents</h3>
+      <div class="call"><div class="n"><b>G ❤️</b><small>FaceTime Audio · 47 min</small></div><div class="t">23:55</div></div>
+      <div class="call"><div class="n"><b>Charlie</b><small>mobile · 6 min</small></div><div class="t">18:12</div></div>
+      <div class="call"><div class="n"><b>BP</b><small>work · 4 min</small></div><div class="t">17:40</div></div>
+      <div class="call miss"><div class="n"><b>BP (2)</b><small>work</small></div><div class="t">13:06</div></div>
+      <div class="call"><div class="n"><b>Caro</b><small>mobile · 2 min</small></div><div class="t">12:20</div></div>
+      <div class="call miss"><div class="n"><b>BP</b><small>work</small></div><div class="t">11:31</div></div>
+      <div class="vm"><div class="top"><b>BP</b><span>13:06 · 0:22</span></div><p>"Sir, it's Giles Audley. His Majesty has seen the footage from this morning. He'd be grateful if you'd ring me before this evening's dinner. Thank you, sir."</p><p><em>Voicemail · Transcription</em></p></div>
+      <div class="vm"><div class="top"><b>Caro</b><span>12:20 · 0:14</span></div><p>"Saw it on the news with my head over the loo, so thanks for that. You absolute idiot. I laughed so much I was sick again. Ring me."</p><p><em>Voicemail · Transcription</em></p></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="1" data-name="Washington"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Washington</div>
+  <div class="ephrow">
+    <div class="menu"><div class="crest">British Embassy · Washington</div><h3>Dinner</h3><div class="d">Monday 26th June 2017</div>
+      <p>Chilled pea soup, Scottish crab<br><small>Nyetimber Classic Cuvée 2010</small></p><div class="rule"></div>
+      <p>Saddle of Welsh lamb, Jersey Royals, mint<br><small>Château Talbot 2005</small></p><div class="rule"></div>
+      <p>Strawberries and Chantilly<br><small>in honour of Wimbledon</small></p></div>
+    <div class="place"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Place card · Table 1</div><div class="fold">HRH The Prince of Wales</div></div>
+    <div class="badge"><div class="t">Smithsonian · NMAH</div><div class="b">Escorted visitor<big>VIP 01</big>27 JUN 2017 · Before opening<small>Valid with staff escort only · Return to Security, Constitution Ave</small></div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → NY ============ -->
+<section class="leg light" data-g="2" data-name="To New York"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>American Airlines</b> · Shuttle</span><span>First</span></div>
+      <div class="route">DCA <i></i> LGA</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">AA 2130</span></div>
+      <div><small>Date</small><span class="v">27 JUN 2017</span></div>
+      <div><small>Seat</small><span class="v">2A</span></div>
+    </div>
+    <div class="stub"><small>Leg 2 of 8</small><div class="city">New York</div><small>+208 mi · 55 min</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 02 NEW YORK ============ -->
+<section class="bleed" id="newyork" data-g="2" data-name="New York">
+  <img class="bg" src="img/usa-2017-05.jpg" alt="Alexander standing alone at the North Pool of the 9/11 Memorial, the tower behind him" style="object-position:50% 30%">
+  <div class="wrap">
+    <div class="eyebrow">Chapter two · Manhattan</div>
+    <div class="chapno" aria-hidden="true">02</div>
+    <h2>New York City</h2>
+    <div class="meta"><span><b>Tue 27 – Thu 29 June</b></span><span>The Carlyle</span></div>
+    <p class="why">Finance, the United Nations and the American morning shows. He goes to the 9/11 Memorial ninety minutes after landing, before anything lighter, so the wreath is the first picture from New York.</p>
+  </div>
+</section>
+<section style="padding-block:10px 60px" data-g="2" data-name="New York"><div class="wrap">
+  <div class="prog" style="--n:3">
+    <div class="day"><h4>Tue 27 Jun</h4><p><span>16.00</span>LaGuardia.</p><p><span>17.30</span>9/11 Memorial. Wreath at the North Pool; families and first responders. Leaves a private note at the pools.</p><p><span>18.15</span>The Museum, after hours, with the director and curators.</p><p><span>20.15</span>Consul-General's residence, East 51st.</p></div>
+    <div class="day hot"><h4>Wed 28 Jun</h4><p><span>09.30</span>NYSE floor after the bell.</p><p><span>11.30</span>Intrepid, Pier 86. Enterprise and Concorde G-BOAD.</p><p><span>15.00</span>FDNY Engine 54 / Ladder 4, 8th Ave &amp; 48th. Pizza and Coke with the crew. The longest slot of the day.</p><p><span>19.00</span>Cambridge in America gala, the Met.</p></div>
+    <div class="day off"><h4>Thu 29 Jun</h4><p><span>Morning</span>No engagements before noon.</p><p><span>12.30</span>UN Headquarters. The Secretary-General.</p><p><span>14.30</span>Wounded Warrior Project.</p><p><span>17.00</span>AA to O'Hare.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="2" data-name="New York"><div class="wrap"><div class="in">
+  <div class="label">TUE 27 JUN · 19.40 · SEVEN STOREYS DOWN</div>
+  <p>They'd cleared the place, and seven storeys under Manhattan it was cold, and his shoes were too loud. Leather soles. Clara's choice. He'd have worn something quieter if anyone had told him.</p>
+  <p>The curator called him Your Royal Highness at the lift, sir at the bottom of it, and sir at the start of every sentence after that, sometimes twice. At the Survivors' Stairs he told her, as kindly as he knew how, that she really didn't have to. She said "Sorry, sir," went pink to the ears, and managed three sentences without it.</p>
+  <p>Foundation Hall was enormous. The slurry wall ran up one side, rough and dark and wet-looking, and the Last Column stood in the middle covered in marker pen and spray paint, company numbers, unit badges, names. Then Ladder 3. The front of the cab was gone. Not crushed. Peeled, the metal curled back on itself like the lid of a sardine tin, so you could see the dashboard and the seats and a clipboard still wedged by the window.</p>
+  <p>He made himself look at it. He knew how to look at wreckage and work out what had happened to the people inside it. He'd have given a great deal not to know.</p>
+  <p>The director said quietly that there was a little further to go.</p>
+  <p>The gallery of faces was worse because it was so ordinary. Passport photos. Wedding photos. A man holding up a fish. She stopped every so often and pointed, and didn't need to look for them. Birmingham. A bank, the 104th floor. In for one meeting, her first time in New York. Sixty-seven.</p>
+  <p>Arlington on Sunday, Walter Reed after it, and he'd been fine. In the lift going up he couldn't get a breath all the way down, so he counted floors. B6. B5. B4. Marianne didn't say anything. She stood a little closer than usual, that was all.</p>
+  <p>East 51st Street took eleven minutes. Nobody spoke. At the Consul-General's door he did up his jacket, found his face, and walked into a room full of bankers holding champagne.</p>
+</div></div></section>
+
+<section class="front" data-g="2" data-name="New York"><div class="wrap">
+  <div class="head"><h2>Jacket <em>off</em></h2><div class="eyebrow" style="color:var(--frame)">Wed 28 – Thu 29 June · The coverage</div></div>
+  <div class="board">
+    <article class="clip tab c1"><div class="m" style="background:#C8102E;font:900 30px/1 var(--body);letter-spacing:-.02em">NEW YORK POST</div><img src="img/usa-2017-06.jpg" alt="Alexander in a white shirt, jacket off, with a can of Coke and pizza at the FDNY firehouse"><div class="h" style="font-size:56px">Prince of the City</div><div class="s">Royal ditches jacket, grabs a slice with Bravest · Pages 4–5 · THURSDAY, JUNE 29, 2017</div></article>
+    <article class="clip c2"><div class="mast">The Daily Telegraph</div><div class="date">THURSDAY, JUNE 29, 2017 · PAGE 3</div><img src="img/usa-2017-08.jpg" alt="Alexander speaking with families at the Memorial"><h3>Prince honours the fallen at Ground Zero</h3><div class="deck">Heir lays wreath at 9/11 Memorial · American media hail firehouse visit</div></article>
+    <div class="c3">
+      <article class="clip tab rot-a"><div class="m" style="background:var(--publication-daily-news,#1258a8);font:900 26px var(--body)">DAILY NEWS</div><div class="h" style="font-size:34px">Prince comes aboard the Intrepid</div><div class="s">Royal visitor climbs into Concorde cockpit · Crowds line the West Side Highway · Page 7</div></article>
+      <article class="clip rot-b" style="background:#fff;font-family:var(--body)"><div style="font:900 18px var(--body);background:#000;color:#fff;display:inline-block;padding:2px 8px;margin-bottom:8px">PAGE SIX</div><h3 style="font:800 19px/1.2 var(--body)">Prince Alexander charms Met gala, then heads for the exit</h3><p style="font:13.5px/1.45 var(--body);margin-top:6px">A guest tells us he "had clearly done his forty minutes" by dessert and was back at the Carlyle before eleven.</p></article>
+    </div>
+    <article class="clip c4" style="background:#fff;font-family:var(--body)"><div style="font:900 22px var(--body);color:#E1261C">People · Royals</div><h3 style="font:800 21px/1.2 var(--body);margin:6px 0">See Every Photo From Prince Alexander's Big Day in New York City</h3><p style="font:13.5px/1.45 var(--body)">From a wreath at the 9/11 Memorial to pizza at an FDNY firehouse and black tie at the Met. June 28, 2017 · 52 photos</p></article>
+    <article class="clip c5" style="background:#fff;font-family:var(--body)"><div style="font:800 11px var(--body);letter-spacing:.14em;color:#555">THE CARLYLE · MADISON AVE · THU 29 JUNE</div><h3 style="font:italic 400 24px/1.25 var(--display);margin:10px 0">"We've been here since seven. He's asleep. They said he's asleep. We're staying."</h3><p style="font:13px var(--body);color:#555">A woman from New Jersey with a Union flag and a folding chair, to the Post</p></article>
+  </div>
+  <div class="chyron" role="marquee"><div class="lab" style="background:#0F57B8">GMA</div><div class="tk" style="background:#0B1E3F"><span>Royal fever grips New York · Prince Alexander at 9/11 Memorial · Crowds on West Side Highway · Live from the Intrepid at 8:30</span></div></div>
+</div></section>
+
+<section class="noise" data-g="2" data-name="New York"><div class="wrap">
+  <div class="head"><h2>The Bravest, and the rest</h2><p>Firehouse, fans, and the Upper East Side's opinions.</p></div>
+  <div class="masonry">
+    <div class="card ig"><div class="imgwrap"><img src="img/usa-2017-06.jpg" alt=""></div><div class="who"><div class="av" style="background:#b3121f">54</div><div><b>fdny_engine54</b><small>Midtown, Manhattan</small></div></div><b>3,640 likes</b><br>Had a royal visitor at the Pride of Midtown today. HRH The Prince of Wales stopped by the day after his visit to the Memorial, took his jacket off and ate pizza with the guys. Good questions, good company. Still owes us for the pie. #FDNY #PrideOfMidtown #NeverForget
+      <div class="cm"><b>mike.c.fdny</b> Great day at the house 👊🔥</div><div class="cm"><b>jenn.rivera22</b> @kristen_m look who was at 54 🙈</div><div class="cm"><b>kristen_m</b> @jenn.rivera22 STOP 😭😭</div><div class="cm"><b>proud.fdny.wife</b> So proud of you guys ❤️🇺🇸</div><div class="cm"><b>fitbyjay</b> 🔥🔥 summer shred plans in bio 💪</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6A1B9A">B</div><div><b>brooke 🗽</b><small>@brookeinbk · 28 Jun 2017</small></div></div>he took his jacket off at a firehouse and every woman in manhattan felt it in her spine<div class="act">22K Retweets · 71K Likes</div></div>
+    <div class="card ig"><div class="imgwrap"><img src="img/usa-2017-07.jpg" alt=""></div><div class="who"><div class="av" style="background:#455A64">N</div><div><b>nico.rivas_</b><small>Upper East Side, Manhattan</small></div></div><b>1,861 likes</b><br>MET PRINCE ALEXANDER TODAY 😭🇬🇧 waited 3 hours outside the carlyle and he actually stopped. asked where i was from and i forgot for a second lmao #princealexander #nyc
+      <div class="cm"><b>danii.g</b> NICO 😭😭😭</div><div class="cm"><b>mattcortez</b> bro how 💀</div><div class="cm"><b>abuela.rosa</b> Que guapo!! Los dos 😍</div><div class="cm"><b>followboost_247</b> Nice pic! DM us to grow your page 🚀</div></div>
+    <div class="rd"><div class="sub">r/nyc <span>· u/uws_curmudgeon · 1d</span></div><h4>The Carlyle sidewalk has been unusable for two days because of a man who is asleep</h4>
+      <div class="cm"><div class="u"><b>bodega_cat_dad</b> · 1d</div>i saw a woman with a folding chair and a cooler. a COOLER<div class="pts">⬆ 1.4k</div></div>
+      <div class="cm"><div class="u"><b>LexAveLocal</b> · 1d</div>the Carlyle has survived JFK, Bobby Short and Woody Allen, it'll survive this<div class="pts">⬆ 902</div>
+        <div class="cm"><div class="u"><b>nyc_throwaway_88</b> · 1d</div>interesting list of names there<div class="pts">⬆ 655</div></div></div>
+      <div class="cm"><div class="u"><b>sweetgreen_hater</b> · 22h</div>he came out at noon and waved and someone fainted. I'm not exaggerating, EMS came<div class="pts">⬆ 377</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#1565C0">J</div><div><b>Jim Caruso</b><small>@jimcaruso_fdny_ret · 28 Jun 2017</small></div></div>Retired out of 54. Kid sat down with the guys, ate the pizza, and asked about the men we lost, by name. Didn't make it about him. Respect.<div class="act">4,410 Retweets · 19K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#37474F">I</div><div><b>Intrepid Museum</b><small>@IntrepidMuseum · 28 Jun 2017</small></div></div>HRH The Prince of Wales in the cockpit of Concorde G-BOAD this morning. Our volunteers report he did not want to get out. ✈️🇬🇧<div class="act">1,902 Retweets · 7.7K Likes</div></div>
+    <div class="tb"><div class="n">thecarlylewindow</div>day 2 of the prince of wales sleeping in on the upper east side while 300 people and the entire british press stand outside like it's a vigil<br><br>king behaviour honestly<div class="tags">#he's not the king #i know #prince alexander</div><div class="notes">18,330 notes</div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="2" data-name="New York"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · New York</div>
+  <div class="ephrow">
+    <div class="hanger"><b>Do Not Disturb</b><small>The Carlyle · A Rosewood Hotel</small><div style="font:500 20px var(--hand);color:#E8DCC2;margin-top:16px;text-transform:none;letter-spacing:0">Thu 29 · slept till 10</div></div>
+    <div class="badge"><div class="t" style="background:#0B2F6B">Intrepid · Pier 86</div><div class="b">Concorde G-BOAD<big>COCKPIT</big>28 JUN 2017 · 11:52<small>Escort: J. Morales (Vol.) · Ret. USN</small><div class="hole"></div></div></div>
+    <div class="menu" style="transform:rotate(1.5deg)"><div class="crest">Cambridge in America</div><h3>Gala Dinner</h3><div class="d">The Metropolitan Museum of Art · 28 June 2017</div><p>Black tie</p><div class="rule"></div><p style="font:italic 14px var(--display);color:var(--muted)">Guest of honour<br>HRH The Prince of Wales<br>Trinity College</p></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → CHICAGO ============ -->
+<section class="leg" data-g="3" data-name="To Chicago"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>American Airlines</b> · Boarding pass</span><span>First</span></div>
+      <div class="route">LGA <i></i> ORD</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">AA 321</span></div>
+      <div><small>Date</small><span class="v">29 JUN 2017</span></div>
+      <div><small>Seat</small><span class="v">3F</span></div>
+    </div>
+    <div class="stub"><small>Leg 3 of 8</small><div class="city">Chicago</div><small>+733 mi</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 03 CHICAGO ============ -->
+<section class="open" id="chicago" data-g="3" data-name="Chicago"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter three · Illinois</div>
+      <div class="chapno" aria-hidden="true">03</div>
+      <h2>Chicago</h2>
+      <div class="meta"><span><b>Thu 29 June – Mon 3 July</b></span><span>The Langham, Wacker Drive</span><span>The Warrior Games</span></div>
+      <p class="why">Chicago is on the route because he asked for it. DoD invited him to open the Warrior Games, and he asked for three days instead of one evening so he could watch competition and spend time with the British team.</p>
+    </div>
+    <figure><img src="img/usa-2017-10.jpg" alt="Alexander in a grey henley talking with an athlete in a wheelchair at McCormick Place"><figcaption>McCormick Place · Sat 1 July</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:4">
+    <div class="day"><h4>Fri 30 Jun</h4><p><span>09.00</span>Architecture river cruise.</p><p><span>11.00</span>University of Chicago.</p><p><span>14.00</span>Developing Communities Project, Altgeld Gardens.</p><p><span>16.30</span>Millennium Park, Cloud Gate.</p></div>
+    <div class="day hot"><h4>Sat 1 Jul</h4><p><span>10.00</span>McCormick Place. Training sessions; most of the day with the athletes.</p><p><span>19.00</span>Opening ceremony, Soldier Field. Gives the address.</p><p><span>22.00</span>Athletes' barbecue.</p></div>
+    <div class="day"><h4>Sun 2 Jul</h4><p><span>09.00</span>British-American Business Council.</p><p><span>13.00</span>First day of competition, with Team UK.</p><p><span>19.30</span>Dinner, Lieutenant Governor.</p></div>
+    <div class="day"><h4>Mon 3 Jul</h4><p><span>08.00</span>Lane Tech track.</p><p><span>10.00</span>Navy Pier send-off.</p><p><span>12.15</span>United to Houston.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="3" data-name="Chicago"><div class="wrap"><div class="in">
+  <div class="label">SAT 1 JUL · 11.20 · McCORMICK PLACE, HALL F</div>
+  <p>Hall F smelled of rubber flooring and Deep Heat and four hundred people's sweat. Somebody had Springsteen going on a speaker and nobody was listening. He'd been there two hours, in a navy polo and chinos Clara had sworn would look right on the floor, and they did, and he'd stopped thinking about them.</p>
+  <p>A sitting volleyball player from Colorado, prosthetic propped at the end of the bench with a Broncos sticker on the socket, nodded at his face. "That from over there?"</p>
+  <p>Everyone on that bench knew. It had been in every paper on two continents.</p>
+  <p class="say">"Helmand, 2013," Alexander said. "So I know a bit about the rehab side. Not like this. But I remember the first few weeks."</p>
+  <p class="say">The man looked at him for a second. "With respect, sir, you got a scar." Two fingers tapped the carbon fibre. "I got this."</p>
+  <p>Nobody else on the bench said anything. Three yards away a press officer went very still, and he could feel her working out whether the pool had caught it.</p>
+  <p>Stupid. A few weeks at Nott Cott with a dressing on his face and a filthy temper, and he'd just set it down next to a leg.</p>
+  <p class="say">"Yes," he said. "That's fair."</p>
+  <p class="say">"No worries." The man knocked the socket against the bench, checking something. "You any good at this?"</p>
+  <p>He was not. He got down on the floor and took a ball full in the face inside four minutes, and the Colorado bench made the noise men make in every gym in the world, and he lay on his back looking up at the girders with his nose stinging, laughing, and thought it was the best hour he'd had since Heathrow.</p>
+  <p>Thom came to get him at exactly the time on the card. The bench booed him all the way to the door.</p>
+</div></div></section>
+
+<section class="front" data-g="3" data-name="Chicago"><div class="wrap">
+  <div class="head"><h2>Soldier <em>Field</em></h2><div class="eyebrow" style="color:var(--frame)">Fri 30 June – Mon 3 July · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Chicago Tribune</div><div class="date">SUNDAY, JULY 2, 2017 · SECTION 1, PAGE 6</div>
+      <h3>Prince Alexander opens Warrior Games at Soldier Field</h3><div class="deck">Royal visitor spends day with athletes at McCormick Place</div><div class="by">By Megan Kowalski</div>
+      <p>Prince Alexander opened the Department of Defense Warrior Games on Saturday night with a short speech that drew some of the loudest cheers of the evening.</p>
+      <p style="font:italic 400 19px/1.35 var(--press);border-left:3px solid #222;padding-left:12px">"I'll keep this quick, because nobody on that field came to Chicago to listen to me. Over the next week you're going to compete against each other as hard as you can. Good luck. Give it everything."</p></article>
+    <article class="clip tab c2"><div class="m" style="background:#0A2F5C;font:900 24px var(--body)">CHICAGO SUN-TIMES</div><div class="h">Prince Charming</div><div class="s">Thousands pack Millennium Park for royal walkabout · Warrior Games open tonight at Soldier Field · Page 4 · SATURDAY, JULY 1, 2017</div></article>
+    <div class="c3">
+      <article class="clip rot-a"><div class="mast" style="font-size:22px">The Times</div><div class="date">MONDAY, JULY 3, 2017 · PAGE 9</div><h3 style="font-size:20px">Prince puts injured troops centre stage in Chicago</h3><div class="deck">Heir spends three days at Warrior Games with British team</div></article>
+      <div class="card rot-b"><div class="who"><div class="av" style="background:#33363c">MT</div><div><b>Military Times</b><small>@MilitaryTimes · 1 Jul 2017</small></div></div>Prince Alexander, a former RAF search-and-rescue pilot, opened the DoD Warrior Games at Soldier Field tonight. 🇺🇸🇬🇧 #WarriorGames2017<div class="act">1,204 Retweets · 3,880 Likes</div></div>
+    </div>
+  </div>
+  <div class="chyron" role="marquee"><div class="lab" style="background:#1B4F9C">WGN News at Five</div><div class="tk" style="background:#0E2240"><span>Prince Alexander at Cloud Gate · Expect delays on Lower Wacker · Warrior Games open Saturday at Soldier Field · Cubs or Sox? Palace won't say</span></div></div>
+</div></section>
+
+<section class="noise" data-g="3" data-name="Chicago"><div class="wrap">
+  <div class="head"><h2>The Windy City weighs in</h2><p>Lower Wacker, the Bean, and baseball.</p></div>
+  <div class="masonry">
+    <div class="card ig"><div class="imgwrap"><img src="img/usa-2017-10.jpg" alt=""></div><div class="who"><div class="av" style="background:#4a5a3a">UK</div><div><b>teamuk_warriorgames</b><small>McCormick Place, Chicago</small></div></div><b>2,214 likes</b><br>Big thanks to HRH The Prince of Wales for spending the day with the squad ahead of tonight's opening ceremony. Lost count of how many sessions he stayed for. Let's go 🇬🇧 #WarriorGames2017 #TeamUK
+      <div class="cm"><b>shaz_raf</b> Brilliant, well done all 👏🇬🇧</div><div class="cm"><b>karen_s_1965</b> So proud of you Darren ❤️❤️</div><div class="cm"><b>mattyp_rm</b> Bring it home boys 🇬🇧🇬🇧</div><div class="cm"><b>daz_b</b> he took a volleyball to the face and carried on, top bloke</div></div>
+    <div class="rd"><div class="sub">r/chicago <span>· u/wackerdriveway · 30 Jun 2017</span></div><h4>PSA: Lower Wacker and half the Loop shut this afternoon for the Prince of Wales. Plan accordingly</h4>
+      <div class="cm"><div class="u"><b>southloopsally</b></div>He was at Altgeld Gardens today. Did not expect to see a British prince on the 130th St bus route but here we are<div class="pts">⬆ 412</div></div>
+      <div class="cm"><div class="u"><b>roseland_rob</b></div>Heard Obama was supposed to be there<div class="pts">⬆ 280</div><div class="cm"><div class="u"><b>southloopsally</b></div>Obama is literally in Bali<div class="pts">⬆ 351</div></div></div>
+      <div class="cm"><div class="u"><b>bean_counter</b></div>Saw him at the Bean. Tall. Very tall. Security was very nice about me crying<div class="pts">⬆ 198</div></div>
+      <div class="cm"><div class="u"><b>cubsin2016</b></div>Can someone ask him if he's a Cubs fan or a Sox fan, this is important<div class="pts">⬆ 77</div><div class="cm"><div class="u"><b>whitesox_til_i_die</b></div>he's british they don't have baseball they have cricket which is baseball for people who hate fun<div class="pts">⬆ 64</div></div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#C62828">K</div><div><b>Kels</b><small>@kelsonthelake · 1 Jul 2017</small></div></div>the prince of wales in a polo shirt at mccormick place is the closest i will ever get to god<div class="act">7,700 Retweets · 30K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#2E7D32">D</div><div><b>Deshawn (Bears season tix)</b><small>@dshawn_chi · 1 Jul 2017</small></div></div>ushering at Soldier Field tonight and the british prince held a door for ME. then told the guy behind him to put his phone away. respectfully. sir yes sir<div class="act">5,230 Retweets · 21K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#5D4037">T</div><div><b>Tanya Ruiz</b><small>@tanyaruiz_chi · 1 Jul 2017</small></div></div>Not the royal fan in my house but my husband lost his leg in Kandahar and that speech was short and didn't call anybody an inspiration and my husband cried on the couch. So. Thanks prince<div class="act">2,980 Retweets · 14K Likes</div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="3" data-name="Chicago"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Chicago</div>
+  <div class="ephrow" style="--n:2">
+    <div class="badge" style="max-width:300px"><div class="t" style="background:#0B2F6B">DoD Warrior Games 2017</div><div class="b">Chicago, Illinois<big>ALL ACCESS</big>HRH The Prince of Wales · Official Guest<small>Valid 30 JUN – 03 JUL · McCormick Place · Soldier Field · Lane Tech</small><div class="hole"></div></div></div>
+    <div class="note"><div class="from">On Langham notepaper · Sun 2 July</div>Sitting volleyball — Colorado bench.<br>Ask DPS: can we send them something that isn't a signed photo<br>Gloves? Kit? ASK THEM.</div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → HOUSTON ============ -->
+<section class="leg light" data-g="4" data-name="To Houston"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>United</b> · Boarding pass</span><span>First</span></div>
+      <div class="route">ORD <i></i> IAH</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">UA 1529</span></div>
+      <div><small>Date</small><span class="v">03 JUL 2017</span></div>
+      <div><small>Seat</small><span class="v">2B</span></div>
+    </div>
+    <div class="stub"><small>Leg 4 of 8</small><div class="city">Houston</div><small>+925 mi</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 04 HOUSTON ============ -->
+<section class="bleed" id="houston" data-g="4" data-name="Houston">
+  <img class="bg" src="img/usa-2017-01.jpg" alt="Alexander arriving in Houston" style="object-position:50% 20%">
+  <div class="wrap">
+    <div class="eyebrow">Chapter four · Texas</div>
+    <div class="chapno" aria-hidden="true">04</div>
+    <h2>Houston</h2>
+    <div class="meta"><span><b>Mon 3 – Wed 5 July</b></span><span>The St. Regis</span><span>Space City</span></div>
+    <p class="why">NASA and the Texas Medical Center: an afternoon at Johnson Space Center, a morning at the Neutral Buoyancy Lab, and Houston Methodist. The middle day is the Fourth of July, and the Mayor has invited him to the fireworks.</p>
+  </div>
+</section>
+<section style="padding-block:10px 60px" data-g="4" data-name="Houston"><div class="wrap">
+  <div class="prog" style="--n:3">
+    <div class="day"><h4>Mon 3 Jul</h4><p><span>15.00</span>Houston Intercontinental, then south to Clear Lake.</p><p><span>16.15</span>Johnson Space Center, with Ellen Ochoa. ISS flight control, then the Mockup Facility.</p><p><span>19.30</span>BP America reception.</p></div>
+    <div class="day hot"><h4>Tue 4 Jul</h4><p><span>—</span>Independence Day. A late start.</p><p><span>13.00</span>Picnic for British and American service families.</p><p><span>19.30</span>Freedom Over Texas, Eleanor Tinsley Park. Fireworks with the Mayor.</p></div>
+    <div class="day"><h4>Wed 5 Jul</h4><p><span>08.30</span>Neutral Buoyancy Lab. Spacewalk training underwater.</p><p><span>11.30</span>Houston Methodist. Rehab and prosthetics research.</p><p><span>15.30</span>United to LAX.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="4" data-name="Houston"><div class="wrap"><div class="in">
+  <div class="label">WED 5 JUL · 08.40 · NEUTRAL BUOYANCY LAB, SONNY CARTER</div>
+  <p>It was a hangar with a swimming pool in it. Forty feet deep, the size of a football pitch, and sitting on the bottom was a piece of the International Space Station. Not a model. The real dimensions, the real handrails, white and gold under six million gallons of water lit up like a lido.</p>
+  <p>He stood at the rail with his hands in his pockets and his mouth slightly open and didn't care in the slightest that the pool photographer was getting it.</p>
+  <p>Two astronauts in white suits hung down there with safety divers round them like pilot fish, working a bolt on a truss. Everything at a third of the speed. Six-hour sessions, the training lead said, every bolt and tether and handrail on the real walk, until they could do it in their sleep.</p>
+  <p>Six hours. He'd done long sorties and come home unable to feel his arse. He couldn't imagine it in a suit.</p>
+  <p class="say">"Can I see the gloves?"</p>
+  <p>They brought him a spare. He worked his hand in and tried to make a fist and couldn't get it shut. That was unpressurised, she said. In vacuum it was worse. People lost fingernails.</p>
+  <p class="say">"Fuck off," he said, delighted. "Sorry."</p>
+  <p class="say">"No, that's the normal reaction."</p>
+  <p>He flexed the glove at the pool, open, shut, open, and thought about being two hundred and fifty miles up, hanging off a truss over the whole curve of the Earth with your fingernails coming loose, and doing it anyway because a bolt needed changing. It was the most gloriously insane thing he'd ever heard of. He wanted to go. He knew for certain he would never be allowed within a mile of it, and he still wanted to go.</p>
+  <p>In the car to Houston Methodist he made Marianne look at the photos on his phone. She said "Very nice, sir" without looking at any of them.</p>
+</div></div></section>
+
+<section class="fourth" data-g="4" data-name="Houston">
+  <canvas id="fw" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold);margin-bottom:24px">Tue 4 July · Eleanor Tinsley Park · 50,000 people</div>
+    <blockquote>"I think it worked out fine for you."</blockquote>
+    <cite>Asked how it felt for a British royal to celebrate Independence Day · Houston Chronicle</cite>
+  </div>
+</section>
+
+<section class="front" data-g="4" data-name="Houston"><div class="wrap">
+  <div class="head"><h2>No hard <em>feelings</em></h2><div class="eyebrow" style="color:var(--frame)">Mon 3 – Wed 5 July · The coverage</div></div>
+  <div class="board">
+    <article class="clip c1"><div class="mast">Houston Chronicle</div><div class="date">WEDNESDAY, JULY 5, 2017 · A1</div>
+      <h3 style="font-size:40px">No hard feelings</h3><div class="deck">British prince joins 50,000 for Fourth fireworks · Prince tours Mission Control</div><div class="by">By Luis Garza</div>
+      <p>Prince Alexander joined an estimated 50,000 people at Eleanor Tinsley Park on Tuesday night for the city's Fourth of July celebration, watching the fireworks from a riverside stand with Mayor Sylvester Turner.</p></article>
+    <article class="clip c2" style="background:#fff;font-family:var(--body)"><div style="font:italic 900 24px Georgia,serif;color:#111;border-bottom:2px solid #111;padding-bottom:4px;margin-bottom:8px">Texas Monthly</div><h3 style="font:800 21px/1.2 var(--body)">A British Prince Spent the Fourth of July in Houston. Texans Took It Well.</h3><p style="font:13.5px/1.5 var(--body);margin-top:6px">A good number of the fifty thousand seemed to have come to look at Prince Alexander. Nobody in the crowd we spoke to brought up 1776.</p></article>
+    <div class="c3">
+      <div class="card rot-a"><div class="who"><div class="av" style="background:#0b3d91">N</div><div><b>NASA Johnson</b><small>@NASA_Johnson · 3 Jul 2017</small></div></div>The Prince of Wales visited Mission Control today to see how we keep the @Space_Station running 24/7/365. He had a lot of questions. 🚀🇺🇸🇬🇧<div class="act">2,890 Retweets · 11.4K Likes</div></div>
+      <div class="card rot-b"><div class="who"><div class="av" style="background:#1565C0">F</div><div><b>flight director (ret.)</b><small>@fido_ret · 3 Jul 2017</small></div></div>Can confirm he asked us to start the orbital mechanics part again. Twice. Honestly more than most congressmen manage.<div class="act">640 Retweets · 3.1K Likes</div></div>
+    </div>
+  </div>
+  <div class="chyron" role="marquee"><div class="lab" style="background:#E31837">KHOU 11</div><div class="tk" style="background:#101820"><span>Royal visit · Prince tours Mission Control · Freedom Over Texas Tuesday at Eleanor Tinsley Park · Prince to watch fireworks with Mayor Turner · Traffic: Allen Pkwy closed from 4pm</span></div></div>
+</div></section>
+
+<section class="noise" data-g="4" data-name="Houston"><div class="wrap">
+  <div class="head"><h2>Y'all</h2><p>Texas and the Fourth.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#AD1457">M</div><div><b>maya</b><small>@mayaxo · 5 Jul 2017</small></div></div>the british crown spent 241 years recovering from the fourth of july and then sent THAT to houston for the fireworks. this is psychological warfare<div class="act">88K Retweets · 301K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#795548">C</div><div><b>Cody 🤠</b><small>@codyfromkaty · 4 Jul 2017</small></div></div>my grandpa looked at the jumbotron when they showed the prince and said "we beat them once we can do it again" and then took 40 pictures of the jumbotron on his ipad<div class="act">12K Retweets · 58K Likes</div></div>
+    <div class="rd"><div class="sub">r/houston <span>· u/beltway8_survivor · 4 Jul 2017</span></div><h4>A British royal at Freedom Over Texas is the funniest booking in city history</h4>
+      <div class="cm"><div class="u"><b>montrose_mike</b></div>Turner's comms guy deserves a raise. or a medal<div class="pts">⬆ 1.9k</div></div>
+      <div class="cm"><div class="u"><b>heightsgirl</b></div>He was sweating through the shirt by 8pm and honestly that's the most Houston thing that could happen to him<div class="pts">⬆ 1.1k</div></div>
+      <div class="cm"><div class="u"><b>ClearLakeEngineer</b></div>He was at JSC yesterday. Stood at the ISS console for twenty minutes asking how long it takes to get used to sleeping strapped to a wall. Genuinely wanted to know<div class="pts">⬆ 860</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#0D47A1">T</div><div><b>Texas GOP 🇺🇸</b><small>@TexasGOPparody · 4 Jul 2017</small></div></div>Reminder that in 1776 we told these people to leave and in 2017 they came back and got the best seat at the fireworks<div class="act">3,300 Retweets · 15K Likes</div></div>
+    <div class="phone" style="max-width:330px"><div class="screen recents">
+      <div class="sb"><span>19:12</span><span>●●●</span></div>
+      <h3>Recents</h3>
+      <div class="call"><div class="n"><b>G ❤️</b><small>FaceTime Audio · 22 min</small></div><div class="t">18:48</div></div>
+      <div class="call"><div class="n"><b>Charlie</b><small>mobile · 1 min</small></div><div class="t">18:40</div></div>
+      <div class="vm"><div class="top"><b>Charlie</b><span>18:40 · Message</span></div><p>"Mayor's people want you to say something about the Revolution when you go up to the stand. Please don't. If a reporter asks, keep it to one line. Ring me back."</p></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="eph" data-g="4" data-name="Houston"><div class="wrap">
+  <div class="eyebrow" style="margin-bottom:30px">Kept · Houston</div>
+  <div class="ephrow" style="--n:2">
+    <div class="badge" style="max-width:300px"><div class="t" style="background:#0b3d91">NASA · Johnson Space Center</div><div class="b">Bldg 30 · Mission Control<big>ESCORTED</big>03 JUL 2017 · Visitor 0001<small>No photography in FCR-1 unless authorised · Return badge at exit</small><div class="hole"></div></div></div>
+    <div class="place" style="transform:rotate(-2deg)"><div style="font:600 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">City of Houston · Freedom Over Texas</div><div class="fold">Mayor's Stand · Seat 2</div><div style="font:500 22px var(--hand);color:#1f4a8a;margin-top:12px">the Americans seem to have done all right on their own</div></div>
+  </div>
+</div></section>
+
+<!-- ============ LEG → LA ============ -->
+<section class="leg" data-g="5" data-name="To Los Angeles"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>United</b> · Boarding pass</span><span>First</span></div>
+      <div class="route">IAH <i></i> LAX</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">UA 1271</span></div>
+      <div><small>Date</small><span class="v">05 JUL 2017</span></div>
+      <div><small>Seat</small><span class="v">2A</span></div>
+    </div>
+    <div class="stub"><small>Leg 5 of 8</small><div class="city">Los Angeles</div><small>+1,379 mi</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ 05 LOS ANGELES ============ -->
+<section class="open" id="losangeles" data-g="5" data-name="Los Angeles"><div class="wrap">
+  <div class="grid">
+    <div style="min-width:0">
+      <div class="eyebrow">Chapter five · California</div>
+      <div class="chapno" aria-hidden="true">05</div>
+      <h2>Los Angeles</h2>
+      <div class="meta"><span><b>Wed 5 – Fri 7 July</b></span><span>Pasadena · Edwards · Beverly Hills</span><span>Consul-General's residence, Hancock Park</span></div>
+      <p class="why">Thursday is Santa Monica start-ups, JPL and a BAFTA reception. Friday is Edwards Air Force Base, the Wounded Warrior Project and a black-tie dinner at the Beverly Hilton.</p>
+    </div>
+    <figure><img src="img/usa-2017-16.jpg" alt="Alexander in a blue blazer leaning over a console as a JPL flight controller explains a screen" style="aspect-ratio:5/4;object-fit:cover"><figcaption>JPL mission operations, Pasadena · Thu 6 July</figcaption></figure>
+  </div>
+  <div class="prog" style="--n:2">
+    <div class="day hot"><h4>Thu 6 Jul</h4><p><span>09.30</span>Launchpad LA, Santa Monica.</p><p><span>11.30</span>JPL, Pasadena. Mars 2020, Juno, the Deep Space Network, then the Mars Yard.</p><p><span>19.00</span>BAFTA Los Angeles reception, West Hollywood.</p></div>
+    <div class="day"><h4>Fri 7 Jul</h4><p><span>08.30</span>Helicopter to Edwards AFB. Test pilots and the F-35 test force.</p><p><span>15.00</span>Wounded Warrior Project, LA office.</p><p><span>19.15</span>The Beverly Hilton. Walks the barrier on Wilshire.</p><p><span>19.30</span>Creative-industries dinner, black tie.</p></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="5" data-name="Los Angeles"><div class="wrap"><div class="in">
+  <div class="label">THU 6 JUL · 12.50 · THE MARS YARD, PASADENA</div>
+  <p>The Mars Yard was a patch of red dirt and rocks about the size of a tennis court behind a building in Pasadena, and it was the best place he had ever been.</p>
+  <p>Ninety-one degrees. He'd taken his jacket off and nobody had stopped him. The test rover sat in the middle of it like a dog told to wait, six wheels and a mast with a head on top, cables trailing off to a laptop on a folding table.</p>
+  <p class="say">"It decides that on its own?"</p>
+  <p class="say">"Some of it. We tell it where to go. It works out how not to die on the way."</p>
+  <p class="say">"Say that again. Slower."</p>
+  <p>She said it again, slower, crouched in the grit beside him with her sunglasses pushed up into grey hair. He understood about two-thirds and nodded through the rest, and she could tell, and didn't mind. Then she handed him a wheel. Aluminium, light as a biscuit tin, with a ragged hole torn through the tread.</p>
+  <p class="say">"Same thing's happening to Curiosity. Sharp rocks. We're learning to drive round them."</p>
+  <p class="say">"That's on Mars? Right now?"</p>
+  <p class="say">"Right now. Driving around."</p>
+  <p>He laughed out loud. He couldn't help it. He was crouched in the dirt in his good trousers holding a wheel whose twin was a hundred and forty million miles away, and a woman in Pasadena was steering it round rocks on a Thursday. He turned it over and over in his hands. He thought it was the coolest fucking thing he had ever been allowed to touch, and he didn't bother hiding it, and the pool photographer got that too.</p>
+  <p>Marianne stood at the edge of the sand with the card. When she said "sir" he handed the wheel back as if it were glass, brushed the grit off his knees, and thanked the engineer twice.</p>
+  <p>In the gift shop he bought a JPL cap for G and a die-cast rover the length of his hand for himself, paid with his own card, and carried the bag to the car.</p>
+</div></div></section>
+
+<section class="spread flip" data-g="5" data-name="Los Angeles"><div class="wrap"><div class="grid">
+  <div class="stack">
+    <div class="card ig"><div class="imgwrap" style="aspect-ratio:4/3"><img src="img/usa-2017-11.jpg" alt=""></div><div class="who"><div class="av" style="background:#0b3d91">J</div><div><b>nasajpl</b><small>Jet Propulsion Laboratory</small></div></div><b>21,560 likes</b><br>Royal visit to the Mars Yard! 👑 HRH The Prince of Wales met the engineers building our next rover, #Mars2020, and got a close look at how we test its wheels on Mars-like ground here in Pasadena.
+      <div class="cm"><b>k.sato.jpl</b> So fun having him in the Yard today! 🚀</div><div class="cm"><b>space.nerd.mike</b> Mars 2020 looking good 👀</div><div class="cm"><b>emilyyy.w</b> @hannah.ross he's so cute 😭</div></div>
+    <div class="receipt"><div class="c"><b>JPL STORE</b><br>4800 Oak Grove Dr<br>Pasadena CA 91109<br>07/06/2017 13:52</div><hr><div class="r"><span>JPL CAP NAVY</span><span>24.00</span></div><div class="r"><span>DIECAST ROVER 1:64</span><span>18.95</span></div><hr><div class="r"><span>SUBTOTAL</span><span>42.95</span></div><div class="r"><span>TAX 9.5%</span><span>4.08</span></div><div class="r"><b>TOTAL</b><b>47.03</b></div><hr><div class="c">VISA DEBIT **** 1004 · CHIP READ<br>THANK YOU · AD ASTRA</div></div>
+  </div>
+  <figure class="photo"><img src="img/usa-2017-15.jpg" alt="Alexander in black tie at the BAFTA reception between two guests" style="max-height:760px;object-fit:cover;width:100%"><figcaption>BAFTA Los Angeles · Thu 6 July</figcaption></figure>
+</div></div></section>
+
+<section class="filmwrap" data-g="5" data-name="Los Angeles">
+  <div class="wrap"><div class="eyebrow" style="color:var(--gold)">Fri 7 July · 19.22 · Wilshire Boulevard</div><p style="margin-top:10px">Contact sheet, AP photographer on the riser. Frames 14 and 15 run everywhere. The video runs everywhere else.</p></div>
+  <div class="film" aria-label="Two frames of the woman at the barrier hugging Alexander">
+    <figure><img src="img/usa-2017-12.jpg" alt="A woman leans over the barrier with her arms around Alexander's neck"><figcaption>14 · 19:22:07</figcaption></figure>
+    <figure><img src="img/usa-2017-13.jpg" alt="Alexander's shoulders pull back as she kisses his cheek"><figcaption>15 · 19:22:08</figcaption></figure>
+    <figure><img src="img/usa-2017-12.jpg" alt="" style="filter:grayscale(1) contrast(1.1)"><figcaption>14 · B/W for print</figcaption></figure>
+  </div>
+</section>
+
+<section class="drab" data-g="5" data-name="Los Angeles"><div class="wrap"><div class="in">
+  <div class="label">FRI 7 JUL · 19.22 · THE BARRIER, BEVERLY HILTON</div>
+  <p>Hundreds of them, there since lunch, and every single one had a phone up. He said thanks for waiting to a woman and she answered him from behind the screen, filming him saying it, without once looking at him. How long have you been here. Into a phone. Where've you come from. Into a phone. Two weeks of talking to the backs of fucking iPhones, half of them checking the footage while he was still standing in front of them, and he was tired enough now to want to take one out of somebody's hand and throw it into the traffic on Wilshire.</p>
+  <p>He smiled at the next screen and moved on.</p>
+  <p>She didn't have a phone. She had on a floral dress and she didn't put out a hand. She put out both arms, over the barrier and round his neck, and pulled.</p>
+  <p>For a second there was nothing but her hair and sun cream, coconut, her mouth wet on his cheek and the bow tie twisted in her fist. He flinched, his shoulders jerking back, and couldn't stop it.</p>
+  <p>Then Miranda's hand was flat on his back and his own hands were on the woman's wrists, polite about it, unhooking her a finger at a time. He smiled. He said thank you, which was insane. He moved on to a man with a Union flag who looked frightened on his behalf.</p>
+  <p class="say">In the lift Miranda said, "That's on me, sir."</p>
+  <p class="say">"It's on her," he said. He straightened his tie in the mirrored wall and could still smell her.</p>
+</div></div></section>
+
+<section class="noise" data-g="5" data-name="Los Angeles"><div class="wrap">
+  <div class="head"><h2>Hollywood</h2><p>BAFTA, the Beverly Hilton and Wilshire Boulevard.</p></div>
+  <div class="masonry">
+    <div class="yt"><div class="vid" style="background-image:url(img/usa-2017-12.jpg)"><span>0:31</span></div><div class="t">Fan GRABS Prince Alexander, hugs and KISSES him outside Beverly Hilton — watch his face</div><div class="c" style="color:#aaa;padding-top:0">2.6M views · 4 days ago</div>
+      <div class="c"><b>Ana R</b>wow 😳</div><div class="c"><b>marcus</b>the way he flinched lol</div><div class="c"><b>Leah V</b>where was security??</div><div class="c"><b>Pete</b>if she did that to anyone else she'd be arrested</div><div class="c"><b>Kim T</b>he handled that really well tbh</div><div class="c"><b>xo_bri</b>lucky 😂😂</div></div>
+    <div class="web"><div class="m" style="background:#C8102E">TMZ</div><div class="b"><h4>PRINCE ALEXANDER — Grabbed, Hugged and Kissed by Fan Outside Beverly Hilton … Face Says It All (VIDEO)</h4>Royal protection moved in fast. The prince kept smiling. Mostly.<small>7/7/2017 10:41 PM PT</small></div></div>
+    <div class="web"><div class="m" style="background:#111">THE HOLLYWOOD REPORTER · Rambling Reporter</div><div class="b"><h4>The Prince who didn't want to play</h4>Alexander was charming for exactly as long as the receiving line lasted at BAFTA's West Hollywood soirée. After that, two guests tell us, the future king answered every question in fewer than ten words and kept one eye on the door.<small>8 July 2017</small></div></div>
+    <div class="web"><div class="m" style="background:#E2007A">E! NEWS</div><div class="b"><h4>Hollywood's Hottest Guest This Week? Prince Alexander</h4>Everyone wanted a photo with the future king at BAFTA's reception on Thursday night. Not everyone got one.<small>7 July 2017</small></div></div>
+    <div class="clip" style="background:var(--news)"><div class="mast" style="font-size:22px">Los Angeles Times</div><div class="date">FRIDAY, JULY 7, 2017 · B1</div><h3 style="font-size:21px">Royal visitor gets a close look at Mars</h3><div class="deck">Prince Alexander spends morning at JPL, evening at BAFTA reception</div></div>
+    <div class="rd"><div class="sub">r/LosAngeles <span>· u/silverlake_sadboi · 7 Jul 2017</span></div><h4>Wilshire is a parking lot because a woman wanted to kiss a prince</h4>
+      <div class="cm"><div class="u"><b>dtla_dan</b></div>the most LA sentence ever written<div class="pts">⬆ 2.2k</div></div>
+      <div class="cm"><div class="u"><b>westside_wendy</b></div>I was 6 people down from her. She'd been there since 1pm and told everyone she was "going to do something." Nobody believed her<div class="pts">⬆ 1.6k</div></div>
+      <div class="cm"><div class="u"><b>eaglerock_ed</b></div>His face when she grabbed him is every man at a bachelorette party<div class="pts">⬆ 940</div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#6D4C41">A</div><div><b>a minor actor</b><small>@notthatfamous · 7 Jul 2017</small></div></div>asked him at BAFTA if he ever does Balmoral weekends for "creatives" and he smiled and said "It's mostly my family and a great deal of rain" and thirty seconds later I was somehow talking to the consul general's wife about her dog. never been so smoothly handled in my life<div class="act">9,412 Retweets · 44K Likes</div></div>
+  </div>
+</div></section>
+
+<section class="phones" data-g="5" data-name="Los Angeles"><div class="wrap">
+  <div class="head"><div><div class="eyebrow" style="color:var(--gold)">Saturday 8 July · 8 a.m. in Sussex, midnight in Los Angeles</div><h2 style="margin-top:8px">American all over you</h2></div><p>The Mail has the photos before he's out of the dinner jacket.</p></div>
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>00:04</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="ts">Sat 00:01</div>
+        <div class="bub in">oh my god alec the mail has the photos</div>
+        <div class="bub in shot"><div style="background-image:url(img/usa-2017-13.jpg)"><span>MailOnline · Prince grabbed by fan</span></div></div>
+        <div class="bub in">she HUGGED you. she KISSED you</div>
+        <div class="bub in">your face 😭😭</div>
+        <div class="bub in">my poor poor baby you have american all over you</div>
+        <div class="bub out">I'm aware. She was over the barrier before anyone could move. Miranda is furious with herself.</div>
+        <div class="bub in">are you going to leave me for a tanned california girl</div>
+        <div class="bub out">No. She smelled of sun cream and she had me by the bow tie.</div>
+                <div class="bub in">i'm crying. i've had to sit down on the kitchen floor</div>
+        <div class="bub out">It's gone midnight here and I'm still in the dinner jacket. I'm going to bed.</div>
+        <div class="bub in">love you. go and scrub yourself</div>
+        <div class="bub out">Love you. Home on Monday.</div>
+      </div>
+    </div></div>
+    <div class="phonenote">
+      <div class="label">THE SAME NIGHT · 00:20 · HANCOCK PARK</div>
+      <p>He didn't scrub himself. He sat on the end of the bed at the Consul-General's house with the jacket off and the tie in his hand and the rover on the bedside table, and watched the video once, on mute. Charlie had sent him the TMZ link at 11.40.</p>
+      <p>He looked like he'd been hit. Two frames. Then the smile came back over it.</p>
+      <p>He turned the phone face down, took his shoes off, and went to bed.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ROAD → SANTA BARBARA ============ -->
+<section class="leg light" data-g="6" data-name="Up the 101"><div class="wrap">
+  <div class="pass road">
+    <div class="main">
+      <div class="air"><span><b>California Highway Patrol</b> · Movement order</span><span>Motorcade</span></div>
+      <div class="route">HANCOCK PK <i></i> CARPINTERIA</div>
+      <div><small>Date</small><span class="v">SAT 08 JUL 2017</span></div>
+      <div><small>Depart</small><span class="v">09:45</span></div>
+      <div><small>Route</small><span class="v">US-101 N · on-ramps held</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 06 SANTA BARBARA ============ -->
+<section class="bleed" id="santabarbara" data-g="6" data-name="Santa Barbara">
+  <img class="bg" src="img/usa-2017-14.jpg" alt="Alexander in a grey suit talking with guests in a white marquee" style="object-position:55% 30%">
+  <div class="wrap">
+    <div class="eyebrow">Chapter six · Carpinteria</div>
+    <div class="chapno" aria-hidden="true">06</div>
+    <h2>Santa Barbara</h2>
+    <div class="meta"><span><b>Sat 8 July</b></span><span>Day visit</span><span>Santa Barbara Polo &amp; Racquet Club</span></div>
+    <p class="why">A charity polo match for the Prince's Foundation, a donors' lunch and an evening reception, then back down the 101. His team loses by a goal.</p>
+  </div>
+</section>
+
+<section class="spread" data-g="6" data-name="Santa Barbara"><div class="wrap"><div class="grid">
+  <div class="stack">
+    <div><p class="pull" style="font-size:34px">"He looked over here once and everybody screamed. I'm thirty-four years old. I have a mortgage. I screamed too."</p><cite>A spectator · Los Angeles Times, 9 July 2017</cite></div>
+    <div class="prog-card"><small>Santa Barbara Polo &amp; Racquet Club</small><h3>Charity Match</h3><small>in aid of The Prince's Foundation</small><div class="sc"><span>Prince's Foundation</span><big>6 – 7</big><span>Santa Barbara</span></div><small>4 chukkas · Saturday 8 July 2017</small></div>
+    <div class="clip" style="background:#fff;font-family:var(--body)"><div style="font:800 13px var(--body);letter-spacing:.06em;color:#555">SANTA BARBARA INDEPENDENT</div><h3 style="font:800 20px/1.2 var(--body);margin:6px 0">Prince Alexander Plays Polo in Carpinteria, Loses Close Match</h3><p style="font:13.5px var(--body)">About 3,000 people watched. His team lost by a goal. The event raised money for his foundation.</p></div>
+  </div>
+  <div class="stack">
+    <div class="card ig"><div class="imgwrap" style="aspect-ratio:4/3"><img src="img/usa-2017-14.jpg" alt=""></div><div class="who"><div class="av" style="background:#2f5d3a">P</div><div><b>sbpoloclub</b><small>Santa Barbara Polo &amp; Racquet Club</small></div></div><b>6,980 likes</b><br>What a day at the club! Thank you to HRH The Prince of Wales and both teams for a hard-fought charity match. 🐎☀️ #santabarbarapolo
+      <div class="cm"><b>montecito_mom</b> What a gorgeous day ☀️🐎</div><div class="cm"><b>lexi.b</b> @sammy_t we were literally there 😭</div><div class="cm"><b>sammy_t</b> @lexi.b 😍😍😍</div><div class="cm"><b>polo_dad_805</b> he got a bit physical in the 4th, ump let it go 👀</div></div>
+    <div class="clip tab rot-b"><div class="m" style="background:#ED1C24">Daily Mirror</div><div class="h" style="font-size:34px">Prince's polo pain ends US tour</div><div class="s">Heir loses charity match in California · But American fans don't mind · Pages 8–9 · MONDAY, JULY 10, 2017</div></div>
+  </div>
+</div></div></section>
+
+<!-- ============ HOME ============ -->
+<section class="leg" data-g="7" data-name="Home"><div class="wrap">
+  <div class="pass">
+    <div class="main">
+      <div class="air"><span><b>British Airways</b> · Boarding pass</span><span>First</span></div>
+      <div class="route">LAX <i></i> LHR</div>
+      <div><small>Passenger</small><span class="v">HRH THE PRINCE OF WALES</span></div>
+      <div><small>Flight</small><span class="v">BA 268</span></div>
+      <div><small>Date</small><span class="v">09 JUL 2017</span></div>
+      <div><small>Seat</small><span class="v">2K</span></div>
+      <div><small>Departs</small><span class="v">19:50 PDT</span></div>
+      <div><small>Arrives</small><span class="v">14:15 BST</span></div>
+    </div>
+    <div class="stub"><small>Leg 8 of 8</small><div class="city">Home</div><small>+5,456 mi · the Spanish state visit in two days</small><div class="bars" aria-hidden="true"></div></div>
+  </div>
+</div></section>
+
+<!-- ============ THE FRENZY ============ -->
+<section class="front" id="frenzy" data-g="7" data-name="Online" style="background:var(--frame-deep);background-image:none;color:#fff"><div class="wrap">
+  <div class="head"><h2 style="color:#fff">America loses <em style="color:var(--gold)">its mind</em></h2><div class="eyebrow" style="color:var(--gold)">Sixteen days · The frenzy</div></div>
+  <p style="max-width:62ch;font:400 19px/1.65 var(--display);color:#D9DFE6;margin-bottom:40px">A country that threw out a king two hundred and forty-one years ago has never stopped being fascinated by them, and it has never had one quite like this. All three morning shows send anchors. Entertainment programmes that have never covered a royal visit are refused accreditation and stand behind the barriers anyway. Cable covers the eye roll as politics, the entertainment shows cover it as romance, and late night covers it as both.</p>
+  <div class="board">
+    <div class="c1" style="transform:none"><div class="mag"><img src="img/usa-2017-15.jpg" alt="Alexander in black tie"><div class="mh">PEOPLE</div><div class="dt">JULY 17, 2017 · $4.99</div><div class="hl"><b>The Prince Who Stole America</b><span>Inside his 16 days · Will he propose to Georgiana? · The firehouse photos · What the eye roll really meant</span></div></div></div>
+    <div class="c2" style="display:grid;gap:22px;margin-top:0;transform:none">
+      <div class="late"><div class="k">LATE NIGHT · MONDAY'S MONOLOGUE · 26 JUNE</div><q>Finally, someone in that room with the right reaction.</q><small>The future King rolled his eyes at the President, and honestly? Same. · Studio audience on its feet for 40 seconds</small></div>
+      <div class="listicle"><div class="m">BuzzFeed</div><h3>21 Photos Of Prince Alexander In America That Are Frankly Too Much</h3><ol><li>When he got off the plane in Washington and the sunglasses were simply hanging there</li><li>The eye roll. You know the one.</li><li>When he took his jacket off at the firehouse and every woman in Manhattan felt it</li><li>When the whole of Soldier Field stood up as he walked out</li><li>When a NASA engineer explained a wheel to him and he looked at it like it was a puppy</li></ol><div style="color:#888;font-size:12px;margin-top:6px">Posted June 30, 2017 · 4.8M views</div></div>
+    </div>
+    <div class="c3" style="margin-top:0">
+      <div class="etsy rot-a"><div class="shirt">🙄<br>ONE SECOND<small>OVAL OFFICE · 2017</small></div><div class="b"><div class="pr">$22.00</div>Eye Roll Heard Round the World Unisex Tee<div class="st">RoyalTeesBK · ★★★★★ (1,204) · Bestseller</div></div></div>
+      <div class="card rot-b"><div class="who"><div class="av" style="background:#8D6E63">S</div><div><b>Sugar Rush Bakery</b><small>@sugarrushbk · 29 Jun 2017</small></div></div>The Prince Alexander 👑 is BACK by popular demand. Cinnamon cake, brown butter frosting, a little fondant crown, and a lot of attitude. Sold out by 11 two days running.<div class="act">812 Retweets · 3.4K Likes</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="noise" data-g="7" data-name="Online"><div class="wrap">
+  <div class="head"><h2>The internet, for sixteen days</h2><p>Thirst, pedantry, and Greg.</p></div>
+  <div class="masonry">
+    <div class="card"><div class="who"><div class="av" style="background:#7B1FA2">K</div><div><b>kendra</b><small>@kendrawrites · 28 Jun 2017</small></div></div>america fought an entire war to never have to deal with these people again and now look at us. LOOK at us<div class="act">61K Retweets · 188K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#8e44ad">J</div><div><b>jules</b><small>@julesvb · 28 Jun 2017</small></div></div>y'all are thirsting after a literal king<div class="act">2,301 Retweets · 9,040 Likes</div><div class="reply">↳ he's not the king, his DAD is the king</div><div class="reply">↳ he's the PRINCE of WALES jules</div><div class="reply">↳ his dad is King James, google is free</div><div class="reply">↳ it's fine she's just early</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#c0392b">D</div><div><b>Dana Price</b><small>@danaprice · 7 Jul 2017</small></div></div>Not to be dramatic but if Prince Alexander rolled his eyes at me I would apologize<div class="act">24K Retweets · 97K Likes</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#34495e">G</div><div><b>Greg Hollis</b><small>@greghollis · 27 Jun 2017</small></div></div>Watching grown adults lose it over a foreign aristocrat's face is the most embarrassing thing this country has done this week, and it's been a week<div class="act">3,880 Retweets · 12K Likes</div><div class="reply">↳ <b>Top reply:</b> ok greg</div></div>
+    <div class="tb"><div class="n">princeofwalesdaily</div>[gif · the eye roll, looped]<br><br>reblog if you would also like to be this unbothered in the most powerful room in the world<div class="tags">#prince alexander #the eye roll #iconic #british royals</div><div class="notes">214,906 notes</div></div>
+    <div class="dish"><div class="bar2">Royal Dish › Prince Alexander in the United States (page 31)</div>
+      <div class="p"><div class="l"><b>MarieAntoinette2</b><br>Senior Member<br>Posts: 1188</div><div class="r"><div class="when">Reply #301 on: June 28, 2017, 06:48:13 PM</div>The firehouse pictures are lovely. Jacket off, paper plate, can of Coke. This is what they should have led with instead of the White House.<div class="sig">« Last Edit: June 28, 2017, 06:50:44 PM by MarieAntoinette2 »</div></div></div>
+      <div class="p"><div class="l"><b>HarbourView</b><br>Full Member<br>Australia<br>Posts: 571</div><div class="r"><div class="when">Reply #344 on: July 08, 2017, 02:20:31 PM</div>The video from the Beverly Hilton. Oh dear. I've seen him do a hundred barriers in Sydney and I have never seen him flinch like that. Whoever is on his protection team that day needs a word.</div></div>
+      <div class="p"><div class="l"><b>Marguerite</b><br>Courtier<br>Posts: 8214</div><div class="r"><div class="when">Reply #345 on: July 08, 2017, 02:41:09 PM</div><div class="q">Quote from: sweetpea<br>Is G flying out for the polo?</div>No and stop asking, girlfriends don't go on tours. It's been said fifty times on this thread.<div class="sig">"Never complain, never explain" ~ and never sit next to Fergus at dinner</div></div></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#4E342E">U</div><div><b>Us Weekly</b><small>@usweekly · 10 Jul 2017</small></div></div>GEORGIANA WATCH: What Prince Alexander's girlfriend was doing while he conquered America (hint: not much!) 👀<div class="act">310 Retweets · 1.1K Likes</div><div class="reply">↳ living her life in sussex like a normal person??</div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#33363c">D</div><div><b>Dept of Defense</b><small>@DeptofDefense · 6 Jul 2017</small></div></div>We love the enthusiasm, but please don't print official #WarriorGames photos on merchandise. Thank you! 🇺🇸<div class="act">540 Retweets · 2.6K Likes</div><div class="reply">↳ is this about the tote bag</div><div class="reply">↳ free the tote bag</div></div>
+  </div>
+</div></section>
+
+<section class="drab" data-g="3" data-name="Online"><div class="wrap"><div class="in">
+  <div class="label">THE LANGHAM, CHICAGO · 1 A.M.</div>
+  <p>He reads the coverage in bed when he should be asleep. Not all of it, and not the political pieces, which Charlie summarises for him in the morning. The other stuff. The lists, the photographs, the women on Twitter. He tells himself he's checking how the day landed.</p>
+  <p>He reads the BuzzFeed one twice.</p>
+</div></div></section>
+
+<section class="phones" style="padding-top:20px;background:var(--frame-deep)" data-g="3" data-name="Online"><div class="wrap">
+  <div class="phonerow">
+    <div class="phone"><div class="screen">
+      <div class="sb"><span>01:07</span><span>●●●</span></div>
+      <div class="thd"><div class="pic">G</div><b style="font-size:13px">G ❤️</b><br><small>iMessage</small></div>
+      <div class="msgs">
+        <div class="bub in">ok so a woman on twitter says if you rolled your eyes at her she would apologise which honestly fair</div>
+        <div class="bub out">You're up early. It's gone one here and I'm lying in bed reading about myself, which is tragic. How's the roof at the Hendersons'?</div>
+        <div class="bub in">still leaking. roofer can't come till thursday and mrs henderson has put a bucket in the hall like it's a design choice</div>
+        <div class="bub in">also there's a list. 21 photos of you. i'm reading it at 6am like a weirdo</div>
+        <div class="bub out">Number 7 is the best one. The rover. Tell me you agree.</div>
+        <div class="bub in">number 7 is fine. number 3 is the firehouse one and you know it</div>
+        <div class="bub out">Clara will be thrilled. She chose that shirt for exactly that reason.</div>
+        <div class="bub in">tell clara she's very good at her job and i hate her</div>
+        <div class="bub in">the eye roll was good though. i'll allow the eye roll</div>
+        <div class="bub out">Marianne didn't allow it. I got a very long look in the car afterwards.</div>
+        <div class="bub out">I miss you G. Nine more days. I'll ring you from Houston before the fireworks.</div>
+        <div class="bub in">come home soon. america can't have you</div>
+        <div class="bub out">Not long now. Go and have breakfast, I'm going to try and sleep.</div>
+        <div class="bub in">love you. sleep. stop reading about yourself</div>
+      </div>
+    </div></div>
+  </div>
+</div></section>
+
+<!-- ============ AFTER ============ -->
+<section class="after" id="after" data-g="7" data-name="After the tour"><div class="wrap">
+  <div class="eyebrow">After the tour</div>
+  <h2 style="font:800 clamp(40px,6vw,80px)/.95 var(--display);margin:10px 0 34px">The export product.</h2>
+  <div class="grid">
+    <div class="body">
+      <p>The visit produces the government meetings, defence coverage and institutional contact it was planned for. It also produces a one-second clip that follows him for the rest of the fortnight, and a final stretch in California where the difference between being interested and merely being available gets harder to hide.</p>
+      <p>Inside the household the useful lesson is about the programme. He can manage a tour of this size. But tiredness makes him short with people, and a crowded room of people who want something from him is far harder than a room of engineers explaining something he wants to understand.</p>
+      <p>Clara Bell stays. The Mars rover goes on his desk at Kensington Palace. Two days after he lands, the King of Spain arrives for a state visit, and Alexander is back in white tie as though the fortnight hadn't happened.</p>
+    </div>
+    <div class="stack" style="gap:40px">
+      <div class="cable"><div class="hd"><span class="cls">OFFICIAL-SENSITIVE</span><br>FM WASHINGTON · TO FCO · DIPTEL<br>SUBJECT: VISIT OF HRH THE PRINCE OF WALES, 24 JUN–9 JUL: ASSESSMENT</div>
+        <p>1. SUMMARY. The most widely covered British engagement in the United States in a decade. Objectives met in all five cities.</p>
+        <p>4. The Oval Office pool spray attracted disproportionate attention. The White House has given no indication of offence and the President has referred to the meeting warmly in two subsequent interviews. We judge the matter closed.</p>
+        <p style="margin:0">DARROCH</p></div>
+      <div class="note"><div class="from">MF · Household file · July 2017</div>No more than two evening receptions in a row.<br>Protect the morning after a long day.<br>Never schedule Hollywood on the same day as anything he actually likes.</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="next"><div class="wrap">
+  <a href="#"><small>← Previous in this collection</small><span>France</span></a>
+  <a href="2017-germany-and-poland.html" style="text-align:right"><small>Next in this collection →</small><span>Germany &amp; Poland</span></a>
+</div></section>
+
+<footer class="itin"><div class="wrap"><div class="lab" aria-hidden="true">Itinerary</div><nav aria-label="Itinerary, city by city">
+  <a href="#briefing" data-nav="briefing"><small>Jun 2017</small><span>Briefing</span></a>
+  <a href="#washington" data-nav="washington"><small>24–27 Jun</small><span>Washington</span></a>
+  <a href="#newyork" data-nav="newyork"><small>27–29 Jun</small><span>New York</span></a>
+  <a href="#chicago" data-nav="chicago"><small>29 Jun–3 Jul</small><span>Chicago</span></a>
+  <a href="#houston" data-nav="houston"><small>3–5 Jul</small><span>Houston</span></a>
+  <a href="#losangeles" data-nav="losangeles"><small>5–7 Jul</small><span>Los Angeles</span></a>
+  <a href="#santabarbara" data-nav="santabarbara"><small>8 Jul</small><span>Santa Barbara</span></a>
+  <a href="#frenzy" data-nav="frenzy"><small>24 Jun–9 Jul</small><span>Online</span></a>
+  <a href="#after" data-nav="after"><small>Jul</small><span>After</span></a>
+</nav></div></footer>
+
+<div class="mini" aria-hidden="true"><canvas id="mini" width="248" height="248"></canvas><br><b id="miniName">London</b></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="data/world.js"></script>
+<script>
+/* Tour route — same shape as your assets/js/usa-2017.js */
+window.TOUR = {
+  stops: [
+    ["London", 51.47, -0.45, "British Airways"],
+    ["Washington", 38.9, -77.04, "BA 217"],
+    ["New York", 40.77, -73.97, "AA shuttle"],
+    ["Chicago", 41.88, -87.63, "American"],
+    ["Houston", 29.76, -95.37, "United"],
+    ["Los Angeles", 34.06, -118.3, "United"],
+    ["Santa Barbara", 34.4, -119.52, "Motorcade on the 101"],
+    ["London", 51.47, -0.45, "British Airways"]
+  ]
+};
+(function(){
+  /* nav highlight */
+  const navs=[...document.querySelectorAll('.strip a,.itin a')];
+  const ids=[...new Set(navs.map(a=>a.dataset.nav))];
+  const secs=[...document.querySelectorAll('[data-g]')];
+  let curG=0,targetRot=null;
+  const miniName=document.getElementById('miniName');
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;
+    curG=+el.dataset.g; if(miniName)miniName.textContent=el.dataset.name||'';
+    let id=null,n=el;while(n){if(n.id&&ids.includes(n.id)){id=n.id;break}n=n.previousElementSibling}
+    const k=ids.indexOf(id);
+    navs.forEach(a=>{const i=ids.indexOf(a.dataset.nav);a.classList.toggle('on',i===k);a.classList.toggle('done',k>=0&&i<k)});
+    const cur=document.querySelector('.itin a.on');if(cur){const nv=cur.parentElement;const x=cur.offsetLeft-nv.clientWidth/2+cur.clientWidth/2;nv.scrollTo({left:x,behavior:'smooth'})}
+    setTarget(curG);
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>io.observe(s));
+
+  /* fireworks */
+  const fw=document.getElementById('fw');
+  if(fw){const ctx=fw.getContext('2d');let W,H,parts=[];const cols=['#C39A55','#a94336','#F5F1E8','#8FB4D9'];
+    function size(){W=fw.width=fw.offsetWidth;H=fw.height=fw.offsetHeight}size();addEventListener('resize',size);
+    function burst(x,y){const c=cols[Math.random()*cols.length|0];for(let i=0;i<70;i++){const a=Math.random()*6.283,s=Math.random()*3+1;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c})}}
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){for(let k=0;k<6;k++){burst(W*(.15+k*.14),H*(.25+(k%2)*.2))}for(let s=0;s<30;s++)parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.03});parts.forEach(p=>{ctx.fillStyle=p.c;ctx.globalAlpha=.6;ctx.fillRect(p.x,p.y,2,2)})}
+    else{let t=0;(function loop(){t++;if(t%38===0)burst(W*(.1+Math.random()*.8),H*(.15+Math.random()*.4));
+      ctx.globalAlpha=1;ctx.fillStyle='rgba(10,20,36,.22)';ctx.fillRect(0,0,W,H);
+      parts=parts.filter(p=>p.l>0);parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.99;p.l-=.012;ctx.globalAlpha=Math.max(p.l,0);ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,2.2,2.2)});
+      requestAnimationFrame(loop)})()}}
+
+  /* globes */
+  if(!window.d3||!window.topojson||!window.WORLD){return}
+  const land=topojson.merge(WORLD,WORLD.objects.countries.geometries);
+  const borders=topojson.mesh(WORLD,WORLD.objects.countries,(a,b)=>a!==b);
+  const S=TOUR.stops.map(s=>[s[2],s[1]]);
+  const C={sea:'#E9DFCB',land:'#c7b49a',border:'#E9DFCB',route:'#a94336',ghost:'#a9433655',grat:'#D9CCB0',rim:'#a94336'};
+  function make(id,scaleF,labels){
+    const cv=document.getElementById(id);if(!cv)return null;
+    const ctx=cv.getContext('2d'),W=cv.width;
+    const pr=d3.geoOrthographic().translate([W/2,W/2]).scale(W/2*scaleF).clipAngle(90);
+    const path=d3.geoPath(pr,ctx);
+    return function(r,upto){
+      pr.rotate(r);ctx.clearRect(0,0,W,W);
+      ctx.beginPath();path({type:'Sphere'});ctx.fillStyle=C.sea;ctx.fill();
+      ctx.beginPath();path(d3.geoGraticule10());ctx.strokeStyle=C.grat;ctx.lineWidth=W/700;ctx.stroke();
+      ctx.beginPath();path(land);ctx.fillStyle=C.land;ctx.fill();
+      ctx.beginPath();path(borders);ctx.strokeStyle=C.border;ctx.lineWidth=W/900;ctx.stroke();
+      ctx.setLineDash([W/90,W/150]);
+      ctx.beginPath();path({type:'LineString',coordinates:S});ctx.strokeStyle=C.ghost;ctx.lineWidth=W/320;ctx.stroke();
+      ctx.setLineDash([]);
+      if(upto>0){ctx.beginPath();path({type:'LineString',coordinates:S.slice(0,upto+1)});ctx.strokeStyle=C.route;ctx.lineWidth=W/220;ctx.stroke()}
+      const cen=[-r[0],-r[1]];
+      TOUR.stops.forEach((s,i)=>{if(i===7)return;const p=[s[2],s[1]];if(d3.geoDistance(p,cen)>1.45)return;const xy=pr(p);
+        ctx.beginPath();ctx.arc(xy[0],xy[1],W/(i===upto?60:120),0,7);ctx.fillStyle=i<=upto?C.route:'#8a7a63';ctx.fill();
+        if(labels){ctx.font=`600 ${W/40}px Hanken Grotesk, sans-serif`;ctx.fillStyle='#25313a';ctx.fillText(s[0],xy[0]+W/60,xy[1]+W/150)}});
+      ctx.beginPath();path({type:'Sphere'});ctx.strokeStyle=C.rim;ctx.lineWidth=W/260;ctx.stroke();
+    };
+  }
+  const big=make('bigglobe',.92,true), mini=make('mini',.94,false);
+  if(big)big([80,-38],7);
+  let rot=[0,-51];
+  function rotFor(g){const s=TOUR.stops[g];if(g===0||g===7)return[40,-46];return[-s[2],-s[1]]}
+  function setTarget(g){targetRot=rotFor(g)}
+  setTarget(0);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function tick(){if(targetRot){if(reduce){rot=targetRot.slice()}else{rot=[rot[0]+(targetRot[0]-rot[0])*.06,rot[1]+(targetRot[1]-rot[1])*.06]}}
+    mini&&mini(rot,curG===7?7:curG);requestAnimationFrame(tick)})();
+})();
+</script>

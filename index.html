@@ -1,0 +1,679 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Alexander Abroad</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Hanken+Grotesk:wght@300..600&family=Caveat:wght@500;600&display=swap">
+<style>
+/* Layout: one framed screen. A green mat with a brass hairline frame; inside it the globe stays put on the left while the tour index glides on the right, with no visible scrollbar. Top bar carries the title, bottom bar a year rail. */
+:root{
+  /* archive palette: ink-black, parchment and old gold */
+  --mat:#0C0C0E; --bg:#141416; --bg-2:#1D1D21; --ink:#EEE8DC; --muted:#A39E95; --faint:#6A665F; --line:#2A2A2F;
+  --brass:#C9A15A; --rose:#C98476; --sky:#8FA9C2; --sage:#A3AE8A;
+  --display:"Playfair Display",Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --gap:clamp(10px,2vw,26px);
+  --globe-hi:#25252A; --globe-lo:#0E0E10; --land:#3A3833; --frame:#C9A15A55;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--mat);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--brass);outline-offset:4px}
+
+.frame{position:absolute;inset:var(--gap);top:calc(var(--gap) + env(safe-area-inset-top,0px));bottom:calc(var(--gap) + env(safe-area-inset-bottom,0px));left:max(var(--gap),env(safe-area-inset-left,0px));right:max(var(--gap),env(safe-area-inset-right,0px));
+  background:var(--bg);border:1px solid var(--frame);border-radius:4px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;
+  box-shadow:0 0 0 6px var(--mat),0 0 0 7px var(--line),0 30px 80px #0008}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 28px;border-bottom:1px solid var(--line)}
+.bar.bottom{border-bottom:0;border-top:1px solid var(--line);padding:10px 20px}
+.brand{display:flex;align-items:baseline;gap:16px;min-width:0}
+.crest{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,36px);line-height:1;margin:0;white-space:nowrap}
+h1 em{color:var(--brass)}
+.tools{display:flex;align-items:center;gap:24px}
+.swatches{display:flex;gap:8px}
+.swatches button{width:16px;height:16px;border-radius:50%;border:1px solid var(--frame);padding:0}
+.swatches button[data-p="green"]{background:#13221D}.swatches button[data-p="navy"]{background:#122038}.swatches button[data-p="claret"]{background:#3A141E}.swatches button[data-p="slate"]{background:#2A2D32}.swatches button[data-p="ivory"]{background:#F5F1E8}
+.swatches button.on{outline:1px solid var(--brass);outline-offset:3px}
+.legend{display:flex;gap:18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+
+.stage{display:grid;grid-template-columns:44% 1fr;min-height:0}
+.side{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px 28px;border-right:1px solid var(--line);background:radial-gradient(70% 60% at 50% 45%,var(--bg-2),transparent 75%);min-height:0}
+.globe-wrap{width:min(100%,62vh);aspect-ratio:1;max-width:100%}
+canvas{width:100%;height:100%;display:block}
+.now{text-align:center;min-height:84px}
+.now .when{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.now .what{font-family:var(--display);font-style:italic;font-size:clamp(20px,2vw,28px);line-height:1.15;margin-top:6px;text-wrap:balance}
+.now .stat{font-size:14px;color:var(--muted);margin-top:4px}
+
+.scroller{position:relative;overflow-y:auto;scrollbar-width:none;scroll-snap-type:y proximity;scroll-behavior:smooth;min-height:0;
+  -webkit-mask-image:linear-gradient(transparent,#000 70px,#000 calc(100% - 90px),transparent);mask-image:linear-gradient(transparent,#000 70px,#000 calc(100% - 90px),transparent)}
+.scroller::-webkit-scrollbar{display:none}
+main{padding:40px 44px 40vh 44px;min-width:0}
+.reign{display:flex;align-items:center;gap:18px;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);margin:0 0 8px}
+.reign::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--brass),transparent)}
+.reign.king{margin-top:80px}
+.year{position:relative;padding-top:36px}
+.year-num{font-family:var(--display);font-size:clamp(90px,11vw,160px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--line);position:absolute;right:-6px;top:10px;pointer-events:none;user-select:none;z-index:0;will-change:transform}
+.year h2{font-size:13px;letter-spacing:.3em;color:var(--muted);font-weight:500;margin:0 0 6px;position:relative}
+
+.tour{position:relative;z-index:1;display:block;padding:20px 0 22px;border-bottom:1px solid var(--line);scroll-snap-align:center}
+.tour .top{display:flex;gap:16px;align-items:baseline;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.tour .top .k{color:var(--c)}
+.tour .name{font-family:var(--display);font-weight:400;font-size:clamp(28px,3.2vw,48px);line-height:1.05;margin-top:6px;display:inline-block;transition:color .35s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .35s;text-wrap:balance;opacity:.55}
+.tour .name i{font-size:.5em;color:var(--brass);font-style:normal;vertical-align:.7em;margin-left:.3em;opacity:0;transition:opacity .3s}
+.tour .route{font-size:15px;color:var(--muted);margin-top:8px;max-width:60ch;line-height:1.7;opacity:.6;transition:opacity .35s}
+.tour .route{display:flex;flex-wrap:wrap;row-gap:2px}
+.tour .route span{white-space:nowrap}
+.tour .route span+span::before{content:"⟶";color:var(--c);opacity:.6;padding:0 .55em;font-size:.85em}
+.tour .note{display:inline-block;margin-top:10px;font-family:var(--display);font-style:italic;color:var(--c);font-size:16px}
+.tour.overseas,.tour.cut{--c:var(--rose)} .tour.realm{--c:var(--sky)} .tour.home{--c:var(--sage)}
+.tour:hover .name,.tour.on .name{color:var(--c);transform:translateX(12px);opacity:1}
+.tour.on .route,.tour:hover .route{opacity:1}
+.tour:hover .name i,.tour.on .name i{opacity:1}
+.tour.cut .name{text-decoration:line-through;text-decoration-color:var(--rose);text-decoration-thickness:1px}
+.margin{display:flex;flex-wrap:wrap;gap:4px 22px;padding:16px 0 4px;font-family:var(--display);font-style:italic;font-size:15px;color:var(--faint);position:relative;z-index:1}
+.margin span::before{content:"✦";font-style:normal;font-size:9px;color:var(--brass);margin-right:8px;vertical-align:2px}
+.ghost{font-family:var(--display);font-style:italic;color:var(--faint);padding:18px 0;border-bottom:1px solid var(--line);position:relative;z-index:1}
+.ghost s{font-size:26px;margin-right:12px;color:var(--muted)}
+
+.rail{display:flex;justify-content:space-between;align-items:center;width:100%;gap:4px;position:relative}
+.rail button{position:relative;font-size:13px;letter-spacing:.06em;color:var(--faint);padding:6px 4px;font-variant-numeric:tabular-nums;transition:color .3s}
+.rail button:hover{color:var(--ink)}
+.rail button.on{color:var(--brass)}
+.rail button.on::after{content:"";position:absolute;left:50%;top:-11px;width:5px;height:5px;border-radius:50%;background:var(--brass);transform:translateX(-50%)}
+.rail .crown{width:1px;height:16px;background:var(--brass);opacity:.6}
+
+@media (max-width:860px){
+  
+  .swatches button{width:14px;height:14px}
+  .bar{padding:12px 16px}
+  .stage{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .side{flex-direction:row;padding:10px 16px;border-right:0;border-bottom:1px solid var(--line);gap:14px}
+  .globe-wrap{width:30vw;max-width:150px;flex:none}
+  .now{text-align:left;min-height:0}
+  main{padding:24px 18px 40vh}
+  .rail button{font-size:11px;padding:6px 1px}
+  .rail .crown{display:none}
+  .rail button:nth-child(odd):not(.on){display:none}
+}
+@media (prefers-reduced-motion:reduce){.scroller{scroll-behavior:auto}.tour .name{transition:none}}
+
+.views{display:flex;gap:4px;margin-left:20px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.views button{font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border-radius:999px;color:var(--muted);transition:background .3s,color .3s}
+.views button.on{background:var(--brass);color:var(--bg)}
+[hidden]{display:none!important}
+.passport{min-height:0;display:grid;place-items:center;padding:22px;overflow:hidden}
+.book{--paper:#F1ECE4;--paper-2:#E7DFD3;--pink:#E9D6D8;--pink-ink:#7E4B55;--pi:#262A33;--pm:#6C6A70;
+  display:grid;grid-template-columns:1fr 1fr;width:min(100%,1080px);height:100%;max-height:640px;border-radius:6px 10px 10px 6px;
+  background:#4A1420;padding:9px;box-shadow:0 30px 60px #0009, inset 0 0 0 1px #ffffff12;color:var(--pi)}
+.pg{position:relative;min-height:0;background:radial-gradient(120% 90% at 50% 40%,var(--paper),var(--paper-2));overflow:hidden}
+.pg:first-child{border-radius:3px 0 0 3px;box-shadow:inset -14px 0 20px -14px #0004}
+.pg:last-child{border-radius:0 3px 3px 0;box-shadow:inset 14px 0 20px -14px #0004}
+.guilloche{position:absolute;inset:0;opacity:.5;pointer-events:none}
+/* data page */
+.data{display:flex;flex-direction:column;padding:26px 28px 0}
+.data .hd{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-ink);position:relative}
+.data .hd b{font-family:var(--display);font-style:italic;letter-spacing:.02em;text-transform:none;font-size:18px;font-weight:400;color:var(--pi)}
+.dgrid{position:relative;display:grid;grid-template-columns:150px 1fr;gap:16px 22px;margin-top:18px}
+.photo{position:relative;width:150px;aspect-ratio:35/45;border-radius:3px;overflow:hidden;filter:grayscale(.15) sepia(.12) contrast(1.02);box-shadow:0 0 0 1px #0002}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;mix-blend-mode:multiply}
+.photo::after{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 110% 110%,transparent 0 6px,#7E4B5522 6px 7px);pointer-events:none}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;align-content:start;min-width:0}
+.f{min-width:0}.f.w{grid-column:1/-1}
+.f small{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--pm)}
+.f span{display:block;font-family:"Courier New",ui-monospace,monospace;font-size:14px;font-weight:600;letter-spacing:.04em;line-height:1.25;text-transform:uppercase}
+.sig{grid-column:1/-1;font-family:var(--display);font-style:italic;font-size:30px;color:#1F2C4A;margin-top:-4px;transform:rotate(-3deg);transform-origin:left;opacity:.85}
+.mrz{position:relative;margin-top:auto;padding:12px 0 18px;font-family:"Courier New",ui-monospace,monospace;font-size:clamp(9px,1.15vw,14px);letter-spacing:.12em;line-height:1.5;white-space:nowrap;overflow:hidden;color:#2B2B2B;border-top:1px dashed #0002}
+.void{position:absolute;right:-6px;top:44%;transform:rotate(-14deg);border:3px double #9E2A35;color:#9E2A35;padding:6px 16px;font-family:"Courier New",monospace;font-weight:700;letter-spacing:.2em;font-size:22px;opacity:.82;background:#F1ECE433;text-align:center;line-height:1.1;mix-blend-mode:multiply}
+.void small{display:block;font-size:10px;letter-spacing:.18em}
+.punch{position:absolute;top:10px;right:14px;display:flex;gap:4px}
+.punch i{width:8px;height:8px;border-radius:50%;background:#4A1420;box-shadow:inset 0 1px 2px #000a}
+.clip{position:absolute;bottom:0;right:0;width:44px;height:44px;background:#4A1420;clip-path:polygon(100% 0,100% 100%,0 100%)}
+/* visa page */
+.visa{display:flex;flex-direction:column}
+.log{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:18px 22px 14px;border-bottom:1px dashed #0002;position:relative}
+.log div{display:flex;flex-direction:column}
+.log b{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.2vw,30px);line-height:1;font-variant-numeric:lining-nums}
+.log span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--pm);margin-top:4px}
+.stamps{position:relative;flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;padding:14px 18px 28px}
+.stamps::-webkit-scrollbar{display:none}
+.vh{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink-ink);margin:10px 4px 4px;display:flex;align-items:center;gap:10px}
+.vh::after{content:"";flex:1;border-top:1px dashed #7E4B5555}
+.sgrid{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center;justify-content:center;padding:6px 0 10px}
+.stamp{--ink:#2E4C8A;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink);border:2px solid var(--ink);padding:7px 12px;font-family:"Courier New",ui-monospace,monospace;font-weight:700;text-transform:uppercase;line-height:1.15;opacity:.82;mix-blend-mode:multiply;transform:rotate(var(--r));margin:4px 6px;transition:transform .25s,opacity .25s;cursor:pointer;text-decoration:none;max-width:170px}
+.stamp:hover,.stamp:focus-visible{transform:rotate(0) scale(1.08);opacity:1}
+.stamp .c{font-size:12px;letter-spacing:.1em}
+.stamp .dt{font-size:11px;letter-spacing:.06em;margin:3px 0}
+.stamp .x{font-size:8px;letter-spacing:.2em}
+.stamp.s1{border-radius:4px}
+.stamp.s2{border-radius:50%/40%;padding:12px 18px}
+.stamp.s3{border-style:double;border-width:4px;border-radius:2px}
+.stamp.s4{border-radius:50%;width:104px;height:104px;padding:10px}
+.stamp.s5{border-radius:14px;border-style:dashed}
+.stamp.seal{--ink:#9A7A33;border:0;width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#D7B56E,#9A7A33 70%);color:#3A2A0C;box-shadow:inset 0 0 0 4px #00000018,inset 0 0 0 8px #FFFFFF22;mix-blend-mode:normal;opacity:.95}
+.years{padding:6px 6px 0}
+.yrow{display:grid;grid-template-columns:40px 1fr 70px;align-items:center;gap:10px;font-size:11px;color:var(--pm);margin:5px 0;font-variant-numeric:tabular-nums}
+.yrow .t{height:6px;border-radius:3px;background:#0000000f;overflow:hidden;display:flex}
+.yrow .t i{display:block;height:100%}
+.yrow b{font-weight:600;color:var(--pi);text-align:right}
+.ykey{display:flex;gap:14px;font-size:10px;color:var(--pm);letter-spacing:.1em;text-transform:uppercase;margin:4px 0 8px}
+.ykey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px}
+@media (max-width:860px){
+  .views{margin-left:10px}.views button{padding:5px 10px;font-size:11px}
+  .passport{padding:10px;place-items:start}
+  .book{grid-template-columns:1fr;height:auto;max-height:none;overflow-y:auto;scrollbar-width:none}
+  .passport{overflow-y:auto;scrollbar-width:none}
+  .dgrid{grid-template-columns:110px 1fr}.photo{width:110px}
+  .stamps{overflow:visible}
+  .log{grid-template-columns:repeat(2,1fr);row-gap:12px}
+}
+
+.pnav{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px dashed #0002;position:relative}
+.pnav>button{width:30px;height:30px;border-radius:50%;border:1px solid #7E4B5555;color:var(--pink-ink);font-size:20px;line-height:1;display:grid;place-items:center;transition:background .2s}
+.pnav>button:hover:not(:disabled){background:#7E4B5518}
+.pnav>button:disabled{opacity:.25;cursor:default}
+.pinfo{display:flex;align-items:baseline;gap:10px;min-width:96px}
+.pinfo b{font-family:var(--display);font-weight:400;font-size:24px;color:var(--pi)}
+.pinfo span{font-size:10px;letter-spacing:.16em;color:var(--pm)}
+.layout{margin-left:auto;display:flex;border:1px solid #7E4B5544;border-radius:999px;padding:2px}
+.layout button{font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:var(--pm)}
+.layout button.on{background:var(--pink-ink);color:var(--paper)}
+.stamps.scatter{overflow:hidden}
+.stamps.scatter .stamp{position:absolute;margin:0}
+.stamps.scatter .stamp:hover,.stamps.scatter .stamp:focus-visible{transform:translate(-50%,-50%) rotate(0) scale(1.08);z-index:2}
+.stamps.neat .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));justify-items:center;gap:10px 6px}
+.stamps.neat .stamp{margin:0;width:120px}
+.stamps.neat .stamp.s4,.stamps.neat .stamp.seal{width:104px}
+.stamp .c{overflow-wrap:anywhere}
+span.stamp{cursor:default}
+.stamps.flip{animation:flip .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes flip{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.pfoot{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pm);pointer-events:none}
+.stamps.neat{padding-bottom:36px}
+@media (prefers-reduced-motion:reduce){.stamps.flip{animation:none}}
+@media (max-width:860px){.stamps.scatter{min-height:420px}}
+/* landscape data card */
+.sigimg{display:block;height:clamp(22px,8cqi,44px);width:auto;max-width:100%;margin-top:2px;transform:rotate(-2deg);transform-origin:left;opacity:.92}
+.data{display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px 20px;gap:16px}
+.obs{position:relative;padding:4px 10px;color:var(--pm);font-size:13px}
+.obs-h{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--pink-ink);margin-bottom:8px}
+.obs p{margin:0 0 6px;font-family:"Courier New",ui-monospace,monospace;font-weight:600;color:var(--pi);font-size:13px;line-height:1.4}
+.obs p.sm{font-family:var(--sans);font-weight:400;color:var(--pm);font-size:11px}
+.card{position:relative;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#EFE7EC,#E6E9EF 45%,#ECE4D9);box-shadow:0 0 0 1px #0000001a,0 6px 18px #0002;container-type:inline-size}
+.card .guilloche{opacity:.55}
+.band{position:relative;text-align:center;font-family:var(--sans);font-weight:700;font-size:clamp(8px,2.3cqi,12px);letter-spacing:.08em;text-transform:uppercase;padding:7px 10px 5px;color:#1B2A55;border-bottom:1px solid #1B2A5522}
+.cbody{position:relative;display:grid;grid-template-columns:30% 1fr;gap:3cqi;padding:2.5cqi 9cqi 1.5cqi 3cqi}
+.pcol{display:flex;flex-direction:column;gap:6px}
+.plabel{font-family:var(--sans);font-weight:600;font-size:clamp(7px,2cqi,10px);letter-spacing:.14em;text-transform:uppercase;color:#7A5A86;display:flex;flex-direction:column;line-height:1.2}
+.plabel em{font-style:normal;opacity:.75}
+.card .photo{width:100%;border-radius:4px}
+.card .photo::after{background:repeating-radial-gradient(circle at 50% 46%,transparent 0 9px,#8A6AA033 9px 10px);mix-blend-mode:multiply}
+.card .fields{display:flex;flex-direction:column;gap:.9cqi;min-width:0}
+.card .f small{font-family:var(--sans);font-size:clamp(6px,1.75cqi,9px);letter-spacing:.04em;text-transform:none;color:#5C5F7A}
+.card .f small em{font-style:normal;opacity:.75}
+.card .f span{font-family:"Courier New",ui-monospace,monospace;font-weight:700;font-size:clamp(9px,3.1cqi,15px);letter-spacing:.06em;line-height:1.15;color:#1E1E26}
+.row2,.row3{display:grid;gap:3cqi}.row2{grid-template-columns:auto 1fr}.row3{grid-template-columns:auto auto 1fr}
+.card .sig{font-family:var(--display)!important;font-style:italic;font-weight:400!important;text-transform:none!important;letter-spacing:0!important;color:#1F2C4A!important;font-size:clamp(14px,4.6cqi,24px)!important;transform:rotate(-3deg);transform-origin:left;display:inline-block}
+.ghost-pic{position:absolute;right:11cqi;bottom:1cqi;width:13cqi;opacity:.18;filter:grayscale(1) contrast(1.4);mix-blend-mode:multiply;pointer-events:none}
+.ghost-pic img{display:block;width:100%;border-radius:2px}
+.perf{position:absolute;right:2.2cqi;top:4cqi;writing-mode:vertical-rl;font-family:"Courier New",monospace;font-weight:700;font-size:clamp(18px,6.5cqi,34px);letter-spacing:.12em;color:transparent;
+  background:radial-gradient(circle,#4A3E44 38%,transparent 42%) 0 0/5px 5px;-webkit-background-clip:text;background-clip:text;opacity:.75}
+.card .mrz{position:relative;margin:0;padding:1.4cqi 3cqi 2.2cqi;border-top:0;background:#F7F4EFcc;font-size:clamp(7px,2.55cqi,13px);letter-spacing:.09em;line-height:1.45;color:#1E1E26}
+.card .void{right:4%;top:36%;font-size:clamp(13px,4.6cqi,22px)}
+.data .punch{top:auto;bottom:6px;right:50%;transform:translateX(50%)}
+.data .clip{width:36px;height:36px}
+
+/* categories */
+:root{--lilac:#B9A6CC}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters{flex-wrap:nowrap}
+.filters button{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.12em;white-space:nowrap;text-transform:uppercase;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:4px 9px;transition:color .25s,border-color .25s,opacity .25s}
+.filters button i{width:8px;height:8px;border-radius:50%;opacity:.35;transition:opacity .25s}
+.filters button b{font-weight:500;letter-spacing:0;font-variant-numeric:tabular-nums;opacity:.7}
+.filters button.on{color:var(--ink);border-color:var(--frame)}
+.filters button.on i{opacity:1}
+.tour.uk{--c:var(--sage)} .tour.uk .name{font-size:clamp(24px,2.6vw,38px)}
+.tour.nopage{cursor:default}
+.hov{cursor:default;transition:color .25s}
+.margin span.hov:hover,.margin span.hov:focus-visible,.margin span.hov.on{color:var(--ink)}
+.ghost.hov:hover,.ghost.hov.on{color:var(--muted)}
+.tour.tbc .top span:first-child{font-style:italic}
+.tour .route span.x{text-decoration:line-through;opacity:.55}
+.margin span.m-uk::before{color:var(--sage)} .margin span.m-personal::before{content:"◦";color:var(--lilac);font-size:13px;vertical-align:0}
+.margin span.m-personal{color:var(--muted)}
+#index.hide-overseas .c-overseas,#index.hide-realm .c-realm,#index.hide-uk .c-uk,#index.hide-uk .m-uk,#index.hide-occ .m-occ,#index.hide-personal .m-personal{display:none}
+@media (max-width:1500px){.filters button b{display:none}}
+@media (max-width:1180px){.views{margin-left:10px}.brand{gap:10px}}
+@media (max-width:860px){.filters{display:none}}
+
+/* ——— scrapbook register ——— */
+.ystat{font-size:12.5px;letter-spacing:.06em;color:var(--brass);opacity:.85;margin:0 0 14px;position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.tour.cover{display:grid;grid-template-columns:40% 1fr;padding:0;margin:22px 0 26px;border:0;background:var(--tf);border-radius:3px;overflow:hidden;min-height:240px;box-shadow:0 18px 40px #0007,inset 0 0 0 1px #ffffff12;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
+.tour.cover:hover,.tour.cover.on{transform:translateY(-3px);box-shadow:0 24px 50px #000a,inset 0 0 0 1px color-mix(in srgb,var(--ta) 70%,transparent)}
+.cover .cv-img{position:relative;background:center 25%/cover;filter:saturate(.75) contrast(1.05)}
+.cover .cv-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,var(--tf)),linear-gradient(0deg,color-mix(in srgb,var(--tf) 55%,transparent),transparent 60%)}
+.cover .cv-img.none{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--ta) 22%,var(--tf)) 0 2px,var(--tf) 2px 14px);display:grid;place-items:center;filter:none}
+.cover .cv-img.none span{font-family:var(--display);font-style:italic;font-size:clamp(40px,5vw,72px);color:color-mix(in srgb,var(--ta) 80%,#fff);position:relative;z-index:1;transform:rotate(-6deg)}
+.cover .cv-body{padding:22px 26px 24px;border-left:1px solid color-mix(in srgb,var(--ta) 80%,transparent);min-width:0}
+.cover .top{color:#ffffff99}.cover .top .k{color:color-mix(in srgb,var(--ta) 60%,#fff)}
+.tour.cover .name{opacity:1;color:#F4EFE4;font-size:clamp(30px,3.3vw,50px);transform:none!important}
+.tour.cover .route{color:#ECE5D6d0;opacity:1;font-size:14.5px}
+.tour.cover .route span+span::before{color:color-mix(in srgb,var(--ta) 60%,#fff)}
+.tour.cover .note{color:color-mix(in srgb,var(--ta) 55%,#fff)}
+.cover .note{display:block}
+.cover .open{display:table;margin-top:16px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--ta);padding-bottom:3px}
+.tour.plain{padding-left:20px;border-left:3px solid var(--ta);background:linear-gradient(90deg,color-mix(in srgb,var(--tf) 70%,transparent),transparent 75%);margin:10px 0;border-bottom:0}
+.tour.plain .top .k{color:color-mix(in srgb,var(--ta) 55%,#fff)}
+.tour.plain .route span+span::before{color:var(--ta)}
+.tour.plain .note{color:color-mix(in srgb,var(--ta) 55%,#fff)}
+.tour .soon{display:inline-block;margin-top:10px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);border:1px dashed var(--line);padding:3px 8px}
+.tour.home{--c:var(--sage);padding:16px 0 18px}
+.tour.home .name{font-size:clamp(22px,2.3vw,32px)}
+.tour.home .route{font-size:14px}
+.ev{display:flex;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);position:relative;z-index:1;cursor:default;outline-offset:2px}
+.ev .d{flex:none;width:118px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.ev .t{transition:color .3s}
+.ev.occ .t{font-family:var(--display);font-size:19px;color:#D9D2C4}
+.ev.day .t{font-size:15px;color:var(--muted)}
+.ev .mk{flex:none;align-self:center}
+.mk.poppy{width:14px;height:14px}
+.mk.band{width:14px;height:4px;background:#0a0a0a;box-shadow:0 0 0 1px var(--faint)}
+.mk.star{color:var(--brass);font-size:10px}
+.ev.personal{border-bottom:0;padding:8px 0 8px 6px}
+.ev.personal .d,.ev.personal .t{font-family:Caveat,"Segoe Script",cursive;letter-spacing:0;text-transform:none}
+.ev.personal .d{font-size:19px;color:#8E8778}
+.ev.personal .t{font-size:27px;line-height:1.1;color:#CFC6B4;transform:rotate(-1.2deg);display:inline-block}
+.ev.on .t,.ev:hover .t{color:var(--brass)}
+.ev.personal.on .t,.ev.personal:hover .t{color:#E4D8C0}
+#index.hide-personal .ev.personal,#index.hide-occ .ev.occ,#index.hide-uk .ev.day,#index.hide-uk .tour.home,#index.hide-overseas .tour.overseas,#index.hide-overseas .tour.cut,#index.hide-realm .tour.realm{display:none}
+.rail{padding-top:6px}
+.rail .tick{position:absolute;top:-8px;width:3px;height:9px;border-radius:2px;transform:translateX(-50%);opacity:.75;cursor:pointer}
+.rail .tick.has{height:13px;top:-12px;opacity:1;box-shadow:0 0 0 1px #0008}
+@media (max-width:860px){.tour.cover{grid-template-columns:1fr;grid-template-rows:150px auto}.ev .d{width:84px}.cover .cv-img::after{background:linear-gradient(0deg,var(--tf),transparent 70%)}}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="data/world.js"></script>
+<div class="frame">
+  <header class="bar">
+    <div class="brand"><h1>Alexander <em>abroad</em></h1><div class="views" id="views"><button type="button" class="on" data-v="index">Tours</button><button type="button" data-v="passport">Passport</button></div></div>
+    <div class="tools"><div class="filters" id="filters" role="group" aria-label="Show categories"></div></div>
+  </header>
+  <div class="stage">
+    <aside class="side">
+      <div class="globe-wrap"><canvas id="globe" width="880" height="880" aria-hidden="true"></canvas></div>
+      <div class="now" aria-live="polite"><div class="when" id="nWhen"></div><div class="what" id="nWhat"></div><div class="stat" id="nStat"></div></div>
+    </aside>
+    <div class="scroller" id="scroller"><main id="index"></main></div>
+  </div>
+  <section class="passport" id="passport" hidden>
+    <div class="book">
+      <div class="pg data">
+        <div class="obs">
+          <div class="obs-h">Observations</div>
+          <p>The holder is His Royal Highness The Prince of Wales.</p>
+          <p class="sm">This passport remains the property of His Majesty’s Government.</p>
+        </div>
+        <div class="card">
+          <svg class="guilloche" viewBox="0 0 400 260" preserveAspectRatio="none" id="gl"></svg>
+          <div class="band">United Kingdom of Great Britain and Northern Ireland</div>
+          <div class="cbody">
+            <div class="pcol">
+              <div class="plabel">Passport<em>Passeport</em></div>
+              <div class="photo"><img alt="Passport photograph of Alexander" src="img/emb0.jpeg"></div>
+            </div>
+            <div class="fields"><div class="row3"><div class="f "><small>Type<em>/Type</em></small><span>P</span></div><div class="f "><small>Code<em>/Code</em></small><span>GBR</span></div><div class="f "><small>Passport no.<em>/Passeport no.</em></small><span>100423986</span></div></div><div class="f "><small>1 · Surname<em>/Nom</em></small><span>—</span></div><div class="f "><small>2 · Given names<em>/Prénoms</em></small><span>Alexander James Arthur George</span></div><div class="f "><small>3 · Nationality<em>/Nationalité</em></small><span>British citizen</span></div><div class="f "><small>4 · Date of birth<em>/Date de naissance</em></small><span>23 Apr /Avr 86</span></div><div class="row2"><div class="f "><small>5 · Sex<em>/Sexe</em></small><span>M</span></div><div class="f "><small>6 · Place of birth<em>/Lieu de naissance</em></small><span>London</span></div></div><div class="row2"><div class="f "><small>7 · Date of issue<em>/Date de délivrance</em></small><span>11 Jan /Janv 16</span></div><div class="f "><small>8 · Authority<em>/Autorité</em></small><span>HMPO</span></div></div><div class="f "><small>9 · Date of expiry<em>/Date d’expiration</em></small><span>11 Jan /Janv 26</span></div>
+              <div class="f"><small>10 · Holder’s signature<em>/Signature du titulaire</em></small><img class="sigimg" alt="Signature: Alexander" src="img/emb1.png"></div>
+            </div>
+            <div class="ghost-pic"><img alt="" src="img/emb2.jpeg"></div>
+            <div class="perf" aria-hidden="true">100423986</div>
+          </div>
+          <div class="mrz">P&lt;GBR&lt;&lt;ALEXANDER&lt;JAMES&lt;ARTHUR&lt;GEORGE&lt;&lt;&lt;&lt;&lt;&lt;<br>1004239868GBR8604236M2601116&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;04</div>
+          <div class="void">Cancelled<small>21 · 04 · 2024 · Accession</small></div>
+          <div class="clip"></div>
+        </div>
+        <div class="punch"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="pg visa">
+        <div class="log" id="log"></div>
+        <div class="pnav">
+          <button type="button" id="pgPrev" aria-label="Previous page">‹</button>
+          <div class="pinfo"><b id="pgLabel"></b><span id="pgNum"></span></div>
+          <button type="button" id="pgNext" aria-label="Next page">›</button>
+          <div class="layout" id="layout"><button type="button" data-l="neat" class="on">In order</button><button type="button" data-l="scatter">As stamped</button></div>
+        </div>
+        <div class="stamps" id="stamps"></div>
+      </div>
+    </div>
+  </section>
+  <footer class="bar bottom"><nav class="rail" id="rail" aria-label="Jump to year"></nav></footer>
+</div>
+
+<script>
+// ——— THE ARCHIVE ———
+// Source of truth: tour-calendar-revision-2026-10-15.md (definitive).
+// T(start, end, title, route, kind, {lab, note, at:[lat,lon], when, ctry, tbc})
+//   kinds with a card:   overseas · realm · uk · cut
+//   kinds in the margin: occ (commemorations, ceremonies, royal-family occasions)
+//                        ukday (single-day UK visits) · personal · ghost (planned, never made)
+//   when  = display text for dates that are not fixed (start is then only a sort key)
+//   ctry  = countries entered, for passport stamps
+const T=(s,e,t,route,k,o={})=>({s,e,t,route:route||"",k,...o});
+const D=[
+ // 2016
+ T("2016-04-08","2016-04-29","Australia & New Zealand","Sydney|Canberra|Brisbane|Great Barrier Reef|Darwin|Uluru|Perth|Auckland|Waitangi|Christchurch|Queenstown|Fiordland|Wellington","overseas",{note:"His first major solo tour",at:[-30,145],ctry:["Australia","New Zealand"]}),
+ T("2016-05-27",0,"Prince Oscar’s christening, Stockholm","","occ",{at:[59.33,18.07],ctry:["Sweden"]}),
+ T("2016-05-31",0,"Jutland centenary, Orkney","","occ",{at:[58.98,-2.96]}),
+ T("2016-06-30","2016-07-01","Somme centenary, Thiepval","","occ",{at:[50.05,2.69],ctry:["France"]}),
+ T("2016-07-18","2016-07-20","Cornwall & Devon","Penzance|Newquay|Dartmoor","uk",{lab:"Duchy of Cornwall",at:[50.4,-4.6]}),
+ T("2016-07-25","2016-07-30","Wales Week","Llanddewi Brefi|Llandovery & Myddfai|Garth|Talgarth|Abergavenny","uk",{note:"The first Wales Week, ending at the Eisteddfod",at:[52,-3.6]}),
+ T("2016-08-15","2016-08-19","Wester Ross & Coigach","Balmacara|Lochcarron|Gairloch|Ullapool|Achiltibuie","uk",{lab:"Scotland",note:"His first summer working week in Scotland",at:[57.8,-5.4]}),
+ T("2016-08-23",0,"North Rhine-Westphalia at seventy, Düsseldorf","","occ",{at:[51.23,6.78],ctry:["Germany"]}),
+ T("2016-09-21","2016-10-03","Canada","Ottawa|Montreal|Quebec City|Toronto|Winnipeg|Calgary|Fort McMurray|Banff|Whitehorse|Victoria|Vancouver","overseas",{at:[52,-100],ctry:["Canada"]}),
+ // 2017
+ T("2017-02-10","2017-02-14","Skiing at Courchevel","","personal",{at:[45.41,6.63],ctry:["France"]}),
+ T("2017-03-15","2017-03-17","France","Paris|Toulouse","overseas",{lab:"Overseas visit",at:[46,1.5],ctry:["France"]}),
+ T("2017-04-09",0,"Vimy Ridge centenary","","occ",{at:[50.38,2.77],ctry:["France"]}),
+ T("2017-05-09","2017-05-10","Northern Ireland","Bellaghy|Derry/Londonderry|Hillsborough|Belfast|Dromore","uk",{note:"The first of his annual visits",at:[54.7,-6.6]}),
+ T("2017-06-24","2017-07-09","The United States","Washington DC|New York City|Chicago|Houston|Los Angeles & Santa Barbara","overseas",{at:[38,-92],ctry:["United States"]}),
+ T("2017-07-19","2017-07-21","Cornwall & Devon","Newquay|Lifton|Okehampton","uk",{lab:"Duchy of Cornwall",at:[50.6,-4.3]}),
+ T("2017-07-30","2017-07-31","Passchendaele centenary, Ypres","","occ",{at:[50.85,2.88],ctry:["Belgium"]}),
+ T("2017-08-04","2017-08-10","Wales Week","Bodedern|Menai Bridge & Bangor|Llŷn|Criccieth|Denbighshire","uk",{at:[53,-4.2]}),
+ T("2017-08-14","2017-08-18","Lochaber & the West Highland peninsulas","Fort William|Strontian|Acharacle|Kilchoan|Glenbeg|Lochaline","uk",{lab:"Scotland",at:[56.7,-5.7]}),
+ T("2017-09-10",0,"Botswana, with Georgie","","personal",{at:[-19.5,23.5],when:"September",ctry:["Botswana"]}),
+ T("2017-10-09","2017-10-16","Germany & Poland","Berlin|Heidelberg|Hamburg|Warsaw|Gdańsk & Stutthof","overseas",{at:[52,15],ctry:["Germany","Poland"]}),
+ T("2017-11-20",0,"Òran na Mara, Lewis & Harris, with Georgie","","personal",{at:[58.0,-6.8],when:"Later in the year"}),
+ // 2018
+ T("2018-04-22","2018-04-29","The Middle East","Amman|Petra|Jerash|Zaatari|Jerusalem|Ramallah|Nazareth|Tel Aviv & Jaffa","overseas",{at:[32,35],ctry:["Jordan","Israel","Palestinian Territories"]}),
+ T("2018-06-01",0,"Paris & Provence","","personal",{at:[43.9,5.0],when:"June",ctry:["France"]}),
+ T("2018-06-12","2018-06-13","Northern Ireland","Belfast|Coleraine|Omagh|Gortin","uk",{at:[54.8,-6.9]}),
+ T("2018-07-02","2018-07-04","Devon, Cornwall & Scilly","Honiton|St Tudy & St Agnes|St Mary’s & St Martin’s","uk",{lab:"Duchy of Cornwall",at:[50.1,-5.6]}),
+ T("2018-07-05","2018-07-08","Tamarisk, Isles of Scilly, with Georgie","","personal",{at:[49.92,-6.3]}),
+ T("2018-07-10",0,"RAF centenary, London","","occ",{at:[51.5,-0.13]}),
+ T("2018-07-16","2018-07-20","China","Beijing|Shanghai|Shenzhen","overseas",{at:[32,117],ctry:["China"]}),
+ T("2018-07-30","2018-08-04","Wales Week","Llandovery & Myddfai|Builth Wells|Brecon|Llwyn Celyn|Cardiff Bay","uk",{note:"Ending at the Cardiff Bay Eisteddfod",at:[51.9,-3.4]}),
+ T("2018-08-08",0,"Amiens centenary","","occ",{at:[49.89,2.3],ctry:["France"]}),
+ T("2018-08-13","2018-08-17","Argyll & Bute","Rothesay & Bute|Dunoon|Strachur|Cairndow|Kilmartin & Lochgilphead","uk",{lab:"Scotland",at:[56,-5.2]}),
+ T("2018-11-19","2018-11-26","Russia","Moscow|St Petersburg & Tsarskoe Selo|Ekaterinburg","overseas",{at:[57,40],ctry:["Russia"]}),
+ // 2019
+ T("2019-02-02","2019-02-11","The Nordics","Oslo|Copenhagen|Stockholm|Helsinki","overseas",{at:[60,17],ctry:["Norway","Denmark","Sweden","Finland"]}),
+ T("2019-03-26","2019-03-27","Northern Ireland","Fermanagh|Lisnaskea|Ballymena","uk",{at:[54.4,-7.2]}),
+ T("2019-05-07","2019-05-10","Germany","Berlin|Leipzig|Munich & Bavaria","overseas",{lab:"Overseas visit",at:[51,12],ctry:["Germany"]}),
+ T("2019-06-05","2019-06-06","D-Day 75, Portsmouth & Normandy","","occ",{at:[49.34,-0.6],ctry:["France"]}),
+ T("2019-06-13",0,"Weald & Downland Museum and Petworth, West Sussex","","ukday",{at:[50.92,-0.65]}),
+ T("2019-07-15","2019-07-17","Cornwall & Devon","Mevagissey|Callington|Tavistock|Cullompton|Exmoor","uk",{lab:"Duchy of Cornwall",at:[50.5,-4.2]}),
+ T("2019-07-29","2019-08-03","Wales Week","Dolgellau & Meirionnydd|Conwy Valley|Llanrwst","uk",{at:[52.9,-3.8]}),
+ T("2019-08-12","2019-08-16","The Borders","Hawick|St Boswells|Melrose","uk",{lab:"Scotland",at:[55.5,-2.8]}),
+ T("2019-10-08","2019-10-18","India & Bhutan","Delhi|Jaipur|Mumbai|Thimphu","overseas",{at:[24,80],ctry:["India","Bhutan"]}),
+ T("2019-10-22",0,"Tokyo","","ghost",{at:[35.68,139.7],note:"for the enthronement · expected internally, then the King went himself"}),
+ // 2020
+ T("2020-01-15",0,"Pakistan","","ghost",{at:[30,69],note:"planned, then cancelled"}),
+ T("2020-02-03","2020-02-11","The Caribbean","Jamaica|Belize|Barbados|St Vincent & the Grenadines","overseas",{at:[15,-72],ctry:["Jamaica","Belize","Barbados","St Vincent & the Grenadines"]}),
+ T("2020-07-28",0,"Gloucestershire Royal Hospital","","ukday",{at:[51.86,-2.23]}),
+ T("2020-08-06",0,"Cotswold Farm Park","","ukday",{at:[51.93,-1.84]}),
+ T("2020-08-18",0,"Longfield Hospice, Minchinhampton","","ukday",{at:[51.7,-2.2]}),
+ T("2020-08-27",0,"Turnbull & Asser, Gloucester","","ukday",{at:[51.85,-2.25]}),
+ T("2020-10-05","2020-10-08","The western Highlands","Inverness|Ullapool|Gairloch","uk",{lab:"Scotland",at:[57.7,-5]}),
+ T("2020-12-14","2020-12-16","Moray","RAF Lossiemouth|Elgin","uk",{lab:"By Royal Train",at:[57.6,-3.3]}),
+ // 2021
+ T("2021-04-13","2021-04-14","Rural mid Wales","Brecon|Upper Wye Valley|Builth Wells & Rhayader","uk",{at:[52.1,-3.4]}),
+ T("2021-05-24","2021-05-25","Northern Ireland","Belfast|County Down|County Armagh","uk",{at:[54.4,-6.3]}),
+ T("2021-07-10",0,"Cornwall & Devon","The South West","uk",{lab:"Duchy of Cornwall",when:"July",tbc:1,at:[50.5,-4.5]}),
+ T("2021-08-24","2021-08-26","Aberdeenshire","Aberdeenshire communities|Ballater","uk",{lab:"Scotland",at:[57.1,-2.8]}),
+ T("2021-09-07","2021-09-09","The Midlands","Birmingham|Coventry|Leicester","uk",{at:[52.5,-1.6]}),
+ T("2021-10-10",0,"The North of England","Newcastle|Sunderland|Sheffield","uk",{when:"Autumn",tbc:1,at:[54.4,-1.5]}),
+ T("2021-11-01","2021-11-02","COP26, Glasgow","","occ",{at:[55.86,-4.29]}),
+ T("2021-11-16","2021-11-22","Croatia, Bosnia & Herzegovina & Kosovo","Zagreb|Petrinja|Sarajevo|Potočari|Pristina|Prizren","overseas",{at:[44,18],ctry:["Croatia","Bosnia & Herzegovina","Kosovo"]}),
+ // 2022
+ T("2022-03-20","2022-03-26","The Gulf","Abu Dhabi|Dubai|Doha|Riyadh & Diriyah","overseas",{at:[25,50],ctry:["United Arab Emirates","Qatar","Saudi Arabia"]}),
+ T("2022-06-07","2022-06-08","Northern Ireland","Cookstown|Belfast","uk",{at:[54.6,-6.7]}),
+ T("2022-06-21","2022-06-30","Rwanda & Kenya","Kigali|Nairobi|Ol Pejeta & Nanyuki","overseas",{note:"CHOGM in Kigali",at:[-1,33],ctry:["Rwanda","Kenya"]}),
+ T("2022-07-18","2022-07-20","Cornwall & Devon","Mousehole|Newlyn|Nansledan|Trefranck Farm|Torquay","uk",{lab:"Duchy of Cornwall",at:[50.3,-4.8]}),
+ T("2022-07-25","2022-07-31","Wales Week","Hay-on-Wye|Pembrokeshire|Lampeter|Tregaron","uk",{at:[52,-4.4]}),
+ T("2022-08-16","2022-08-19","Skye & Raasay","Waternish|Dunvegan|Staffin|Portree|Raasay|Broadford","uk",{lab:"Scotland",note:"Two private days follow",at:[57.35,-6.2]}),
+ T("2022-12-01","2022-12-21","The South Atlantic","Ascension|St Helena|Falkland Islands|South Georgia","overseas",{at:[-35,-30],ctry:["Ascension Island","St Helena","Falkland Islands","South Georgia"]}),
+ // 2023
+ T("2023-03-20","2023-03-26","Ireland","Dublin|County Meath|Galway|Leitrim|Limerick|Cork|Kerry","overseas",{at:[53,-8],ctry:["Ireland"]}),
+ T("2023-04-24","2023-04-26","Cornwall & Devon","Falmouth|Newquay|Dartmoor","uk",{lab:"Duchy of Cornwall",at:[50.4,-4.5]}),
+ T("2023-05-23","2023-05-24","Northern Ireland","Armagh|Enniskillen","uk",{at:[54.35,-7]}),
+ T("2023-05-26",0,"Battle of the Atlantic at eighty, Liverpool","","occ",{at:[53.4,-2.99]}),
+ T("2023-07-31","2023-08-06","Wales Week","Nant Gwrtheyrn|Llanbedrog & Porthdinllaen|Porthmadog|Boduan","uk",{at:[52.9,-4.4]}),
+ T("2023-08-14","2023-08-18","Lewis & Harris","Stornoway|Tarbert|West & north Lewis","uk",{lab:"Scotland",at:[58.2,-6.6]}),
+ T("2023-11-01","2023-11-10","Japan & South Korea","Tokyo|Kyoto|Koyasan|Osaka|Seoul|Busan","overseas",{at:[36,133],ctry:["Japan","South Korea"]}),
+ T("2023-12-12",0,"RAF Akrotiri, Cyprus","","occ",{at:[34.59,32.99],when:"December",ctry:["Cyprus"]}),
+ // 2024
+ T("2024-04-10","2024-04-21","Southeast Asia & the Pacific","Kuala Lumpur|Singapore|Solomon Islands|Vanuatu|Funafuti|×Fiji|×Tonga","cut",{when:"Mid-April",note:"Broken off in Funafuti on 21 April. The King is dead.",at:[-5,160],ctry:["Malaysia","Singapore","Solomon Islands","Vanuatu","Tuvalu"]}),
+ T("2024-05-02",0,"State funeral of King James, Westminster Abbey","","occ",{at:[51.5,-0.13]}),
+ T("2024-06-05","2024-06-06","D-Day 80, Portsmouth & Normandy","","occ",{at:[49.34,-0.6],ctry:["France"]}),
+ T("2024-07-01",0,"Holyrood Week, Edinburgh","","occ",{at:[55.95,-3.17],when:"Early July"}),
+ T("2024-09-02","2024-09-15","Canada","Ottawa|St. John’s|Halifax|Cape Breton|Fredericton & Moncton|Prince Edward Island|Yellowknife & Dettah|Winnipeg|Montreal|Toronto","realm",{lab:"Realm visit",note:"His first realm visit as King",at:[52,-85],ctry:["Canada"]}),
+ T("2024-10-18","2024-10-26","Australia & Samoa","Sydney|Canberra|Apia","realm",{lab:"Realm visit",note:"CHOGM in Apia",at:[-25,165],ctry:["Australia","Samoa"]}),
+ T("2024-12-07",0,"Notre-Dame reopens, Paris","","occ",{at:[48.85,2.35],ctry:["France"]}),
+ // 2025
+ T("2025-01-09",0,"President Carter’s funeral, Washington","","occ",{at:[38.93,-77.07],ctry:["United States"]}),
+ T("2025-01-27",0,"Auschwitz, eighty years on","","occ",{at:[50.03,19.2],ctry:["Poland"]}),
+ T("2025-04-26",0,"Pope Francis’s funeral, Rome","","occ",{at:[41.9,12.45],ctry:["Vatican City"]}),
+ T("2025-05-26","2025-05-27","Canada","Ottawa","realm",{lab:"Realm visit",note:"The Speech from the Throne",at:[45.4,-75.7],ctry:["Canada"]}),
+ T("2025-07-14","2025-07-20","The Baltic States, Poland & Ukraine","Tallinn|Tapa|Riga|Vilnius|Warsaw|Orzysz|Kyiv","overseas",{note:"Kyiv under embargo",at:[55,24],ctry:["Estonia","Latvia","Lithuania","Poland","Ukraine"]}),
+ T("2025-07-02",0,"Presentation of the Honours of Scotland, St Giles’","","occ",{at:[55.95,-3.19],when:"Summer"}),
+ T("2025-10-26",0,"Italy","Rome|Ravenna","realm",{lab:"State visit",when:"Late October",tbc:1,at:[42.5,12.5],ctry:["Italy"]}),
+ // 2026
+ T("2026-04-27","2026-04-30","The United States","Washington DC|New York City|Virginia","realm",{lab:"State visit",at:[39,-76],ctry:["United States"]}),
+ T("2026-05-01","2026-05-02","Bermuda","Hamilton","overseas",{lab:"Overseas visit",at:[32.3,-64.8],ctry:["Bermuda"]}),
+ T("2026-09-09",0,"King Harald’s funeral, Oslo","","occ",{at:[59.91,10.75],ctry:["Norway"]}),
+ T("2026-10-27","2026-11-04","The Bahamas, Guyana & Antigua","Nassau|Georgetown|St John’s & Barbuda","realm",{lab:"Realm & state visit",note:"CHOGM in Antigua",at:[15,-65],ctry:["Bahamas","Guyana","Antigua & Barbuda"]}),
+ // 2027
+ T("2027-10-13","2027-10-29","Australia & New Zealand","Sydney|Canberra|Adelaide & the Mid North|the Kimberley|Perth|Auckland|Rotorua|Wellington|Queenstown & Fiordland|Christchurch","realm",{lab:"Realm visit",note:"With Queen Georgiana",at:[-32,150],ctry:["Australia","New Zealand"]})
+];
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const CAT={overseas:"overseas",cut:"overseas",realm:"realm",uk:"uk",ukday:"uk",occ:"occ",personal:"personal",ghost:"ghost"};
+const KL={overseas:"Overseas tour",realm:"Realm & state",uk:"At home",cut:"Overseas tour · interrupted"};
+const CATS=[["overseas","Overseas","--rose"],["realm","Realm & state","--sky"],["uk","At home","--sage"],["occ","Occasions","--brass"],["personal","Personal","--lilac"]];
+const d=s=>new Date(s+"T12:00:00Z");
+const fmt=(s,e)=>{const a=d(s);if(!e)return a.getUTCDate()+" "+MON[a.getUTCMonth()];const b=d(e);
+  return a.getUTCMonth()===b.getUTCMonth()?a.getUTCDate()+"–"+b.getUTCDate()+" "+MON[a.getUTCMonth()]:a.getUTCDate()+" "+MON[a.getUTCMonth()]+" – "+b.getUTCDate()+" "+MON[b.getUTCMonth()]};
+const when=r=>r.when||fmt(r.s,r.e);
+const days=(s,e)=>e?Math.round((d(e)-d(s))/864e5)+1:1;
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const slug=r=>{let k=r.t.toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").replace(/^the-/,"");k=({"australia-and-new-zealand":"ausnz","united-states":"usa"})[k]||k;return r.s.slice(0,4)+"-"+k+".html"};
+const CARD=new Set(["overseas","realm","uk","cut"]);
+// only the big set pieces get their own page: overseas tours and visits, realm and state visits
+const PAGE=new Set(["overseas","realm","cut"]);
+const tours=D.filter(r=>r.at);
+const stops=r=>r.route.split("|").filter(p=>p[0]!=="×");
+
+// category filter
+const off=new Set();
+const filt=document.getElementById("filters");
+filt.innerHTML=CATS.map(([k,l,v])=>`<button type="button" class="on" data-cat="${k}" aria-pressed="true"><i style="background:var(${v})"></i>${l}<b>${D.filter(r=>CAT[r.k]===k).length}</b></button>`).join("");
+filt.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.cat;
+  off.has(k)?off.delete(k):off.add(k);const on=!off.has(k);b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);
+  document.getElementById("index").classList.toggle("hide-"+k,!on)});
+
+// index — scrapbook register
+const PAL={"2016-04-08":["#0e3b40","#b4532a","ausnz"],"2016-09-21":["#4a0f18","#9e1f2e","canada"],"2017-03-15":["#122b43","#9a7035"],"2017-06-24":["#203c59","#a94336","usa"],"2017-10-09":["#303a3e","#8f363f"],"2018-04-22":["#3c4538","#9c573a"],"2018-07-16":["#612a2b","#956b2f"],"2018-11-19":["#352b43","#95703d","russia"],"2019-02-02":["#334e59","#9a6644"],"2019-05-07":["#293e36","#92723c"],"2019-10-08":["#32385d","#a57326"],"2020-02-03":["#154c51","#ad5a49"],"2021-11-16":["#263f4c","#9b6250"],"2022-03-20":["#443044","#98703d"],"2022-06-21":["#284839","#a25b3f"],"2022-12-01":["#263d49","#a26345"],"2023-03-20":["#214b41","#a26540"],"2023-11-01":["#2a324b","#aa5741"],"2024-04-10":["#1b4946","#9c7741"],"2024-09-02":["#173e36","#8f4247"],"2024-10-18":["#174c5b","#aa6739"],"2025-05-26":["#173e36","#8f4247"],"2025-07-14":["#243f50","#9c722c","baltics"],"2025-10-26":["#623b32","#727246"],"2026-04-27":["#182e48","#9a4242"],"2026-05-01":["#182e48","#9a4242"],"2026-10-27":["#1a4d53","#aa6154"],"2027-10-13":["#24483f","#a5643e"]};
+const HAVE=new Set(["2016-ausnz.html","2016-canada.html","2017-france.html","2017-usa.html","2017-germany-and-poland.html","2018-middle-east.html","2018-russia.html","2025-baltic-states-poland-and-ukraine.html"]);
+const POPPY=/centenar|D-Day|Auschwitz|Atlantic|Jutland|Somme|Vimy|Passchendaele|Amiens|Akrotiri/;
+const mark=r=>POPPY.test(r.t)?'<svg class="mk poppy" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#B3262E"/><circle cx="10" cy="10" r="2.6" fill="#141416"/></svg>':/funeral/i.test(r.t)?'<span class="mk band" aria-hidden="true"></span>':'<span class="mk star" aria-hidden="true">✦</span>';
+const routeHTML=r=>r.route?`<div class="route">${r.route.split("|").map(p=>p[0]==="×"?`<span class="x">${esc(p.slice(1))}</span>`:`<span>${esc(p)}</span>`).join("")}</div>`:"";
+const abroad=r=>r.ctry&&r.ctry.length;
+let h="";
+h+=`<div class="reign">As Prince of Wales</div>`;
+for(let y=2016;y<=2027;y++){
+  const rows=D.filter(r=>r.s.startsWith(y));
+  const split=y===2024?[rows.filter(r=>r.s<"2024-04-22"),rows.filter(r=>r.s>="2024-04-22")]:[rows];
+  split.forEach((rs,si)=>{
+    if(y===2024&&si===1){h+=`<div class="reign king">As King · from 21 April 2024</div>`}
+    if(!rs.length)return;
+    const big=rs.filter(r=>PAGE.has(r.k)),home=rs.filter(r=>r.k==="uk");
+    const cs=new Set();rs.filter(r=>r.k!=="ghost").forEach(r=>(r.ctry||[]).forEach(c=>cs.add(c)));
+    const nights=big.reduce((n,r)=>n+(r.e?days(r.s,r.e)-1:0),0);
+    const bits=[];if(big.length)bits.push(big.length+(big.length===1?" visit abroad":" visits abroad"));if(cs.size)bits.push(cs.size+(cs.size===1?" country":" countries"));if(nights)bits.push(nights+" nights away");if(home.length)bits.push(home.length+(home.length===1?" week at home":" weeks at home"));
+    h+=`<section class="year" data-y="${y}"><div class="year-num" aria-hidden="true">${y}</div><h2>${y}${y===2024?(si?" · as King":" · as Prince of Wales"):""}</h2>${bits.length&&!(y===2024&&si===0)?`<div class="ystat">${bits.join(" · ")}</div>`:""}`;
+    rs.forEach(r=>{
+      const idx=tours.indexOf(r);
+      if(PAGE.has(r.k)){
+        const p=PAL[r.s]||["#2a2a30","#9a7a45"],file=slug(r),has=HAVE.has(file);
+        const st=`style="--tf:${p[0]};--ta:${p[1]}"`;
+        const top=`<div class="top"><span>${when(r)}${r.tbc?" · dates to settle":""}</span><span class="k">${esc(r.lab||KL[r.k])}</span></div>`;
+        if(has){const img=p[2]?`<div class="cv-img" style="background-image:url(img/cover-${p[2]}.jpg)"></div>`:`<div class="cv-img none"><span>${esc(r.t)}</span></div>`;
+          h+=`<a class="tour cover ${r.k} c-${CAT[r.k]}" href="${file}" data-i="${idx}" ${st}>${img}<div class="cv-body">${top}<div class="name">${esc(r.t)}</div>${routeHTML(r)}${r.note?`<div class="note">${esc(r.note)}</div>`:""}<span class="open">Open the tour ↗</span></div></a>`}
+        else h+=`<div class="tour plain ${r.k} c-${CAT[r.k]}${r.tbc?" tbc":""}" data-i="${idx}" ${st}>${top}<div class="name">${esc(r.t)}</div>${routeHTML(r)}${r.note?`<div class="note">${esc(r.note)}</div>`:""}<span class="soon">Page to come</span></div>`;
+      } else if(r.k==="uk"){
+        h+=`<div class="tour home c-uk${r.tbc?" tbc":""}" data-i="${idx}"><div class="top"><span>${when(r)}${r.tbc?" · dates to settle":""}</span><span class="k">${esc(r.lab||KL[r.k])}</span></div><div class="name">${esc(r.t)}</div>${routeHTML(r)}${r.note?`<div class="note">${esc(r.note)}</div>`:""}</div>`;
+      } else if(r.k==="ghost"){
+        h+=`<div class="ghost hov" tabindex="0" data-i="${idx}"><s>${esc(r.t)}</s>${esc(r.note||"")}</div>`;
+      } else if(r.k==="personal"){
+        h+=`<div class="ev personal m-personal hov" tabindex="0" data-i="${idx}"><span class="d">${when(r)}</span><span class="t">${esc(r.t)}</span></div>`;
+      } else {
+        h+=`<div class="ev ${r.k==="occ"?"occ m-occ":"day m-uk"} hov" tabindex="0" data-i="${idx}"><span class="d">${when(r)}</span>${r.k==="occ"?mark(r):""}<span class="t">${esc(r.t)}</span></div>`;
+      }
+    });
+    h+=`</section>`;
+  });
+}
+document.getElementById("index").innerHTML=h;
+
+
+// globe — d3 orthographic projection over Natural Earth country shapes
+const cv=document.getElementById("globe"),x=cv.getContext("2d"),W=880,C=440,R=380;
+const css=getComputedStyle(document.documentElement),col=n=>css.getPropertyValue(n).trim();
+let COL,BRASS,GH,GL,LAND,BG;
+function readCols(){const c=getComputedStyle(document.documentElement),g=n=>c.getPropertyValue(n).trim();COL={overseas:g("--rose"),cut:g("--rose"),realm:g("--sky"),uk:g("--sage"),ukday:g("--sage"),occ:g("--brass"),personal:g("--lilac"),ghost:g("--faint")};BRASS=g("--brass");GH=g("--globe-hi");GL=g("--globe-lo");LAND=g("--land");BG=g("--bg")}
+readCols();
+const proj=d3.geoOrthographic().scale(R).translate([C,C]).clipAngle(90).precision(.4);
+const path=d3.geoPath(proj,x);
+const countries=topojson.feature(WORLD,WORLD.objects.countries);
+const borders=topojson.mesh(WORLD,WORLD.objects.countries,(a,b)=>a!==b);
+const land=topojson.merge(WORLD,WORLD.objects.countries.geometries);
+const grat=d3.geoGraticule10();
+const LON=[-0.13,51.5];
+let rot=[0,-20],tRot=[0,-20],cur=-1,sc=R,tSc=R;
+function draw(){
+  proj.rotate([rot[0],rot[1]]).scale(sc);
+  x.clearRect(0,0,W,W);
+  x.save();x.beginPath();x.arc(C,C,R,0,7);x.clip();
+  const g=x.createRadialGradient(C-130,C-150,30,C,C,R);g.addColorStop(0,GH);g.addColorStop(1,GL);
+  x.fillStyle=g;x.beginPath();path({type:"Sphere"});x.fill();
+  x.globalAlpha=.14;x.strokeStyle=BRASS;x.lineWidth=.8;x.beginPath();path(grat);x.stroke();
+  x.globalAlpha=1;x.fillStyle=LAND;x.beginPath();path(land);x.fill();
+  x.globalAlpha=.55;x.strokeStyle=BG;x.lineWidth=.7;x.beginPath();path(borders);x.stroke();
+  x.globalAlpha=.9;x.strokeStyle=BRASS;x.lineWidth=.9;x.beginPath();path(land);x.stroke();
+  
+  const center=[-rot[0],-rot[1]];
+  const vis=p=>d3.geoDistance(p,center)<Math.PI/2-.02;
+  tours.forEach((r,i)=>{const p=[r.at[1],r.at[0]];if(off.has(CAT[r.k])||!vis(p)||i===cur)return;const [a,b]=proj(p);
+    x.globalAlpha=.6;x.fillStyle=COL[r.k];x.beginPath();x.arc(a,b,4,0,7);x.fill()});
+  if(cur>=0){const r=tours[cur],p=[r.at[1],r.at[0]];
+    x.globalAlpha=.9;x.strokeStyle=COL[r.k];x.lineWidth=1.6;x.setLineDash([2,6]);
+    x.beginPath();path({type:"LineString",coordinates:[LON,p]});x.stroke();x.setLineDash([]);
+    if(vis(p)){const [a,b]=proj(p);x.globalAlpha=1;x.fillStyle=COL[r.k];x.beginPath();x.arc(a,b,8,0,7);x.fill();
+      x.globalAlpha=.45;x.lineWidth=1.5;x.beginPath();x.arc(a,b,18,0,7);x.stroke()}}
+  if(vis(LON)){const [a,b]=proj(LON);x.globalAlpha=1;x.fillStyle=BRASS;x.beginPath();x.arc(a,b,5,0,7);x.fill()}
+  x.restore();x.globalAlpha=1;x.strokeStyle=BRASS;x.lineWidth=1.4;x.beginPath();x.arc(C,C,R,0,7);x.stroke();
+}
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function tick(){
+  let dl=tRot[0]-rot[0];dl=((dl+540)%360)-180;
+  rot[0]+=dl*.06;rot[1]+=(tRot[1]-rot[1])*.06;sc+=(tSc-sc)*.06;
+  draw();requestAnimationFrame(tick)}
+function focusTour(i){
+  if(i===cur)return;cur=i;const r=tours[i];
+  // centre between London and destination so the arc reads, leaning toward the destination
+  const inUK=r.at[0]>49.5&&r.at[0]<61&&r.at[1]>-8.5&&r.at[1]<2;
+  if(inUK){tRot=[-(r.at[1]*.6-2*.4),-(r.at[0]*.6+54*.4)];tSc=R*7}else{
+  const mid=d3.geoInterpolate(LON,[r.at[1],r.at[0]])(.7);
+  tRot=[-mid[0],Math.max(-60,Math.min(60,-mid[1]))];tSc=R}
+  document.querySelectorAll(".tour.on,.hov.on").forEach(e=>e.classList.remove("on"));
+  document.querySelector(`[data-i="${i}"]`)?.classList.add("on");
+  document.getElementById("nWhen").textContent=when(r)+" "+r.s.slice(0,4);
+  document.getElementById("nWhat").textContent=r.t;
+  document.getElementById("nStat").textContent=CARD.has(r.k)?(r.tbc||!r.e?"Dates to settle":days(r.s,r.e)+" days")+" · "+stops(r).length+(stops(r).length===1?" stop":" stops"):({occ:"Occasion",personal:"Private",ukday:"Day visit",ghost:"Never made"})[r.k]+(r.e?" · "+days(r.s,r.e)+" days":"");
+  if(typeof markYear==="function")markYear(r.s.slice(0,4));
+}
+document.querySelectorAll(".tour,.hov").forEach(el=>{
+  const i=+el.dataset.i;el.addEventListener("mouseenter",()=>focusTour(i));el.addEventListener("focus",()=>focusTour(i));
+});
+const scroller=document.getElementById("scroller");
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)focusTour(+e.target.dataset.i)})},{root:scroller,rootMargin:"-45% 0px -50% 0px"});
+// year rail
+const rail=document.getElementById("rail");
+let rh="";for(let y=2016;y<=2027;y++){rh+=`<button type="button" data-y="${y}">${y}</button>`;if(y===2024)rh+=`<span class="crown" title="Accession"></span>`}
+rail.innerHTML=rh;
+D.filter(r=>PAGE.has(r.k)).forEach(r=>{const y=+r.s.slice(0,4),m=+r.s.slice(5,7)-1,f=(y-2016+(m+.5)/12)/12,p=PAL[r.s]||["","#9a7a45"];
+  const t=document.createElement("span");t.className="tick"+(HAVE.has(slug(r))?" has":"");t.style.left=(f*100)+"%";t.style.background=p[1];t.title=r.t+" · "+when(r)+" "+y;
+  t.onclick=()=>{const el=document.querySelector(`[data-i="${tours.indexOf(r)}"]`);if(el)scroller.scrollTo({top:el.offsetTop-80})};rail.appendChild(t)});
+rail.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  const s=document.querySelector(`.year[data-y="${b.dataset.y}"]`);if(s)scroller.scrollTo({top:s.offsetTop-20})});
+function markYear(y){rail.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.y==y))}
+// parallax on year numerals
+const nums=[...document.querySelectorAll(".year-num")];
+function para(){const top=scroller.scrollTop,h=scroller.clientHeight;
+  if(!reduce)nums.forEach(n=>{const s=n.parentElement;const off=(s.offsetTop-top-h/2)*-.18;n.style.transform=`translateY(${off}px)`})}
+scroller.addEventListener("scroll",()=>requestAnimationFrame(para),{passive:true});para();
+document.querySelectorAll(".tour").forEach(el=>io.observe(el));
+
+// ——— passport ———
+const LONDON=[51.5,-0.13];
+const hav=(a,b)=>{const r=Math.PI/180,dl=(b[0]-a[0])*r,dn=(b[1]-a[1])*r;const h=Math.sin(dl/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dn/2)**2;return 3958.8*2*Math.asin(Math.sqrt(h))};
+const legMiles=r=>{const out=hav(LONDON,r.at);const n=stops(r).length;return Math.round(out*2*(1+Math.min(n,12)*.04))};// out and back, plus an allowance for internal legs
+const mode=r=>r.k==="uk"?"rail":"air";
+const tot={air:0,rail:0,nights:0},byYear={};
+tours.filter(r=>CARD.has(r.k)).forEach(r=>{const m=legMiles(r),y=r.s.slice(0,4);tot[mode(r)]+=m;tot.nights+=r.e?days(r.s,r.e)-1:0;(byYear[y]??={air:0,rail:0})[mode(r)]+=m});
+const big=n=>n.toLocaleString("en-GB");
+document.getElementById("log").innerHTML=
+ `<div><b>${big(tot.air+tot.rail)}</b><span>Miles, est.</span></div><div><b>${big(tot.air)}</b><span>By air</span></div><div><b>${big(tot.rail)}</b><span>By rail</span></div><div><b>${((tot.air+tot.rail)/24901).toFixed(1)}×</b><span>Round the world</span></div>`;
+const hash=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
+const INKS=["#2E4C8A","#7A2E5A","#1F6B57","#8A3B2E","#3D3A8A","#5A6A1F","#7A4A1E"];
+// passport entries come from each record's ctry list
+const entries=[];
+D.filter(r=>r.ctry).forEach(r=>{const a=d(r.s),n=r.e?days(r.s,r.e):1,minor=!CARD.has(r.k);
+  r.ctry.forEach((c,i)=>{const dt=new Date(a.getTime()+Math.round(i*n/r.ctry.length)*864e5);entries.push({c,dt,r,king:r.s>="2024-04-22",minor})})});
+entries.sort((a,b)=>a.dt-b.dt);
+const short=dt=>String(dt.getUTCDate()).padStart(2,"0")+" "+MON[dt.getUTCMonth()].toUpperCase()+" "+String(dt.getUTCFullYear()).slice(2);
+const stampHTML=(e,i,scatter,n)=>{const h=hash(e.c+e.dt.toISOString()),rot=scatter?(h%17)-8:(h%7)-3;
+  let pos="";if(scatter){const cols=n>6?3:2,rows=Math.ceil(n/cols),cx=i%cols,cy=Math.floor(i/cols);
+    const jx=((h%9)-4)*1.2,jy=(((h>>>4)%9)-4)*1.2;
+    pos=`left:${(cx+.5)/cols*100+jx}%;top:${(cy+.5)/Math.max(rows,2)*92+jy}%;transform:translate(-50%,-50%) rotate(var(--r));`}
+  const tag=(e.minor||!PAGE.has(e.r.k))?"span":"a",href=(e.minor||!PAGE.has(e.r.k))?"":` href="${slug(e.r)}"`,title=` title="${esc(e.r.t)}"`;
+  if(e.king)return `<${tag} class="stamp seal"${href}${title} style="--r:${rot}deg;${pos}"><span class="x">The King</span><span class="c">${esc(e.c)}</span><span class="dt">${short(e.dt)}</span></${tag}>`;
+  const words=["Admitted","Entry","Arrived","Immigration"];
+  return `<${tag} class="stamp s${(h%5)+1}"${href}${title} style="--r:${rot}deg;--ink:${INKS[h%INKS.length]};${pos}"><span class="x">${words[h%4]}</span><span class="c">${esc(e.c)}</span><span class="dt">${short(e.dt)}</span></${tag}>`};
+const years=[...new Set(entries.map(e=>e.dt.getUTCFullYear()))].sort();
+const pages=[...years.map(y=>({y})),{log:true}];
+let pi=0,scatter=false;
+const mx=Math.max(...Object.values(byYear).map(v=>v.air+v.rail));
+function logPage(){let st=`<div class="vh">Miles by year</div><div class="years"><div class="ykey"><span><i style="background:#9E2A35"></i>Air</span><span><i style="background:#1F6B57"></i>Rail</span></div>`;
+  for(let y=2016;y<=2027;y++){const v=byYear[y]||{air:0,rail:0};st+=`<div class="yrow"><span>${y}</span><div class="t"><i style="width:${v.air/mx*100}%;background:#9E2A35"></i><i style="width:${Math.max(v.rail/mx*100,v.rail?1.5:0)}%;background:#1F6B57"></i></div><b>${big(v.air+v.rail)}</b></div>`}
+  return st+`</div>`}
+function renderPage(){const p=pages[pi],box=document.getElementById("stamps");
+  document.getElementById("pgLabel").textContent=p.log?"Log":p.y;
+  document.getElementById("pgNum").textContent=(pi+1)+" / "+pages.length;
+  document.getElementById("pgPrev").disabled=pi===0;document.getElementById("pgNext").disabled=pi===pages.length-1;
+  document.getElementById("layout").hidden=!!p.log;
+  if(p.log){box.className="stamps";box.innerHTML=logPage();return}
+  const es=entries.filter(e=>e.dt.getUTCFullYear()===p.y);
+  box.className="stamps "+(scatter?"scatter":"neat");
+  box.innerHTML=(scatter?"":`<div class="sgrid">`)+es.map((e,i)=>stampHTML(e,i,scatter,es.length)).join("")+(scatter?"":`</div>`)+
+    `<div class="pfoot">${es.length} ${es.length===1?"entry":"entries"} · ${p.y}${p.y===2024?" · passport cancelled 21 April":""}</div>`;
+  box.classList.remove("flip");void box.offsetWidth;box.classList.add("flip")}
+document.getElementById("pgPrev").onclick=()=>{if(pi>0){pi--;renderPage()}};
+document.getElementById("pgNext").onclick=()=>{if(pi<pages.length-1){pi++;renderPage()}};
+document.getElementById("layout").onclick=e=>{const b=e.target.closest("button");if(!b)return;scatter=b.dataset.l==="scatter";
+  document.querySelectorAll("#layout button").forEach(x=>x.classList.toggle("on",x===b));renderPage()};
+document.addEventListener("keydown",e=>{if(document.getElementById("passport").hidden)return;
+  if(e.key==="ArrowRight")document.getElementById("pgNext").click();if(e.key==="ArrowLeft")document.getElementById("pgPrev").click()});
+renderPage();
+// guilloche security pattern
+(()=>{let p="";for(let i=0;i<14;i++){let dd="";for(let t=0;t<=400;t+=4){const y=140+Math.sin(t/30+i*.45)*(60+i*4)*Math.sin(t/120);dd+=(t?"L":"M")+t+" "+y.toFixed(1)}p+=`<path d="${dd}" fill="none" stroke="#A98BB8" stroke-width=".6"/>`}document.getElementById("gl").innerHTML=p})();
+// view switch
+const views=document.getElementById("views"),stage=document.querySelector(".stage"),pass=document.getElementById("passport"),railBar=document.querySelector(".bar.bottom");
+views.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const v=b.dataset.v;
+  views.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));
+  stage.hidden=v!=="index";railBar.hidden=v!=="index";filt.hidden=v!=="index";pass.hidden=v!=="passport";
+  document.querySelector(".frame").style.gridTemplateRows=v==="index"?"auto 1fr auto":"auto 1fr"});
+focusTour(0);markYear("2016");
+tick();
+</script>
